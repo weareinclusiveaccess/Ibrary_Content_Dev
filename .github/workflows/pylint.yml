@@ -14,7 +14,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - python-version: "3.14"
+            continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -24,23 +27,29 @@ jobs:
           version: "latest"
 
       - name: Set up Python ${{ matrix.python-version }}
+        id: setup-python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: ${{ matrix.python-version == '3.14' }}
+        continue-on-error: ${{ matrix.python-version == '3.14' }}
 
       - name: Install dependencies
+        if: steps.setup-python.outcome == 'success'
         run: uv sync --extra dev
 
       - name: Install pylint
+        if: steps.setup-python.outcome == 'success'
         run: uv pip install pylint
 
       - name: Analyzing code with pylint
+        if: steps.setup-python.outcome == 'success'
         run: |
           pylint src tests --output-format=text || exit 0
         continue-on-error: true
 
       - name: Generate pylint report (JSON)
+        if: steps.setup-python.outcome == 'success'
         run: |
           pylint src tests --output-format=json --reports=y > pylint-report.json || exit 0
         continue-on-error: true

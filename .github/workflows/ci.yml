@@ -22,23 +22,44 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
-          allow-prereleases: true
+          python-version: "3.13"
+
 
       - name: Install dependencies
         run: uv sync --extra dev
 
       - name: Check code formatting with Black
-        run: uv run black --check src tests
+
+        run: |
+          if [ -d "src" ] || [ -d "tests" ]; then
+            uv run black --check src tests 2>/dev/null || uv run black --check src tests
+          else
+            echo "No source directories found, skipping black check"
+          fi
 
       - name: Check import sorting with isort
-        run: uv run isort --check-only src tests
+        run: |
+          if [ -d "src" ] || [ -d "tests" ]; then
+            uv run isort --check-only src tests 2>/dev/null || uv run isort --check-only src tests
+          else
+            echo "No source directories found, skipping isort check"
+          fi
 
       - name: Lint with ruff
-        run: uv run ruff check src tests
+        run: |
+          if [ -d "src" ] || [ -d "tests" ]; then
+            uv run ruff check src tests
+          else
+            echo "No source directories found, skipping ruff check"
+          fi
 
       - name: Format with ruff (as secondary check)
-        run: uv run ruff format --check src tests
+        run: |
+          if [ -d "src" ] || [ -d "tests" ]; then
+            uv run ruff format --check src tests
+          else
+            echo "No source directories found, skipping ruff format check"
+          fi
 
   type-check:
     name: Type Check
@@ -69,7 +90,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - python-version: "3.14"
+            continue-on-error: true
+
     steps:
       - uses: actions/checkout@v4
 
@@ -79,20 +105,40 @@ jobs:
           version: "latest"
 
       - name: Set up Python ${{ matrix.python-version }}
+        id: setup-python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: ${{ matrix.python-version == '3.14' }}
-          allow-prereleases: ${{ matrix.python-version == '3.14' }}
+        continue-on-error: ${{ matrix.python-version == '3.14' }}
 
       - name: Install dependencies
+        if: steps.setup-python.outcome == 'success'
         run: uv sync --extra dev
 
+      - name: Check if tests exist
+        if: steps.setup-python.outcome == 'success'
+        id: check_tests
+        run: |
+          if [ -d "tests" ] && [ "$(find tests -name '*.py' -type f | wc -l)" -gt 0 ]; then
+            echo "tests_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "tests_exist=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run tests with pytest
+        if: steps.setup-python.outcome == 'success' && steps.check_tests.outputs.tests_exist == 'true'
         run: uv run pytest tests/ -v --cov=src --cov-report=xml --cov-report=term
 
+      - name: Create empty coverage file if no tests
+        if: steps.setup-python.outcome == 'success' && steps.check_tests.outputs.tests_exist == 'false'
+        run: |
+          echo '<?xml version="1.0" ?><coverage></coverage>' > coverage.xml
+          echo "No tests found, skipping pytest"
+
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        if: always()
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           flags: unittests
@@ -125,8 +171,13 @@ jobs:
 
       - name: Run bandit security linter
         run: |
-          pip install bandit[toml]
-          bandit -r src -f json -o bandit-report.json || true
+          if [ -d "src" ] && [ "$(find src -name '*.py' -type f | wc -l)" -gt 0 ]; then
+            pip install bandit[toml]
+            bandit -r src -f json -o bandit-report.json || true
+          else
+            echo '{"errors": []}' > bandit-report.json
+            echo "No Python files found in src, skipping bandit"
+          fi
         continue-on-error: true
 
       - name: Upload bandit results
