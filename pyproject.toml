@@ -3,7 +3,7 @@ name = "ibrary"
 version = "0.1.0"
 description = "Automated Content Rewording Component for Accessible Secondary School Learning - IBrary"
 readme = "readme.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.15"
 license = {text = "MIT"}
 authors = [
     {name = "IBrary Team"}
