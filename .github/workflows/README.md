@@ -14,8 +14,8 @@ This directory contains all CI/CD workflows for the IBrary project.
 **Jobs:**
 - **Lint & Format Check**: Validates code formatting with Black, isort, and Ruff
 - **Type Check**: Runs mypy for type checking
-- **Test**: Runs pytest across Python 3.10, 3.11, and 3.12
-- **Security Scan**: Runs safety and bandit security checks
+- **Test**: Runs pytest across Python 3.10, 3.11, 3.12, and 3.13
+- **Security Scan**: Runs bandit security linter (free/open source)
 
 **Status Badge:**
 ```markdown
@@ -51,17 +51,13 @@ This directory contains all CI/CD workflows for the IBrary project.
 - Weekly schedule (Mondays at 9:00 AM)
 
 **Purpose:**
-- Automatically updates Python dependencies
-- Updates GitHub Actions
-- Groups minor/patch updates
+- Updates GitHub Actions automatically
 - Creates PRs with proper labels
 
 **Configuration:**
-- Weekly updates for Python packages
-- Weekly updates for GitHub Actions
-- Groups dev dependencies together
-- Groups production dependencies together
-- Limits open PRs to 5
+- Monthly updates for GitHub Actions (Dependabot doesn't support UV/uv.lock yet)
+- Limits open PRs to 3
+- **Note:** Python dependencies must be updated manually using `uv lock --upgrade`
 
 ### 5. Release Workflow (`.github/workflows/release.yml`)
 
@@ -86,10 +82,7 @@ To enable full functionality, add these secrets to your repository:
    - Create a new token with "Upload packages" scope
    - Add as repository secret: `PYPI_API_TOKEN`
 
-2. **Codecov Token** (optional): For coverage reporting
-   - Sign up at codecov.io
-   - Add repository
-   - Add token as secret: `CODECOV_TOKEN`
+**Note:** All workflows use only free/open-source services. No paid subscriptions required.
 
 ## Workflow Status Badges
 
@@ -138,16 +131,12 @@ schedule:
   time: "09:00"       # Time (UTC)
 ```
 
-### Adding Coverage Reporting
+### Viewing Coverage Reports
 
-Add Codecov step to `ci.yml`:
-```yaml
-- name: Upload coverage to Codecov
-  uses: codecov/codecov-action@v4
-  with:
-    token: ${{ secrets.CODECOV_TOKEN }}
-    file: ./coverage.xml
-```
+Coverage reports are generated as HTML artifacts and uploaded automatically:
+- Download from Actions tab after workflow run
+- Located in the "coverage-report-{python-version}" artifact
+- Open `index.html` in a browser to view coverage
 
 ## Troubleshooting
 
