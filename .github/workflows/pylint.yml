@@ -1,0 +1,54 @@
+name: Pylint
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  pylint:
+    name: Pylint Analysis (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: ${{ matrix.python-version == '3.14' }}
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Install pylint
+        run: uv pip install pylint
+
+      - name: Analyzing code with pylint
+        run: |
+          pylint src tests --output-format=text || exit 0
+        continue-on-error: true
+
+      - name: Generate pylint report (JSON)
+        run: |
+          pylint src tests --output-format=json --reports=y > pylint-report.json || exit 0
+        continue-on-error: true
+
+      - name: Upload pylint results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pylint-report-${{ matrix.python-version }}
+          path: pylint-report.json
+          retention-days: 7
