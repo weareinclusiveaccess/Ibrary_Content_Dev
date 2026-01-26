@@ -7,7 +7,7 @@
   "introduction": "Colors of Fall Taking a walk through the woods in the fall, as the leaves begin to change  color, can be an enjoyable and relaxing form of exercise. But why are the leaves  changing color? Leaves contain several diferent types of pigment, including  the green chlorophylls and the yellow to red carotenoids. These pigment s play  an important role in the absorption of solar energy for photosyn thesis. In the  fall, when the lower temperatures signal a change in the seasons, the suppl y of  water and nutrients to the leaves declines, and the chlorophyll begins to d egrade. Now the carotenoids, which were always present but masked by the chlorophylls, become visible, in the process causing the change in leaf co lor. \n Interestingly, the same carotenoids act as antioxidants in our diets. Antioxidants protect us against free radicals, dangerous molecules that o therwise\ndegrade the DNA and proteins within a cell. Antioxidants, such  as betacarotene, are common in red and yellow vegetables.  In this chapter, we will see how these pigments are involved in the process  of photosynthesis and how plants capture solar energy to manufacture glucose, their food supply. As you read through this chapter, think about the following questions:\n 1. What is the role of the photosynthetic pigments in photosynthesis?\n 2. How do plants convert solar energy to chemical energy?\n 3. What is the role of water in photosynthesis?",
   "subtopics_info": [
     {
-      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Describe the function of the chloroplast in photosynthesis.\n 2. State the overall chemical equation for photosynthesis.\n 3. Recognize what is meant by the terms reduction and oxidation.",
+      "learning_outcomes": [],
       "subtopic_introduction": "Photosynthesis transforms solar energy into the chemical energy of a carbohydrate. Photosynthetic organisms, including plants, algae, and cyanobacteria, produce an enormous amount of carbohydrates (Fig. 6.1). If the carbohydrates  were instantly converted to coal, and the coal loaded into standard railroad cars  (each car holding about 50 tons), the photosynthesizers of the biosphere would  fill more than 100 cars per second with coal. It is no wonder, then, that photosynthetic organisms are able to sustain  themselves and, with the exception of a few types of bacteria (see Section 17.3),  all of the other living organisms on Earth.\n1 To appreciate this, consider that most  mosses Euglena garden plants  kelp\n200× diatoms cyanobacteria\n1 A few types of bacteria are chemosynthetic organisms, which obtain the necessary energy to produce their  own organic nutrients by oxidizing inorganic compounds.\nFigure 6.1 Photosynthetic organisms. Photosynthetic organisms include plants, such a s lowers and  mosses, that typically live on land; photosynthetic protists, such as  the Euglena, diatoms, and kelp shown here, which typically live in  water; and cyanobacteria, a type of bacterium that lives everywhere. \n(kelp): © Chuck Davis/Stone/Getty Images; (diatoms): © Ed Reschke; (Euglena): \n© M.I. (Spike) Walker/Alamy; (sunlower): © Corbis RF; (moss): © Steven P. Lynch; \n(cyanobacteria): © John Hardy, University of Washington, Stevens Point \nDepartment of Biology",
       "subtopic_number": "6.1",
       "subtopic_title": "Overview of Photosynthesis",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Describe the function of photosynthetic pigments.\n 2. Explain the low of electrons in the light reactions of photosynthesis.\n 3. Explain how ATP and NADPH are generated in the light reactions.",
+      "learning_outcomes": [],
       "subtopic_introduction": "During the light reactions of photosynthesis, the pigments within the thylakoid membranes absorb solar energy. Solar energy (also called radiant energy) can be described in terms of its wavelength and its energy content in an electromagnetic spectrum.  Figure 6.4  lists the types of solar energy,  from the type with the shortest wavelength, gamma rays, to that with the  longest, radio waves. Notice how v isible light  occupies only a small portion  of this spectrum. Visible light contains various wavelengths of light, as can be proven by  passing it through a prism; the different wavelengths appear to us as the colors  of the rainbow, ranging from violet (the shortest wavelength) to blue, green,  yellow, orange, and red (the longest wavelength). The energy content is highest  for violet light and lowest for red light.\nLess than half of the solar radiation that hits the Earth’s atmosphere  ever reaches its surface, and most of this radiation is within the visiblelight range. Higher-energy wavelengths are screened out by the ozone layer in the atmosphere, and lower-energy wavelengths are screened out by water  vapor and CO\n2 before they reach the Earth’s surface. Both the organic molecules within organisms and certain life processes, such as vision and photosynthesis, are adapted to utilize the radiation that is most prevalent in the environment.\nFigure 6.4 The electromagnetic spectrum. Solar energy exists in a range of wavelengths extending from the very  short wavelengths of gamma rays through the very long wavelengths  of radio waves. Visible light, which drives photosynthesis, is expanded  to show its component colors. The colors difer according to  wavelength and energy content. Increasing energy Gamma\nrays X-rays UV Infrared Microwaves Radio waves Increasing wavelength Wavelengths (nm)\n380 500 Visible light\n600 750\nConnections: Scientiic Inquiry How do the grow-lights in a  greenhouse work? The grow-lights in commercial greenhouses do not emit all of the wavelengths of visible light. Instead, these lamps have been designed to emit  more strongly in the blue and red  wavelengths of light. Since these are  the preferred wavelengths of the chlorophyll molecules, the growers can optimize plant growth. You will also n otice that the colors of your clothes may appear slightly diferent under a grow-light. This is because the light reaching the pigments in the cloth does  not contain all of the wavelengths, so not all the colors are re lected back to  your eyes.\n© Natig Aghayev/Shutterstock RF",
       "subtopic_number": "6.2",
       "subtopic_title": "The Light Reactions—Harvesting Energy",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Summarize the three stages of the Calvin cycle, and describe the major  event that occurs during each stage.\n 2. Describe how ATP and NADPH are utilized in the manufacture of  carbohydrates by the Calvin cycle.\n 3. Summarize how the output of the Calvin cycle is used to make other  carbohydrates.\nThe ATP and NADPH generated by the light reactions power the Calvin cycle reactions. The",
+      "learning_outcomes": [],
       "subtopic_introduction": "Calvin cycle is often referred to as the  light-independent reactions, since these reactions do not require an input of solar energy but, rather, rely on the outputs of the light reactions. The cycle is named for \nMelvin Calvin, who, with colleagues, used  the radioactive isotope \n14C as a tracer to discover the reactions that make up the cycle.",
       "subtopic_number": "6.3",
       "subtopic_title": "The Calvin Cycle Reactions—Making Sugars",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Deine C\n4 photosynthesis, and explain why some plants must use this  type of photosynthesis.\n 2. Describe both the advantages and the disadvantages of C4  photosynthesis over C3 photosynthesis.\n 3. Compare and contrast the leaf structure of a C3 plant with that of   a C4 plant.\n 4. Explain CAM photosynthesis, and describe the conditions under which  plants can use it.",
+      "learning_outcomes": [],
       "subtopic_introduction": "Plants are physically adapted to their environments. In the cold, windy climates  of the north, evergreen trees have small, narrow leaves that look like needles.  In the warm, wet climates of the south, some evergreen trees have large, flat  leaves to catch the rays of the sun.",
       "subtopic_number": "6.4",
       "subtopic_title": "Variations in Photosynthesis",
@@ -304,5 +304,10 @@
         }
       ]
     }
-  ]
+  ],
+  "chapter_exercises": {
+    "chapter_review_questions": [],
+    "critical_thinking_questions": []
+  },
+  "chapter_summary": ""
 }

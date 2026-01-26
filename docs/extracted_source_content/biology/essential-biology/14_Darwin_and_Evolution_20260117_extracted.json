@@ -251,5 +251,10 @@
         }
       ]
     }
-  ]
+  ],
+  "chapter_exercises": {
+    "chapter_review_questions": [],
+    "critical_thinking_questions": []
+  },
+  "chapter_summary": ""
 }

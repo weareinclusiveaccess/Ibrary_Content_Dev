@@ -96,9 +96,6 @@
       "subtopic_number": "9.4",
       "subtopic_title": "Changes in Chromosome Number",
       "subtopic_page_label": "154",
-      "subtopic_assessments": [],
-      "subtopic_concept": "",
-      "subtopic_summary": "",
       "subsubtopics_info": [
         {
           "subsubtopic_title": "Down Syndrome",
@@ -263,5 +260,10 @@
         }
       ]
     }
-  ]
+  ],
+  "chapter_exercises": {
+    "chapter_review_questions": [],
+    "critical_thinking_questions": []
+  },
+  "chapter_summary": ""
 }

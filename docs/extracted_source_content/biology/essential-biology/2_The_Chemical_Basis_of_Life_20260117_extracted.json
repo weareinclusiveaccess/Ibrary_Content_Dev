@@ -23,43 +23,57 @@
         "Distinguish between reactants and products in a chemical equation."
       ],
       "subtopic_concept": "Subatomic particles determine how elements bond to form molecules and compounds.",
-      "subtopic_summary": "",
+      "subtopic_summary": "Atoms and Atomic Bonds \nBoth living organisms and nonliving things are composed of matter  consisting of elements. The major elements in living organisms are carbon,  hydrogen, nitrogen, and oxygen. Elements consist of atoms, which in turn  contain subatomic particles. Protons have positive charges, neutrons are  uncharged, and electrons have negative charges. Electrons are found outside  the nucleus in energy levels called electron shells. Protons and neutrons in the nucleus determine the mass number of an atom. \nThe atomic number indicates the number of protons in the nucleus. In an  electrically neutral atom, the atomic number also indicates the number of  electrons. Isotopes are atoms of a single element that differ in their number  of neutrons. Radioactive isotopes have many uses, including serving as  tracers in biological experiments and medical procedures. The number of electrons in the valence shell (outer energy level) determines  the reactivity of an atom. The first electron shell is complete when it is  occupied by two electrons. Atoms are most stable when the valence shell  contains 8 electrons. The octet rule states that atoms react with one another  in order to have a completed valence shell.\nAtoms are often bonded together to form molecules. If the elements in a  molecule are different, it is called a compound. Molecules and compounds  may be held together by ionic or covalent bonds. Ionic bonds are formed by  an attraction between oppositely charged ions. Ions form when atoms lose or  gain one or more electrons to achieve a completed outer shell. Covalent  bonds occur when electrons are shared between two atoms. There are single  covalent bonds (sharing one pair of electrons), double (sharing two pairs of  electrons), and triple (sharing three pairs of electrons). shells nucleus = protons = neutrons = electrons",
       "subsubtopics_info": [
         {
           "subsubtopic_title": "Atomic Structure",
           "subsubtopic_start_page_label": "23",
           "subsubtopic_end_page_label": "23",
-          "subsubtopic_page_contents": "The atomic theory states that elements consist of tiny particles called  atoms. Because each element consists of only one kind of atom, the  same name is given to an element and its atoms. This name is represented by one or two letters, called the atomic symbol. For example, the symbol H stands for an atom of hydrogen, and the symbol Na (for natrium in Latin) stands for an atom of sodium. If we could look inside a single atom, we would see that it is made  mostly of three types of subatomic particles: neutrons, which have no electrical charge; protons, which have a positive charge; and electrons, which have a negative charge. Protons and neutrons are located within the center of  an atom, which is called the nucleus, while electrons move about the nucleus.\nFigure 2.2 shows the arrangement of the subatomic particles in a helium \natom, which has only two electrons. In Figure 2.2 b, the circle represents the  approximate location of the electrons based on their energy state. However,  electrons are in a constant state of motion, so their estimated location is often \nshown as a cloud (Fig. 2.2a). Overall, most of an atom is empty space. In fact,  if we could draw an atom the size of a baseball stadium, the nucleus would be  like a gumball in the center of the stadium, and the electrons would be tiny  specks whirling about in the upper stands. Usually, we can only indicate where  the electrons are expected to be. In our analogy, the electrons might very well  stray outside the stadium at times. Since atoms are a form of matter, you might expect each atom to have a  certain mass. In effect, the mass number of an atom is just about equal to the  sum of its protons and neutrons. Protons and neutrons are assigned one mass  unit each. Electrons, being matter, have mass, but they are so small that their  mass is assumed to be zero in most calculations. The term mass is used, rather  than  weight, because mass is constant but weight is associated with gravity and  thus varies depending on an object's location in the universe.\nAll atoms of an element have the same number of protons. This is called  the atom’s atomic number. The number of protons makes an atom unique and  may be used to identify which element the atom belongs to. As we will see, the  number of neutrons may vary between atoms of an element. The average of the  mass numbers for these atoms is called the atomic mass. The atomic number tells you the number of positively charged protons.  If the atom is electrically neutral, then the atomic number also indicates the  number of negatively charged electrons. To determine the usual number of  neutrons, subtract the number of protons from the atomic mass and take the  closest whole number."
+          "subsubtopic_page_contents": "The atomic theory states that elements consist of tiny particles called  atoms. Because each element consists of only one kind of atom, the  same name is given to an element and its atoms. This name is represented by one or two letters, called the atomic symbol. For example, the symbol H stands for an atom of hydrogen, and the symbol Na (for natrium in Latin) stands for an atom of sodium. If we could look inside a single atom, we would see that it is made  mostly of three types of subatomic particles: neutrons, which have no electrical charge; protons, which have a positive charge; and electrons, which have a negative charge. Protons and neutrons are located within the center of  an atom, which is called the nucleus, while electrons move about the nucleus.\nFigure 2.2 shows the arrangement of the subatomic particles in a helium \natom, which has only two electrons. In Figure 2.2 b, the circle represents the  approximate location of the electrons based on their energy state. However,  electrons are in a constant state of motion, so their estimated location is often \nshown as a cloud (Fig. 2.2a). Overall, most of an atom is empty space. In fact,  if we could draw an atom the size of a baseball stadium, the nucleus would be  like a gumball in the center of the stadium, and the electrons would be tiny  specks whirling about in the upper stands. Usually, we can only indicate where  the electrons are expected to be. In our analogy, the electrons might very well  stray outside the stadium at times. Since atoms are a form of matter, you might expect each atom to have a  certain mass. In effect, the mass number of an atom is just about equal to the  sum of its protons and neutrons. Protons and neutrons are assigned one mass  unit each. Electrons, being matter, have mass, but they are so small that their  mass is assumed to be zero in most calculations. The term mass is used, rather  than  weight, because mass is constant but weight is associated with gravity and  thus varies depending on an object's location in the universe.\nAll atoms of an element have the same number of protons. This is called  the atom’s atomic number. The number of protons makes an atom unique and  may be used to identify which element the atom belongs to. As we will see, the  number of neutrons may vary between atoms of an element. The average of the  mass numbers for these atoms is called the atomic mass. The atomic number tells you the number of positively charged protons.  If the atom is electrically neutral, then the atomic number also indicates the  number of negatively charged electrons. To determine the usual number of  neutrons, subtract the number of protons from the atomic mass and take the  closest whole number.",
+          "connections": [
+            {
+              "type": "Scientific Inquiry",
+              "title": "Where do elements come from?",
+              "content": " We are all familiar with elements. Iron, sodium, oxygen, and carbon are all common in our lives, but where do they originate? Normal chemical reactions do not produce elements. The majority of the heavier elements, such as iron, are produced only by the intense chemical and physical reactions within stars. When these stars reach the end of their lives, they explode, producing a supernova. Supernovas scatter the heavier elements into space, where they eventually are involved in the formation of planets. \nThe late astronomer and philosopher Carl Sagan (1934–1996) frequently referred to humans as “star stuf.” In many ways, we, and all other living organisms, are formed from elements that originated within the stars."
+            },
+          ]
         },
         {
           "subsubtopic_title": "The Periodic Table",
           "subsubtopic_start_page_label": "23",
           "subsubtopic_end_page_label": "24",
-          "subsubtopic_page_contents": "Once chemists discovered a number of the elements, they began to realize that  the elements’ chemical and physical characteristics recur in a predictable manner. The periodic table ( Fig. 2.3) was developed as a way to display the elements, and therefore the atoms, according to these characteristics. In a periodic table, the atomic number is written above the atomic symbol. The atomic mass is written below the atomic symbol. For example, the carbon atom is shown in this way:\n6 C\n12.01atomic mass atomic number\nFigure 2.2 Two models of helium (He). Atoms contain subatomic particles, which are located as shown in  these two simpli ﬁed models of helium. Protons are positively  charged, neutrons have no charge, and electrons are negatively  charged. Protons and neutrons are within the nucleus, and electrons  are outside the nucleus. a. This model shows electrons as a  negatively charged cloud around the nucleus. b. In this model, the  average location of electrons is represented by a circle.\n1 H\n1.008\n1\n1\n2\n3\n4\n3 Li\n6.941\n11 Na\n22.99\n19 K\n39.10\n4 Be\n9.012\n12 Mg\n24.31\n20 Ca\n40.08\n5 B\n10.81\n13 Al\n26.98\n31 Ga\n69.72\n6 C\n12.01\n14 Si\n28.09\n32 Ge\n72.59\n7 N\n14.01\n15 P\n30.97\n33 As\n74.92\n8 O\n16.00\n16 S\n32.07\n34 Se\n78.96\n9 F\n19.00\n17 Cl\n35.45\n35 Br\n79.90 Groups Periods\n8\n2 He\n4.003\n10 Ne\n20.18\n18 Ar\n39.95\n36 Kr\n83.60\n2345 67\nFigure 2.3 A portion of the periodic table. In the periodic table, the elements, and therefore the atoms that  compose them, are in the order of their atomic numbers but  arranged in periods (horizontal rows) and groups (vertical columns).  All the atoms in a particular group have certain chemical  characteristics in common. The elements highlighted in red make up  the the majority of matter in organic molecules (Chapter 3). A full \nperiodic table is provided in Appendix A."
+          "subsubtopic_page_contents": "Once chemists discovered a number of the elements, they began to realize that  the elements’ chemical and physical characteristics recur in a predictable manner. The periodic table ( Fig. 2.3) was developed as a way to display the elements, and therefore the atoms, according to these characteristics. In a periodic table, the atomic number is written above the atomic symbol. The atomic mass is written below the atomic symbol. For example, the carbon atom is shown in this way:\n6 C\n12.01atomic mass atomic number Every atom is in a particular period (the horizontal rows) and in a particular group (the vertical columns). The atoms in group 8 are called the noble gases because they are gases that rarely react with another atom, for reasons we will discuss later in this section. In Figure 2.3, notice that helium (He) and neon (Ne) are noble gases. "
         },
         {
           "subsubtopic_title": "Isotopes",
           "subsubtopic_start_page_label": "24",
           "subsubtopic_end_page_label": "25",
-          "subsubtopic_page_contents": "Isotopes are atoms of the same element that differ in the number of neutrons.  In other words, isotopes have the same number of protons, but they have different mass numbers. In some cases, a nucleus with excess neutrons is unstable and may decay and emit radiation. Such an isotope is said to be radioactive. \nHowever, not all isotopes are radioactive. The radiation given off by radioactive isotopes can be detected in various ways. Most people are familiar with the\nuse of a Geiger counter to detect radiation. However, other methods to detect  radiation exist that are useful in medicine and science.\nUses of Radioactive Isotopes The importance of chemistry to biology and medicine is nowhere more evident  than in the many uses of radioactive isotopes. For example, radioactive isotopes can be used as tracers to detect molecular changes or to destroy abnormal or infectious cells. Since both radioactive isotopes and stable isotopes contain  the same number of electrons and protons, they essentially behave the same in  chemical reactions. Therefore, a researcher can use a small amount of radioactive isotope as a tracer to detect how a group of cells or an organ is processing a certain element or molecule. For example, by giving a person a small amount  of radioactive iodine (iodine-131), it is possible to determine whether the thyroid gland is functioning properly. Another example is a procedure called positron-emission tomography (PET), which utilizes tracers to determine the comparative activity of tissues. A radioactively labeled glucose tracer that  emits a positron (a subatomic particle that is the opposite of an electron) is injected into the body. Positrons emit small amounts of radiation, which may be detected by sensors and analyzed by a computer. The result is a color image  that shows which tissues took up glucose and are thus metabolically active \n(Fig. 2.4). A number of conditions, such as tumors, Alzheimer disease, epilepsy, or a stroke, may be detected using PET scans. Radioactive substances in the environment can cause harmful chemical \nchanges in cells, damage DNA, and cause cancer. The release of radioactive  particles following a nuclear power plant accident can have far-reaching and \nlong-lasting effects on human health. For example, a 2011 Pacific tsunami  caused a release of radioactive cesium-137 from the Fukushima nuclear facility (Fig. 2.5a). But the effects of radiation can also be put to good use. Packets of radioactive isotopes can be placed in the body, so that the subatomic particles emitted destroy only cancer cells, with little risk to the rest of the body. Radiation from radioactive isotopes has been used for many years to  sterilize medical and dental equipment. Since the terrorist attacks in 2001, mail \nthat is destined for the White House and congressional offices in Washington,  DC, is irradiated to protect against dangerous biological agents, such as   anthrax (Fig. 2.5b).\nFigure 2.4 PET scan.\nIn a PET scan, red indicates areas of greatest metabolic activity, and  blue means areas of least activity. Computers analyze the data from  diferent sections of an organ—in this case, the human brain.\n© National Institutes of Health a. b.\nFigure 2.5 High levels of radiation.\na. The Fukushima nuclear facility. Following a tsunami, an accident  at this facility released radioactive isotopes into the environment .   b. Radiation can also be used to sterilize items, such as mail and  packages, to protect us from biological agents, such as anthrax.\n(a): © DigitalGlobe/Getty Images; (b): © Getty Images"
+          "subsubtopic_page_contents": "Isotopes are atoms of the same element that differ in the number of neutrons.  In other words, isotopes have the same number of protons, but they have different mass numbers. In some cases, a nucleus with excess neutrons is unstable and may decay and emit radiation. Such an isotope is said to be radioactive. \nHowever, not all isotopes are radioactive. The radiation given off by radioactive isotopes can be detected in various ways. Most people are familiar with the\nuse of a Geiger counter to detect radiation. However, other methods to detect  radiation exist that are useful in medicine and science.\nUses of Radioactive Isotopes The importance of chemistry to biology and medicine is nowhere more evident  than in the many uses of radioactive isotopes. For example, radioactive isotopes can be used as tracers to detect molecular changes or to destroy abnormal or infectious cells. Since both radioactive isotopes and stable isotopes contain  the same number of electrons and protons, they essentially behave the same in  chemical reactions. Therefore, a researcher can use a small amount of radioactive isotope as a tracer to detect how a group of cells or an organ is processing a certain element or molecule. For example, by giving a person a small amount  of radioactive iodine (iodine-131), it is possible to determine whether the thyroid gland is functioning properly. Another example is a procedure called positron-emission tomography (PET), which utilizes tracers to determine the comparative activity of tissues. A radioactively labeled glucose tracer that  emits a positron (a subatomic particle that is the opposite of an electron) is injected into the body. Positrons emit small amounts of radiation, which may be detected by sensors and analyzed by a computer. The result is a color image  that shows which tissues took up glucose and are thus metabolically active \n(Fig. 2.4). A number of conditions, such as tumors, Alzheimer disease, epilepsy, or a stroke, may be detected using PET scans. Radioactive substances in the environment can cause harmful chemical \nchanges in cells, damage DNA, and cause cancer. The release of radioactive  particles following a nuclear power plant accident can have far-reaching and \nlong-lasting effects on human health. For example, a 2011 Pacific tsunami  caused a release of radioactive cesium-137 from the Fukushima nuclear facility (Fig. 2.5a). But the effects of radiation can also be put to good use. Packets of radioactive isotopes can be placed in the body, so that the subatomic particles emitted destroy only cancer cells, with little risk to the rest of the body. Radiation from radioactive isotopes has been used for many years to  sterilize medical and dental equipment. Since the terrorist attacks in 2001, mail \nthat is destined for the White House and congressional offices in Washington,  DC, is irradiated to protect against dangerous biological agents, such as   anthrax (Fig. 2.5b). ",
+          "connections": [
+            {
+              "type": "Health",
+              "title": "Does irradiation add radioactive particles to food?",
+              "content": "No, the process of food irradiation exposes certain types of foods to a form of radiation called ionizing radiation. While ionizing radiation is very useful in killing bacteria on foods, it does not accumulate in or on the food. If you shine a light on a wall, the wall will not accumulate the light, nor will the wall emit light when you turn your light out. The same is true of ionizing radiation and the food irradiation process. Rather, food irradiation helps protect our food supply against disease-causing bacteria, such as Salmonella and Escherichia coli O157:H7."
+            },
+          ]
         },
         {
           "subsubtopic_title": "Arrangement of Electrons in an Atom",
           "subsubtopic_start_page_label": "25",
           "subsubtopic_end_page_label": "26",
-          "subsubtopic_page_contents": "Electrons in atoms are much like the blades of a ceiling fan. When the fan is  moving, it is difficult to see the individual blades, and all you see is a whirling  blur. When the fan is stopped, each blade has a specific location and can be \nseen. Likewise, the electrons of an atom are constantly moving. Although it is  not possible to determine the precise location of an individual electron at any  given moment, it is useful to construct models of atoms that show electrons at \ndiscrete energy levels about the nucleus ( Fig. 2.6 ). These energy levels are  commonly called electron shells. Since the nucleus of an atom is positively  charged, negatively charged electrons require an increasing amount of energy  to push them farther away from the nucleus. Electrons in outer electron shells,  therefore, contain more energy than those in inner electron shells.\nEach electron shell contains a certain number of electrons. In the models  shown in Figure 2.6, the electron shells are drawn as concentric rings about the  nucleus. These shells are used to represent the energy of the electrons, and not  necessarily their physical location. The first shell closest to the nucleus can  contain two electrons; thereafter, shells increase in the number of electrons that  they may contain (second shell = 8, third = 16, etc.). In atoms with more than  one electron shell, the lower level is generally filled with electrons first, before  electrons are added to higher levels. The sulfur atom, with an atomic number of 16, has two electrons in the  first shell, eight electrons in the second shell, and six electrons in the third, or \nouter, shell. Notice in the periodic table (see Fig. 2.3) that sulfur is in the third \nperiod. In other words, the period tells you how many shells an atom has. Also  note that sulfur is in group 6. The group tells you how many electrons an atom  has in its outer shell. P Phosphorus O Oxygen N Nitrogen C Carbon H Hydrogen electron\n1       H\n1\n6       C\n12\n7       N\n14\n8       O\n16\n15       P\n31 electron shell nucleus inner shell outer (valence) shell S Sulfur\n16       S\n32\nFigure 2.6 Atoms of six important elements. Electrons orbit the nucleus at particular energy levels called  electron shells. Th e ﬁrst shell contains up to two electrons, and each  shell thereafter has an increasing number of electrons."
+          "subsubtopic_page_contents": "Electrons in atoms are much like the blades of a ceiling fan. When the fan is  moving, it is difficult to see the individual blades, and all you see is a whirling  blur. When the fan is stopped, each blade has a specific location and can be \nseen. Likewise, the electrons of an atom are constantly moving. Although it is  not possible to determine the precise location of an individual electron at any  given moment, it is useful to construct models of atoms that show electrons at \ndiscrete energy levels about the nucleus ( Fig. 2.6 ). These energy levels are  commonly called electron shells. Since the nucleus of an atom is positively  charged, negatively charged electrons require an increasing amount of energy  to push them farther away from the nucleus. Electrons in outer electron shells,  therefore, contain more energy than those in inner electron shells.\nEach electron shell contains a certain number of electrons. In the models  shown in Figure 2.6, the electron shells are drawn as concentric rings about the  nucleus. These shells are used to represent the energy of the electrons, and not  necessarily their physical location. The first shell closest to the nucleus can  contain two electrons; thereafter, shells increase in the number of electrons that  they may contain (second shell = 8, third = 16, etc.). In atoms with more than  one electron shell, the lower level is generally filled with electrons first, before  electrons are added to higher levels. The sulfur atom, with an atomic number of 16, has two electrons in the  first shell, eight electrons in the second shell, and six electrons in the third, or \nouter, shell. Notice in the periodic table (see Fig. 2.3) that sulfur is in the third \nperiod. In other words, the period tells you how many shells an atom has. Also  note that sulfur is in group 6. The group tells you how many electrons an atom  has in its outer shell. P Phosphorus O Oxygen N Nitrogen C Carbon H Hydrogen electron\n1       H\n1\n6       C\n12\n7       N\n14\n8       O\n16\n15       P\n31 electron shell nucleus inner shell outer (valence) shell S Sulfur\n16       S\n32\nFigure 2.6 Atoms of six important elements. Electrons orbit the nucleus at particular energy levels called  electron shells. Th e ﬁrst shell contains up to two electrons, and each  shell thereafter has an increasing number of electrons. If an atom has only one shell, the outer shell is complete when it has two electrons. If an atom has two or more shells, the outer shell is most stable when it has eight electrons; this is called the octet rule. We mentioned that atoms in group 8 of the periodic table are called the noble gases because they do not ordinarily undergo reactions. Atoms with fewer than eight electrons in the outer shell react with other atoms in such a way that each has a completed outer shell after the reaction. Atoms can give up, accept, or share electrons in order to have eight electrons in the outer shell. In other words, the number of electrons in an atom’s outer shell, called the valence shell, determines its chemical reactivity. The size of an atom is also important. Both carbon (C) and silicon (Si) atoms are in group 4, and therefore they have four electrons in their valence shells. This means they can bond with as many as four other atoms in order to achieve eight electrons in their outer shells. But carbon in period 2 has two shells, and silicon in period 3 has three shells. The smaller atom, carbon, can bond to other carbon atoms and form long-chained molecules, while the larger silicon atom is unable to bond to other silicon atoms. This partially explains why carbon, and not silicon, plays an important role in building the molecules of life. Overall, the chemical properties of atoms—that is, the ways they react—are largely determined by the arrangement of their electrons."
         },
         {
           "subsubtopic_title": "Types of Chemical Bonds",
           "subsubtopic_start_page_label": "26",
           "subsubtopic_end_page_label": "28",
-          "subsubtopic_page_contents": "A group of atoms bonded together is called a molecule. When a molecule contains atoms of more than one element, it can be called a compound. Compounds and molecules contain two primary types of chemical bonds: ionic and covalent. The type of bond that forms depends on whether two bonded atoms  share electrons or whether one has given electrons to the other. For example, in  hydrogen gas (H\n2), the two hydrogen atoms are sharing electrons in order to fill  the valence shells of both atoms. When sodium chloride (NaCl) forms, however, the sodium atom (Na) gives an electron to the chlorine (Cl) atom, and in that way each atom has eight electrons in the outer shell.\nIonic Bonding An ionic bond forms when two atoms are held together by the attraction between opposite charges. The reaction between sodium and chlorine atoms is an example of how an ionic bond is formed. Consider that sodium (Na), with only  one electron in its third shell, usually gives up an electron (Fig. 2.7a). Once it  does so, the second shell, with eight electrons, becomes its outer shell. Chlorine (Cl), on the other hand, tends to take on an electron, because its outer shell has seven electrons. If chlorine gets one more electron, it has a completed outer  shell. So, when a sodium atom and a chlorine atom react, an electron is transferred from sodium to chlorine. Now both atoms have eight electrons in their outer shells. This electron transfer causes these atoms to become ions, or charged atoms. The sodium ion has one more proton than it has electrons; therefore, it has a net charge of +1 (symbolized by Na +). The chloride ion has one more electron than it has protons; therefore, it has a net charge of –1 (symbolized by Cl\n–). Negatively charged ions often have names that end in “ide,” and thus Cl– \nis called a chloride ion. In the periodic table (see Fig. 2.3), atoms in groups 1  and 2 and groups 6 and 7 become ions when they react with other atoms. Atoms in groups 2 and 6 always transfer two electrons. For example, calcium becomes Ca\n2+, while oxygen becomes O2–. Cl chlorine atom (Cl) Na sodium atom (Na) Cl chloride ion (Cl–) sodium chloride (NaCl) Na sodium ion (Na+) outer shells are now complete + – + Na+ Cl– a. b.\nFigure 2.7 Formation of sodium chloride. a. During the formation of sodium chloride, an electron is transferred  from the sodium atom to the chlorine atom. At the completion of the  reaction, each atom has eight electrons in the outer shell, but each  also carries a charge as shown. b. In a sodium chloride crystal  (commonly called salt), attraction between the Na + and CI – ions  causes the atoms to assume a three-dimensional lattice shape.\n(b, photo): © PM Images/Getty RF\nCHAPTER 2 The Chemical Basis of Life 27 Ionic compounds are often found as salts, solid substances that usually  separate and exist as individual ions in water. A common example is sodium  chloride (NaCl), or table salt. A sodium chloride crystal illustrates the solid  form of a salt (Fig. 2.7 b). When sodium chloride is placed in water, the ionic  bonds break, causing the Na\n+ and Cl– ions to dissociate. Ionic compounds are  most commonly found in this dissociated (ionized) form in biological systems  because these systems are 70–90% water.\nCovalent Bonding A covalent bond results when two atoms share electrons in order to have a  completed outer shell. In a hydrogen atom, the outer shell is complete when it  contains two electrons. If hydrogen is in the presence of a strong electron acceptor, it gives up its electron to become a hydrogen ion (H +). But if this is not  possible, hydrogen can share with another atom, and thereby have a completed  outer shell. For example, one hydrogen atom can share with another hydrogen  atom. In this case, the two orbitals overlap and the electrons are shared between  them—that is, you count the electrons as belonging to both atoms: Hydrogen gas (H2) HH Rather than drawing an orbital model like the one above, scientists often use  simpler ways to indicate molecules. A structural formula uses straight lines, as \nin H H. The straight line is used to indicate a pair of shared electrons. A   molecular formula omits the lines that indicate bonds and simply shows the  number of atoms involved, as in H\n2. Sometimes, atoms share more than two electrons to complete their   octets. A double covalent bond occurs when two atoms share two pairs of   electrons, as in this molecule of oxygen gas: Oxygen gas (O2) OO In order to show that oxygen gas (O 2) contains a double bond, the structural  formula is written as O O to indicate that two pairs of electrons are shared  between the oxygen atoms. It is also possible for atoms to form triple covalent bonds, as in nitrogen \ngas (N2), which can be written as NN. Single covalent bonds between atoms  are quite strong, but double and triple bonds are even stronger.\nA single atom may form bonds with more than one other atom. For example, the molecule methane results when carbon binds to four hydrogen atoms ( Fig. 2.8 a). In methane, each bond actually points to one corner of a four-sided structure called a tetrahedron (Fig. 2.8 b). The best model to show  this arrangement is a ball-and-stick model (Fig. 2.8 c). Space-filling models  (Fig. 2.8d) come closest to showing the actual shape of a molecule. The shapes  of molecules help dictate the functional roles they play in organisms. a. Electron model showing covalent bonds hydrogen c. Ball-and-stick model d. Space-ﬁlling model b. Structural model C H HH H Methane (CH4) C C H HH H H H H H\n109° covalent bond carbon\nFigure 2.8 Shapes of covalently bonded molecules. An electron model ( a) and a structural model ( b) show that methane  (CH4) contains one carbon atom bonded to four hydrogen atoms.   c. The ball-and-stick model shows that, when carbon bonds to four  other atoms, as in methane, each bond actually points to one corner  of a tetrahedron. d. The space- ﬁlling model is a three-dimensional  representation of the molecule."
+          "subsubtopic_page_contents": "A group of atoms bonded together is called a molecule. When a molecule contains atoms of more than one element, it can be called a compound. Compounds and molecules contain two primary types of chemical bonds: ionic and covalent. The type of bond that forms depends on whether two bonded atoms  share electrons or whether one has given electrons to the other. For example, in  hydrogen gas (H\n2), the two hydrogen atoms are sharing electrons in order to fill  the valence shells of both atoms. When sodium chloride (NaCl) forms, however, the sodium atom (Na) gives an electron to the chlorine (Cl) atom, and in that way each atom has eight electrons in the outer shell.\nIonic Bonding:\n An ionic bond forms when two atoms are held together by the attraction between opposite charges. The reaction between sodium and chlorine atoms is an example of how an ionic bond is formed. Consider that sodium (Na), with only  one electron in its third shell, usually gives up an electron (Fig. 2.7a). Once it  does so, the second shell, with eight electrons, becomes its outer shell. Chlorine (Cl), on the other hand, tends to take on an electron, because its outer shell has seven electrons. If chlorine gets one more electron, it has a completed outer  shell. So, when a sodium atom and a chlorine atom react, an electron is transferred from sodium to chlorine. Now both atoms have eight electrons in their outer shells. This electron transfer causes these atoms to become ions, or charged atoms. The sodium ion has one more proton than it has electrons; therefore, it has a net charge of +1 (symbolized by Na +). The chloride ion has one more electron than it has protons; therefore, it has a net charge of –1 (symbolized by Cl\n–). Negatively charged ions often have names that end in “ide,” and thus Cl– \nis called a chloride ion. In the periodic table (see Fig. 2.3), atoms in groups 1  and 2 and groups 6 and 7 become ions when they react with other atoms. Atoms in groups 2 and 6 always transfer two electrons. For example, calcium becomes Ca2+, while oxygen becomes O2–. \n Ionic compounds are often found as salts, solid substances that usually  separate and exist as individual ions in water. A common example is sodium  chloride (NaCl), or table salt. A sodium chloride crystal illustrates the solid  form of a salt (Fig. 2.7 b). When sodium chloride is placed in water, the ionic  bonds break, causing the Na\n+ and Cl– ions to dissociate. Ionic compounds are  most commonly found in this dissociated (ionized) form in biological systems  because these systems are 70–90% water.\nCovalent Bonding: \n A covalent bond results when two atoms share electrons in order to have a  completed outer shell. In a hydrogen atom, the outer shell is complete when it  contains two electrons. If hydrogen is in the presence of a strong electron acceptor, it gives up its electron to become a hydrogen ion (H +). But if this is not  possible, hydrogen can share with another atom, and thereby have a completed  outer shell. For example, one hydrogen atom can share with another hydrogen  atom. In this case, the two orbitals overlap and the electrons are shared between  them—that is, you count the electrons as belonging to both atoms: HH --> Hydrogen gas (H2) . Rather than drawing an orbital model like the one above, scientists often use  simpler ways to indicate molecules. A structural formula uses straight lines, as \nin H-H. The straight line is used to indicate a pair of shared electrons. A   molecular formula omits the lines that indicate bonds and simply shows the  number of atoms involved, as in H\n2. Sometimes, atoms share more than two electrons to complete their   octets. A double covalent bond occurs when two atoms share two pairs of   electrons, as in this molecule of oxygen gas: 00 --> Oxygen gas (O2). \n In order to show that oxygen gas (O 2) contains a double bond, the structural  formula is written as O O to indicate that two pairs of electrons are shared  between the oxygen atoms. It is also possible for atoms to form triple covalent bonds, as in nitrogen \ngas (N2), which can be written as NN. Single covalent bonds between atoms  are quite strong, but double and triple bonds are even stronger.\nA single atom may form bonds with more than one other atom. For example, the molecule methane results when carbon binds to four hydrogen atoms ( Fig. 2.8 a). In methane, each bond actually points to one corner of a four-sided structure called a tetrahedron (Fig. 2.8 b). The best model to show  this arrangement is a ball-and-stick model (Fig. 2.8 c). Space-filling models  (Fig. 2.8d) come closest to showing the actual shape of a molecule. The shapes  of molecules help dictate the functional roles they play in organisms."
         },
         {
           "subsubtopic_title": "Chemical Formulas and Reactions",
           "subsubtopic_start_page_label": "28",
           "subsubtopic_end_page_label": "38",
-          "subsubtopic_page_contents": "Chemical reactions are very important to organisms. In a chemical reaction,  the molecules are often represented by a chemical formula, such as the one  below for the energy molecule glucose. C6H12O6 one molecule indicates\n6 atoms of carbon indicates\n6 atoms of oxygen indicates\n12 atoms of hydrogen Notice how the chemical formula for glucose indicates the type and quantity of  each element that is found in the molecule. Chemical formulas do not indicate  the arrangement of these elements. As we will see later, they are sometimes  several different structures that can be formed based on a chemical formula. We have already noted that the process of photosynthesis enables plants  to make molecular energy available to themselves and other organisms. An  overall equation for photosynthesis indicates that some bonds are broken and  others are formed:\n6 CO2 carbon dioxide\n6 H2O water C6H12O6 glucose +6  O2 oxygen + This equation says that six molecules of carbon dioxide react with six molecules of water to form one glucose molecule and six molecules of oxygen. The reactants (molecules that participate in the reaction) are shown on the left of  the arrow, and the products (molecules formed by the reaction) are shown on  the right. Notice that the equation is “balanced”—that is, the same number of  each type of atom occurs on both sides of the arrow.\nCheck Your Progress 2.1\n 1. Describe the structure of an atom, including the charge of each  subatomic particle.\n 2. Deﬁne the term isotope, and list a few beneﬁcial uses of radioactive  isotopes.\n 3. Explain the diferences between covalent and ionic bonds.\n 4. Summarize the octet rule, and explain how it relates to an element—s  reactivity.\n 5. Distinguish between reactants and products in a chemical equation.\n2.1  Subatomic particles determine how  elements bond to form molecules  and compounds.\nCONNECTING THE CONCEPTS\nCHAPTER 2 The Chemical Basis of Life 29 hydrogen bondb. O HH Oxygen is slightly negative (–) Hydrogens are slightly positive (+) a.\nFigure 2.9 The structure of water.  The properties of water play an important role in all life, including the  kingﬁsher shown here. a. The space-ﬁlling model shows the ∧ shape  of a water molecule. Oxygen attracts the shared electrons more than  hydrogen atoms do, and this causes the molecule to be polar: The  oxygen carries a slightly negative charge and the hydrogens carry a  slightly positive charge. b. The positive hydrogens form hydrogen  bonds with the negative oxygen in nearby molecules.\n(photo): © Arco Images/GmbH/Alamy \n2.2 Water’s Importance to Life\nLearning Outcomes Upon completion of this section, you should be able to\n 1. Describe the general structure of a water molecule.\n 2. List the properties of water that are important to life.\n 3. Understand the importance of hydrogen bonds to the properties of  water. Life began in water, and water is the single most important molecule on \nEarth. All organisms are 70–90% water; their cells consist of  membranous  compartments enclosing aqueous solutions. The structure of a water  molecule gives it unique properties. These properties play an  important role in how living organisms function.\nThe Structure of Water The electrons shared between two atoms in a covalent bond are not  always shared equally. Atoms differ in their electronegativity—that is,  their affinity for electrons in a covalent bond. Atoms that are more electronegative tend to hold shared electrons more tightly than do those that are less electronegative. This unequal sharing of electrons causes the bond to become  polar, meaning that the atoms on both sides of the bond are partially charged,  even though the overall molecule itself bears no net charge.  For example, in a water molecule, oxygen shares electrons with two  hydrogen atoms. Oxygen is more electronegative than hydrogen, so the  two bonds are polar. The shared electrons spend more time orbiting the  oxygen nucleus than the hydrogen nuclei, and this unequal sharing of electrons makes water a polar molecule. The covalent bonds are angled, and the molecule is bent roughly into a ∧ shape. The point of the ∧ (oxygen) is the  negative (–) end, and the two hydrogens are the positive (+) end (Fig. 2.9a). The polarity of water molecules causes them to be attracted to one another. The positive hydrogen atoms in one molecule are attracted to the negative oxygen atoms in other water molecules. This attraction is called a hydrogen bond,  and each water molecule can engage in as many as four  hydrogen bonds (Fig. 2.9 b). The covalent bond is much stronger than a hydrogen bond, but the large number of hydrogen bonds in water make for a strong attractive force. The properties of water are due to its polarity and its  ability to form hydrogen bonds.\nProperties of Water We often take water for granted, but without water, life as we know it would not  exist. The properties of water that support life are solvency, cohesion and adhesion, high surface tension, high heat capacity, and varying density.\nWater Is a Solvent Because of its polarity and hydrogen-bonding ability, water dissolves a great  number of substances. Molecules that are attracted to water are said to be   hydrophilic (hydro, water; phil, love). Polar and ionized molecules are usually  hydrophilic. Nonionized and nonpolar molecules that are not attracted to water  are said to be hydrophobic (hydro, water; phob, fear).\n30 PART ONE The Cell Cohesion of water molecules allows forward ﬂow. Adhesion of water molecules helps prevent backward ﬂow. Blood vessel Water transport vessel\nFigure 2.10 Cohesion and adhesion of water molecules.  Water’s properties of cohesion and adhesion make it an excellent  transport medium in both trees and humans.\n(tree): © Paul Davies/Alamy; (man): © Asiaselects/Getty RF When a salt such as sodium chloride (NaCl) is put into water, the negative  ends of the water molecules are attracted to the sodium ions, and the positive  ends of the water molecules are attracted to the chloride ions. This attraction  causes the sodium ions and the chloride ions to break up, or dissociate, in water:\nThe salt NaCl dissociates in water.\nNa+ Cl– ++ ++ + + – – + + + +–– + + – –\nOHH HH O Water may also dissolve polar nonionic substances, such as long chains  of glucose, by forming hydrogen bonds with them. When ions and molecules  disperse in water, they move about and collide, allowing reactions to occur.  The interior of our cells is composed primarily of water, and the ability of water to act as a solvent allows the atoms and molecules within each cell to readily interact and participate in chemical reactions.\nWater Molecules Are Cohesive and Adhesive Cohesion refers to the ability of water molecules to cling to each other due to  hydrogen bonding. Because of cohesion, water exists as a liquid under ordinary  conditions of temperature and pressure. The strong cohesion of water molecules is apparent because water flows freely, yet the molecules do not separate from each other. Adhesion refers to the ability of water molecules to cling to \nother polar surfaces. This ability is due to water’s polarity. The positive and  negative poles of water molecules cause them to adhere to other polar surfaces. Due to cohesion and adhesion, liquid water is an excellent transport system (Fig. 2.10). Both within and outside the cell, water assists in the transport\nCHAPTER 2 The Chemical Basis of Life 31 of nutrients and waste materials. Many multicellular animals contain internal  vessels in which water assists the transport of materials. The liquid portion of  blood, which transports dissolved and suspended substances within the body,  is 90% water. The cohesion and adhesion of water molecules allow blood to fill  the tubular vessels of the cardiovascular system, making transport possible.  Cohesion and adhesion also contribute to the transport of water in plants.  Plants have their roots anchored in the soil, where they absorb water, but the  leaves are uplifted and exposed to solar energy. Water evaporating from the  leaves is immediately replaced with water molecules from transport vessels  that extend from the roots to the leaves. Because water molecules are cohesive,  a tension is created that pulls a water column up from the roots. Adhesion of  water to the walls of the vessels also helps prevent the water column from  breaking apart.\nWater Has a High Surface Tension Because the water molecules at the surface are more strongly attracted to each  other than to the air above, water molecules at the surface cling tightly to each \nother. Thus, we say that water exhibits surface tension. The stronger the force  between molecules in a liquid, the greater the surface tension. Hydrogen  bonding is the main force that causes water to have a high surface tension.   If you slowly fill a glass with water, you may notice that the level of the  water forms a small dome above the top of the glass. This is due to the surface  tension of water.\nConnections: Scientiic Inquiry How do some insects walk on water? Anyone who has visited a pond or stream has  witnessed insects walking on the surface of  the water. These insects, commonly called water striders, have evolved this ability by adapting to two properties of water—its surface tension and the fact that water is a polar molecule. By trapping small air bubbles in the hairs on their legs, water striders are able to remain buoyant and not break the surface tension of the water molecules. Many water striders also secrete a nonp olar wax, which further repels the water molecules and keeps the  insect al oat.\nWater Has a High Heat Capacity The many hydrogen bonds that link water molecules allow water to absorb heat  without greatly changing in temperature. Water’s high heat capacity is important not only for aquatic organisms but for all organisms. Because the temperature of water rises and falls slowly, terrestrial organisms are better able to maintain their normal internal temperatures and are protected from rapid temperature changes.\nWater also has a high heat of vaporization: It takes a great deal of heat to  break the hydrogen bonds in water so that it becomes gaseous and evaporates  into the environment. If the heat given off by our metabolic activities were to  go directly into raising our body temperature, death would follow. Instead, the  heat is dispelled as sweat evaporates (Fig. 2.11). b. a.\nFigure 2.11 Heat capacity and heat of vaporization. \nAt room temperature, water is a liquid. a. Water takes a large amount  of heat to vaporize at 100°C. b. It takes much body heat to vaporize  sweat, which is mostly liquid water, and the vaporization helps keep  our bodies cool when the temperature rises.\n(a): © Jill Bratten/McGraw-Hill Education; (b): © Clerkenwell/Getty RF\n© Martin Shields/Alamy\n32 PART ONE The Cell Because of water’s high heat capacity and high heat of vaporization, \ntemperatures along the majority of Earth’s coasts are moderate. During the  summer, the ocean absorbs and stores solar heat; during the winter, the ocean  releases it slowly. In contrast, the interior regions of the continents experience  abrupt changes in temperature.\nIce Is Less Dense Than Water Unlike other substances, water expands as it freezes, which explains why cans  of soda burst when placed in a freezer and how roads in northern climates become bumpy because of “frost heaves” in the winter. Since water expands as it freezes, ice is less dense than liquid water, and therefore ice floats on liquid  water (Fig. 2.12).\nConnections: Ecology Why is it important that ice is less dense than water? If ice were more dense than water, it would  sink, and ponds, lakes, and perhaps even  the ocean would freeze solid, making life impossible in the water as well as on land. Instead, bodies of water always freeze from the top down. When a body of water freezes  on the surface, the ice acts as an insulator to  prevent the water below it from freezing.  This protects aquatic organisms, so that  they can survive the winter. As ice melts in the spring, it draws heat from the  environment, helping prevent a sudden change in temperature th at might be  harmful to life.\n04 100\n1.0\n0.9 Density (g/cm3) Temperature (°C) liquid water ice lattice\nFigure 2.12 Properties of ice.  The geometric requirements of hydrogen bonding of water  molecules cause ice to be less dense than liquid water. Water’s essential role for life is  based on its ability to form   hydrogen bonds. \n2.2\nCONNECTING THE CONCEPTS\n© Corbis RF\nCheck Your Progress 2.2\n 1. Explain how the structure of a water molecule gives it unique  properties . \n 2. Describe how the properties of water make it an important molecule  for life.\n 3. Explain how hydrogen bonds relate to the properties of water.\nCHAPTER 2 The Chemical Basis of Life 33\n2.3 Acids and Bases\nLearning Outcomes Upon completion of this section, you should be able to\n 1. Distinguish between an acid and a base.\n 2. Interpret the pH scale.\n 3. Explain the purpose of a bufer. As shown in the equation below, when water dissociates (breaks apart), it   releases an equal number of hydrogen ions (H +) and hydroxide ions (OH–). H+          +        OH– hydrogen ion hydroxide ion water\nH HO We can determine whether a solution is acidic or basic by examining the  proportion of hydrogen and hydroxide ions in the solution.\nAcidic Solutions (High H+ Concentration)\nLemon juice, vinegar, tomato juice, and coffee are all acidic solutions. Acidic  solutions have a sharp or sour taste, and therefore we sometimes associate them \nwith indigestion. What do they have in common? To a chemist, acids are substances that dissociate in water, releasing hydrogen ions (H +). For example, an  important acid is hydrochloric acid (HCl), which dissociates in this manner: H+          +        Cl– hydrogen ion chloride ion hydrochloric acid HCl\nAcidic solutions have a higher concentration of H + ions than OH – ions. \nThe acidity of a substance depends on how fully it dissociates in water. HCl  dissociates almost completely; therefore, it is called a strong acid. If hydrochloric acid is added to a beaker of water, the number of hydrogen ions (H +) increases greatly.\nConnections: Scientiic Inquiry How strong is the acid in your stomach? Within the gastric juice of the stomach is hydrochloric acid  (HCl), which has a pH value between 1.0 and 2.0. This acid  makes the contents of your stomach around 1 million times  more acidic than water and 100 times more acidic than  vinegar. While theoretically the gastric juice in your stomach is able to dissolve metals, such as steel, in reality the contents of your stomach are exposed to these extreme  pH values for only a short period of time before moving  into the remainder of the intestinal tract, where the acid  levels are quickly neutralized.\n(photo): © Corbis RF\n34 PART ONE The Cell\nBasic Solutions (Low H+ Concentration) Milk of magnesia and ammonia are common basic (alkaline) solutions that  most people are familiar with. Basic solutions have a bitter taste and feel   slippery when in water. To a chemist, bases are substances that either take  up hydrogen ions (H +) or release hydroxide ions (OH –). For example, an  important base is sodium hydroxide (NaOH), which dissociates in this  manner: Na+          +      OH– sodium ion hydroxide ion sodium hydroxide NaOH\nBasic solutions have a higher concentration of OH – ions than H + ions.  Like acids, the strength of a base is determined by how fully it dissociates.   Dissociation of sodium hydroxide is almost complete; therefore, it is called a  strong base. If sodium hydroxide is added to a beaker of water, the number of  hydroxide ions increases. Many strong bases, such as ammonia, are useful household cleansers.  Ammonia has a poison symbol and carries a strong warning not to ingest the  product. Neither acids nor bases should be tasted, because they are quite destructive to cells. pH and the pH Scale pH1 is a mathematical way of indicating the number of hydrogen ions in a  solution. The pH scale  is used to indicate the acidity or basicity of a solution. The pH scale ranges from 0 to 14 ( Fig. 2.13 ). A pH of 7 represents a neutral state in which the hydrogen ion and hydroxide ion concentrations  are equal, as in pure water. A pH below 7 is acidic because the hydrogen  ion concentration, commonly expressed in brackets as [H +], is greater than  the hydroxide concentration, [OH –]. A pH above 7 is basic because [OH –]  is greater than [H +]. Further, as we move down the pH scale from pH 7 to  pH 0, each unit has 10 times the acidity [H +] of the previous unit. As we  move up the scale from 7 to 14, each unit has 10 times the basicity [OH –]  of the previous unit. The pH scale was devised to eliminate the use of cumbersome numbers.  For example, the hydrogen ion concentrations of several solutions are given on  the left, and the pH is on the right:\n0.000001\n0.0000001\n0.00000001 [H +] (moles per liter) pH = = =\n1 × 10 –6\n1 × 10–7\n1 × 10–8\n6 (acid)\n7 (neutral)\n8 (base) The effect of pH on organisms is dramatically illustrated by the phenomenon known as acid precipitation. When fossil fuels are burned, sulfur dioxide and nitrogen oxides are produced, and they combine with water in the atmosphere to form acids. These acids then come in contact with organisms and objects, leading to damage or even death. AcidBase\nIncreasing [H+] Increasing [OH–]\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14 hydrochloric acid (HCI) stomach acid lemon juice Coca-Cola, beer, vinegar tomatoes black coﬀee urine pure water, tears seawater baking soda, stomach antacids\nGreat Salt Lake household ammonia bicarbonate of soda oven cleaner sodium hydroxide (NaOH) normal rainwater saliva human blood milk of magnesia [H + ] [OH – ] neutral pH [H + ] = [OH – ]\nFigure 2.13 The pH scale.  The proportionate amount of hydrogen ions to hydroxide ions is  indicated by the diagonal line. Any solution with a pH above 7 is  basic, while any solution with a pH below 7 is acidic.\n1 pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number.\nCHAPTER 2 The Chemical Basis of Life 35 Bufers and pH A buffer is a chemical or a combination of chemicals that keeps pH within  established limits. Buffers resist pH changes because they can take up excess  hydrogen ions (H +) or hydroxide ions (OH–). In the human body, pH needs to  be kept within a narrow range in order to maintain homeostasis. Diseases such  as diabetes and congestive heart failure may bring on a condition called acidosis, in which the body is unable to buffer the excessive production of H + ions. \nIf left untreated, acidosis can cause a number of health problems ( Fig. 2.14)  and may result in coma or death. • Sleepiness and loss   of consciousness •  Confusion • Headache • Coma • Coughing and   shortness of breath • Arrhythmia • Increased heart rate • Nausea • Vomiting • Diarrhea • Weakness Muscular Intestinal Respiratory Heart Gastric\nCentral Nervous System\nFigure 2.14 Acidosis. \nAcidosis occurs when the body in unable to bu fer high H + ion  concentrations in the blood. Some of the symptoms of acidosis are  shown here. Homeostasis is dependent on living  organisms’ ability to maintain   speciic pH levels.\n2.3\nCONNECTING THE CONCEPTS\nCheck Your Progress 2.3\n 1. Distinguish between an acid and a base . \n 2. Generalize what information is given by the pH of a solution. \n 3. Summarize how bufers are used to regulate the pH of the human  body.\n36 PART ONE The Cell a higher electronegativity than hydrogen. The positively and negatively  charged ends of the molecules are attracted to each other to form hydrogen  bonds. Hydrogen bonds explain the chemical characteristics of water,  including its cohesive and adhesive properties.  The polarity of water causes the attraction of hydrophilic molecules. \nMolecules that are not attracted to water are hydrophobic. The polarity and  hydrogen bonding in water account for its unique properties, which are  summarized in Table 2.1:\nTable 2.1 Properties of Water\nProperties Chemical Reason(s) Efect\nWater is a solvent. Polarity Water facilitates chemical  reactions. Water is cohesive  and adhesive. Hydrogen bonding;  polarity Water serves as a transport  medium. Water has a high  surface tension.\nHydrogen bonding The surface tension of water  is hard to break. Water has a high heat  capacity and heat of  vaporization.\nHydrogen bonding Water protects organisms from  rapid changes in temperature  and from overheating. Water varies in  density.\nHydrogen bonding Ice is less dense than liquid  water and therefore ice loats  on liquid water.\n2.3 \nAcids and Bases Water dissociates to produce an equal number of hydrogen ions (H+) and \nhydroxide ions. This is neutral pH. Acids increase the H+ concentration of a \nsolution, while bases decrease the H+ concentration. This pH scale shows  the range of acidic and basic solutions:\n0 Acid neutral more [H+] less [OH–] less [H+] more [OH–] Base\n71 4\nCells are sensitive to pH changes. Biological systems contain buffers that  help keep the pH within a normal range. ASSESS \nTesting Yourself Choose the best answer for each question.\n2.1 \nAtoms and Atomic Bonds\n 1. The mass number of an atom depends primarily on the number of  a. protons and neutrons. c. neutrons and electrons.  b. positrons. d. protons and electrons.\nSTUDY TOOLS  \n Maximize your study time with McGraw-Hill SmartBook®, th e ﬁrst adaptive textbook. http://connect.mheducation.com SUMMARIZE \nAll life is composed of a similar set of elements. Living organisms perform  chemical reactions to break down and build molecules to fit their specific needs.  Knowledge of basic chemistry provides a foundation for understanding biology.\n2.1\n2.2\n2.3 Subatomic particles determine how elements bond to form molecules and  compounds. Waterʼs essential role for life is based on its ability to form hydrogen bonds. Homeostasis is dependent on living organismsʼ ability to maintain specii c  pH levels.\n2.1 \nAtoms and Atomic Bonds Both living organisms and nonliving things are composed of matter  consisting of elements. The major elements in living organisms are carbon,  hydrogen, nitrogen, and oxygen. Elements consist of atoms, which in turn  contain subatomic particles. Protons have positive charges, neutrons are  uncharged, and electrons have negative charges. Electrons are found outside  the nucleus in energy levels called electron shells. Protons and neutrons in the nucleus determine the mass number of an atom. \nThe atomic number indicates the number of protons in the nucleus. In an  electrically neutral atom, the atomic number also indicates the number of  electrons. Isotopes are atoms of a single element that differ in their number  of neutrons. Radioactive isotopes have many uses, including serving as  tracers in biological experiments and medical procedures. The number of electrons in the valence shell (outer energy level) determines  the reactivity of an atom. The first electron shell is complete when it is  occupied by two electrons. Atoms are most stable when the valence shell  contains 8 electrons. The octet rule states that atoms react with one another  in order to have a completed valence shell.\nAtoms are often bonded together to form molecules. If the elements in a  molecule are different, it is called a compound. Molecules and compounds  may be held together by ionic or covalent bonds. Ionic bonds are formed by  an attraction between oppositely charged ions. Ions form when atoms lose or  gain one or more electrons to achieve a completed outer shell. Covalent  bonds occur when electrons are shared between two atoms. There are single  covalent bonds (sharing one pair of electrons), double (sharing two pairs of  electrons), and triple (sharing three pairs of electrons). shells nucleus = protons = neutrons = electrons\n2.2 Water’s Importance to Life\nThe two covalent O—H bonds of water are polar because the electrons are  not shared equally between oxygen and hydrogen. This is because oxygen has\nCHAPTER 2 The Chemical Basis of Life 37\n 2. The most abundant element by weight in the human body is  a.  carbon. c. oxygen.  b. hydrogen. d. nitrogen.\n 3. In the following equation, name the reactants: NaCl → Na + Cl.\n a. Na c. NaCl\n b. Cl d. Both a and b are correct.\n 4. A covalent bond in which electrons are not shared equally is called  a. polar. c. nonpolar.  b. normal. d. neutral.\n 5. Refer to Figure 2.3. Which element has the same number of valence  electrons as nitrogen (N)?  a. carbon (C) c. neon (Ne)  b. phosphorus (P) d. oxygen (O)\n2.2 \nWater’s Importance to Life\n 6. Water flows freely but does not separate into individual molecules  because water is  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 7. Compounds having an affinity for water are said to be  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 8. Water freezes from the top down because  a. water has a high surface tension.  b. ice has a high heat capacity.  c. ice is less dense than water.  d. ice is less cohesive than water.\n 9. Water can absorb a large amount of heat without much change in  temperature because it has a high  a. surface tension.  b. heat capacity.  c. hydrogen ion (H +) concentration.  d. hydroxide ion (OH –) concentration.\n2.3 Acids and Bases\n 10. A pH of 3 is .  a. basic c. acidic  b. neutral d. a buffer\n 11.  contribute hydrogen ions (H+) to a solution\n a. Bases c. Acids\n b. Isotopes d. Compounds\n 12. To maintain a constant pH, many organisms use  to  regulate the hydrogen ion concentration.  a. buffers c. acids  b. bases d. isotopes ENGAGE  BioNOW\nWant to know how this science is relevant to your life? Check out the  BioNow video below.  ∙Properties of Water What characteristic of water do you think is most important to a living  organism, such as yourself?\nThinking Critically \n 1. On a hot summer day, you decide to dive into a swimming pool. Before  you begin your dive, you notice that the surface of the water is smooth  and continuous. After the dive, you discover that some water droplets  are clinging to your skin and that your skin temperature feels cooler.  Explain these observations based on the properties of water.\n 2. Like carbon, silicon has four electrons in its outer shell, yet life  evolved to be carbon-based. What is there about silicon’s structure  that might prevent it from sharing with four other elements and  prevent it from forming the many varied shapes of carboncontaining molecules?\n 3. Antacids are a common over-the-counter remedy for heartburn, a  condition caused by an overabundance of H + ions in the stomach.  Based on what you know regarding pH, how do the chemicals in  antacids work?\n 4. Acid precipitation is produced when atmospheric water is polluted by  sulfur dioxide and nitrous oxide emissions. These emissions are mostly  produced by the burning of fossil fuels, particularly coal. In the  atmosphere, these compounds are converted to sulfuric and nitric  acids, and are absorbed into water droplets in the atmosphere. \nEventually they fall back to Earth as acid precipitation. How do you  think acid precipitation can negatively influence an ecosystem?"
+          "subsubtopic_page_contents": "Chemical reactions are very important to organisms. In a chemical reaction,  the molecules are often represented by a chemical formula, such as the one  below  for the energy molecule glucose. [$formular_number: 2.1 ]. Notice how the chemical formula for glucose indicates the type and quantity of  each element that is found in the molecule. Chemical formulas do not indicate  the arrangement of these elements. As we will see later, they are sometimes  several different structures that can be formed based on a chemical formula. We have already noted that the process of photosynthesis enables plants  to make molecular energy available to themselves and other organisms. An  overall equation for photosynthesis indicates that some bonds are broken and  others are formed: [$formular_number: 2.2 ]\n6 CO2 carbon dioxide\n6 H2O water C6H12O6 glucose +6  O2 oxygen + This equation says that six molecules of carbon dioxide react with six molecules of water to form one glucose molecule and six molecules of oxygen. The reactants (molecules that participate in the reaction) are shown on the left of  the arrow, and the products (molecules formed by the reaction) are shown on  the right. Notice that the equation is “balanced”—that is, the same number of  each type of atom occurs on both sides of the arrow."
         }
       ]
     },
@@ -69,9 +83,13 @@
       "subtopic_number": "2.2",
       "subtopic_title": "Water’s Importance to Life",
       "subtopic_page_label": "29",
-      "subtopic_assessments": [],
-      "subtopic_concept": "",
-      "subtopic_summary": "",
+      "subtopic_assessments": [
+        "Explain how the structure of a water molecule gives it unique  properties.",
+        "Describe how the properties of water make it an important molecule  for life.",
+        "Explain how hydrogen bonds relate to the properties of water."
+      ],
+      "subtopic_concept": "Water’s essential role for life is based on its ability to form hydrogen bond",
+      "subtopic_summary": "Water’s Importance to Life \nThe two covalent O—H bonds of water are polar because the electrons are  not shared equally between oxygen and hydrogen. This is because oxygen has The Cell a higher electronegativity than hydrogen. The positively and negatively  charged ends of the molecules are attracted to each other to form hydrogen  bonds. Hydrogen bonds explain the chemical characteristics of water,  including its cohesive and adhesive properties.  The polarity of water causes the attraction of hydrophilic molecules. \nMolecules that are not attracted to water are hydrophobic. The polarity and  hydrogen bonding in water account for its unique properties, which are  summarized in Table 2.1",
       "subsubtopics_info": [
         {
           "subsubtopic_title": "The Structure of Water",
@@ -83,48 +101,106 @@
           "subsubtopic_title": "Properties of Water",
           "subsubtopic_start_page_label": "29",
           "subsubtopic_end_page_label": "38",
-          "subsubtopic_page_contents": "We often take water for granted, but without water, life as we know it would not  exist. The properties of water that support life are solvency, cohesion and adhesion, high surface tension, high heat capacity, and varying density.\nWater Is a Solvent Because of its polarity and hydrogen-bonding ability, water dissolves a great  number of substances. Molecules that are attracted to water are said to be   hydrophilic (hydro, water; phil, love). Polar and ionized molecules are usually  hydrophilic. Nonionized and nonpolar molecules that are not attracted to water  are said to be hydrophobic (hydro, water; phob, fear).\n30 PART ONE The Cell Cohesion of water molecules allows forward ﬂow. Adhesion of water molecules helps prevent backward ﬂow. Blood vessel Water transport vessel\nFigure 2.10 Cohesion and adhesion of water molecules.  Water’s properties of cohesion and adhesion make it an excellent  transport medium in both trees and humans.\n(tree): © Paul Davies/Alamy; (man): © Asiaselects/Getty RF When a salt such as sodium chloride (NaCl) is put into water, the negative  ends of the water molecules are attracted to the sodium ions, and the positive  ends of the water molecules are attracted to the chloride ions. This attraction  causes the sodium ions and the chloride ions to break up, or dissociate, in water:\nThe salt NaCl dissociates in water.\nNa+ Cl– ++ ++ + + – – + + + +–– + + – –\nOHH HH O Water may also dissolve polar nonionic substances, such as long chains  of glucose, by forming hydrogen bonds with them. When ions and molecules  disperse in water, they move about and collide, allowing reactions to occur.  The interior of our cells is composed primarily of water, and the ability of water to act as a solvent allows the atoms and molecules within each cell to readily interact and participate in chemical reactions.\nWater Molecules Are Cohesive and Adhesive Cohesion refers to the ability of water molecules to cling to each other due to  hydrogen bonding. Because of cohesion, water exists as a liquid under ordinary  conditions of temperature and pressure. The strong cohesion of water molecules is apparent because water flows freely, yet the molecules do not separate from each other. Adhesion refers to the ability of water molecules to cling to \nother polar surfaces. This ability is due to water’s polarity. The positive and  negative poles of water molecules cause them to adhere to other polar surfaces. Due to cohesion and adhesion, liquid water is an excellent transport system (Fig. 2.10). Both within and outside the cell, water assists in the transport\nCHAPTER 2 The Chemical Basis of Life 31 of nutrients and waste materials. Many multicellular animals contain internal  vessels in which water assists the transport of materials. The liquid portion of  blood, which transports dissolved and suspended substances within the body,  is 90% water. The cohesion and adhesion of water molecules allow blood to fill  the tubular vessels of the cardiovascular system, making transport possible.  Cohesion and adhesion also contribute to the transport of water in plants.  Plants have their roots anchored in the soil, where they absorb water, but the  leaves are uplifted and exposed to solar energy. Water evaporating from the  leaves is immediately replaced with water molecules from transport vessels  that extend from the roots to the leaves. Because water molecules are cohesive,  a tension is created that pulls a water column up from the roots. Adhesion of  water to the walls of the vessels also helps prevent the water column from  breaking apart.\nWater Has a High Surface Tension Because the water molecules at the surface are more strongly attracted to each  other than to the air above, water molecules at the surface cling tightly to each \nother. Thus, we say that water exhibits surface tension. The stronger the force  between molecules in a liquid, the greater the surface tension. Hydrogen  bonding is the main force that causes water to have a high surface tension.   If you slowly fill a glass with water, you may notice that the level of the  water forms a small dome above the top of the glass. This is due to the surface  tension of water.\nConnections: Scientiic Inquiry How do some insects walk on water? Anyone who has visited a pond or stream has  witnessed insects walking on the surface of  the water. These insects, commonly called water striders, have evolved this ability by adapting to two properties of water—its surface tension and the fact that water is a polar molecule. By trapping small air bubbles in the hairs on their legs, water striders are able to remain buoyant and not break the surface tension of the water molecules. Many water striders also secrete a nonp olar wax, which further repels the water molecules and keeps the  insect al oat.\nWater Has a High Heat Capacity The many hydrogen bonds that link water molecules allow water to absorb heat  without greatly changing in temperature. Water’s high heat capacity is important not only for aquatic organisms but for all organisms. Because the temperature of water rises and falls slowly, terrestrial organisms are better able to maintain their normal internal temperatures and are protected from rapid temperature changes.\nWater also has a high heat of vaporization: It takes a great deal of heat to  break the hydrogen bonds in water so that it becomes gaseous and evaporates  into the environment. If the heat given off by our metabolic activities were to  go directly into raising our body temperature, death would follow. Instead, the  heat is dispelled as sweat evaporates (Fig. 2.11). b. a.\nFigure 2.11 Heat capacity and heat of vaporization. \nAt room temperature, water is a liquid. a. Water takes a large amount  of heat to vaporize at 100°C. b. It takes much body heat to vaporize  sweat, which is mostly liquid water, and the vaporization helps keep  our bodies cool when the temperature rises.\n(a): © Jill Bratten/McGraw-Hill Education; (b): © Clerkenwell/Getty RF\n© Martin Shields/Alamy\n32 PART ONE The Cell Because of water’s high heat capacity and high heat of vaporization, \ntemperatures along the majority of Earth’s coasts are moderate. During the  summer, the ocean absorbs and stores solar heat; during the winter, the ocean  releases it slowly. In contrast, the interior regions of the continents experience  abrupt changes in temperature.\nIce Is Less Dense Than Water Unlike other substances, water expands as it freezes, which explains why cans  of soda burst when placed in a freezer and how roads in northern climates become bumpy because of “frost heaves” in the winter. Since water expands as it freezes, ice is less dense than liquid water, and therefore ice floats on liquid  water (Fig. 2.12).\nConnections: Ecology Why is it important that ice is less dense than water? If ice were more dense than water, it would  sink, and ponds, lakes, and perhaps even  the ocean would freeze solid, making life impossible in the water as well as on land. Instead, bodies of water always freeze from the top down. When a body of water freezes  on the surface, the ice acts as an insulator to  prevent the water below it from freezing.  This protects aquatic organisms, so that  they can survive the winter. As ice melts in the spring, it draws heat from the  environment, helping prevent a sudden change in temperature th at might be  harmful to life.\n04 100\n1.0\n0.9 Density (g/cm3) Temperature (°C) liquid water ice lattice\nFigure 2.12 Properties of ice.  The geometric requirements of hydrogen bonding of water  molecules cause ice to be less dense than liquid water. Water’s essential role for life is  based on its ability to form   hydrogen bonds. \n2.2\nCONNECTING THE CONCEPTS\n© Corbis RF\nCheck Your Progress 2.2\n 1. Explain how the structure of a water molecule gives it unique  properties . \n 2. Describe how the properties of water make it an important molecule  for life.\n 3. Explain how hydrogen bonds relate to the properties of water.\nCHAPTER 2 The Chemical Basis of Life 33\n2.3 Acids and Bases\nLearning Outcomes Upon completion of this section, you should be able to\n 1. Distinguish between an acid and a base.\n 2. Interpret the pH scale.\n 3. Explain the purpose of a bufer. As shown in the equation below, when water dissociates (breaks apart), it   releases an equal number of hydrogen ions (H +) and hydroxide ions (OH–). H+          +        OH– hydrogen ion hydroxide ion water\nH HO We can determine whether a solution is acidic or basic by examining the  proportion of hydrogen and hydroxide ions in the solution.\nAcidic Solutions (High H+ Concentration)\nLemon juice, vinegar, tomato juice, and coffee are all acidic solutions. Acidic  solutions have a sharp or sour taste, and therefore we sometimes associate them \nwith indigestion. What do they have in common? To a chemist, acids are substances that dissociate in water, releasing hydrogen ions (H +). For example, an  important acid is hydrochloric acid (HCl), which dissociates in this manner: H+          +        Cl– hydrogen ion chloride ion hydrochloric acid HCl\nAcidic solutions have a higher concentration of H + ions than OH – ions. \nThe acidity of a substance depends on how fully it dissociates in water. HCl  dissociates almost completely; therefore, it is called a strong acid. If hydrochloric acid is added to a beaker of water, the number of hydrogen ions (H +) increases greatly.\nConnections: Scientiic Inquiry How strong is the acid in your stomach? Within the gastric juice of the stomach is hydrochloric acid  (HCl), which has a pH value between 1.0 and 2.0. This acid  makes the contents of your stomach around 1 million times  more acidic than water and 100 times more acidic than  vinegar. While theoretically the gastric juice in your stomach is able to dissolve metals, such as steel, in reality the contents of your stomach are exposed to these extreme  pH values for only a short period of time before moving  into the remainder of the intestinal tract, where the acid  levels are quickly neutralized.\n(photo): © Corbis RF\n34 PART ONE The Cell\nBasic Solutions (Low H+ Concentration) Milk of magnesia and ammonia are common basic (alkaline) solutions that  most people are familiar with. Basic solutions have a bitter taste and feel   slippery when in water. To a chemist, bases are substances that either take  up hydrogen ions (H +) or release hydroxide ions (OH –). For example, an  important base is sodium hydroxide (NaOH), which dissociates in this  manner: Na+          +      OH– sodium ion hydroxide ion sodium hydroxide NaOH\nBasic solutions have a higher concentration of OH – ions than H + ions.  Like acids, the strength of a base is determined by how fully it dissociates.   Dissociation of sodium hydroxide is almost complete; therefore, it is called a  strong base. If sodium hydroxide is added to a beaker of water, the number of  hydroxide ions increases. Many strong bases, such as ammonia, are useful household cleansers.  Ammonia has a poison symbol and carries a strong warning not to ingest the  product. Neither acids nor bases should be tasted, because they are quite destructive to cells. pH and the pH Scale pH1 is a mathematical way of indicating the number of hydrogen ions in a  solution. The pH scale  is used to indicate the acidity or basicity of a solution. The pH scale ranges from 0 to 14 ( Fig. 2.13 ). A pH of 7 represents a neutral state in which the hydrogen ion and hydroxide ion concentrations  are equal, as in pure water. A pH below 7 is acidic because the hydrogen  ion concentration, commonly expressed in brackets as [H +], is greater than  the hydroxide concentration, [OH –]. A pH above 7 is basic because [OH –]  is greater than [H +]. Further, as we move down the pH scale from pH 7 to  pH 0, each unit has 10 times the acidity [H +] of the previous unit. As we  move up the scale from 7 to 14, each unit has 10 times the basicity [OH –]  of the previous unit. The pH scale was devised to eliminate the use of cumbersome numbers.  For example, the hydrogen ion concentrations of several solutions are given on  the left, and the pH is on the right:\n0.000001\n0.0000001\n0.00000001 [H +] (moles per liter) pH = = =\n1 × 10 –6\n1 × 10–7\n1 × 10–8\n6 (acid)\n7 (neutral)\n8 (base) The effect of pH on organisms is dramatically illustrated by the phenomenon known as acid precipitation. When fossil fuels are burned, sulfur dioxide and nitrogen oxides are produced, and they combine with water in the atmosphere to form acids. These acids then come in contact with organisms and objects, leading to damage or even death. AcidBase\nIncreasing [H+] Increasing [OH–]\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14 hydrochloric acid (HCI) stomach acid lemon juice Coca-Cola, beer, vinegar tomatoes black coﬀee urine pure water, tears seawater baking soda, stomach antacids\nGreat Salt Lake household ammonia bicarbonate of soda oven cleaner sodium hydroxide (NaOH) normal rainwater saliva human blood milk of magnesia [H + ] [OH – ] neutral pH [H + ] = [OH – ]\nFigure 2.13 The pH scale.  The proportionate amount of hydrogen ions to hydroxide ions is  indicated by the diagonal line. Any solution with a pH above 7 is  basic, while any solution with a pH below 7 is acidic.\n1 pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number.\nCHAPTER 2 The Chemical Basis of Life 35 Bufers and pH A buffer is a chemical or a combination of chemicals that keeps pH within  established limits. Buffers resist pH changes because they can take up excess  hydrogen ions (H +) or hydroxide ions (OH–). In the human body, pH needs to  be kept within a narrow range in order to maintain homeostasis. Diseases such  as diabetes and congestive heart failure may bring on a condition called acidosis, in which the body is unable to buffer the excessive production of H + ions. \nIf left untreated, acidosis can cause a number of health problems ( Fig. 2.14)  and may result in coma or death. • Sleepiness and loss   of consciousness •  Confusion • Headache • Coma • Coughing and   shortness of breath • Arrhythmia • Increased heart rate • Nausea • Vomiting • Diarrhea • Weakness Muscular Intestinal Respiratory Heart Gastric\nCentral Nervous System\nFigure 2.14 Acidosis. \nAcidosis occurs when the body in unable to bu fer high H + ion  concentrations in the blood. Some of the symptoms of acidosis are  shown here. Homeostasis is dependent on living  organisms’ ability to maintain   speciic pH levels.\n2.3\nCONNECTING THE CONCEPTS\nCheck Your Progress 2.3\n 1. Distinguish between an acid and a base . \n 2. Generalize what information is given by the pH of a solution. \n 3. Summarize how bufers are used to regulate the pH of the human  body.\n36 PART ONE The Cell a higher electronegativity than hydrogen. The positively and negatively  charged ends of the molecules are attracted to each other to form hydrogen  bonds. Hydrogen bonds explain the chemical characteristics of water,  including its cohesive and adhesive properties.  The polarity of water causes the attraction of hydrophilic molecules. \nMolecules that are not attracted to water are hydrophobic. The polarity and  hydrogen bonding in water account for its unique properties, which are  summarized in Table 2.1:\nTable 2.1 Properties of Water\nProperties Chemical Reason(s) Efect\nWater is a solvent. Polarity Water facilitates chemical  reactions. Water is cohesive  and adhesive. Hydrogen bonding;  polarity Water serves as a transport  medium. Water has a high  surface tension.\nHydrogen bonding The surface tension of water  is hard to break. Water has a high heat  capacity and heat of  vaporization.\nHydrogen bonding Water protects organisms from  rapid changes in temperature  and from overheating. Water varies in  density.\nHydrogen bonding Ice is less dense than liquid  water and therefore ice loats  on liquid water.\n2.3 \nAcids and Bases Water dissociates to produce an equal number of hydrogen ions (H+) and \nhydroxide ions. This is neutral pH. Acids increase the H+ concentration of a \nsolution, while bases decrease the H+ concentration. This pH scale shows  the range of acidic and basic solutions:\n0 Acid neutral more [H+] less [OH–] less [H+] more [OH–] Base\n71 4\nCells are sensitive to pH changes. Biological systems contain buffers that  help keep the pH within a normal range. ASSESS \nTesting Yourself Choose the best answer for each question.\n2.1 \nAtoms and Atomic Bonds\n 1. The mass number of an atom depends primarily on the number of  a. protons and neutrons. c. neutrons and electrons.  b. positrons. d. protons and electrons.\nSTUDY TOOLS  \n Maximize your study time with McGraw-Hill SmartBook®, th e ﬁrst adaptive textbook. http://connect.mheducation.com SUMMARIZE \nAll life is composed of a similar set of elements. Living organisms perform  chemical reactions to break down and build molecules to fit their specific needs.  Knowledge of basic chemistry provides a foundation for understanding biology.\n2.1\n2.2\n2.3 Subatomic particles determine how elements bond to form molecules and  compounds. Waterʼs essential role for life is based on its ability to form hydrogen bonds. Homeostasis is dependent on living organismsʼ ability to maintain specii c  pH levels.\n2.1 \nAtoms and Atomic Bonds Both living organisms and nonliving things are composed of matter  consisting of elements. The major elements in living organisms are carbon,  hydrogen, nitrogen, and oxygen. Elements consist of atoms, which in turn  contain subatomic particles. Protons have positive charges, neutrons are  uncharged, and electrons have negative charges. Electrons are found outside  the nucleus in energy levels called electron shells. Protons and neutrons in the nucleus determine the mass number of an atom. \nThe atomic number indicates the number of protons in the nucleus. In an  electrically neutral atom, the atomic number also indicates the number of  electrons. Isotopes are atoms of a single element that differ in their number  of neutrons. Radioactive isotopes have many uses, including serving as  tracers in biological experiments and medical procedures. The number of electrons in the valence shell (outer energy level) determines  the reactivity of an atom. The first electron shell is complete when it is  occupied by two electrons. Atoms are most stable when the valence shell  contains 8 electrons. The octet rule states that atoms react with one another  in order to have a completed valence shell.\nAtoms are often bonded together to form molecules. If the elements in a  molecule are different, it is called a compound. Molecules and compounds  may be held together by ionic or covalent bonds. Ionic bonds are formed by  an attraction between oppositely charged ions. Ions form when atoms lose or  gain one or more electrons to achieve a completed outer shell. Covalent  bonds occur when electrons are shared between two atoms. There are single  covalent bonds (sharing one pair of electrons), double (sharing two pairs of  electrons), and triple (sharing three pairs of electrons). shells nucleus = protons = neutrons = electrons\n2.2 Water’s Importance to Life\nThe two covalent O—H bonds of water are polar because the electrons are  not shared equally between oxygen and hydrogen. This is because oxygen has\nCHAPTER 2 The Chemical Basis of Life 37\n 2. The most abundant element by weight in the human body is  a.  carbon. c. oxygen.  b. hydrogen. d. nitrogen.\n 3. In the following equation, name the reactants: NaCl → Na + Cl.\n a. Na c. NaCl\n b. Cl d. Both a and b are correct.\n 4. A covalent bond in which electrons are not shared equally is called  a. polar. c. nonpolar.  b. normal. d. neutral.\n 5. Refer to Figure 2.3. Which element has the same number of valence  electrons as nitrogen (N)?  a. carbon (C) c. neon (Ne)  b. phosphorus (P) d. oxygen (O)\n2.2 \nWater’s Importance to Life\n 6. Water flows freely but does not separate into individual molecules  because water is  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 7. Compounds having an affinity for water are said to be  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 8. Water freezes from the top down because  a. water has a high surface tension.  b. ice has a high heat capacity.  c. ice is less dense than water.  d. ice is less cohesive than water.\n 9. Water can absorb a large amount of heat without much change in  temperature because it has a high  a. surface tension.  b. heat capacity.  c. hydrogen ion (H +) concentration.  d. hydroxide ion (OH –) concentration.\n2.3 Acids and Bases\n 10. A pH of 3 is .  a. basic c. acidic  b. neutral d. a buffer\n 11.  contribute hydrogen ions (H+) to a solution\n a. Bases c. Acids\n b. Isotopes d. Compounds\n 12. To maintain a constant pH, many organisms use  to  regulate the hydrogen ion concentration.  a. buffers c. acids  b. bases d. isotopes ENGAGE  BioNOW\nWant to know how this science is relevant to your life? Check out the  BioNow video below.  ∙Properties of Water What characteristic of water do you think is most important to a living  organism, such as yourself?\nThinking Critically \n 1. On a hot summer day, you decide to dive into a swimming pool. Before  you begin your dive, you notice that the surface of the water is smooth  and continuous. After the dive, you discover that some water droplets  are clinging to your skin and that your skin temperature feels cooler.  Explain these observations based on the properties of water.\n 2. Like carbon, silicon has four electrons in its outer shell, yet life  evolved to be carbon-based. What is there about silicon’s structure  that might prevent it from sharing with four other elements and  prevent it from forming the many varied shapes of carboncontaining molecules?\n 3. Antacids are a common over-the-counter remedy for heartburn, a  condition caused by an overabundance of H + ions in the stomach.  Based on what you know regarding pH, how do the chemicals in  antacids work?\n 4. Acid precipitation is produced when atmospheric water is polluted by  sulfur dioxide and nitrous oxide emissions. These emissions are mostly  produced by the burning of fossil fuels, particularly coal. In the  atmosphere, these compounds are converted to sulfuric and nitric  acids, and are absorbed into water droplets in the atmosphere. \nEventually they fall back to Earth as acid precipitation. How do you  think acid precipitation can negatively influence an ecosystem?"
+          "subsubtopic_page_contents": "We often take water for granted, but without water, life as we know it would not  exist. The properties of water that support life are solvency, cohesion and adhesion, high surface tension, high heat capacity, and varying density.\nWater Is a Solvent Because of its polarity and hydrogen-bonding ability, water dissolves a great  number of substances. Molecules that are attracted to water are said to be   hydrophilic (hydro, water; phil, love). Polar and ionized molecules are usually  hydrophilic. Nonionized and nonpolar molecules that are not attracted to water  are said to be hydrophobic (hydro, water; phob, fear). When a salt such as sodium chloride (NaCl) is put into water, the negative  ends of the water molecules are attracted to the sodium ions, and the positive  ends of the water molecules are attracted to the chloride ions. This attraction  causes the sodium ions and the chloride ions to break up, or dissociate, in water: [$formular_number: 2.3 ].  Water may also dissolve polar nonionic substances, such as long chains  of glucose, by forming hydrogen bonds with them. When ions and molecules  disperse in water, they move about and collide, allowing reactions to occur.  The interior of our cells is composed primarily of water, and the ability of water to act as a solvent allows the atoms and molecules within each cell to readily interact and participate in chemical reactions.\nWater Molecules Are Cohesive and Adhesive\n\n Cohesion refers to the ability of water molecules to cling to each other due to  hydrogen bonding. Because of cohesion, water exists as a liquid under ordinary  conditions of temperature and pressure. The strong cohesion of water molecules is apparent because water flows freely, yet the molecules do not separate from each other. Adhesion refers to the ability of water molecules to cling to \nother polar surfaces. This ability is due to water’s polarity. The positive and  negative poles of water molecules cause them to adhere to other polar surfaces. Due to cohesion and adhesion, liquid water is an excellent transport system (Fig. 2.10). Both within and outside the cell, water assists in the transport\nCHAPTER 2 The Chemical Basis of Life 31 of nutrients and waste materials. Many multicellular animals contain internal  vessels in which water assists the transport of materials. The liquid portion of  blood, which transports dissolved and suspended substances within the body,  is 90% water. The cohesion and adhesion of water molecules allow blood to fill  the tubular vessels of the cardiovascular system, making transport possible.  Cohesion and adhesion also contribute to the transport of water in plants.  Plants have their roots anchored in the soil, where they absorb water, but the  leaves are uplifted and exposed to solar energy. Water evaporating from the  leaves is immediately replaced with water molecules from transport vessels  that extend from the roots to the leaves. Because water molecules are cohesive,  a tension is created that pulls a water column up from the roots. Adhesion of  water to the walls of the vessels also helps prevent the water column from  breaking apart.\nWater Has a High Surface Tension \n\n Because the water molecules at the surface are more strongly attracted to each  other than to the air above, water molecules at the surface cling tightly to each \nother. Thus, we say that water exhibits surface tension. The stronger the force  between molecules in a liquid, the greater the surface tension. Hydrogen  bonding is the main force that causes water to have a high surface tension.   If you slowly fill a glass with water, you may notice that the level of the  water forms a small dome above the top of the glass. This is due to the surface  tension of water. \nWater Has a High Heat Capacity The many hydrogen bonds that link water molecules allow water to absorb heat  without greatly changing in temperature. Water’s high heat capacity is important not only for aquatic organisms but for all organisms. Because the temperature of water rises and falls slowly, terrestrial organisms are better able to maintain their normal internal temperatures and are protected from rapid temperature changes.\nWater also has a high heat of vaporization: It takes a great deal of heat to  break the hydrogen bonds in water so that it becomes gaseous and evaporates  into the environment. If the heat given off by our metabolic activities were to  go directly into raising our body temperature, death would follow. Instead, the  heat is dispelled as sweat evaporates (Fig. 2.11). \nDuring the  summer, the ocean absorbs and stores solar heat; during the winter, the ocean  releases it slowly. In contrast, the interior regions of the continents experience  abrupt changes in temperature.\nIce Is Less Dense Than Water Unlike other substances, water expands as it freezes, which explains why cans  of soda burst when placed in a freezer and how roads in northern climates become bumpy because of “frost heaves” in the winter. Since water expands as it freezes, ice is less dense than liquid water, and therefore ice floats on liquid  water (Fig. 2.12).",
+          "connections": [
+            {
+              "type": "Scientific Inquiry",
+              "title": "How do some insects walk on water?",
+              "content": "Anyone who has visited a pond or stream has  witnessed insects walking on the surface of  the water. These insects, commonly called water striders, have evolved this ability by adapting to two properties of water—its surface tension and the fact that water is a polar molecule. By trapping small air bubbles in the hairs on their legs, water striders are able to remain buoyant and not break the surface tension of the water molecules. Many water striders also secrete a nonp olar wax, which further repels the water molecules and keeps the  insect al oat."
+            },
+            {
+              "type": "Ecology",
+              "title": "Why is it important that ice is less dense than water?",
+              "content": "If ice were more dense than water, it would  sink, and ponds, lakes, and perhaps even  the ocean would freeze solid, making life impossible in the water as well as on land. Instead, bodies of water always freeze from the top down. When a body of water freezes  on the surface, the ice acts as an insulator to  prevent the water below it from freezing.  This protects aquatic organisms, so that  they can survive the winter. As ice melts in the spring, it draws heat from the  environment, helping prevent a sudden change in temperature th at might be  harmful to life."
+            }
+          ]
         }
       ]
     },
     {
-      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Distinguish between an acid and a base.\n 2. Interpret the pH scale.\n 3. Explain the purpose of a bufer. As shown in the equation below, when water dissociates (breaks apart), it   releases an equal number of hydrogen ions (H +) and hydroxide ions (OH–). H+          +        OH– hydrogen ion hydroxide ion water\nH HO We can determine whether a solution is acidic or basic by examining the  proportion of hydrogen and hydroxide ions in the solution.",
-      "subtopic_introduction": "Acidic Solutions (High H+ Concentration)\nLemon juice, vinegar, tomato juice, and coffee are all acidic solutions. Acidic  solutions have a sharp or sour taste, and therefore we sometimes associate them \nwith indigestion. What do they have in common? To a chemist, acids are substances that dissociate in water, releasing hydrogen ions (H +). For example, an  important acid is hydrochloric acid (HCl), which dissociates in this manner: H+          +        Cl– hydrogen ion chloride ion hydrochloric acid HCl\nAcidic solutions have a higher concentration of H + ions than OH – ions. \nThe acidity of a substance depends on how fully it dissociates in water. HCl  dissociates almost completely; therefore, it is called a strong acid. If hydrochloric acid is added to a beaker of water, the number of hydrogen ions (H +) increases greatly.\nConnections: Scientiic Inquiry How strong is the acid in your stomach? Within the gastric juice of the stomach is hydrochloric acid  (HCl), which has a pH value between 1.0 and 2.0. This acid  makes the contents of your stomach around 1 million times  more acidic than water and 100 times more acidic than  vinegar. While theoretically the gastric juice in your stomach is able to dissolve metals, such as steel, in reality the contents of your stomach are exposed to these extreme  pH values for only a short period of time before moving  into the remainder of the intestinal tract, where the acid  levels are quickly neutralized.\n(photo): © Corbis RF",
+      "learning_outcomes": "Upon completion of this section, you should be able to\n 1. Distinguish between an acid and a base.\n 2. Interpret the pH scale.\n 3. Explain the purpose of a buffer.",
+      "subtopic_introduction": "As shown in the equation below [$formular_number: 2.4], when water dissociates (breaks apart), it   releases an equal number of hydrogen ions (H +) and hydroxide ions (OH–).  We can determine whether a solution is acidic or basic by examining the  proportion of hydrogen and hydroxide ions in the solution.",
       "subtopic_number": "2.3",
       "subtopic_title": "Acids and Bases",
       "subtopic_page_label": "33",
-      "subtopic_assessments": [],
-      "subtopic_concept": "",
-      "subtopic_summary": "",
+      "subtopic_assessments": [
+        " Distinguish between an acid and a base .",
+        "Generalize what information is given by the pH of a solution.",
+        "Summarize how bufers are used to regulate the pH of the human  body."
+      ],
+      "subtopic_concept": "Homeostasis is dependent on living  organisms’ ability to maintain   speciic pH levels.",
+      "subtopic_summary": "Acids and Bases:\n Water dissociates to produce an equal number of hydrogen ions (H+) and \nhydroxide ions. This is neutral pH. Acids increase the H+ concentration of a \nsolution, while bases decrease the H+ concentration. The pH scale shows  the range of acidic and basic solutions:\n0 Acid neutral more [H+] less [OH–] less [H+] more [OH–] Base \nCells are sensitive to pH changes. Biological systems contain buffers that  help keep the pH within a normal range.",
       "subsubtopics_info": [
         {
           "subsubtopic_title": "Acidic Solutions (High H+ Concentration)",
           "subsubtopic_start_page_label": "33",
           "subsubtopic_end_page_label": "34",
-          "subsubtopic_page_contents": "Lemon juice, vinegar, tomato juice, and coffee are all acidic solutions. Acidic  solutions have a sharp or sour taste, and therefore we sometimes associate them \nwith indigestion. What do they have in common? To a chemist, acids are substances that dissociate in water, releasing hydrogen ions (H +). For example, an  important acid is hydrochloric acid (HCl), which dissociates in this manner: H+          +        Cl– hydrogen ion chloride ion hydrochloric acid HCl\nAcidic solutions have a higher concentration of H + ions than OH – ions. \nThe acidity of a substance depends on how fully it dissociates in water. HCl  dissociates almost completely; therefore, it is called a strong acid. If hydrochloric acid is added to a beaker of water, the number of hydrogen ions (H +) increases greatly.\nConnections: Scientiic Inquiry How strong is the acid in your stomach? Within the gastric juice of the stomach is hydrochloric acid  (HCl), which has a pH value between 1.0 and 2.0. This acid  makes the contents of your stomach around 1 million times  more acidic than water and 100 times more acidic than  vinegar. While theoretically the gastric juice in your stomach is able to dissolve metals, such as steel, in reality the contents of your stomach are exposed to these extreme  pH values for only a short period of time before moving  into the remainder of the intestinal tract, where the acid  levels are quickly neutralized.\n(photo): © Corbis RF"
+          "subsubtopic_page_contents": "Lemon juice, vinegar, tomato juice, and coffee are all acidic solutions. Acidic  solutions have a sharp or sour taste, and therefore we sometimes associate them \nwith indigestion. What do they have in common? To a chemist, acids are substances that dissociate in water, releasing hydrogen ions (H +). For example, an  important acid is hydrochloric acid (HCl), which dissociates in this manner: [$formular_number: 2.5]. \nAcidic solutions have a higher concentration of H + ions than OH – ions. \nThe acidity of a substance depends on how fully it dissociates in water. HCl  dissociates almost completely; therefore, it is called a strong acid. If hydrochloric acid is added to a beaker of water, the number of hydrogen ions (H +) increases greatly.",
+          "connections": [
+            {
+              "type": "Scientiic Inquiry",
+              "title": "How strong is the acid in your stomach?",
+              "content": "Within the gastric juice of the stomach is hydrochloric acid  (HCl), which has a pH value between 1.0 and 2.0. This acid  makes the contents of your stomach around 1 million times  more acidic than water and 100 times more acidic than  vinegar. While theoretically the gastric juice in your stomach is able to dissolve metals, such as steel, in reality the contents of your stomach are exposed to these extreme  pH values for only a short period of time before moving  into the remainder of the intestinal tract, where the acid  levels are quickly neutralized."
+            }
+          ]
         },
         {
           "subsubtopic_title": "Basic Solutions (Low H+ Concentration)",
           "subsubtopic_start_page_label": "34",
           "subsubtopic_end_page_label": "34",
-          "subsubtopic_page_contents": "Milk of magnesia and ammonia are common basic (alkaline) solutions that  most people are familiar with. Basic solutions have a bitter taste and feel   slippery when in water. To a chemist, bases are substances that either take  up hydrogen ions (H +) or release hydroxide ions (OH –). For example, an  important base is sodium hydroxide (NaOH), which dissociates in this  manner: Na+          +      OH– sodium ion hydroxide ion sodium hydroxide NaOH\nBasic solutions have a higher concentration of OH – ions than H + ions.  Like acids, the strength of a base is determined by how fully it dissociates.   Dissociation of sodium hydroxide is almost complete; therefore, it is called a  strong base. If sodium hydroxide is added to a beaker of water, the number of  hydroxide ions increases. Many strong bases, such as ammonia, are useful household cleansers.  Ammonia has a poison symbol and carries a strong warning not to ingest the  product. Neither acids nor bases should be tasted, because they are quite destructive to cells."
+          "subsubtopic_page_contents": "Milk of magnesia and ammonia are common basic (alkaline) solutions that  most people are familiar with. Basic solutions have a bitter taste and feel   slippery when in water. To a chemist, bases are substances that either take  up hydrogen ions (H +) or release hydroxide ions (OH –). For example, an  important base is sodium hydroxide (NaOH), which dissociates in this  manner: [$formular_number: 2.6 ].\nBasic solutions have a higher concentration of OH – ions than H + ions.  Like acids, the strength of a base is determined by how fully it dissociates.   Dissociation of sodium hydroxide is almost complete; therefore, it is called a  strong base. If sodium hydroxide is added to a beaker of water, the number of  hydroxide ions increases. Many strong bases, such as ammonia, are useful household cleansers.  Ammonia has a poison symbol and carries a strong warning not to ingest the  product. Neither acids nor bases should be tasted, because they are quite destructive to cells."
         },
         {
           "subsubtopic_title": "pH and the pH Scale",
           "subsubtopic_start_page_label": "34",
           "subsubtopic_end_page_label": "35",
-          "subsubtopic_page_contents": "pH1 is a mathematical way of indicating the number of hydrogen ions in a  solution. The pH scale  is used to indicate the acidity or basicity of a solution. The pH scale ranges from 0 to 14 ( Fig. 2.13 ). A pH of 7 represents a neutral state in which the hydrogen ion and hydroxide ion concentrations  are equal, as in pure water. A pH below 7 is acidic because the hydrogen  ion concentration, commonly expressed in brackets as [H +], is greater than  the hydroxide concentration, [OH –]. A pH above 7 is basic because [OH –]  is greater than [H +]. Further, as we move down the pH scale from pH 7 to  pH 0, each unit has 10 times the acidity [H +] of the previous unit. As we  move up the scale from 7 to 14, each unit has 10 times the basicity [OH –]  of the previous unit. The pH scale was devised to eliminate the use of cumbersome numbers.  For example, the hydrogen ion concentrations of several solutions are given on  the left, and the pH is on the right:\n0.000001\n0.0000001\n0.00000001 [H +] (moles per liter) pH = = =\n1 × 10 –6\n1 × 10–7\n1 × 10–8\n6 (acid)\n7 (neutral)\n8 (base) The effect of pH on organisms is dramatically illustrated by the phenomenon known as acid precipitation. When fossil fuels are burned, sulfur dioxide and nitrogen oxides are produced, and they combine with water in the atmosphere to form acids. These acids then come in contact with organisms and objects, leading to damage or even death. AcidBase\nIncreasing [H+] Increasing [OH–]\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14 hydrochloric acid (HCI) stomach acid lemon juice Coca-Cola, beer, vinegar tomatoes black coﬀee urine pure water, tears seawater baking soda, stomach antacids\nGreat Salt Lake household ammonia bicarbonate of soda oven cleaner sodium hydroxide (NaOH) normal rainwater saliva human blood milk of magnesia [H + ] [OH – ] neutral pH [H + ] = [OH – ]\nFigure 2.13 The pH scale.  The proportionate amount of hydrogen ions to hydroxide ions is  indicated by the diagonal line. Any solution with a pH above 7 is  basic, while any solution with a pH below 7 is acidic.\n1 pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number."
+          "notes": [
+            "pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number."
+          ],
+          "subsubtopic_page_contents": "pH is a mathematical way of indicating the number of hydrogen ions in a  solution. The pH scale  is used to indicate the acidity or basicity of a solution. The pH scale ranges from 0 to 14 ( Fig. 2.13 ). A pH of 7 represents a neutral state in which the hydrogen ion and hydroxide ion concentrations  are equal, as in pure water. A pH below 7 is acidic because the hydrogen  ion concentration, commonly expressed in brackets as [H +], is greater than  the hydroxide concentration, [OH –]. A pH above 7 is basic because [OH –]  is greater than [H +]. Further, as we move down the pH scale from pH 7 to  pH 0, each unit has 10 times the acidity [H +] of the previous unit. As we  move up the scale from 7 to 14, each unit has 10 times the basicity [OH –]  of the previous unit. The pH scale was devised to eliminate the use of cumbersome numbers.  For example, the hydrogen ion concentrations of several solutions are given on  the left, and the pH is on the right:\n [H +] (moles per liter) pH \n0.000001 = 1 × 10 –6  6 (acid)\n0.0000001 =  1 × 10–7  7(neutral)\n0.00000001 = 1 × 10–8  8(base). The effect of pH on organisms is dramatically illustrated by the phenomenon known as acid precipitation. When fossil fuels are burned, sulfur dioxide and nitrogen oxides are produced, and they combine with water in the atmosphere to form acids. These acids then come in contact with organisms and objects, leading to damage or even death."
         },
         {
           "subsubtopic_title": "Bufers and pH",
           "subsubtopic_start_page_label": "35",
           "subsubtopic_end_page_label": "38",
-          "subsubtopic_page_contents": "A buffer is a chemical or a combination of chemicals that keeps pH within  established limits. Buffers resist pH changes because they can take up excess  hydrogen ions (H +) or hydroxide ions (OH–). In the human body, pH needs to  be kept within a narrow range in order to maintain homeostasis. Diseases such  as diabetes and congestive heart failure may bring on a condition called acidosis, in which the body is unable to buffer the excessive production of H + ions. \nIf left untreated, acidosis can cause a number of health problems ( Fig. 2.14)  and may result in coma or death. • Sleepiness and loss   of consciousness •  Confusion • Headache • Coma • Coughing and   shortness of breath • Arrhythmia • Increased heart rate • Nausea • Vomiting • Diarrhea • Weakness Muscular Intestinal Respiratory Heart Gastric\nCentral Nervous System\nFigure 2.14 Acidosis. \nAcidosis occurs when the body in unable to bu fer high H + ion  concentrations in the blood. Some of the symptoms of acidosis are  shown here. Homeostasis is dependent on living  organisms’ ability to maintain   speciic pH levels.\n2.3\nCONNECTING THE CONCEPTS\nCheck Your Progress 2.3\n 1. Distinguish between an acid and a base . \n 2. Generalize what information is given by the pH of a solution. \n 3. Summarize how bufers are used to regulate the pH of the human  body.\n36 PART ONE The Cell a higher electronegativity than hydrogen. The positively and negatively  charged ends of the molecules are attracted to each other to form hydrogen  bonds. Hydrogen bonds explain the chemical characteristics of water,  including its cohesive and adhesive properties.  The polarity of water causes the attraction of hydrophilic molecules. \nMolecules that are not attracted to water are hydrophobic. The polarity and  hydrogen bonding in water account for its unique properties, which are  summarized in Table 2.1:\nTable 2.1 Properties of Water\nProperties Chemical Reason(s) Efect\nWater is a solvent. Polarity Water facilitates chemical  reactions. Water is cohesive  and adhesive. Hydrogen bonding;  polarity Water serves as a transport  medium. Water has a high  surface tension.\nHydrogen bonding The surface tension of water  is hard to break. Water has a high heat  capacity and heat of  vaporization.\nHydrogen bonding Water protects organisms from  rapid changes in temperature  and from overheating. Water varies in  density.\nHydrogen bonding Ice is less dense than liquid  water and therefore ice loats  on liquid water.\n2.3 \nAcids and Bases Water dissociates to produce an equal number of hydrogen ions (H+) and \nhydroxide ions. This is neutral pH. Acids increase the H+ concentration of a \nsolution, while bases decrease the H+ concentration. This pH scale shows  the range of acidic and basic solutions:\n0 Acid neutral more [H+] less [OH–] less [H+] more [OH–] Base\n71 4\nCells are sensitive to pH changes. Biological systems contain buffers that  help keep the pH within a normal range. ASSESS \nTesting Yourself Choose the best answer for each question.\n2.1 \nAtoms and Atomic Bonds\n 1. The mass number of an atom depends primarily on the number of  a. protons and neutrons. c. neutrons and electrons.  b. positrons. d. protons and electrons.\nSTUDY TOOLS  \n Maximize your study time with McGraw-Hill SmartBook®, th e ﬁrst adaptive textbook. http://connect.mheducation.com SUMMARIZE \nAll life is composed of a similar set of elements. Living organisms perform  chemical reactions to break down and build molecules to fit their specific needs.  Knowledge of basic chemistry provides a foundation for understanding biology.\n2.1\n2.2\n2.3 Subatomic particles determine how elements bond to form molecules and  compounds. Waterʼs essential role for life is based on its ability to form hydrogen bonds. Homeostasis is dependent on living organismsʼ ability to maintain specii c  pH levels.\n2.1 \nAtoms and Atomic Bonds Both living organisms and nonliving things are composed of matter  consisting of elements. The major elements in living organisms are carbon,  hydrogen, nitrogen, and oxygen. Elements consist of atoms, which in turn  contain subatomic particles. Protons have positive charges, neutrons are  uncharged, and electrons have negative charges. Electrons are found outside  the nucleus in energy levels called electron shells. Protons and neutrons in the nucleus determine the mass number of an atom. \nThe atomic number indicates the number of protons in the nucleus. In an  electrically neutral atom, the atomic number also indicates the number of  electrons. Isotopes are atoms of a single element that differ in their number  of neutrons. Radioactive isotopes have many uses, including serving as  tracers in biological experiments and medical procedures. The number of electrons in the valence shell (outer energy level) determines  the reactivity of an atom. The first electron shell is complete when it is  occupied by two electrons. Atoms are most stable when the valence shell  contains 8 electrons. The octet rule states that atoms react with one another  in order to have a completed valence shell.\nAtoms are often bonded together to form molecules. If the elements in a  molecule are different, it is called a compound. Molecules and compounds  may be held together by ionic or covalent bonds. Ionic bonds are formed by  an attraction between oppositely charged ions. Ions form when atoms lose or  gain one or more electrons to achieve a completed outer shell. Covalent  bonds occur when electrons are shared between two atoms. There are single  covalent bonds (sharing one pair of electrons), double (sharing two pairs of  electrons), and triple (sharing three pairs of electrons). shells nucleus = protons = neutrons = electrons\n2.2 Water’s Importance to Life\nThe two covalent O—H bonds of water are polar because the electrons are  not shared equally between oxygen and hydrogen. This is because oxygen has\nCHAPTER 2 The Chemical Basis of Life 37\n 2. The most abundant element by weight in the human body is  a.  carbon. c. oxygen.  b. hydrogen. d. nitrogen.\n 3. In the following equation, name the reactants: NaCl → Na + Cl.\n a. Na c. NaCl\n b. Cl d. Both a and b are correct.\n 4. A covalent bond in which electrons are not shared equally is called  a. polar. c. nonpolar.  b. normal. d. neutral.\n 5. Refer to Figure 2.3. Which element has the same number of valence  electrons as nitrogen (N)?  a. carbon (C) c. neon (Ne)  b. phosphorus (P) d. oxygen (O)\n2.2 \nWater’s Importance to Life\n 6. Water flows freely but does not separate into individual molecules  because water is  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 7. Compounds having an affinity for water are said to be  a. cohesive. c. hydrophobic.  b. hydrophilic. d. adhesive.\n 8. Water freezes from the top down because  a. water has a high surface tension.  b. ice has a high heat capacity.  c. ice is less dense than water.  d. ice is less cohesive than water.\n 9. Water can absorb a large amount of heat without much change in  temperature because it has a high  a. surface tension.  b. heat capacity.  c. hydrogen ion (H +) concentration.  d. hydroxide ion (OH –) concentration.\n2.3 Acids and Bases\n 10. A pH of 3 is .  a. basic c. acidic  b. neutral d. a buffer\n 11.  contribute hydrogen ions (H+) to a solution\n a. Bases c. Acids\n b. Isotopes d. Compounds\n 12. To maintain a constant pH, many organisms use  to  regulate the hydrogen ion concentration.  a. buffers c. acids  b. bases d. isotopes ENGAGE  BioNOW\nWant to know how this science is relevant to your life? Check out the  BioNow video below.  ∙Properties of Water What characteristic of water do you think is most important to a living  organism, such as yourself?\nThinking Critically \n 1. On a hot summer day, you decide to dive into a swimming pool. Before  you begin your dive, you notice that the surface of the water is smooth  and continuous. After the dive, you discover that some water droplets  are clinging to your skin and that your skin temperature feels cooler.  Explain these observations based on the properties of water.\n 2. Like carbon, silicon has four electrons in its outer shell, yet life  evolved to be carbon-based. What is there about silicon’s structure  that might prevent it from sharing with four other elements and  prevent it from forming the many varied shapes of carboncontaining molecules?\n 3. Antacids are a common over-the-counter remedy for heartburn, a  condition caused by an overabundance of H + ions in the stomach.  Based on what you know regarding pH, how do the chemicals in  antacids work?\n 4. Acid precipitation is produced when atmospheric water is polluted by  sulfur dioxide and nitrous oxide emissions. These emissions are mostly  produced by the burning of fossil fuels, particularly coal. In the  atmosphere, these compounds are converted to sulfuric and nitric  acids, and are absorbed into water droplets in the atmosphere. \nEventually they fall back to Earth as acid precipitation. How do you  think acid precipitation can negatively influence an ecosystem?"
+          "subsubtopic_page_contents": "A buffer is a chemical or a combination of chemicals that keeps pH within  established limits. Buffers resist pH changes because they can take up excess  hydrogen ions (H +) or hydroxide ions (OH–). In the human body, pH needs to  be kept within a narrow range in order to maintain homeostasis. Diseases such  as diabetes and congestive heart failure may bring on a condition called acidosis, in which the body is unable to buffer the excessive production of H + ions. \nIf left untreated, acidosis can cause a number of health problems ( Fig. 2.14)  and may result in coma or death. Symptoms include: • Sleepiness and loss   of consciousness •  Confusion • Headache • Coma • Coughing and   shortness of breath • Arrhythmia • Increased heart rate • Nausea • Vomiting • Diarrhea • Weakness Muscular Intestinal Respiratory Heart Gastric \nCentral Nervous System"
         }
       ]
     }
   ],
-  "tables_info": {},
+  "tables_info": {
+    "2.1": {
+      "table_number": "2.1",
+      "table_title": "Properties of Water",
+      "table": [
+        {
+          "property": "Water is a solvent",
+          "chemical_reason": "Polarity",
+          "effect": "Water facilitates chemical reactions"
+        },
+        {
+          "property": "Water is cohesive and adhesive",
+          "chemical_reason": "Hydrogen bonding; polarity",
+          "effect": "Water serves as a transport medium"
+        },
+        {
+          "property": "Water has a high surface tension",
+          "chemical_reason": "Hydrogen bonding",
+          "effect": "The surface tension of water is hard to break"
+        },
+        {
+          "property": "Water has a high heat capacity and heat of vaporization",
+          "chemical_reason": "Hydrogen bonding",
+          "effect": "Water protects organisms from rapid changes in temperature and from overheating"
+        },
+        {
+          "property": "Water varies in density",
+          "chemical_reason": "Hydrogen bonding",
+          "effect": "Ice is less dense than liquid water and therefore ice floats on liquid water"
+        }
+      ]
+    }
+  },
   "figures_info": [
     {
       "chapter_number": "2",
@@ -134,15 +210,15 @@
     },
     {
       "chapter_number": "2",
-      "figure_number": "2.2",
-      "figure_title": "shows the arrangement of the subatomic particles in a helium",
-      "figure_description": "atom, which has only two electrons. In"
+      "figure_number": "2.2.a",
+      "figure_title": "Two models of helium (He) - inside nucleus.",
+      "figure_description": " This model shows electrons as a negatively charged cloud around the nucleus"
     },
     {
       "chapter_number": "2",
-      "figure_number": "2.2",
-      "figure_title": "b, the circle represents the",
-      "figure_description": "approximate location of the electrons based on their energy state. However,  electrons are in a constant state of motion, so their estimated location is often \nshown as a cloud (Fig. 2.2a). Overall, most of an atom is empty space. In fact,  if we could draw an atom the size of a baseball stadium, the nucleus would be  like a gumball in the center of the stadium, and the electrons would be tiny  specks whirling about in the upper stands. Usually, we can only indicate where  the electrons are expected to be. In our analogy, the electrons might very well  stray outside the stadium at times. Since atoms are a form of matter, you might expect each atom to have a  certain mass. In effect, the mass number of an atom is just about equal to the  sum of its protons and neutrons. Protons and neutrons are assigned one mass  unit each. Electrons, being matter, have mass, but they are so small that their  mass is assumed to be zero in most calculations. The term mass is used, rather  than  weight, because mass is constant but weight is associated with gravity and  thus varies depending on an object's location in the universe.\nAll atoms of an element have the same number of protons. This is called  the atom’s atomic number. The number of protons makes an atom unique and  may be used to identify which element the atom belongs to. As we will see, the  number of neutrons may vary between atoms of an element. The average of the  mass numbers for these atoms is called the atomic mass. The atomic number tells you the number of positively charged protons.  If the atom is electrically neutral, then the atomic number also indicates the  number of negatively charged electrons. To determine the usual number of  neutrons, subtract the number of protons from the atomic mass and take the  closest whole number.\nThe Periodic Table Once chemists discovered a number of the elements, they began to realize that  the elements’ chemical and physical characteristics recur in a predictable manner. The periodic table ( Fig. 2.3) was developed as a way to display the elements, and therefore the atoms, according to these characteristics. In a periodic table, the atomic number is written above the atomic symbol. The atomic mass is written below the atomic symbol. For example, the carbon atom is shown in this way:\n6 C\n12.01atomic mass atomic number"
+      "figure_number": "2.2.b",
+      "figure_title": "Two models of helium (He) - outside nucleus.",
+      "figure_description": "In this model, the average location of electrons is represented by a circle."
     },
     {
       "chapter_number": "2",
@@ -154,7 +230,300 @@
       "chapter_number": "2",
       "figure_number": "2.3",
       "figure_title": "A portion of the periodic table.",
-      "figure_description": "In the periodic table, the elements, and therefore the atoms that  compose them, are in the order of their atomic numbers but  arranged in periods (horizontal rows) and groups (vertical columns).  All the atoms in a particular group have certain chemical  characteristics in common. The elements highlighted in red make up  the the majority of matter in organic molecules (Chapter 3). A full \nperiodic table is provided in Appendix A."
+      "figure_description": "In the periodic table, the elements, and therefore the atoms that  compose them, are in the order of their atomic numbers but  arranged in periods (horizontal rows) and groups (vertical columns).  All the atoms in a particular group have certain chemical  characteristics in common. The elements highlighted in red make up  the the majority of matter in organic molecules (Chapter 3). A full \nperiodic table is provided in Appendix A.",
+      "figure_content": {
+        "figure_url""",
+        "periodic_table_elements": [
+          {
+            "atomic_number": 1,
+            "symbol": "H",
+            "name": "Hydrogen",
+            "atomic_mass": 1.008,
+            "group": "Non-metal",
+            "period": 1
+          },
+          {
+            "atomic_number": 2,
+            "symbol": "He",
+            "name": "Helium",
+            "atomic_mass": 4.003,
+            "group": "Noble gas",
+            "period": 1
+          },
+          {
+            "atomic_number": 3,
+            "symbol": "Li",
+            "name": "Lithium",
+            "atomic_mass": 6.941,
+            "group": "Alkali metal",
+            "period": 2
+          },
+          {
+            "atomic_number": 4,
+            "symbol": "Be",
+            "name": "Beryllium",
+            "atomic_mass": 9.012,
+            "group": "Alkaline earth metal",
+            "period": 2
+          },
+          {
+            "atomic_number": 5,
+            "symbol": "B",
+            "name": "Boron",
+            "atomic_mass": 10.81,
+            "group": "Metalloid",
+            "period": 2
+          },
+          {
+            "atomic_number": 6,
+            "symbol": "C",
+            "name": "Carbon",
+            "atomic_mass": 12.01,
+            "group": "Non-metal",
+            "period": 2
+          },
+          {
+            "atomic_number": 7,
+            "symbol": "N",
+            "name": "Nitrogen",
+            "atomic_mass": 14.01,
+            "group": "Non-metal",
+            "period": 2
+          },
+          {
+            "atomic_number": 8,
+            "symbol": "O",
+            "name": "Oxygen",
+            "atomic_mass": 16.00,
+            "group": "Non-metal",
+            "period": 2
+          },
+          {
+            "atomic_number": 9,
+            "symbol": "F",
+            "name": "Fluorine",
+            "atomic_mass": 19.00,
+            "group": "Halogen",
+            "period": 2
+          },
+          {
+            "atomic_number": 10,
+            "symbol": "Ne",
+            "name": "Neon",
+            "atomic_mass": 20.18,
+            "group": "Noble gas",
+            "period": 2
+          },
+          {
+            "atomic_number": 11,
+            "symbol": "Na",
+            "name": "Sodium",
+            "atomic_mass": 22.99,
+            "group": "Alkali metal",
+            "period": 3
+          },
+          {
+            "atomic_number": 12,
+            "symbol": "Mg",
+            "name": "Magnesium",
+            "atomic_mass": 24.31,
+            "group": "Alkaline earth metal",
+            "period": 3
+          },
+          {
+            "atomic_number": 13,
+            "symbol": "Al",
+            "name": "Aluminum",
+            "atomic_mass": 26.98,
+            "group": "Metal",
+            "period": 3
+          },
+          {
+            "atomic_number": 14,
+            "symbol": "Si",
+            "name": "Silicon",
+            "atomic_mass": 28.09,
+            "group": "Metalloid",
+            "period": 3
+          },
+          {
+            "atomic_number": 15,
+            "symbol": "P",
+            "name": "Phosphorus",
+            "atomic_mass": 30.97,
+            "group": "Non-metal",
+            "period": 3
+          },
+          {
+            "atomic_number": 16,
+            "symbol": "S",
+            "name": "Sulfur",
+            "atomic_mass": 32.07,
+            "group": "Non-metal",
+            "period": 3
+          },
+          {
+            "atomic_number": 17,
+            "symbol": "Cl",
+            "name": "Chlorine",
+            "atomic_mass": 35.45,
+            "group": "Halogen",
+            "period": 3
+          },
+          {
+            "atomic_number": 18,
+            "symbol": "Ar",
+            "name": "Argon",
+            "atomic_mass": 39.95,
+            "group": "Noble gas",
+            "period": 3
+          },
+          {
+            "atomic_number": 19,
+            "symbol": "K",
+            "name": "Potassium",
+            "atomic_mass": 39.10,
+            "group": "Alkali metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 20,
+            "symbol": "Ca",
+            "name": "Calcium",
+            "atomic_mass": 40.08,
+            "group": "Alkaline earth metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 21,
+            "symbol": "Sc",
+            "name": "Scandium",
+            "atomic_mass": 44.96,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 22,
+            "symbol": "Ti",
+            "name": "Titanium",
+            "atomic_mass": 47.87,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 23,
+            "symbol": "V",
+            "name": "Vanadium",
+            "atomic_mass": 50.94,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 24,
+            "symbol": "Cr",
+            "name": "Chromium",
+            "atomic_mass": 52.00,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 25,
+            "symbol": "Mn",
+            "name": "Manganese",
+            "atomic_mass": 54.94,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 26,
+            "symbol": "Fe",
+            "name": "Iron",
+            "atomic_mass": 55.85,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 27,
+            "symbol": "Co",
+            "name": "Cobalt",
+            "atomic_mass": 58.93,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 28,
+            "symbol": "Ni",
+            "name": "Nickel",
+            "atomic_mass": 58.69,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 29,
+            "symbol": "Cu",
+            "name": "Copper",
+            "atomic_mass": 63.55,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 30,
+            "symbol": "Zn",
+            "name": "Zinc",
+            "atomic_mass": 65.38,
+            "group": "Transition metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 31,
+            "symbol": "Ga",
+            "name": "Gallium",
+            "atomic_mass": 69.72,
+            "group": "Metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 32,
+            "symbol": "Ge",
+            "name": "Germanium",
+            "atomic_mass": 72.59,
+            "group": "Metalloid",
+            "period": 4
+          },
+          {
+            "atomic_number": 33,
+            "symbol": "As",
+            "name": "Arsenic",
+            "atomic_mass": 74.92,
+            "group": "Metalloid",
+            "period": 4
+          },
+          {
+            "atomic_number": 34,
+            "symbol": "Se",
+            "name": "Selenium",
+            "atomic_mass": 78.96,
+            "group": "Non-metal",
+            "period": 4
+          },
+          {
+            "atomic_number": 35,
+            "symbol": "Br",
+            "name": "Bromine",
+            "atomic_mass": 79.90,
+            "group": "Halogen",
+            "period": 4
+          },
+          {
+            "atomic_number": 36,
+            "symbol": "Kr",
+            "name": "Krypton",
+            "atomic_mass": 83.80,
+            "group": "Noble gas",
+            "period": 4
+          }
+        ]
+      }
     },
     {
       "chapter_number": "2",
@@ -172,19 +541,139 @@
       "chapter_number": "2",
       "figure_number": "2.6",
       "figure_title": "Atoms of six important elements.",
-      "figure_description": "Electrons orbit the nucleus at particular energy levels called  electron shells. Th e ﬁrst shell contains up to two electrons, and each  shell thereafter has an increasing number of electrons."
+      "figure_description": "Electrons orbit the nucleus at particular energy levels called  electron shells. Th e ﬁrst shell contains up to two electrons, and each  shell thereafter has an increasing number of electrons.",
+      "figure_content": {
+        "figure_url": "artifacts/images/chapter_2_Atoms_of_six_important_element.png",
+        "atomic_structures": [
+          {
+            "element": "Hydrogen",
+            "symbol": "H",
+            "atomic_number": 1,
+            "atomic_mass": 1.008,
+            "electrons": "1 electron in the outer (valence) shell",
+            "description": "Hydrogen is the simplest element, with a single proton in its nucleus and one electron in the outer shell."
+          },
+          {
+            "element": "Carbon",
+            "symbol": "C",
+            "atomic_number": 6,
+            "atomic_mass": 12.01,
+            "electrons": "4 electrons in the outer (valence) shell",
+            "description": "Carbon is a fundamental element in organic chemistry, with four electrons in its outer shell, allowing it to form bonds with other atoms."
+          },
+          {
+            "element": "Nitrogen",
+            "symbol": "N",
+            "atomic_number": 7,
+            "atomic_mass": 14.01,
+            "electrons": "5 electrons in the outer (valence) shell",
+            "description": "Nitrogen is essential for life, with five electrons in its outer shell, making it reactive in forming compounds."
+          },
+          {
+            "element": "Oxygen",
+            "symbol": "O",
+            "atomic_number": 8,
+            "atomic_mass": 16.00,
+            "electrons": "6 electrons in the outer (valence) shell",
+            "description": "Oxygen is a key element for respiration, with six electrons in its outer shell, making it highly reactive and capable of forming bonds with other elements."
+          },
+          {
+            "element": "Phosphorus",
+            "symbol": "P",
+            "atomic_number": 15,
+            "atomic_mass": 31.00,
+            "electrons": "5 electrons in the outer (valence) shell",
+            "description": "Phosphorus is an essential element for life, particularly in DNA and energy molecules like ATP."
+          },
+          {
+            "element": "Sulfur",
+            "symbol": "S",
+            "atomic_number": 16,
+            "atomic_mass": 32.07,
+            "electrons": "6 electrons in the outer (valence) shell",
+            "description": "Sulfur is commonly found in proteins and enzymes, with six electrons in its outer shell."
+          }
+        ]
+      }
     },
     {
       "chapter_number": "2",
       "figure_number": "2.7",
       "figure_title": "Formation of sodium chloride.",
-      "figure_description": "a. During the formation of sodium chloride, an electron is transferred  from the sodium atom to the chlorine atom. At the completion of the  reaction, each atom has eight electrons in the outer shell, but each  also carries a charge as shown. b. In a sodium chloride crystal  (commonly called salt), attraction between the Na + and CI – ions  causes the atoms to assume a three-dimensional lattice shape.\n(b, photo): © PM Images/Getty RF"
+      "figure_description": "a. During the formation of sodium chloride, an electron is transferred  from the sodium atom to the chlorine atom. At the completion of the  reaction, each atom has eight electrons in the outer shell, but each  also carries a charge as shown. b. In a sodium chloride crystal  (commonly called salt), attraction between the Na + and CI – ions  causes the atoms to assume a three-dimensional lattice shape.\n(b, photo): © PM Images/Getty RF",
+      "figure_content": {
+        "figure_url": "artifacts/images/chapter_2_Formation_of_sodium_chloride.png",
+        "formation_of_sodium_chloride": {
+          "step_1": {
+            "description": "Sodium atom (Na) and Chlorine atom (Cl)",
+            "details": "Sodium has one electron in its outer shell, while chlorine has seven electrons. Sodium wants to lose one electron, while chlorine wants to gain one electron."
+          },
+          "step_2": {
+            "description": "Electron Transfer",
+            "details": "Sodium transfers one electron to chlorine. After this transfer, sodium becomes a sodium ion (Na⁺) with a positive charge, and chlorine becomes a chloride ion (Cl⁻) with a negative charge."
+          },
+          "step_3": {
+            "description": "Outer Shells Now Complete",
+            "details": "After the transfer of an electron, both sodium and chlorine have complete outer electron shells (8 electrons in their outer shell), making them more stable."
+          },
+          "step_4": {
+            "description": "Formation of Sodium Chloride (NaCl)",
+            "details": "The sodium ion (Na⁺) and chloride ion (Cl⁻) are attracted to each other by electrostatic forces, forming an ionic bond and creating sodium chloride (NaCl), commonly known as salt."
+          },
+          "step_5": {
+            "description": "Image Example",
+            "details": "The image shows salt being poured and salted French fries, illustrating the common use of sodium chloride (NaCl) in food."
+          },
+          "key_concepts": [
+            {
+              "concept": "Ionic Bonding",
+              "description": "NaCl forms through the transfer of an electron from sodium to chlorine, creating Na⁺ and Cl⁻ ions that are attracted to each other."
+            },
+            {
+              "concept": "Sodium Chloride (NaCl)",
+              "description": "Commonly known as salt, NaCl forms from the ionic bonding between sodium and chlorine."
+            },
+            {
+              "concept": "Stable Electron Configuration",
+              "description": "Both sodium and chlorine achieve stable electron configurations by transferring electrons."
+            }
+          ]
+        }
+      }
     },
     {
       "chapter_number": "2",
       "figure_number": "2.8",
       "figure_title": "Shapes of covalently bonded molecules.",
-      "figure_description": "An electron model ( a) and a structural model ( b) show that methane  (CH4) contains one carbon atom bonded to four hydrogen atoms.   c. The ball-and-stick model shows that, when carbon bonds to four  other atoms, as in methane, each bond actually points to one corner  of a tetrahedron. d. The space- ﬁlling model is a three-dimensional  representation of the molecule."
+      "figure_description": "An electron model ( a) and a structural model ( b) show that methane  (CH4) contains one carbon atom bonded to four hydrogen atoms.   c. The ball-and-stick model shows that, when carbon bonds to four  other atoms, as in methane, each bond actually points to one corner  of a tetrahedron. d. The space- ﬁlling model is a three-dimensional  representation of the molecule.",
+      "figure_content": {
+        "figure_url": "artifacts/images/chapter_2_shapes_of_covalently_bonded_molecules.png",
+        "methane_molecule": {
+          "title": "Shapes of Covalently Bonded Molecules",
+          "description": "The image shows different models of the methane molecule (CH4), which consists of one carbon atom bonded to four hydrogen atoms. These models represent the shape and bonding of methane from different perspectives.",
+          "models": [
+            {
+              "model_type": "Electron Model",
+              "description": "The electron model (a) shows covalent bonds between the carbon atom and four hydrogen atoms. The bonds are depicted as shared electron pairs."
+            },
+            {
+              "model_type": "Structural Model",
+              "description": "The structural model (b) shows methane (CH4) with a central carbon atom bonded to four hydrogen atoms. The bonding is represented by lines connecting the atoms."
+            },
+            {
+              "model_type": "Ball-and-Stick Model",
+              "description": "The ball-and-stick model (c) illustrates the tetrahedral arrangement of the carbon atom and four hydrogen atoms. Each bond forms a 109° angle, pointing toward the corners of a tetrahedron."
+            },
+            {
+              "model_type": "Space-Filling Model",
+              "description": "The space-filling model (d) provides a three-dimensional representation of the methane molecule, showing the relative size and positions of the atoms."
+            }
+          ],
+          "concepts": {
+            "covalent_bonding": "Methane's covalent bonds are formed when carbon shares electrons with hydrogen atoms to achieve a stable configuration."
+          }
+        }
+      }
     },
     {
       "chapter_number": "2",
@@ -208,21 +697,608 @@
       "chapter_number": "2",
       "figure_number": "2.12",
       "figure_title": "Properties of ice.",
-      "figure_description": "The geometric requirements of hydrogen bonding of water  molecules cause ice to be less dense than liquid water. Water’s essential role for life is  based on its ability to form   hydrogen bonds. \n2.2\nCONNECTING THE CONCEPTS\n© Corbis RF"
+      "figure_description": "The geometric requirements of hydrogen bonding of water  molecules cause ice to be less dense than liquid water. Water’s essential role for life is  based on its ability to form   hydrogen bonds."
     },
     {
       "chapter_number": "2",
       "figure_number": "2.13",
       "figure_title": "The pH scale.",
-      "figure_description": "The proportionate amount of hydrogen ions to hydroxide ions is  indicated by the diagonal line. Any solution with a pH above 7 is  basic, while any solution with a pH below 7 is acidic.\n1 pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number."
+      "figure_description": "The proportionate amount of hydrogen ions to hydroxide ions is  indicated by the diagonal line. Any solution with a pH above 7 is  basic, while any solution with a pH below 7 is acidic.\n1 pH is deﬁned as the negative log of the hydrogen ion concentration, or –log[H+]. A log is the power to which \n10 must be raised to produce a given number.",
+      "figure_content": {
+        "figure_url": "artifacts/images/chapter_2_The_pH_scale.png",
+        "PH_scale": {
+          "scale_properties": {
+            "acidic_range": "pH less than 7",
+            "neutral_point": "pH equal to 7",
+            "basic_range": "pH greater than 7",
+            "ion_relationship": {
+              "acidic": "High concentration of hydrogen ions (H+)",
+              "neutral": "Equal concentration of hydrogen ions (H+) and hydroxide ions (OH-)",
+              "basic": "High concentration of hydroxide ions (OH-)"
+            }
+          },
+          "acidic": [
+            {
+              "pH": 1,
+              "substance": "Hydrochloric acid (HCl)",
+              "classification": "Strong acid"
+            },
+            {
+              "pH": 2,
+              "substance": "Lemon juice",
+              "classification": "Acid"
+            },
+            {
+              "pH": 3,
+              "substance": "Coca-Cola, beer, vinegar",
+              "classification": "Acid"
+            },
+            {
+              "pH": 4,
+              "substance": "Tomatoes",
+              "classification": "Acid"
+            },
+            {
+              "pH": 5,
+              "substance": "Black coffee",
+              "classification": "Weak acid"
+            },
+            {
+              "pH": 6,
+              "substance": "Normal rainwater",
+              "classification": "Weak acid"
+            }
+          ],
+          "neutral": [
+            {
+              "pH": 7,
+              "substance": "Pure water, tears, human blood",
+              "classification": "Neutral"
+            }
+          ],
+          "basic": [
+            {
+              "pH": 8,
+              "substance": "Seawater",
+              "classification": "Weak base"
+            },
+            {
+              "pH": 9,
+              "substance": "Baking soda, stomach antacids",
+              "classification": "Base"
+            },
+            {
+              "pH": 10,
+              "substance": "Great Salt Lake",
+              "classification": "Base"
+            },
+            {
+              "pH": 11,
+              "substance": "Milk of magnesia, household ammonia",
+              "classification": "Strong base"
+            },
+            {
+              "pH": 12,
+              "substance": "Bicarbonate of soda",
+              "classification": "Strong base"
+            },
+            {
+              "pH": 13,
+              "substance": "Oven cleaner",
+              "classification": "Very strong base"
+            },
+            {
+              "pH": 14,
+              "substance": "Sodium hydroxide (NaOH)",
+              "classification": "Extremely strong base"
+            }
+          ],
+          "directional_indicators": {
+            "increasing_acidity": "Upward direction on the scale corresponds to increasing hydrogen ion concentration (H+)",
+            "increasing_basicity": "Downward direction on the scale corresponds to increasing hydroxide ion concentration (OH-)"
+          },
+          "summary_statement": "Any solution with a pH below 7 is acidic, any solution with a pH above 7 is basic, and a pH of 7 is neutral. The pH scale compares the relative concentrations of hydrogen ions and hydroxide ions in solutions."
+        }
+      }
     },
     {
       "chapter_number": "2",
       "figure_number": "2.14",
       "figure_title": "Acidosis.",
-      "figure_description": "Acidosis occurs when the body in unable to bu fer high H + ion  concentrations in the blood. Some of the symptoms of acidosis are  shown here. Homeostasis is dependent on living  organisms’ ability to maintain   speciic pH levels.\n2.3\nCONNECTING THE CONCEPTS\nCheck Your Progress 2.3\n 1. Distinguish between an acid and a base . \n 2. Generalize what information is given by the pH of a solution. \n 3. Summarize how bufers are used to regulate the pH of the human  body."
+      "figure_description": "Acidosis occurs when the body in unable to bu fer high H + ion  concentrations in the blood. Some of the symptoms of acidosis are  shown here.",
+      "figure_content": {
+        "figure_url": "artifacts/images/chapter_2_Acidosis.png",
+        "acidosis_affected_systems": [
+          {
+            "system": "Central Nervous System",
+            "symptoms": [
+              "Sleepiness and loss of consciousness",
+              "Confusion",
+              "Headache",
+              "Coma"
+            ]
+          },
+          {
+            "system": "Respiratory System",
+            "symptoms": [
+              "Coughing",
+              "Shortness of breath"
+            ]
+          },
+          {
+            "system": "Heart",
+            "symptoms": [
+              "Arrhythmia",
+              "Increased heart rate"
+            ]
+          },
+          {
+            "system": "Muscular System",
+            "symptoms": [
+              "Weakness"
+            ]
+          },
+          {
+            "system": "Gastric System",
+            "symptoms": [
+              "Nausea",
+              "Vomiting"
+            ]
+          },
+          {
+            "system": "Intestinal System",
+            "symptoms": [
+              "Diarrhea"
+            ]
+          }
+        ]
+      }
     }
   ],
+  "formular_and_reactions": [
+    {
+      "chapter_number": "2",
+      "formular_number": "2.1",
+      "type": "chemical_formula",
+      "subtopic_number": "2.1",
+      "subsubtopic_title": "Chemical Formulas and Reactions",
+      "formular_content": {
+        "chemical_formula": "C6H12O6",
+        "molecule": {
+          "type": "Glucose",
+          "elements": [
+            {
+              "element": "Carbon",
+              "symbol": "C",
+              "atoms_count": 6,
+              "description": "6 atoms of carbon"
+            },
+            {
+              "element": "Hydrogen",
+              "symbol": "H",
+              "atoms_count": 12,
+              "description": "12 atoms of hydrogen"
+            },
+            {
+              "element": "Oxygen",
+              "symbol": "O",
+              "atoms_count": 6,
+              "description": "6 atoms of oxygen"
+            }
+          ],
+          "overview": "The chemical formula C6H12O6 indicates the type and quantity of atoms in a molecule of glucose. It shows that the molecule consists of 6 carbon atoms, 12 hydrogen atoms, and 6 oxygen atoms."
+        }
+      }
+    },
+    {
+      "chapter_number": "2",
+      "formular_number": "2.2",
+      "type": "chemical_reaction",
+      "subtopic_number": "2.1",
+      "subsubtopic_title": "Chemical Formulas and Reactions",
+      "reaction_content": {
+        "reaction_equation": "6CO2 + 6H2O -> C6H12O6 + 6O2",
+        "reaction_name": "Formation of glucose (photosynthesis)",
+        "reactants": [
+          {
+            "chemical_formula": "6CO2",
+            "name": "Carbon dioxide",
+            "elements": [
+              {
+                "element": "Carbon",
+                "symbol": "C",
+                "atoms_count": 6
+              },
+              {
+                "element": "Oxygen",
+                "symbol": "O",
+                "atoms_count": 12
+              }
+            ]
+          },
+          {
+            "chemical_formula": "6H2O",
+            "name": "Water",
+            "elements": [
+              {
+                "element": "Hydrogen",
+                "symbol": "H",
+                "atoms_count": 12
+              },
+              {
+                "element": "Oxygen",
+                "symbol": "O",
+                "atoms_count": 6
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "chemical_formula": "C6H12O6",
+            "name": "Glucose",
+            "elements": [
+              {
+                "element": "Carbon",
+                "symbol": "C",
+                "atoms_count": 6
+              },
+              {
+                "element": "Hydrogen",
+                "symbol": "H",
+                "atoms_count": 12
+              },
+              {
+                "element": "Oxygen",
+                "symbol": "O",
+                "atoms_count": 6
+              }
+            ]
+          },
+          {
+            "chemical_formula": "6O2",
+            "name": "Oxygen",
+            "elements": [
+              {
+                "element": "Oxygen",
+                "symbol": "O",
+                "atoms_count": 12
+              }
+            ]
+          }
+        ],
+        "overview": "This reaction shows how six molecules of carbon dioxide and six molecules of water react to form one molecule of glucose and six molecules of oxygen. It represents the process by which glucose is formed in photosynthesis."
+      }
+    },
+    {
+      "chapter_number": "2",
+      "formular_number": "2.3",
+      "type": "chemical_reaction",
+      "subtopic_number": "2.2",
+      "subsubtopic_title": "Properties of Water",
+      "reaction_content": {
+        "reaction_equation": "NaCl (s) -> Na+ (aq) + Cl- (aq)",
+        "reaction_name": "Dissociation of sodium chloride in water",
+        "description": "The salt sodium chloride dissociates in water into sodium ions and chloride ions.",
+        "reactants": [
+          {
+            "chemical_formula": "NaCl",
+            "name": "Sodium chloride",
+            "state": "solid",
+            "components": [
+              {
+                "ion": "Na+",
+                "charge": "+1",
+                "role": "sodium cation"
+              },
+              {
+                "ion": "Cl-",
+                "charge": "-1",
+                "role": "chloride anion"
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "ion": "Na+",
+            "charge": "+1",
+            "state": "aqueous",
+            "description": "Sodium ions surrounded by water molecules"
+          },
+          {
+            "ion": "Cl-",
+            "charge": "-1",
+            "state": "aqueous",
+            "description": "Chloride ions surrounded by water molecules"
+          }
+        ],
+        "water_interaction": {
+          "molecule": "H2O",
+          "description": "Water molecules orient themselves around the ions. The oxygen end of water, which is slightly negative, is attracted to Na+ ions, while the hydrogen ends, which are slightly positive, are attracted to Cl- ions."
+        },
+        "overview": "When sodium chloride is placed in water, the attraction between Na+ and Cl- ions is overcome by the attraction between the ions and water molecules. This causes the ionic compound to dissociate into separate ions in solution."
+      }
+    },
+    {
+      "chapter_number": "2",
+      "formular_number": "2.4",
+      "type": "chemical_reaction",
+      "subtopic_number": "2.3",
+      "subsubtopic_title": "Introduction",
+      "reaction_content": {
+        "reaction_equation": "H2O -> H+ + OH-",
+        "reaction_name": "Ionization of water",
+        "reactants": [
+          {
+            "chemical_formula": "H2O",
+            "name": "Water",
+            "description": "A molecule consisting of two hydrogen atoms bonded to one oxygen atom"
+          }
+        ],
+        "products": [
+          {
+            "ion": "H+",
+            "name": "Hydrogen ion",
+            "charge": "+1",
+            "description": "A positively charged hydrogen ion released from water"
+          },
+          {
+            "ion": "OH-",
+            "name": "Hydroxide ion",
+            "charge": "-1",
+            "description": "A negatively charged ion composed of oxygen and hydrogen"
+          }
+        ],
+        "overview": "This reaction shows that water can dissociate into hydrogen ions and hydroxide ions."
+      }
+    },
+    {
+      "chapter_number": "2",
+      "formular_number": "2.5",
+      "type": "chemical_reaction",
+      "subtopic_number": "2.3",
+      "subsubtopic_title": "Acidic Solutions (High H+ Concentration)",
+      "reaction_content": {
+        "reaction_equation": "HCl -> H+ + Cl-",
+        "reaction_name": "Dissociation of hydrochloric acid",
+        "reactants": [
+          {
+            "chemical_formula": "HCl",
+            "name": "Hydrochloric acid",
+            "description": "A strong acid composed of hydrogen and chlorine"
+          }
+        ],
+        "products": [
+          {
+            "ion": "H+",
+            "name": "Hydrogen ion",
+            "charge": "+1",
+            "description": "A positively charged hydrogen ion released into solution"
+          },
+          {
+            "ion": "Cl-",
+            "name": "Chloride ion",
+            "charge": "-1",
+            "description": "A negatively charged chloride ion"
+          }
+        ],
+        "overview": "This reaction shows how hydrochloric acid dissociates in water to produce hydrogen ions and chloride ions."
+      }
+    },
+    {
+      "chapter_number": "2",
+      "formular_number": "2.6",
+      "type": "chemical_reaction",
+      "subtopic_number": "2.3",
+      "subsubtopic_title": "Basic Solutions (Low H+ Concentration)",
+      "reaction_content": {
+        "reaction_equation": "NaOH -> Na+ + OH-",
+        "reaction_name": "Dissociation of sodium hydroxide",
+        "reactants": [
+          {
+            "chemical_formula": "NaOH",
+            "name": "Sodium hydroxide",
+            "description": "A strong base composed of sodium, oxygen, and hydrogen"
+          }
+        ],
+        "products": [
+          {
+            "ion": "Na+",
+            "name": "Sodium ion",
+            "charge": "+1",
+            "description": "A positively charged sodium ion released into solution"
+          },
+          {
+            "ion": "OH-",
+            "name": "Hydroxide ion",
+            "charge": "-1",
+            "description": "A negatively charged hydroxide ion released into solution"
+          }
+        ],
+        "overview": "This reaction shows how sodium hydroxide dissociates in water to produce sodium ions and hydroxide ions."
+      }
+    }
+  ],
+  "chapter_summary": "All life is composed of a similar set of elements. Living organisms perform  chemical reactions to break down and build molecules to fit their specific needs.  Knowledge of basic chemistry provides a foundation for understanding biology.\n2.1Subatomic particles determine how elements bond to form molecules and  compounds. \n2.2 Waterʼs essential role for life is based on its ability to form hydrogen bonds. \n2.3 Homeostasis is dependent on living organismsʼ ability to maintain specii c  pH levels.",
+  "chapter_exercises": {
+    "chapter_review_questions": [
+      {
+        "question_number": 1,
+        "subtopic": "Atoms and Atomic Bonds",
+        "question_type": "multiple_choice",
+        "question": "The mass number of an atom depends primarily on the number of",
+        "answer_options": {
+          "a": "protons and neutrons",
+          "b": "positrons",
+          "c": "neutrons and electrons",
+          "d": "protons and electrons"
+        },
+        "answer": "a"
+      },
+      {
+        "question_number": 2,
+        "subtopic": "Atoms and Atomic Bonds",
+        "question_type": "multiple_choice",
+        "question": "The most abundant element by weight in the human body is",
+        "answer_options": {
+          "a": "carbon",
+          "b": "hydrogen",
+          "c": "oxygen",
+          "d": "nitrogen"
+        },
+        "answer": "c"
+      },
+      {
+        "question_number": 3,
+        "subtopic": "Atoms and Atomic Bonds",
+        "question_type": "multiple_choice",
+        "question": "In the following equation, name the reactants: NaCl → Na + Cl.",
+        "answer_options": {
+          "a": "Na",
+          "b": "Cl",
+          "c": "NaCl",
+          "d": "Both a and b are correct"
+        },
+        "answer": "d"
+      },
+      {
+        "question_number": 4,
+        "subtopic": "Atoms and Atomic Bonds",
+        "question_type": "multiple_choice",
+        "question": "A covalent bond in which electrons are not shared equally is called",
+        "answer_options": {
+          "a": "polar",
+          "b": "normal",
+          "c": "nonpolar",
+          "d": "neutral"
+        },
+        "answer": "a"
+      },
+      {
+        "question_number": 5,
+        "subtopic": "Atoms and Atomic Bonds",
+        "question_type": "multiple_choice",
+        "question": "Refer to Figure 2.3. Which element has the same number of valence electrons as nitrogen (N)?",
+        "answer_options": {
+          "a": "carbon (C)",
+          "b": "phosphorus (P)",
+          "c": "neon (Ne)",
+          "d": "oxygen (O)"
+        },
+        "answer": "b"
+      },
+      {
+        "question_number": 6,
+        "subtopic": "Water’s Importance to Life",
+        "question_type": "multiple_choice",
+        "question": "Water flows freely but does not separate into individual molecules because water is",
+        "answer_options": {
+          "a": "cohesive",
+          "b": "hydrophilic",
+          "c": "hydrophobic",
+          "d": "adhesive"
+        },
+        "answer": "a"
+      },
+      {
+        "question_number": 7,
+        "subtopic": "Water’s Importance to Life",
+        "question_type": "multiple_choice",
+        "question": "Compounds having an affinity for water are said to be",
+        "answer_options": {
+          "a": "cohesive",
+          "b": "hydrophilic",
+          "c": "hydrophobic",
+          "d": "adhesive"
+        },
+        "answer": "b"
+      },
+      {
+        "question_number": 8,
+        "subtopic": "Water’s Importance to Life",
+        "question_type": "multiple_choice",
+        "question": "Water freezes from the top down because",
+        "answer_options": {
+          "a": "water has a high surface tension",
+          "b": "ice has a high heat capacity",
+          "c": "ice is less dense than water",
+          "d": "ice is less cohesive than water"
+        },
+        "answer": "c"
+      },
+      {
+        "question_number": 9,
+        "subtopic": "Water’s Importance to Life",
+        "question_type": "multiple_choice",
+        "question": "Water can absorb a large amount of heat without much change in temperature because it has a high",
+        "answer_options": {
+          "a": "surface tension",
+          "b": "heat capacity",
+          "c": "hydrogen ion (H+) concentration",
+          "d": "hydroxide ion (OH-) concentration"
+        },
+        "answer": "b"
+      },
+      {
+        "question_number": 10,
+        "subtopic": "Acids and Bases",
+        "question_type": "multiple_choice",
+        "question": "A pH of 3 is",
+        "answer_options": {
+          "a": "basic",
+          "b": "neutral",
+          "c": "acidic",
+          "d": "a buffer"
+        },
+        "answer": "c"
+      },
+      {
+        "question_number": 11,
+        "subtopic": "Acids and Bases",
+        "question_type": "multiple_choice",
+        "question": "________ contribute hydrogen ions (H+) to a solution",
+        "answer_options": {
+          "a": "Bases",
+          "b": "Isotopes",
+          "c": "Acids",
+          "d": "Compounds"
+        },
+        "answer": "c"
+      },
+      {
+        "question_number": 12,
+        "subtopic": "Acids and Bases",
+        "question_type": "multiple_choice",
+        "question": "To maintain a constant pH, many organisms use ________ to regulate the hydrogen ion concentration",
+        "answer_options": {
+          "a": "buffers",
+          "b": "bases",
+          "c": "acids",
+          "d": "isotopes"
+        },
+        "answer": "a"
+      }
+    ],
+    "critical_thinking_questions": [
+      {
+        "question_number": 1,
+        "question": "On a hot summer day, you decide to dive into a swimming pool. Before you begin your dive, you notice that the surface of the water is smooth and continuous. After the dive, you discover that some water droplets are clinging to your skin and that your skin temperature feels cooler. Explain these observations based on the properties of water."
+      },
+      {
+        "question_number": 2,
+        "question": "Like carbon, silicon has four electrons in its outer shell, yet life evolved to be carbon-based. What is there about silicon’s structure that might prevent it from sharing with four other elements and prevent it from forming the many varied shapes of carbon-containing molecules?"
+      },
+      {
+        "question_number": 3,
+        "question": "Antacids are a common over-the-counter remedy for heartburn, a condition caused by an overabundance of hydrogen ions (H+) in the stomach. Based on what you know regarding pH, how do the chemicals in antacids work?"
+      },
+      {
+        "question_number": 4,
+        "question": "Acid precipitation is produced when atmospheric water is polluted by sulfur dioxide and nitrous oxide emissions. These emissions are mostly produced by the burning of fossil fuels, particularly coal. In the atmosphere, these compounds are converted to sulfuric and nitric acids and are absorbed into water droplets. Eventually they fall back to Earth as acid precipitation. How do you think acid precipitation can negatively influence an ecosystem?"
+      }
+    ]
+  },
   "metadata": [
     {
       "subtopic_number": "2.1",
