@@ -1,0 +1,109 @@
+{
+    "subject": {
+      "type": "string",
+      "description": "The name of the subject being taught."
+    },
+    "class": {
+      "type": "string",
+      "description": "The name of the class or course."
+    },
+    "term": {
+      "type": "string|int",
+      "description": "The term number (could be a string or integer, depending on the context)."
+    },
+    "weeks": {
+      "type": "array",
+      "description": "A list of weeks in the course, each with details about topics, subtopics, and assignments.",
+      "items": {
+        "week_number": {
+          "type": "int",
+          "description": "The number of the week (e.g., Week 1, Week 2, etc.)."
+        },
+        "week_topic": {
+          "type": "string",
+          "description": "The main topic covered during the week."
+        },
+        "week_subtopics": {
+          "type": "array",
+          "description": "A list of subtopics related to the week's topic.",
+          "items": {
+            "type": "string",
+            "description": "A subtopic under the week's main topic."
+          }
+        },
+        "introduction": {
+          "type": "string",
+          "description": "An introductory paragraph or overview for the week, explaining what students will learn."
+        },
+        "subtopics": {
+          "type": "array",
+          "description": "A list of subtopics within the week, each with detailed content and resources.",
+          "items": {
+            "subtopic": {
+              "type": "string",
+              "description": "The title or name of the subtopic."
+            },
+            "content": {
+              "type": "string",
+              "description": "The detailed content or explanation for the subtopic."
+            },
+            "introduction": {
+              "type": "string",
+              "description": "An introductory paragraph or overview for the subtopic."
+            },
+            "figures": {
+              "type": "array",
+              "description": "A list of paths or URLs to images related to the subtopic.",
+              "items": {
+                "type": "string",
+                "description": "The file path or URL of an image associated with the subtopic."
+              }
+            },
+            "tables": {
+              "type": "array",
+              "description": "A list of paths or URLs to tables related to the subtopic.",
+              "items": {
+                "type": "string",
+                "description": "The file path or URL of a table related to the subtopic."
+              }
+            },
+            "formular": {
+              "type": "array",
+              "description": "A list of formulas related to the subtopic.",
+              "items": {
+                "type": "string",
+                "description": "The formula or equation related to the subtopic."
+              }
+            }
+          }
+        },
+        "assignments": {
+          "type": "array",
+          "description": "A list of assignments for the week, each with questions and the type of question.",
+          "items": {
+            "question": {
+              "type": "string",
+              "description": "The question or task to be completed in the assignment."
+            },
+            "question_type": {
+              "type": "string",
+              "description": "The type of question (either 'objective' or 'theory')."
+            },
+            "options": {
+              "type": "array",
+              "description": "A list of options for objective questions.",
+              "items": {
+                "type": "string",
+                "description": "An option for an objective question."
+              },
+              "conditional": {
+                "type": "boolean",
+                "description": "This field is required only if the question type is 'objective'."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
