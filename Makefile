@@ -1,0 +1,22 @@
+.PHONY: up down db-migrate dynamodb-setup pipeline help
+
+help: ## Show available commands
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+up: ## Start Docker services (PostgreSQL + DynamoDB Local)
+	docker compose up -d
+
+down: ## Stop Docker services
+	docker compose down
+
+db-migrate: ## Run Alembic migrations
+	alembic upgrade head
+
+dynamodb-setup: ## Create DynamoDB tables
+	python scripts/create_dynamodb_tables.py
+
+pipeline: ## Run the full content pipeline
+	python scripts/run_pipeline.py
+
+pipeline-resume: ## Resume pipeline from a step (usage: make pipeline-resume STEP=curate)
+	python scripts/run_pipeline.py --resume-from $(STEP)

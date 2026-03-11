@@ -1,0 +1,1857 @@
+{
+  "source_document": {
+    "title": "OLD NERDC Curriculum SSCE Biology (SS1-SS3)",
+    "file_path": "data/docs/extracted_source_content/biology/OLD NERDC CURRICULUM SSCE BIOLOGY .pdf",
+    "extracted_on_utc": "2026-02-28T16:12:01.705007Z",
+    "extraction_method": "PyMuPDF word-level column extraction from scanned PDF. Some OCR noise may remain.",
+    "note": "Curriculum has 4 Themes across SS1-SS3. Theme 1: Organisation of Life; Theme 2: The Organism at Work; Theme 3: The Organism and Its Environment; Theme 4: Continuity of Life.",
+    "text_book_title": "Concepts of Biology",
+    "text_book_author": "OpenStax",
+    "text_book_edition": "2nd Edition",
+    "text_book_publisher": "OpenStax",
+    "text_book_publication_year": "2024",
+    "text_book_isbn": "978-1-947172-31-3",
+    "text_book_url": "https://openstax.org/books/concepts-biology/pages/1-introduction"
+  },
+  "curriculum": [
+    {
+      "class": "SSS 1",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 1,
+      "topic": "Recognizing Living Things",
+      "pdf_pages": [
+        12
+      ],
+      "performance_objectives": [
+        "State the characteristics of living things",
+        "Give examples of levels of organization of life",
+        "State complexity of organization in higher organisms"
+      ],
+      "content": [
+        "Characteristics of living things",
+        "Differences between plants and animals",
+        "Levels of organization of life: (a) Cell (Euglena, paramecium), Tissue (hydra), Organ (Onion bulb, the heart of a cow), System (e.g. digestive system, excretory system)",
+        "Complexity of organization in higher organisms: advantages and disadvantages"
+      ],
+      "teachers_activities": [
+        "Teacher provides a live cockroach and a potted plant. Teacher asks students to observe and record.",
+        "Teacher prepares or brings prepared microscope slides of Euglena or Paramecium, Hydra; mounts them on the microscope.",
+        "Teacher provides onion bulbs, cow's heart and the digestive system of a goat or some animals.",
+        "microscope slides of the Euglena or Paramecium, them Hydra Mounts the microscope",
+        "p~ovides onion bulbs, cow's heart the their digestive system of a"
+      ],
+      "student_activities": [
+"Students collect as many living things as possible from the school premises and record them.",
+"Students view the slides under the microscope and record their observations.",
+"Students observe the specimens, record their observations and make inferences."
+      ],
+      "evaluation_guide": [
+        "of three plants in organisms"
+      ],
+      "teaching_learning_materials": ["Plant and animal in the environment", 
+      "Slides of unicellular organisms, Onion bulbs, cow's heart and the alimentary canal of a goat or some animals",
+      "Charts of the above organisms",
+      "Model of heart and digestive system of some animals"
+    ],
+    "textbook_chapters": [1],
+    "textbook_openstax_links": ["https://openstax.org/books/biology-2e/pages/1-1-recognizing-living-things"]
+    
+    },
+    {
+      "class": "SSS 1",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 2,
+      "topic": "Classification of Living Things",
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "performance_objectives": [
+        "State the characteristic features of the kingdoms and give specific examples of representative organisms."
+      ],
+      "content": [
+        "Kingdom Monera (Prokaryote): single-celled, motile or non-motile organisms. No definite nucleus. Bacteria and blue-green algae make up this kingdom.",
+        "Kingdom Protista (Eukaryote): single-celled, motile or non-motile organisms. Complex cell structure with definite nucleus e.g. Chlamydomonas and Amoeba.",
+        "Kingdom Fungi (Eukaryote): mainly non-motile organisms, composed of hyphae containing nuclei e.g. moulds, mushrooms and Rhizopus.",
+        "Kingdom Plantae (Eukaryote): many-celled, non-motile organisms which contain chlorophyll that enable them to photosynthesize. Members include mosses, ferns, pines, all palms and yam plants.",
+        "Kingdom Animalia (Eukaryote): many-celled, motile organisms that feed on other organisms. Members include corals, worms, insects, snails, fishes, frogs, snakes, monkeys and cows."
+      ],
+      "teachers_activities": [
+        "Teacher grows cultures of bacteria and blue-green algae.",
+        "Teacher prepares slides of Chlamydomonas or Amoeba",
+        "Teacher guides students to collect ditch water and view samples under the microscope.",
+        "Teacher guides students to uproot the fern plant, collect plstia (water lemna, lettuce) breaks some branches of shrubs brings them Into the laboratory for students' observation"
+      ],
+      "student_activities": [
+        "Students observe the cultures of bacteria and blue-green algae, record their observations and make inferences.",
+        "Students view the slides of Chlamydomonas or Amoeba under the microscope, record their observations and make inferences.",
+        "Students observe the ditch water and view samples under the microscope, record their observations and make inferences.",
+        "Students observe and draw the fern plant, and make inferences.",
+        "Students observe all specimens, record their observations and make inferences."
+      ],
+      "evaluation_guide": [
+        "State how to grow Rhizopus",
+        "Describe single celled organisms",
+        "Describe Rhizopus and mushrooms",
+        "DeSCribe structures habitats adaptive features of moss, fern, lemna, pistia and flowering plants",
+        "Describe structures habitats adaptive features of earthworm, cockroach, snail, toad, etc"
+      ],
+        "teaching_learning_materials": ["Cultures of bacteria and blue-green algae", 
+        "Microscope slides cover slips and ditch water. Prepared slides of Chlamydomonas or Amoeba etc", 
+        "Mushrooms or moulds",
+        "Moss plant, lemna, pistia, flowering plants",
+        "Charts/drawings of all the organisms fisted above",
+        "Snails, toads, cockroaches, grasshoppers, earthworms, etc",
+        "Pictures, drawings charts of all the organisms"
+      ],
+      "textbook_chapters":  [1, 12, 13, 14, 15]
+    },
+    {
+      "class": "SSS 1",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 3,
+      "topic": "The Cell",
+      "pdf_pages": [
+        15
+      ],
+      "performance_objectives": [
+        "Recognise single celled organisms",
+        "Distinguish between free-living cells colonies, filaments tissues",
+        "Describe the general structure of a cell",
+        "Differentiate between a plant an animal cell"
+      ],
+      "content": [
+        "Cell as a living unit of an organism",
+        "Forms in which living cells exist: i. independent Organism, ii. a colony as iii. as a filament",
+        "Cell structure i. the cell theory ii. cell structure functions of cell components iii. differences similarities between plant animal ~ Is"
+      ],
+      "teachers_activities": [
+        "Teacher provides prepared slides of Paramecium or Euglena, Volvox or Spirogyra.",
+        "Teacher guides students to collect Spirogyra from pond ditch, feel, observe and record their observations",
+        "Teacher mounts slides of plant animal cells for students' observation and presents charts ,showing similarities differences in plant animal cells",
+        "Teacher presents chart showing the similarities and differences between plant and animal cells"
+      ],
+      "student_activities": [
+        "Students observe the slides under the microscope and record their observations",
+        "Students observe the Spirogyra, note its nature",
+        "Students observe slides charts of plant animal cells draw note their differences similarities"
+      ],
+      "evaluation_guide": [
+        "State why the cell is a living unit",
+        "Identify the various forms in which cells exist",
+        "Describe the structure of the cell",
+        "Differentiate /distinguish a plant cell from an animal cell."
+      ],
+      "teaching_learning_materials": ["Microscope", "Slides",  
+      "Prepared slides of Paramecium or Euglena, Volvox or Spirogyra", 
+      "Charts showing different fonns in which cells exist", 
+      "A generalized diagram of a cell", 
+      "Diagrams of plant animal cells"],
+      "textbook_chapters": [3, 4]
+    },
+    {
+      "class": "SSS 1",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 4,
+      "topic": "The Cell and Its Environment",
+      "pdf_pages": [
+        16
+      ],
+      "performance_objectives": [
+        "Demonstrate diffusion and osmosis experimentally",
+        "Recognise that osmosis is a form of diffusion through a selectively permeable membrane",
+        "Recognise that plasmolysis can lead to wilting and haemolysis can lead to loss of blood"
+      ],
+      "content": [
+        "Diffusion: i. definition of diffusion ii. Process of diffusion iii. Significance of diffusion",
+        "Osmosis: i. definition of osmosis ii. diffusion of water through a selectively permeable membrane iii. haemolysis iv. plasmolysis v Osmometer of living matetial vi. Biological significance of haemolysis and plasmolysis"
+      ],
+      "teachers_activities": [
+        "provides cheap requests a spray it one end of the classroom",
+        "The teacher places a crystal of potassium permanganates  in a beaker of water and leave it to stand and ask the student to observe what has happened.",
+        "The teacher demonstrates Osmosis in a i. non-living system ii. living system",
+        "The teacher demonstrates experiments to show effects of solutions of different concentration on red blood cells; effect of water and sugar solution on Onion cells"
+      ],
+      "student_activities": [
+        "sprays the perfume as directed by the teacher",
+        "Students describe what happened",
+        "Students repeat the experiments, observe, record and discuss their observations"
+      ],
+      "evaluation_guide": [
+        "State definitions of processes.",
+        "Carry out experiments to demonstrate processes"
+      ],
+      "teaching_learning_materials": ["Perfume", "Potassium permanganate", "Beakers", "Water", "Pig's bladder", "Thistle funnel", "Sugar", "Peeled yam stopper", "clamp"],
+      "textbook_chapters": [3]
+    },
+    {
+      "class": "SSS 1",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 5,
+      "topic": "Some Properties and Functions of the Cell",
+      "pdf_pages": [
+        17,
+        18
+      ],
+      "performance_objectives": [
+        "Recognise that some nutrients (micronutiierits) are needed in small quantities while some othets (macronutrients) are needed in large quantities",
+        "Show experimentally that the breakdown of carbohydrates may be partial (fermentation) or complete",
+        "Recognise that cells require proteins, fats and carbohydrates for the production of new protoplasm, for repair, growth, and the provision of energy",
+        "Discuss the role of enzymes in digestion",
+        "Infer that excretion is the removal of metabolic waste products from the cell which may be toxic or are in excess of the needs of the cell. Removal od waste products is by diffusion through the body contractile vacuole.",
+        "Identify growth as (i) in dry weight (ii) irreversible increase in size and length (iii) Increasein number of cells", 
+        "Carry out experiments i. from which growth curves could be constructed (ii) determine the regions of growth e.g. in the root. ",
+         "Demonstrate by experiments factors that affect growth. ", 
+         "Explain the ability of cell to detect and respond to external stimuli.",
+         "Identify structural adaptation for mobility e.g. cilia and flagella.",
+         "Recognise reproduction is the ability of living things to produce new individuals of their kind."
+      ],
+      "content": [
+        "Feeding definition and types i. micrnutrients ii. macronutrients",
+        "Cellular respiration. i. Definition of cellular respiration ii. aerobic respiration (catabolism); Krebs cycle iii. anaerobic respiration iv. energy release during respiration",
+        "Anabolism - usefulness of food",
+        "Autotrophy i. photosynthesis ii. chemosynthesis",
+        "Heterotrophy",
+        "Role of enzymes",
+        "Excretion",
+        "Excretory organelles in living cells i. Waste products of metabolic activities in living cells ii. Forms in which waste products are excreted",
+        "Growth: i. basis of growth cell division (Mitosis) enlargement and differentiation ii. regulation of growth by hormones",
+        "Cell reactions to its environment i. Irritability as basic characteristics of protoplasm ii. Types of responses",
+        "Movement: (i) Cyclosis (ii) Organelles for movement (iii) Growth movement as regulated by auxins",
+        "Reproduction: Forms of reproduction a. Asexual i. Fission ii. Budding iii. Vegetative propagation b. Sexual i. Conjugation ii. Fusion of male and female gametes meiosis, structure functions of the male female gonads"
+      ],
+      "teachers_activities": [
+        "Teacher sets up experiments to show the effect of different nutirent on spirogyra", 
+        "The effect of high concentration of fertilizer on plants", 
+        "Teacher set up experiment to show respiration in yeast(anaerobic)",
+        "Teacher set up experiment to show respiration in rat(aerobic)",
+        "Teacher draws the Krebs cycle",
+        "Teacher set up experiment to show growth as a. increase in height b. increase in length",
+        "Teacher help student to prepare and mount slide of root tip to observe cell division",
+        "Teacher guide student to demonstrate action of ptyalin on cooked starch",
+        "Teacher set up experiment to demostrate the release of oxygen during photosynthesis",
+        "Teacher perform experiment to show a. that carbondioxide is used by green plant in sunlight b. that starch is formed during photosynthesis",
+        "Teacher performs experiment to show ffactors that affect plant and animal growht such as availability of nutrients, water, humidity, temperature, light, and hormones",
+        "Teacher perforrms experiment to show a. phototrophic response of shoots b. geotrophic response of roots c geotropic response of shoots d. phototactic response in earthworms",
+        "Teache makes a. cultures of paramecium and Euglena and mount them under the microscope. b Teacher provides prepared slides of Paramecium. and Euglena",
+        "Teacher provides yeast, warm water and plastic bowls",
+        "Teacher provides prepared slides of conjugation in Paramecium.",
+        "Teacher provides prepared slides of cl oonjugation In Splrogyra longitudinal section of the pistil of a flower.",
+        "Teacher gets student to collect flamboyant flower."
+       ],
+      "student_activities": [
+        "Student observe, record and discuss experiments",
+        "Students draw the Krebs cycle along with the teacher",
+        "Student produce saliva from their mouths and observe the experiment",
+        "Students observe the experiments and identify gas produced using a glowing splint",
+        "Students observe the experiments to demonstrate cell division",
+        "Students observe the experiments to demonstrate action of ptyalin on cooked starch",
+        "student to plant maize grain and cowpea seed and watch them germinate and grow taking note of the length of the stem and number of leaves prodiced and recorded daily",
+        "Students observe the experiments to demonstrate the release of oxygen during photosynthesis",
+        "Student observe the movement of Paramecium and Euglena. student observe cilia and flagella using prepared slides",
+        "Students make temporary mount of yeast cells, Identify draw yeast cells that show budding",
+        "Students examine mounted Paramecium, Identify draw conjugating Paramecia",
+        "Student observe, record and discuss with the taéacher taking notr of ovule which contains the ovum",
+        "Students examine the flower, taking note of all the parts especially the stamen and pistil"
+      ],
+      "evaluation_guide": [
+        "State different stages of the Krebs cycle",
+        "Distinguish between aerobic and anaerobic respiration",
+        "Discuss the uses of food to organisms",
+        "Differentiate between autotrophs and heterotrophs",
+        "State three basic necessary for photosynthesis",
+        "State and discuss the role of enzymes in digestion",
+        "Define excretion in relation to cells",
+        "Define growth in relation to cell division",
+        "Discuss the factors that affect growth",
+        "Discuss the ability of cell to respond to stimuli.",
+        "Define reproduction and state the forms of reproduction",
+        "Differentiate between mitosis and meiosis"
+      ],
+      "teaching_learning_materials": ["Spirogyra", "Fertilizer", "Yeast", "Rat", "Conical flask", "Boiling tube", "Plant Elodea", "Sodium hydroxide", "Rubber Bung", "Potted plants", "Vaseline", "Maize grains", "Cowpea seeds", "Empty milk tins or plastic containers", "Auxanometer to record shoot growth", "Clinostat", "Seedlings of cowpea or maize",  "Prepared slides of Paramecium and Euglena",  "Prepared slides of conjugation in Splrogyra", "Prepared slides of conjugation in Splrogyra longitudinal section of the pistil of a flower", "Flamboyant flower", "Razor blade"],
+      "textbook_chapters": [3]
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 6,
+      "topic": "Tissues and Supporting Systems",
+      "pdf_pages": [
+        20,
+        21
+      ],
+      "performance_objectives": [
+        " Recognise different skeletal supporting tissues. ",
+        "state the location and arrangement of different supporting tissues in animals",
+        "state the different supporting tissues(turgid, collenchyma, xylem, wood) in plants and the arrangement of these tissues.",
+        "state the functions of the skeleton supporting in animals and plants and how these functions are performed.",
+        "Construct a working model of a human arma and explain how it functions"
+      ],
+      "content": [
+        "Skeleton and supporting systems in animals \n i. Bilogical significance. \nii. Forms of skeleton e.g. chitin, cartilaginous bones, ",
+        "Types of skeleton: \n i. Exoskeleton \n ii. Endoskeleton \n iii. Hydrostatic skeleton",
+        "Vertebrate skeletons: \n i. Skull \n ii. Ribs and stenum \n iii limb girdles \n iv. limbs",
+        "Bones od the vertebral column.",
+        "Different type of supporting tissues in plants: - location and arrangment of structual components",
+        "Function of skeletons in animals. \n i. Protection of internal organs \n ii. Support of body \n iii. Movement \n iv. Storage of minerals",
+        " Functions of supporting tissues in plants. \n i. Support of plant body \n ii. Protection of plant body \n iii. Movement of plant body \n iv. Storage of nutrients"
+      ],
+      "teachers_activities": [
+        "provides crockroaches, grasshoppers, centipedes, earthworms, and cartilaginiou fih, indicidual bones of a mammal skeleton and infant mammalian skeleton",
+        "Provide tranvere section of tem and root of monocotyledonous and dicotyledonous plants",
+        "provides relevant materials for student to make working of a model human arm",
+        "provide small mammal and guide student to produce mammallian skeleton.",
+        "Provide different bones of the vertebral column and guide students to identify their features."
+      ],
+      "student_activities": [
+        "Observe all the specimen taking note of the different skeleton and stating the type of skeleton",
+        "Identify and list the main part of the mammallian skeleton",
+        "View transvers section of roots and stems under microscope and make drawing of the tissues , taking note of the shape of the cells and  various tissues and list between monocotyledonous and dicotyledonous plants",
+        "Student to list difference between monocotyledonous and dicotyledonous plants",
+        "Student to observe the protective functions of the shell of snail, skull of toad.",
+        "Student to obserce the bones and attached muscles in the hind limb of a toad",
+        "Student are to extract using small mammal either by noiling or burying method",
+        "Student to not e the distinguishing fearures of rhe bones of the vertebral column"
+      ],
+      "evaluation_guide": [
+        "state three differences between monocotyledonous and dicotyledonous plants",
+        "State the relationship between skeleton and muscles during movement",
+        "Discuss what plants and animals would look like without exo- and endo skeletons",
+        "Use the boiling or burying method to produce a mammalian skeleton from a small mammal",
+        "Identify the characteristics of different bones of the vertebral column"
+      ],
+      "teaching_learning_materials": ["Arthropods", "earthworms", "cartilaginous fish", "bones of animals", "between mammalian skeleton", "plant Monocotyledonous and dicotyledonous plants", "e.g. movement guinea grass waterleaf", "snails plants toads.", "small mammal", "pot, Heating source e.g stove and cooker", "Methylated spirit bleach", " Different bone specimen from vertebra column"],
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/38-2-animal-primary-tissues"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 2,
+      "topic": "Nutrition in Animals",
+      "pdf_pages": [
+        22,
+        23
+      ],
+      "performance_objectives": [
+        "THE AT .. .. should be able . to: . Define what food stances are. • t typa....s of food 1 state what suostances a balanced die1t is. , I I usL .c,. types I of, •4'- : 1 i\".2t-=rotrophic nutrition mechanisms iri\" I organisms. Ust types of rn.;;-:irr.alian teeth. Describe the structurk of \"•f:-rnmallan tooth. S~te the dental formula a1foptations of dentition of nutrition. I 10~e digestion in , ·.~·~scribe Earthworm, :~roach, grasshopper THE 2• • 08lEC1lVES (ii) Feeding organisms: - Filter Deposit - - Fluld",
+        "(a) The (I) Incisors. (II) (Iii) (iv) (b) (c) Dental (d) nutrition.",
+        "(a) what (b) (c) (d)"
+      ],
+      "content": [
+        "coN'lE'ir: • · : .: - • -",
+        "Food Substances.",
+        "garrl, I' (a) Types butter, .of fad J ' substances. ' 11..,U I... I prawn, i. .. (i) Carbohydrates. onion, cnl , \"- i=ats 11 • 1 'and 'oils. . 'I 1 -_ ) 1 12: ., ~, - - J Proteins. ' .,, .:,, ' (iii) j • ., (a) 1• (iv) Mineral salts. of I (b) (v) Vitamins. (vi) Water. :",
+        "(b) Balanced ~iet that produce (c) Heterotro~hic enzyme Nutrition: food. (i) \\Types of",
+        "heterotrophlc exposes nutrition. of ' - Holozolc nutrition. - Saprophytic",
+        "nutrition I Parasitic mJtrltlon. from I . f ram dogs. AT mechanisms in holozok: feeding feeding feeding t' Mammalian teeth: different types of teeth canines. Premolars. Molars. Structure of a tooth. fonnula. mode Adaptations of dentition to of Enzymes: are enzymes, enzymes characteristf~f classification enzymes importance of enzymes"
+      ],
+      "teachers_activities": [
+        ". provid~ yam, rice, meat, olive oil, ~ommon salt', fish, pepper, cowpea, crabs etcto the class. ' • I performs experiments to show emulsification fats or oils of Identification different food types.",
+        "performs experiment to show yeast cells a digestive that degrade Toe some pieces meat In the laboratory. 1 I • Teachericollects different types of teeth the At>attoir killed cats or",
+        "to dissect a cockroach a pigeon to .show the alimentary canals.",
+        "Toe performs experiment to test for the acidity of the enzyme ptyalin. '"
+      ],
+      "student_activities": [
+        "S\"udcnts L. cateaori' t rood iter;is und •-; four das.ses of",
+        "food. -~I 2.j observe the experiments",
+        "make inferences. from The grow Rhizopus on tests bread observe the of degradation . the bread daily. '",
+        "observe flies feed on them record their • observations.",
+        "of observe' the· - ' , ' different teeth, ' dkw' and'label. I I ••• ll",
+        "Pigeon observe, draw label.",
+        "observe the experiment, record Saliva, diSOJSS. Iodine"
+      ],
+      "evaluation_guide": [
+        "fVAU J TION r: ..!.: foorJ ; l,.; ·~ .. ccn·1:~ c, ols, protei:\\ ~~hyd;-ote. D6Jibe a that is me food ic substarx:es. Distinguish hc:terotrophic feeding. List the various heterotrophic List types of Draw label mammalian to of in the the of in food various of their in"
+      ],
+      "teaching_learning_materials": "; • ·, .. . 1. Cid it.t:rr· sho~11r19 t e fa• constituents of c, c:nd nec.--q.d·c .. .., Olive oil, bi! meZi bird ba!2nc_-=d yeast, fresh meat identify contains fo, performing Food e.g. 3. Fehling's solution Dct\\\"t'eefl Benedict's solution. holozoic Teeth of 4. herbivores carnivores. nutrition. Chart/diagram 5. the teeth. illustrating structure internal 6. a mammalian a tooth teeth. cockroach. state the importance the crop bird's alimentary canal. test tubes, Benedict's solution, starch, solution, State distilled water. functions ptyal!n digestion. List the types enzymes state importance digestion.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/34-1-digestive-systems"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 1,
+      "topic": "Basic Ecological Concepts",
+      "pdf_pages": [
+        24,
+        25,
+        26
+      ],
+      "performance_objectives": [
+        "should be able to: Name components of any ecosystem. Measure or estimate sizes of ecosystems. Relate the dynamic nature ?f ecosystem to its size. Mention major local (Nigerian) communities. Give names of organisms of each community. Briefly describe different types communities in (a) tropical (b) temperate regions. Name ecological factors to all habitats. Briefly describe each of the pointing out their relative importance. Mention the factors which water-retentivity of soil, determine the amount each soil type can hold. OBJECTI\\JES"
+      ],
+      "content": [
+        "Ecosystem- Components Sizes: (i) Ecological concepts - ' - biosphere - lithosphere - hydrosphere - atmosphere - habitats",
+        "- niche to - population to - biotic community of (biome) - ecosystem",
+        "(ii) Components of an ecosystem - abiotic, tt.>tic,",
+        "aquatic, terrestrial",
+        "Local biotic communities or blomes. (I) Tropical rainforest. (II) Southern guinea savanna. (Iii) Northern guinea savanna. (iv) Sahe! Savanna. (v) Desert .. . (vl) Swamp/estuarine regions.",
+        "Major biomes of the world: (i) Tropical forest Savanna (Iii) Desert (Iv) Shrub (v) · Afro-alpine . . (vi) Swa~p",
+        "Population studies by -sampling method: (i) population size (ii) dominance (Ill) density ( iv) factors that affect population.",
+        "Ecological factor: aquatic, terrestrial, factors common to all habitats. Importance of ecological _factors to populations of animals plants.",
+        "Relationship between soil types water holding effect of soil on vegetation.",
+        "Simple, measurement of ecological factors. (I) (a) physical factors: climatic, topographic gaseous (b) edaphlc factors: chemical physical composition, moisture con1ent thickness of.soil. CH> Measuring instruments."
+      ],
+      "teachers_activities": [
+        "Al,; I.I. V",
+        "takes on a fieldtrip to at least one of the biotic communities e.g. a forest reserve or a botanic garden.",
+        "makes available study charts, photographs, films of different biotic communities in Nigeria biomes of the world. Toe teadier guides the study what • happens to a deared piece of land also study the effects food shortage using mice. guides the to measure sizes of the ecosystem. displays tecological instruments. · . .",
+        "displays the eccilQQlcal ,Instruments before the make them to use them to measure ecologlcal factors.",
+        "takes to the field show them how to measure the population of a small area.",
+        "provides loamy (ii) sandy soil an~ clay so11, measuring cylinder, cotton wool, funnel water. •",
+        "show how to use various measuring Instruments to measure the physical factors of the ecosystems temperature, rainfall etc.",
+        "Show how to improvise some measuring instruments e.g. wind vane."
+      ],
+      "student_activities": [
+        ".1.1.1.ES .",
+        "study the community, record films. discuss.",
+        "study them discuss. Mice",
+        "to observe the rats, discuss make condusions. Loamy sandy clay",
+        "with the help of the cotton perform the funnel experiment to water. compare water holding capacity in the three samples of soil. •",
+        "to study one or more of these ecosystems: a rotten log, a puddle a pond, a stream river, bush.",
+        "study the Instruments write their uses.",
+        "use the provided to sell, measure the population of a small area.",
+        "make .histograms, bar charts ·and graph show different • species· In a , community. e.g.",
+        "measure some of the ecological factors which they have studied e.g. temperature. &"
+      ],
+      "evaluation_guide": [
+        "in the desert the soil link the",
+        "Describe the major blomes of the world : give the , characteristics of each blome.",
+        "List the various factors aff ectlng the population of an area.",
+        "• aid 1e of a , ,,:;togram, show the various animal/ plant species In a given area.",
+        "Ustsome measuring Instruments uses. • their"
+      ],
+      "teaching_learning_materials": ". Oiarts, to: photographs, 1. Define ecosystem, niche habitat 2. List discuss the major biotic communities Nigeria. food. 3. State differences between sahel savanna. soil, soil, soil, measuring 4. State cylinder, characteristics wool, of different types the characteristics to the water retaining capacity of soil. a Dry wet • thermometer, soil . thermometer, rain gauge, quadrat, fish trap, a pooter, Insect net, specimen, bottles etc. • 'to. r.!\" TEAOflNG ,AND \"/· MAffRIALS Different types of measuring ir'istnlments e.g. thennometer, rain gauge, meter-rule, measuring cylinder, wind- vane. --,.~ ..",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/44-1-ecology-of-ecosystems"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 2,
+      "topic": "Functioning Ecosystem: Autotrophy, Food Webs and Trophic Levels",
+      "pdf_pages": [
+        27,
+        28
+      ],
+      "performance_objectives": [
+        "should be",
+        "Define the terms heterotrophy. should be able",
+        "Recognise that food amc;mg living things.",
+        "Recognise that form of carbohydrates, nuqients are transferred consumers",
+        ":State that trophic of food chain.",
+        "Correc:t1y define (or an~ pyramid of",
+        "'Describe the nature flo~ in the ecosystem. THE P£RfORMANCE",
+        "State trat there ls a dimlnutloo of energy In",
+        "Rea)gnlse a definite of lndlviduals from one another, espedatty consumers."
+      ],
+      "content": [
+        "• - able to:",
+        "autotrophy (i) (ii) (iii) to:",
+        "exists relationship (a) chemical energy (in the fats, proteins) (i) among producers, (ii) decomposers. ' (b) level refers to the parts describe) food chains energy/number. ( c) of energy transfer or ANO ITS 0BJECT1VfS ' progressive 2, Energy the feeding chain. (I) change In n001ber relationship feeding level to aquatic between ~urers terrestrial eovlroMlents. (ii) (Ill) energy described chalns. '"
+      ],
+      "teachers_activities": [
+        "Autotrophy Show samples heterotrophy producers (autotrophs) consumers s to (heterotrophs) aquatic terrestrial examples of producers consumers. Trophic levels make Energy showing relationship: Concepts of among food chain food web. e.g. chain, Non-cycle web. nature of chemical energy transfer. Nutrient movement. . ' • How food/energy In ' Pyramid of energy/numbers. Nature of now as food by"
+      ],
+      "student_activities": [
+        "of organisms autotrophs dassify them produc:ers, ' heterotroph consumers decomposers. to develop a chart showing relationships relationship among organisms organisms chain, food food webs) food • construct explain of energy/number ACTIVlllES STUDBf'TS '"
+      ],
+      "evaluation_guide": [
+        "1-\\lUA TION . I GU!DE State the cfistinguishit'9 featiJ.re between an autotroph a heterob'oph.",
+        "to differentiate between a food web a food chain.",
+        "Using different organism~:, produce two examples each of food chain food web.",
+        "to define pyramid of energy number. QJtt)£ -4. Otsti~ ... between pyramid of energy pyramid o/ runbers. a",
+        "lJ5e feed chain to desaibeenert]I How In an eco- system."
+      ],
+      "teaching_learning_materials": "collect Plants animals. as Cardboard chart paper, marker. (food cardboard paper, marker. pyramid o~ 'l.ElRHlNG MAT!R.lA1.S",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 3,
+      "topic": "Energy Transformation in Nature",
+      "pdf_pages": [
+        29
+      ],
+      "performance_objectives": [
+        "Sl;udents should l.· Use tt,e knowledge e!ilergy loss~ iri ecosystem to e>$Plain pyramidal shape r~lationships: . .. 2~ :State that only percentage o.f the ~ergy actually plants. 3: State the first second laws of thermodynamics tl!iem to explain .eyents such as energy, food chain, ., flow."
+      ],
+      "content": [
+        "be able to:",
+        "Energy loss in the ecosystem: of (i) Solar ·radiation: the its intake loss the at the earth's of feeding surface (ii) Entr,gy loss in the biosphere a small (iii) measures of radiant primary production gets to e.g. the amount rate of energy fixation.",
+        "Laws of us thermodynamics: ecological pyramid of - First law. energy - Second la.w .. Application of both law to ecological phenomena."
+      ],
+      "teachers_activities": [
+        "ACTIVIDES",
+        "draws on the chalkboard the pyramidal shape oHeeding relationships:",
+        "uses- the law of thennodynamics to explain· energy f.low across the tropic levels. . . .. . . ."
+      ],
+      "student_activities": [
+        "S11JDENTS",
+        "discuss energy los.s as a .limiting factor in :primary,production .(i.e. production of ·autotropt.ly),",
+        "recall :iostances which are explained by laws of thermodynamics. •"
+      ],
+      "evaluation_guide": [
+        "to: • wh~ the me pyramid has the numbe:- of :J1e fiiSt second I3ws thermodynamics. I I"
+      ],
+      "teaching_learning_materials": "0,arts cardboards. 1. Seate tip of of energy least organisms. 2. State of",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 4,
+      "topic": "Relevance of Biology to Agriculture",
+      "pdf_pages": [
+        30
+      ],
+      "performance_objectives": [
+        "OB.JEb-1vts· _ should be able Classify plar:its u~ing _ botanical agrkultural techniques of classification. Describe. the effects of various agricultural on ecological systems. Identify pests of crops indicate control. Describe some common diseases caused pests their control. Identify factors that affect-production of crops Identify some methods of preserving storing foodstuff. List the factors that affects population growth (ii) affects the availability of man's food."
+      ],
+      "content": [
+        "Oassification of plants: • ·1. (i) Botanical classification shows (e.g. algae, • • spermatophytes) (ii) Agricultural of classification (e.g. fibres, · latex) them (iii) Classification based on cycles (e.g.",
+        "annuals, perennials) -. 'leaas",
+        "Effects of agricultural on ecological systems • clearing/burning (I) Bush (ii) tillage effects (iii) fertilization/herbicide their effects (iv) effects of different types of farming on .",
+        "ecological systems field Pests diseases of farm",
+        "agricul~ral importance (i) knowledge of pests (types, cycles, control) (ii) diseases (types,",
+        "control) farm of"
+      ],
+      "teachers_activities": [
+        "ACTIVmES 1--T_EA_C_H-ER-...-.:-~::....:....;;;..;;..STU~-D-EN_T_S Teacher_",
+        "of various them using various types techniques. plants classifies",
+        "effects of natural",
+        "• to of pests visltfarm plants projects to farm. observe various",
+        "of showing fertilizers pests herbicides ·cause. Takes",
+        "on trip tb a food can land'. • storage. cleared by",
+        "burning modes of Takes to a",
+        "livestock experiment to of limited identify pests population animals etc lQ"
+      ],
+      "student_activities": [
+        "__ 1 Students·collect specimens plants classify the three discuss the hu·man on ecosystems. note the effects diseases on animals in the make-a table local farm, livestock diseases the y set up- _ experimtlto-show how deteriorate in -, practice- different food preservation. carry out an to show the effect food on animals e.g. mice, lizards"
+      ],
+      "evaluation_guide": [
+        "to: Make a large showing different ways classifying_ Discuss the of bush burning on a of farm • List some pests their economic importance. Discuss 4 common ways preserving products. List the consequences shortage of (food on the population."
+      ],
+      "teaching_learning_materials": "1. Different types of plant. 1. 2. Charts chart showing different plant types. of plants. 3 .. Smail birds. 2. 4. Diseased plant effects types. piece 5. pre-mature land. fruits shed by diseased plants. 3. plant 6. different types discuss plant pests of e.g. cassava mosaic. 4. of farm 5. of food crisis)",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/1-introduction"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 5,
+      "topic": "Microorganisms Around Us",
+      "pdf_pages": [
+        31
+      ],
+      "performance_objectives": [
+        "THE Oll6AIIJSN PERPORMANa IOBJECIIVIS"
+      ],
+      "content": [
+        "ITS ENVJRONMENT",
+        "Food production storage: (I) Ways of improving aopyle!d. (U) Causes of wastage. (Ill) Methods of preserving storing food. S. Population growth food supply. Reproduction population growth.",
+        "Relatb1shf p between availability d food human populatfon. Effects of food storage. Government efforts",
+        "lnaease food production e.g. agrirultural revolution."
+      ],
+      "teachers_activities": [
+        "S.Demonstrate food different storage methods to e.g. process. drying",
+        "Collecta large number of Insects use them to demonstrate the effect of food shortage. to '"
+      ],
+      "student_activities": [],
+      "evaluation_guide": [
+        "EYALUAnON 1 '"
+      ],
+      "teaching_learning_materials": "MAIERJALS Fresh 1. ~tables. 2. Ory vegetables. 3. Freeh cassava. I s. ! Prflc essed garrL",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/22-1-prokaryotic-diversity"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 6,
+      "topic": "Microorganisms in Action",
+      "pdf_pages": [
+        32,
+        33,
+        34
+      ],
+      "performance_objectives": [
+        "THE should be able to:",
+        "Identify some micro- organisms present in air water.",
+        "State the characteristics ( colour, pattern of growth, appearance) of colonies of mlcroorganisms.",
+        "Identify microorganisms that can be found on inside human bodies e.g. under the fingernail, mouth cavity expired air. Describe the effects (beneficial harmful) of microorganisms on human body shoulU be uble",
+        "~ecognlse the variety size of fresh water habitat.",
+        "Recognise the variety, quantity distribution vanous organisms In Fresh water habitat. 3 . . Recognise seasonal in ~he size population the habitat",
+        "!Recognise ~e adaptation the animal plants in chqsen fresh water habitat.",
+        "!Estimate the proportion ml~eral salt present in the freshwater habitat",
+        "Infer the food chain in ch0sen freshwater habitat THE ., should be able to: Recognise types of marshes. Correlate the effect of or-any other source of evaporation to the changes in a marsh. Recognise the adaptations organisms in marshy habitat Appreciate the marsh as transitional between terrestrial habitat"
+      ],
+      "content": [
+        "ITS CQ'fENT",
+        "Micro-organis111S in air water: (I) group of micro- organisms: bacteria, viruses, some algae, protozoa some fungi {ii) concept of a.dturing 2 .. Identification of miaoorganisms in: (i) air (ii) pond water {iii) river (iv) stream",
+        "Micro-organisms in our bodies food: ways in which places through which",
+        "micro-organisms enter our bodies eameJ",
+        "of micro- organisms. Examples of carriers of microorganisms, location of microorganisms in carriers. Types of mlcroorganisms to:",
+        "Olaractcrl:;tic; of freshwater. habitat.",
+        "Types of freshwater: of (I) Stagnant ones. (Ii) Running water. changes of",
+        "Adaptive features of fresh water organisms. of the",
+        "ffresh·water organisms. of the l . ITS ENVI ONMENT k '",
+        "O,aracteristics",
+        "ofa marsh. where",
+        "Formation of marshes.",
+        "Types of marshes. marsh them",
+        "Plants risks animals that live in marshes.",
+        "Adaptive features of these plants animals. ' •."
+      ],
+      "teachers_activities": [
+        "ACTIVITlES",
+        "Divide the",
+        "into group working groups, provides each water group with finger sterilized Petri- dishes which",
+        "contain culture the .medium. days record",
+        "Coordinate the of the",
+        "have them diSOJSS their (i) experiments. teeth, Mount some dirt specimen from (ii) the different of Petri-dishes carrier under a microscope",
+        "ask pupils to observe. their",
+        "Put up a chart showing S. the effects of of mlcroorganisms. food, \"I I •",
+        "Take the to a specified site of study ( a fresh water habitat) e.g. pond guides them to carry out the list.ectA",
+        "Ensures that are not taken to infested fresh water e.g. with guinea worm . £ ACTIVrTIES Identify a marsh On site, to take for excursion. (1) pattern Guard against of entering a by letting site know the involved. (2) that ~ marsh biotic (3) from (4) chains (5) soil humidity estimate"
+      ],
+      "student_activities": [
+        "in each grow alltures of microorganisms from air, under the nails. They should leave c,iltures for three then observe, make inferences. Perfonns experiments: to show presence of mlcroorganism$ on the in expired air under the nails; to show occurrence microorganisms on a e.g. housefly. View the micro- organisms under the microscope to identify pattern of growth. Suggest the effects microorganisms on body, etc. & On a prepared site, pupils led by their are to: (1) Observe the pattern of distribution of the biotic components of the site their adaptive features (2) identify the biotic components (3) Collect samples from the site (4) construct food chains of the biotic • components (5) Take readings of temperature, relative humidity estimate light intensity (6) Estimate light penetration using sashay disc (7) Estimate movements of water speed of flow (8) Detennine pH, depth, size turbidity. • a pre-selected Observe the of distribution • : .. the biotic components • '. of the· • their adaptive features. Identify the terrestrial animals usually visit the other components. Collect samples the site. Construct food of the biotic components. Take readings of air temperature, relative light intensity."
+      ],
+      "evaluation_guide": [
+        "to: State where micro-organisms be found. State what happen to teeth if not properly brushed a long time. Describe the characteristics of microorganlsms. What are the of micro- organisms on human, animals, EVA!.UATI0tj 5tud~t.; t-0: l. State the char3Cteri.,-tics tT:!SllWcW?'.\" habit2t",
+        "s·r:ate some a~i::::aticn of c.r,1::1:ils plan;:s in fres.~wate; i,ab:~t . . EVALUATION· to: State types marshes. List the of five that the marsh. Give three of that in"
+      ],
+      "teaching_learning_materials": "1. Petri- dishes, aJlture medium 1. 2. Slides, slides can covers, microscepes, 2. could stains. the 3. Charts showing: for (i) some 3. microorganisms where they some are located in humans 4. (ii) Some effects carriers of microorganisms etc. ANO MATEPJALS 1. Sashay dis:: other ecological Instruments. .Of 2. Olarts showing characteris:ti~ of freshwater habitat, plants animals found in them. 3. Map of Nigeria showing different habitats. Ealloglcal . Implements e.g., shovels, 1. trowels, of containers for ·collecting 2. sampfes, names ; terrestrial charts showing animals marshy areas visit Map of Nigeria 3. outlining the examples marshy areas. plants thrive marshes.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/22-1-prokaryotic-diversity"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 7,
+      "topic": "Aquatic Habitat (Fresh Water and Marine)",
+      "pdf_pages": [
+        35,
+        36,
+        37
+      ],
+      "performance_objectives": [
+        "3: THE P~RFO~CE OIIJECTIVES Stucjents should be able to:",
+        "Describe the chai'ade1stk:s d rnar,ne habitats. pesa,be",
+        "the pattern of disttjbution of plants animals In rtianne habitat, noting the dominant ones.",
+        ".Rea>Qnlse some a~ptive features of the, plants animals in the haoltats.",
+        ";Infer the food chain of the organisms. S. ,Determine some of the physical • fa$)rs, e.g. temperature~ relative humidity, light, wind ar,apH. Tii E . . ~uld be able",
+        "Describe Ule charact-eristk:s of the estuarine habitat.",
+        "Describe the pattern distribution of plants animals in estuarine habitat, noting the dominant ones.",
+        "Reoognise some adaptive features of the plants animals in the habitat.",
+        "Infer the food chain of organisms.",
+        "Determine some of the physical factors, e.g. temperabJre, relative humidity, light, wind PERFORM~NCE : Student;s should be able",
+        "Recognise the·presence micro~ by the colonies furm. '",
+        "M~re the rate of of microbes.",
+        "Ustjthe beneficial effects miaobes from fM!f'/daY experiences.",
+        "Recpgnise that some organi~ms cause diseases.",
+        "Recognise that some disease causing microorganisrns are air~bome, water-borne are spriead through our"
+      ],
+      "content": [
+        "Olaracteristics of a marine habitat. specified",
+        "The major zones: (The near (i) Inter-tidal zone. [Littoral of the {ii) Littoral zone. tidal (iii) Oceanic ;p1e.",
+        "Distribution of the organisms in the habitat",
+        "Adaptive features of marine organisms e.g. bladder for floating, holdfast for attachment. • TTS ENVIRONMt1fT ' to:",
+        "0 1aractt'ft~tic of cslu.'lrinc habltal Empro-",
+        "Types or estuary. rt.igufation of c1nlmal.",
+        "Distribution of the plants animals In estuarine habitat. '",
+        "Adaptive features of plants animals In the estuarine habitats. pH. ' cqrm:NT to:",
+        "Growth of",
+        "micro-organisms: of ways of measuring they the growth of mlcroorganlsms. growth",
+        "Beneficial effects e.g. In . nature, medicine",
+        "of industries.",
+        "Harmful effects of some microbes micro- (i) Types of diseasEH:ausing microorganisms (ii) Diseases caused by microorganisms (iii) Ways in which food. disease causing (PathotJenic) microorganisrns spread are transmitted."
+      ],
+      "teachers_activities": [
+        "to study a pattern site of disbibution shallow water biotic the shore the Zone] edge adaptive sea [inter- Zone] ..",
+        "Identify components.",
+        "Collect from the sbl:iy note of fearures.",
+        "chains components.",
+        "Take temperarure, humidity estimate intensity. 24 , tt lc:i ~lgnlnaince of O'.imo- to etlfJrl •",
+        "biotlc",
+        "chains",
+        "of Demonstrates",
+        "culturing record monitor growth given rate of from mlcroorganlsms. curve",
+        "DiSOJSses with the economic importance of juice, microorganisms, give sb.Jdents",
+        "projects to carry out to assess the mm<. ' effects of microorganisrns."
+      ],
+      "student_activities": [
+        "Observe the Ecological of the instruments of the discs in .components compare habitats their water, features. collecting the biotic samples site them taking adaptive Construct food of the biotic readings of relative light Ident1 1 compon ·nt: .. Coll ~mpl \" the s1 •. Construa food of the biotic components. Take readings temperature, relative humidity estimate light Intensity. Measure growth of a microorganlsm a prepared culture; plot a growth interpret it Perform ~Jiments on Palm fermentation to produce alcohol, fruit milk, etc. juice, . . JUiee. produce yoghurt from fresh of Sb.Jdent5 list the names of some mlcroorganisms diseases they cause."
+      ],
+      "evaluation_guide": [
+        "to: the zones cf habitat found . GU!UC: tc: the growt.1 . . .. ' i : the ·. ingredients : of som~ caused microorganisms_. some effects microorganisms . . ."
+      ],
+      "teaching_learning_materials": ".. • ' e.g. such used to 1. State bJrbldity of . major • marine container for samples. 2. St.\"ate : common adaptive 1 features in marine organtsms. ; €:$t'..2l'ine organisms.. EVA!.UATIO~ - . . s.t~~-.t.s Graph sheets. 1. State relationship amo.19 rate of rni:::rue:-gadsrns : wine, ' environmental Yeast, sugar, fcctors. orange, I pineapple • 2. State ·, main for the prool..!ct:cn Olarts showing mode of spread alcohol few ,yoghurt. mlcroorganisms ·'3. Ust .diseases ,by ·: 4. Discuss ~ beneficial ·of",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/44-4-aquatic-biomes"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 8,
+      "topic": "Towards Better Health",
+      "pdf_pages": [
+        39,
+        40
+      ],
+      "performance_objectives": [
+        "to be able to: Describe some ways",
+        "b}' which disease-causing mia-oorganlsms !nfectious diseases can be controlled.",
+        "State ways of controlling vectors.",
+        "List ways of protecting ourselves from diseases caused by microorganisms spread by vectors.",
+        "Describe some methods used in disposal of refuse sewage. .",
+        "State the roles the should play to individuals ensure good health I !",
+        "Name some national international health I provide : some descriptions of i what they do. I I ! 3· THE '' 'PERFORMANCE OBJECllVES St1Jdents should be to: •",
+        "Recognise that is not always as to organisms in habitats as to those aquatic I habitats.",
+        ":Recognise that conservation is an important problem in terrestrial habitats. Mention effects of",
+        "on dimatic factors vegetation.",
+        "Identify the characteristics of the forest habitat.",
+        "Recognise trophic lev.els distribution animals In a forest.",
+        "Recognise the stratification of plants a forest. food",
+        ", Construct available in a forest."
+      ],
+      "content": [
+        "Control of harmful",
+        "microorganisms: organises Control of dijeaSe- takes causing visit mlaoorganisms, high treatment temperature, antibiotics, high",
+        "salinity, antiseptics, resource dehydration. to talk health",
+        "Vectors: (i) definition (ii) ways of on controlling vectors. disposal.",
+        "Students' health:",
+        "Maintenance of good health construct (a) importance to waste community sites. (b) ways in which",
+        "Display communities do these: on refuse disposal (i) proper (i) (ii) sewage disposal disposal (iii) protectifn of (ii) water treatment {iv) protection of (iii) organizations. food (v) control of diseases {vi) health organizations. I\\ • ND ITS able",
+        "Olaracteristlcs",
+        "of a forest. ' water",
+        "Strata in the available forest terrestrial",
+        "Distribution of plants animals that inhabit a water forest.",
+        "Adaptative features of the plants animals. of ' In chains"
+      ],
+      "teachers_activities": [
+        "groups to to different sewage experiment plant. of using high invites antibiotics persons Studeits on public of the get experiments to write discuss. submit essays refuse/sewage",
+        "experiment spraying that gets stagnant to layer of oil e.g. proper a vector disposal",
+        "stages in charts of the waste observations diagrams refuse ups. Public health",
+        "charts on organizations areas,')f Identify a forest On site to take on an exrursion. ( 1) Let the of know the inherent dangers In forests site equip them to take precaution. (2) (3) from (4) (5)"
+      ],
+      "student_activities": [
+        "T'EACHING in Ovens, perform biotic:s, aspects of the dishes. on control microorganisms, Olarts temperature, proper etc. treatment collect results disposal separate Charts health Ofganizations perform their areas to show a body of water with a can destroy mosquito. study the the cycle mosquito. record their using write study health their A a pre-selected site Observe the pattern of distribution the biotic components of the their adaptive features. Identify the biotic components. Collect samples the site. food Construct chains of the biotic components. Take readings of tf£nperature, relative humidity, estimate light intensity."
+      ],
+      "evaluation_guide": [
+        "we from to list from national their , - S!udents to: List some c0mponents of forest. State three characteristics of forest habitat Describe stratification of forest habitat. Give examples plants that are different in of the forest."
+      ],
+      "teaching_learning_materials": "ANO anti- • to: Petri- 1. Ustsome vectors of showing microorganisms. refuse 2. How can modes. protect our listing harmful micr~rg2nisms. of 3. ways by which water can be protected pollution. 4. List 4 international health organizations, describing area of Ecotogicar 1. hoes, L shovels, biotic containers for specimen. the 2. Map of Nigeria 2. showing typical forests. the 3. Olart showing the layers of a .., typical forest. \"l plants the 4. of found strata",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/42-2-the-adaptive-immune-response"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 9,
+      "topic": "Unicellular Organisms and Invertebrates",
+      "pdf_pages": [
+        41,
+        42
+      ],
+      "performance_objectives": [
+        "THE should be able to:",
+        "Recognise that the problem of water conservation is greater in the grassland than in the forest.",
+        "Notice the progressive absence of water demanding trees grasses from the grassland.",
+        "Recognise the dominant climatic factors.",
+        "Describe the structural other adaptations of grassland plants animals.",
+        "Identify the predominant plant animal species the energy relations between them.",
+        "Describe the soil structure of grassland. 0 1BJECTIVES should be able",
+        "Recognise arid lands as places where water is not available to organisms because it is scarce or frozen. sun,",
+        "Mention that extremes of temperature, water Su1rcity are factors that desert lives • have to cope with.",
+        "Differentiate cold deserts (Tundra) from hot deserts (Sahara).",
+        "Adaptation of • organisms to arid lands."
+      ],
+      "content": [
+        "Characteristics",
+        "Identify of grassland. grassland take",
+        "Types of grassland.",
+        "Visit the ensure its",
+        "Distribution of for study. plants animals in a grassland.",
+        "Equip to",
+        "Some undertake adaptations of proposed grassland f communities: (i) air-conditioned nests e.g. by termites (ii) thick barks e.g. baobab palms (iii) leaf fall (iv) underground stems e.g. grasses. ' to",
+        "O1ilractcri:;tfc:s or",
+        "arid lands. arid take 2 .. Types of arid larids, on",
+        "Dl~trlbutlon of the",
+        "organisms In the to habitat the",
+        "Some adaptatlons of organisms to arid lands: (I) water conservation In plants and.animals (ii) body temperature regulatlon In plants animals."
+      ],
+      "teachers_activities": [
+        "ACTIVI11ES OnaXi:lected where to site, ents to. (1) Collect site to . . (2) suitability Observe patterns of distributions. the (3) Identify the biotic components. visit. (4) Take relative humidity, temperature, estimate light intensity. (5) Collect observe the texture porosity water retentivity £ Tf.ACHER Identify an On a land to stud~t!:: excursion. (1) 0br..erve of distribution Visit the site biotic Its and/on Judge suitability for branches study. trees. (2) Collect biotic (3) Identify biotic ( 4) Take relative estimate (5) note of vegetations. • 30"
+      ],
+      "student_activities": [
+        "LEAP~ING",
+        "Ecological implements hoes, shovels, samples. contain~ for specimens .. the",
+        "Map of showing the grassland collated",
+        "A picture a typical grassland readings of savanna with inhabiting it soil infer the poor . pre-~lected site, J. will the pattern factors of the habitat. components under litter, on trunks,",
+        "leaves of showing regions. samples of",
+        "components. showing collected the components. of readings humidity light Intensity. should take soil on"
+      ],
+      "evaluation_guide": [
+        "ATION to: some racteristics of by in the habitat"
+      ],
+      "teaching_learning_materials": "to: e.g. 1. State three dominant diametric factors in a Nigeria grassland. regions. 2. list names of some showing predominant or plants animals animals in a grassland habitat. 3. Identify some characteristics of plants animals found in grasslands that made them suitable for tier habitat. TEACHJ,NG EVAW MAT£JUALS Ecologlcal instruments that measure 1. State in the ctia arid lands. Map of Nigeria the arid 2. Desoibe some Olarts adaptations ~ibited ctiaracteristics of organisms arid lands arid the components.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins"
+    },
+    {
+      "class": "SSS 1",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 1,
+      "topic": "Reproduction in Plants and Animals",
+      "pdf_pages": [
+        43,
+        44
+      ],
+      "performance_objectives": [
+        "should be. able to:",
+        "Describe reproduction in: TES (i) Amoeba.",
+        "(ii) Paramecium. (iii) Spirogyra. (i)",
+        "Describe reproduction in:",
+        "(i) Earthworm. (ii) Cockroach. (iii) Housefly. (iv) Snail. 3, Differentiate",
+        "between complete incomplete metamorphosis. P ER_FO RMI\\ N CE ~CTtVES"
+      ],
+      "content": [
+        "Reproduction in Amoeba",
+        "by asexual reproduction: the (i) Binary fission. (ii) Multiple fisllon. Reproduction in 2, Paramecium by: Asexual reproduction. (ii) Sexual reproduction.",
+        "Reproduction in Spirogyra by: (i) Asexual or vegetative reproduction.",
+        "(ii) Sexual reproduction or laid conjugation. Reproduction in the Earthworm (I) sexual reproduction only.",
+        "Reproduction in Cockroach (i) Fertillzati~ Is Internal (ii) Exhibits incomplete metamorphosis,",
+        "Reproduction in",
+        "houscrJy: keep (i) Fertilization Is Internal. (ii) Exhibits complete metamorphosis.",
+        "Reproduction in the Snail: (i) Fertilization is internal. (ii) Lay eggs which hatch into young snails. '"
+      ],
+      "teachers_activities": [
+        "ACTIVmEs ' Mount (a)",
+        "specimens from from the ditch on the view under microscope for mfcroscope to observe observe. organisms. (b) Observe Request prepared to their collect eggs of stages. cockroaches observe.",
+        "earthworm Collect with a maggots of housefly",
+        "Observe keep for collected observations. eggs observations. Collect eggs by a snail",
+        "Observe keep in a hCIUsefly closed dally container for observations. observation.",
+        "Observe eggs notes. TEACt1ER Collect .some",
+        "ec1rthworrm show In a r:ultable container for to observe. '"
+      ],
+      "student_activities": [
+        "1cACHING Collect water",
+        "Prepared ditch microscope the slides of to conjugation unicellular Spirogyra, microscope slides, slides of light. reproductive",
+        "Charts illustrating to watch binary at night multiple torch light.",
+        "Chart the showing cockroach of note your metamorphosis in cockroach. the",
+        "Eggs maggots cockroach. note your",
+        "Maggots from the snail",
+        "Snail take daily STUOE'NTS Prepare a chart",
+        "to complete metamorphosis."
+      ],
+      "evaluation_guide": [
+        "by to GiJIDE V/liat is the ':?fence in cyde of cockroach hoUScfly? What is the feature of reproduction in"
+      ],
+      "teaching_learning_materials": "to: 1. Define in asexual sexual reproduction. torch Describe the 2. 2 major ways which Spirogyra Paramecium reproduce. fission. 3. Describe the mode of stages reproduction found in the earthworm. 4. Why is the of cockroach said exhibit incomplete metamorphosis? housefly. 5. Distinguish eggs. between complete incomplete metamorphosis. LEARNlNG 0,arts 5. sho-Ning m3j or complete di ff incomplete t,,e rrfe a metamorphosis. a 3nd Cardboard 7. sheets . main Markers. ! ··n3il? Containers.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/10-1-cell-division"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "Organisation Of Life",
+      "theme_number": 1,
+      "topic_number": 1,
+      "topic": "Classification of Plants",
+      "pdf_pages": [
+        45
+      ],
+      "performance_objectives": [
+        "should be",
+        "Botanical to: (i) (ii) dassify plants bearing (a) botanical agricultural (b)",
+        "Agriculb.Jral of (i) Cereals classification. (ii) Legumes grollldnuts dassify plants Root (Ill) on (iv) Onion {v) Fruits {vi) coffee, (vii) Spices {viii) Off (ix) Latex (x) Fibres",
+        "Plants span of (i) anl)Uals (ii) Biennials (fii)"
+      ],
+      "content": [
+        "dassification: 1.~~ Thallophytes (Algae) Spermatophytes (the seed 1 using plants) like masses, dassification: ferns, - maize, rice; orange - cowpea, hibiscus. erJs -cassava, yam.",
+        "Vegetables - tomato, okra. to - banana, pawpaw drugs - dassJf Beverages tobacco. - ginger, pepper",
+        "- coconut, palm fruit select natural rubber. - - jute, cotton. name they dassified on the based their cycles: cydes. Perennials '"
+      ],
+      "teachers_activities": [
+        "ACTIVTTlc.S TEA01 ER Cla5sificatlon n SS Specim spirog'{ra, water das.si maae, ,",
+        "Leads crops dassify the specimens using agricutwral tCa tion. Asks to",
+        "from the crops specimens the classes belong to on"
+      ],
+      "student_activities": [
+        "STIJOENTS 'ii or.: amon. . Classify the yam, using agricultural dassification. Oassify the",
+        "into annuals, biennials perennials."
+      ],
+      "evaluation_guide": [
+        "n~ (crn;is) in ;:i each class· f oo G1 • categ:,ry. or",
+        "Write the 2 exa:nples each of Annuals, Bi• annual Perennials."
+      ],
+      "teaching_learning_materials": "-~ ..... • -:r ... J .. 11ai :., ' ;c:£:, . grcundnuts, bc-2 ~VJ, tomato, okra, ba~..:., p.3 -.;L•.•:, cnffee, ginger, pep i , coconut, palm fn.ut. maize, Rice, beans, cabbage, radish, ginger, mango, ccccnut.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/25-1-early-plant-life"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 1,
+      "topic": "Digestive System",
+      "pdf_pages": [
+        46
+      ],
+      "performance_objectives": [
+        "THE AT fERFORMANCE . Stuiients should be able to; l. I Describe with ap~ropriate illustrations different types of ali~entary tracts. Explain the feeding",
+        "m~nism of some animals.",
+        "Explain how some ins~vorous plants fee~."
+      ],
+      "content": [
+        "Types ofr",
+        "With alimentary tracts dissected models",
+        "Description the functions of parts of planarian, the alimentary canal. grasshopper, rabbits.",
+        "Modifications of parts to effect their",
+        "Use digestive functions. charts digestive",
+        "Feeding habits: housefly, categories cockroach, mechanisms. sheep illustrate",
+        "Modifications in of feeding the feeding habits of:",
+        "(i) filter feeders. drawn differences fluid feeders. (ii) mouth insects. (iii) insects feeders. '",
+        "Shows (iv) parasitic specimens saprophytic feeders. teeth to modifications",
+        "Feeding in habits protozoa, hydra mammals."
+      ],
+      "teachers_activities": [
+        "ACTJVITIES the aid of",
+        "specimens, or charts, teach alimentary canals of various earthworm, canals. birds",
+        "j the specimens the of the system of in the butterfly, tapewonn,",
+        "dog to modified different types parts. mechanisms. Explains with well charts the in the parts of some of different illustrate in feeding of animals."
+      ],
+      "student_activities": [
+        "Observe the",
+        "compare the the alimentary canals Observe the specimens noting various modifications found",
+        "animals. and/or digestive Identify the housefly, mouth",
+        "mouth some 4.Teeth some dog,"
+      ],
+      "evaluation_guide": [
+        "-- -- to: Explain the mechanism iisted animals cockroach' deg. Give reasons for modifications m listed (dog, man Describe briefly modifications mechanisms with a . • filter feeder parasitic feeder. J"
+      ],
+      "teaching_learning_materials": "ANO -, Dissected specimens showing 1. (a) alimentary of feeding earthworm, bird of the rabbi.t licuseflv, . ( b) Specimens the charts of fow1d system or . arnmals ,etc) .. butterfly, : cockroach, sheep 2. dog. cne Diagrams of parts of associated insects. . named models of animals e.g. man.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/34-2-nutrition-and-energy-production"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 2,
+      "topic": "Transportation System",
+      "pdf_pages": [
+        47,
+        48
+      ],
+      "performance_objectives": [
+        "THE ORGANi SM AT should be able",
+        "principles Define diffusion.",
+        "Explain the of diffusion",
+        "as a transport large for complex",
+        "move Explain the necessity distances. transport system In organisms.",
+        "Identify source of where they",
+        "transported to. veins, bundles. Discuss the different of transportation",
+        "such as cytoplasm, (i) lymph (ii) Describe the organisms mechanisms of (iii) transportation in various most (Iv) circulation Compare contrast mechanisms of transportation. THE AT",
+        "Demonstrate experimentally the flow of in plant."
+      ],
+      "content": [
+        "Definition of diff uslon",
+        "Set up experiment osmosis the behind them. of dlff coloured Need for diffusion.",
+        "Instructs Transport system in organisms. the leaves pawpaw, Need for substances to Allemanda over greater (milk bush) rubber for",
+        "Explains transportation. structures /vein etc Structure of arteries, drawn capillaries, vascular '",
+        "Mounts of the Media of transportation of Fluid as medium of plant transportation - structure function of blood",
+        "Mounts Cytoplasm in small of blood transverse Cell sap or latex in of an artery plants vein. Closed open",
+        "Mechanisms of",
+        "transportation: (a) (l) Organisms. (Ii) Multicellular the organisms. (b) (iii) Higher animals. small (iv) Higher plants. the blood",
+        "Absorption of water mineral salts.",
+        "sets water"
+      ],
+      "teachers_activities": [
+        "TEA,CHER Observe an",
+        "on rate exp~rlments uslon of a carefully liquid. time taken coloured , diffuse. to detach of",
+        "Detach cassava, leaves of theveta plants. or required.",
+        "Observe make the the artery of plants using well diagrams.",
+        "Note the structures. the slide young petal",
+        "Examine Tradescantia slides draw the cytoplasm a slide granules smear the hair cell. section a",
+        "Observe draw the \" the blood transverse section of a vein. Dlssed:s: . ' a>ekroach or • grasshopper to expose heart toad, frog or a",
+        "mammal to show heart some vessels. to up an experiment showing absorption of in higher plants."
+      ],
+      "student_activities": [
+        "the Diagrams arteries, record the capillari'3 es. by the bund liquid to the Prepared those Tradescantlal inferences on Prepared vein. the transport. Charts of grasshopper, the frog a observe small mammal. noting around Cosine, a Herbaceous beaker, blade, slides of slide smear, microscope. an artery",
+        "Examine draw dissected specimens. Locate the transport vessels. Note the differences in the thickness of the walls of the vessels.",
+        "Observe the experiment make inferences."
+      ],
+      "evaluation_guide": [
+        "co: short the of bundles. large diagrams specimen~. the are the system animals ar:ilmals. two large !"
+      ],
+      "teaching_learning_materials": "showing veins, V3SCUiar 1. Write not2S on s'\".ructures arteries vascular slide of petal. 2. Make labeled of the slide of artery 3. \\'I/hat differences between transport in small cockroach or large toad or named 4. Name transportation media in animals. young plant, glass light LEARNIJ\\1C: MATERIA~S l",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/40-1-overview-of-the-circulatory-system"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 3,
+      "topic": "Respiratory System",
+      "pdf_pages": [
+        49
+      ],
+      "performance_objectives": [
+        "PfRfORMMCE OBJECTMS should be able to:",
+        "the different (I) respiratory (ID) (Iv) the characteristics (v) respiratory surface.",
+        "label some d respfratory organs d animals. (I) the various (II) d respiration animals, e.g. (ID) .",
+        "the mechanism d gases the stomata of ;:"
+      ],
+      "content": [
+        "Types cl respiratory",
+        "systems· swtk Body respiration (ll)a,etaneous respiration of GIiis Tracheal system Lungs rat Mechanisms of",
+        "respiratory system In: Higher animals. the Lower animals. . Plants.",
+        "J ,, Mec:fl8nigns of gaseous exchange through the stomata of plants.",
+        "to ' of ."
+      ],
+      "teachers_activities": [
+        "TEAOIER Mounts prepared slides showing respiratory organs earthworm, tllapia, toad, grasshopper Displays the gilts removed from a dead tllapia for to observe various structures. £ Disaisses respiratory movements In higher lower animals In plants. Leads perform experiments showing effects of turgidity on the opening dosing stomata using a model of stomata."
+      ],
+      "student_activities": [
+        "STUO£NTS",
+        "Observe tf,,e respiratory organs of the various anlmals.",
+        "Observe the gill fakes, giH arch the Qtn filaments draw.",
+        "Make notes on the respfratc,y mechanisms.",
+        "Observe record their observations."
+      ],
+      "evaluation_guide": [
+        "Drav, a.;cJ latejtr,e respiratory organs.",
+        "State the a nunber gills In each chamber how are they a~.",
+        "Explain the mechanisms 0 F , respiration in named lower higher animals plants.",
+        "Desaibe gaseous exchange through the stomata of leaVeS."
+      ],
+      "teaching_learning_materials": "1.fAANING ;QTEJUAl,S 1. Prepared sftde, 2. Gills of tllapia, 3. Chalkboard, raevant d~ Olarts. 4. Cellophane tubing to make models of stomata. 5. Mlaoscope.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/39-1-systems-of-gas-exchange"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 4,
+      "topic": "Excretory Systems",
+      "pdf_pages": [
+        50
+      ],
+      "performance_objectives": [
+        "PE~l:ORM~NCE .:. • Ol'lJEtl1VES , shoulC.l b~ nt:>le to: Identify and'tlescrlbe erent types of excretory systems In plc1nts·and· animals. ~ • • .: Explain the mechanisms of some of the excretory organs to relate ·structure : functions. • •• .,. ',. . ,. ... ... . .' '"
+      ],
+      "content": [
+        "• ; t i • r 1r.ii :CONTENT · · 1 ',1 ! ~ -1 ~, ·1. . excretory ~ystems: 1, • • (I)• ·Contractile the vacuoles. , Z. \"'(11) · Flame cells. (I) · . '(111)\" ·Malpigttian tubules: : • •. : (ii-} ,, ,·(Iv) ·Kidney; • • (iii) I .\\ ,; ~ ~ • :.: ·.,. • , • • a (:v~-·St:omata . 1 . -sheep lenticels.",
+        ",Ex<tretory •• 2i • . mechanism· in: : (i) Earthworm. • • • 'Slide (ii) Insects. shaped (iii) Mammal~. . . - the of -4. • parts"
+      ],
+      "teachers_activities": [
+        "T_EA_C_H_E_R_--'-~. _ _ ~orscusses the various eXCJ'etor:y systems with swdents.· Asks to observe-:· Malpighian tubules in a dissected cockroach. Excretory system In a· dissected rat. ·rntemal structure of a dissected kidney of or pig, (i) Removes the epidermis of the lower ·.StJr:face\"of. a dicotyledonous-leaf. ·(ii)=:Prepare a wet-mount · :and asks to examine-the kidney guard cells -stomata in the cen\"tre the c-ells. Displays charts or diagrams of nephron to leads them to identify the different -and relate the identified parts to the functions they perform."
+      ],
+      "student_activities": [
+        "·c..;._•~-ST-U_D_E_N_T_S_--i · part in •l, Take discussion. -2. -Observe draw the • malpighian tubules, the excretory system of rat the internal stn:Jctur-e-of the • • kidney of a sheep or pfg. •",
+        "Observe the slide, record the observations make a labelled diagram of the gaar-d cells the stomata:",
+        "Relate parts identified to functions."
+      ],
+      "evaluation_guide": [
+        "...... -- Studenfto: Identify describe the -different excretory systems presented. Draw label Mammalian"
+      ],
+      "teaching_learning_materials": "· ·. l. Dissected cockroach showing 1. malpfghian . tubules, dissected rat kidney of the sheep. 2. a kidney. 2 . Dicotyledonous leaf, glass slides microscope. -3. Charts or diagrams of nephron.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/41-3-excretion-systems"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 1,
+      "topic": "Nutrient Cycling in Nature",
+      "pdf_pages": [
+        51,
+        52
+      ],
+      "performance_objectives": [
+        ",utAHCJ! l1J\"rCTIVU r.fKXJd lJo (o) Tun Dcsa1behow dro.Jloo:s In (11) The the: arborl detail. :The (Ill} c',de (c:r Stnle'M'fYthe c,de Is (b} The (ex ltfe. (I) 1he Remg,lse the balmia! (II) The ootwr.eriari>on·r,ct llwlg (Ill) The the pert s,lants l!nd",
+        "by the wata- fn The {I) (II) Importance the water 01'911'11sms. detatl.",
+        "wttt1 the tt.e ofdagnm (I) lniPMDIC nltrogc:n. pliwtt:s {I) Tho cydl~ be"
+      ],
+      "content": [
+        "ma11ar ' ), ~;n CJJrtx:n O,dll T..tlrnt:: ~)le cmtail •• pnxa, cnrbcn 'qdfn9. af ·l a.pen I _ Import.am at . • -~ ~ tfe. -~1t, Oxygen ~ . ~ c:I ~ c,dmg. cf lmporm,cc d c:ac;ga\\ tD crgll~sms.",
+        "~rbco-oxygen balllnm mplrtd The\\Y8t?t'Cyde: ~. rl wate- tydlf'G 'MII pmaBi ■ rlwala' to ltvt,g",
+        "(I) well TheN~Cyde: ri 1ibogen tlJ ri'llul,. rinalis. ?\"CJCMJ d nitrogen, (0) to ~ COi'ITTHT ◄. Dem I ~UOn In",
+        "NJturn: C'JPCf TON (I) Micro ilnd macro decomp0fC\"S, (il) (ii) Role of ammo~ deromposers. released (b) released '"
+      ],
+      "teachers_activities": [
+        "o,r:,,,, ,irt. ' n~ ~- '{a)~~ fnfll:':.::c/ mr',~· • c,c. ~p.::w.-1r.a In r.o ~ ~mrrt 1%2 ~n tr1C ~ ~ du~ ~ Dtn1U'tC ab ~ opsimem:ntJi':GWS ~d~ ln aJr. nbo'\"\"\"\" the c,dc ¥ftth chart. dtw,n Win the aid d .a dtw.11 chst at the ritrogen~~ntile ~c1rmoge,1n 1D 1)111101 Zllili~ « \"~ Impobn:e r4nwls. Mout lm,;rb t.o thilt: . ~ VJ. carboncfioxlde, are dlxing decomposition. Heat enerr:it Is du1ng decorr1)0Sitioo."
+      ],
+      "student_activities": [
+        "Or3W Ii. ~ nltrogitn cyde."
+      ],
+      "evaluation_guide": [
+        "~ ~bi,~ (l.e. ~ c,::a:-CX\"~n cnwand bbei~~ld ' qde.. t!',e cyde. Ustthe fflPOltancerl tD piants anlmal~",
+        "--the d~"
+      ],
+      "teaching_learning_materials": ";x.~~\"1.f'r. ; ~ ~r:c:::e}. 3. ~~ -4.. DrlM ~'trogtY1 ls such 5. e.it broth, ftth,boUecirQ, n~ GCnlc,I flask aid Md stqlpo-. \"",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 2,
+      "topic": "Ecological Management: Association, Tolerance, Adaptation and Pollution",
+      "pdf_pages": [
+        53,
+        54,
+        55
+      ],
+      "performance_objectives": [
+        "PERFORMI\\NC( ODJECTIVE.S , 1d nt:. ~hould be t1b <:! to: Recognise some of ttv.! different of types association existing betvveen dlff erent species. Identify beneficial harmful neutral forms assodation among organisms. Deduce the mode of a given from observed characteristics. should be able to: Discuss why living things possess a range of tolerance to environmental factors. 7.\"Usf ttie aoloffc factors - impose tolerance on organlsms. Depict tolerance range a graph. ~atbt n\\,l'f ,..,...,,..........,...\"\" In !\"m4 \\S,,Q !O -.-nr-.nirit:•~ Doottic the ~I bllrty d racmr ror as the pr1ndpol animal dstrit::ujoo, eiasmples d ~on List t!nWalfflClltm fac:tDrs. ITS should be able to: pollution. alr pollutants the harmful pollutant. effect of detergents, artificial fertilizers herbicides on aquatic organisms. poor sewage system of pollution. _ domestic wastes that pollute water. the decay of organic e.g. dead anlmals a source of pollutlon."
+      ],
+      "content": [
+        "CO HVfT (1) Syrnbry;,:;; mu ulb-: di• (Ii) Para~IU:;m - h.1rrnru1 o hO\":it. (111) Mutuall.sm - bt!nt:ficl I to both lndep,_ndent living po:;~ibl (Iv) Commensallsrns - ho~t unaffected while the commenS<JI benefits.",
+        "Features of blological Importance possessed by organisms of an association. Concepts of minimum",
+        "maximum range of tolerance.",
+        "Geographic range graph illustratlng maximum minimum range of tolerance. ' I . rorm :md r rue ~I~ to t--:rbocro mv1ronmcr1t.ll and~ condlt~. w tcr 8~).",
+        "Elf cct5 of d avallabllity watr!r",
+        "on adaptlvl modincations. dJfferent",
+        "(I) Structural adapt!tion d",
+        "Tadpoles fish to attach to In water. plastldne base (ii) Structura I weeds, adaptation In birds. one into jar water other table. Asks",
+        "compare toad, owl. '",
+        "• Pollution of the",
+        "(i) atmosphere: experiments (I) Nature, names pollutl~m sources of air jars pollutants. water (ll) In (ii) _Effects of air place pollutants: larvae, (Iii) (Iii) Effects of such noise. • detergents insecticide.",
+        "Pollution of water soil:",
+        "Leads to visit (i) Types estate composition of industrial pollutants. arid (ii) Side effects."
+      ],
+      "teachers_activities": [
+        "L. r I ·-: I' .1-:J .. ( r1.,r lf, •; pur,i\"lti-:m)",
+        "A'\" \" \"tuelcnt:; to coll et tlck:: ram cow or dog nd wher po!;Slbl hermit crab.",
+        "Teadler guides to perform ' experiment showing limits of tolerance of lilapia.",
+        "draws a typical tolerance range graph. w~ (•.o. ~ ) . Not c!ltf CNmdCClrl~~ ttie tt,e bacxgroonds. th ifter a ' Guides a hoo,p of",
+        "Note to the morphological of tvwo water dlf!erena5 later drop listed a tall gas containing leave the one on the to t:adpoJe fish, fish sparrow ' ACTIVTTil!S TEACH·ER Leads",
+        "to set up of the on the e.g. set up Jars containing for drinking.",
+        "each jar, mosquito pollutlon. tadpoles. Add pollutants",
+        "as crude oil, various or industrial the an industrial to study waste their effects."
+      ],
+      "student_activities": [
+        "Srudents subject Tllapi3 o ,,. drfferent or concentrat.Jons of salt solution fish record th-eir observations of the rare of opercula movements.",
+        "study the graph. colour rttcrd a: In .~r.ffl C two-weed!: 'Ntllle. tt, In I.tie organisms. STIJDENTS Observe the effect",
+        "pollutant oo organisms in the oil, Assist to set up experiments on",
+        "Observe the effects of wastes on -"
+      ],
+      "evaluation_guide": [
+        "to: three features tolerance a of range. R.:?f3te the coservc:d differences in appe.arai1~ of terr,esuial . I 2-japtations. J . . -- •., to: Dlscuss the of pollutants on organisms. Write a comprehensive report of their in the context of pollution In the . \\"
+      ],
+      "teaching_learning_materials": "iiep.a, sal:. s ~ent5 ~I:=!', l:::iea! e-s big gloS 00\\ .. t 1. Sbit:e depenci. g on a!llotic me), ~ for graph a.\"awn ori chalkboarti. 2. Draw graph tolerance ' 3. cQt2tlc J t • TEAOflNG AN D LEAR.KING MATERIAJ..5 Glass jars, mosquito Larvae, tadpcies, crude 1. detergents, effect insecticides. The industrial estate visl te-d. 2. visit",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/47-4-the-challenges-of-climate-disruption"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 3,
+      "topic": "Conservation of Natural Resources",
+      "pdf_pages": [
+        56
+      ],
+      "performance_objectives": [
+        "' I OBJEmvES St}Jdents should be able 1.1 Define conservation. 2.: Enumerate reasons for on of lands = ~ m destruction on. 3.: State why various on laws should obeyed. 4J Dlsruss problems difficulties associated with CQnservatlon. s.i Disruss the need to cqnserve petroleum n~tural gas. 6,1 State methods of ·ns~tlon of a given ~ tural resource."
+      ],
+      "content": [
+        ",coNTENT to:",
+        "Conservation of natural resources: (i) What It means. wild (Ii) Ways of ensuring It: - agencies responsible for conservation. - legislation. - education. - erection of parks reserves. (iii) Benefits of conservation. '"
+      ],
+      "teachers_activities": [
+        "OiscusseS the",
+        "problems difficulties of conservation with the lead them to",
+        "suggest possible solutions. study",
+        "Passes rou~ dosely the amservation dass. law doa.iment.",
+        "Shows film or documentary on gas gas flaring, oil spillage."
+      ],
+      "student_activities": [
+        "Prefer",
+        "The solutions to law problems of conservation.",
+        "The flaring. Browse through the document it more after Watch documentary on flaring, oil spillage etc."
+      ],
+      "evaluation_guide": [
+        "- - to: the meaning conservation. two laws law book. Mention two I of . .."
+      ],
+      "teaching_learning_materials": "conservation • document. • 1. State • of film on gas . 2. State . conservation • from the : 3. methods cons~;vation.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/47-3-preserving-biodiversity"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 4,
+      "topic": "Pests and Diseases of Crops",
+      "pdf_pages": [
+        57
+      ],
+      "performance_objectives": [
+        "P[R f ORMANC£ OD-JECTIVES St11dcnts should .ible tn:",
+        "Deflnl Identffy pests certa In crops",
+        "indicate their control. (I) Toe feeders, Describe the plant cydes of (II) Thelr some of the e.g. pests. grasshoppers, of butterflies). Describe (iii) some 8 common weaver diseases caused monkeys). pests.",
+        "Describe pest control measures.",
+        "Control (B) Diseases agents: (I) fungal mlldew) (II) viral stunting) (Iii) bacterial leaf spot, (C) Control"
+      ],
+      "content": [
+        "CON1 Kl tJoo of p.-..=.ts. OasslflcaUon of ~ 171: part they attack· (stem bor~ . ~ leaf~, ~ ,hoot ,~. seed feeders). anlmal type - (invertebrne pest_s, Nematodes, Arthropods, locusts, coleopteran, lepld<J9tera larva Vertebrate pests- (birds e.g. quell, ig. bird, mammals rodents, ' • cydes of pests. of pests. caused by pest their diseases Blight, (e.g. root rot diseases (e.g. mosaic, malting, diseases (e.g. bacterial wilt, soft: rot). of pest."
+      ],
+      "teachers_activities": [
+        "l. ( I / t;r.;11•r.,: p-J-. (i') 0.r.-:ir•, n•t! ). Tc :;f:{! er wltr1 srudf.111:! cr -re - table mewl g t? • reratio~hip cf crop dlse \"• their agents nd methods of control."
+      ],
+      "student_activities": [],
+      "evaluation_guide": [],
+      "teaching_learning_materials": "Pe~.ftjdes e.g.: •",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/1-introduction"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 1,
+      "topic": "Reproductive Systems in Vertebrates",
+      "pdf_pages": [
+        58,
+        59
+      ],
+      "performance_objectives": [
+        "... Descri!}(! tt e structur .. nd fun ons of the male , nd fem ale reproductive or~ans of vertebrates.",
+        "Draw label clagrams of male fem ale reproductive systems in mammals. Draw, label describe '1. the structures of male f male gametes (sperm o um).",
+        "DlsUngulsl\\ b tween male fem ale r productive organs in mammals.",
+        "Distinguish between eggs of vertebrates,",
+        "Cornpare,reproductlon fish, bird, toad, reptile mammals, ~-~--...:O:.:BJl=.::E:.:::CTIVES~::-=;___-+"
+      ],
+      "content": [
+        "CONTCNT ., 1,rnm I;",
+        "Structures of t • m, le ond female reproductive system . s",
+        "Parts of the",
+        "reproductive systems their functions.",
+        "Structures of the male female gamete (sperm} the female gamete (ovum).",
+        "Differences",
+        "between male fem ale reproductive organs. rat 5, Structural (ii} differences In the eggs of vertebrates, to 6, Comparison of 't. reproduction In fish, of reptiles In mammals. ' +-- - Wi , S. ' diagr cl m- mak rcpn::dud rr:.! of a ra or lead • tudr.nt. ~ngu~ male reproductr, in mammal:; tabular form.",
+        "Displays eggs of some vertebrates fish, chicken lizard) which had asked to bring dass.",
+        "Leads the to ' compare reproduction fish, toad, bird devefop showing the comparisons."
+      ],
+      "teachers_activities": [
+        "Uses th dissected J. specimens to male ~plain the functions of the f organs of the reproductive systems (male",
+        "female). (I) Mounts fresh sperm specimen from a under the",
+        "microscope. Drawing students' attention the movement. pJrts. Mounts sections a mammalian ovary under a microscope. tlf:!aid t-'? f€1Tlal~ or rabbit, to !~ bctw~n female ln t, ~ orua~ record ~ In",
+        "Comp..ir:.. reprc<!tlction toad, reptll~, the m.:,mr.,..,(!;. (toad, the been to In reptile, mammals a table"
+      ],
+      "student_activities": [
+        "Comp r = tL ,-produ v_ 5Y'iLm With t m le r produa1v1: system. J. slid View the male sperm gamete (rat's sperm) under the",
+        "microscope. Draw sllde label the spem,.",
+        "View the female male gamete under the microscope of Identify the various",
+        "fish, or",
+        "+ 4--~~~~'...::::::::_--: '-\" 4 C: ..,. c!Jr.r_.:;. in ri~ , btr ,,."
+      ],
+      "evaluation_guide": [
+        "'X-:'m. ,re; in sperm ana three DISCUSS strucrural differences the eggs of the vertebrates. Tabulate the differences in the reproduction of fish, birds mammals."
+      ],
+      "teaching_learning_materials": "E: -£: c M1crosco,x, of he: fresh of the rac_ 4. Microscope of various of the ovum. Diagrams of 5. fem ale reproducti e organs rat or rabbit. reptiles, Eggs of toad, lizard, chicken other available named vertebrates. Chalkboard.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/43-2-the-male-reproductive-system"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 2,
+      "topic": "Reproductive Systems in Plants",
+      "pdf_pages": [
+        60
+      ],
+      "performance_objectives": [
+        "PERfOR 1 ICC: should be able to:",
+        "Identify reproductive plants. in",
+        "D\\stlngulsh betw1=en the essential non-essential partslof a flower.",
+        "Describe the various rep~ ductlve organs of a",
+        "Describe the different of placentation."
+      ],
+      "content": [
+        "Structures l functions of the organs reproductive organs of plarits,",
+        "Arrangement of reproductive organs In different plants. 3; Types of flowers: flower. (i) hypogenous. kinds (II) f rlgynous.",
+        "Kinds of placentation."
+      ],
+      "teachers_activities": [
+        ". Asks",
+        "to examine the various various parts a of either newer provided. or",
+        "Describes each part points out grass. the essential non-essential parts.",
+        "Describes the",
+        "various various reproductive organs",
+        "of a flower the slides position of the lens ovary in each flower. '",
+        "Prepares transverse section longitudlnal section of ovaries for to observe with hand lens."
+      ],
+      "student_activities": [
+        "Examine ttie l. parts of Hi~SOJS, Allamanda Barbados, Pride of Barbados or",
+        "Ovaries Hibiscus Pride of Barbados, Flamboyant Draw the flower. position of ovaries. Examine the with hand note the different kinds of placentation."
+      ],
+      "evaluation_guide": [
+        "l • I J ml\"~ cf the '. v',~ r)' t~ --"
+      ],
+      "teaching_learning_materials": "AJ'fD ljUJDE MATERlAl.$ AJJamanda, ~tsto: Pride of gra~ 1. lceorify parts •,ar.)\\.;: of flo ... ,er. ~!<3W t;ie 2. : position o, ! flowes. -- . - -",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/32-1-reproductive-development-and-structure"
+    },
+    {
+      "class": "SSS 2",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 3,
+      "topic": "Pollination in Plants",
+      "pdf_pages": [
+        61
+      ],
+      "performance_objectives": [
+        "OF LTFI: PERf,ORHANCE OB.JtCTIVU st:vdenl.5 should be able",
+        "Define pollinatioo. (I)",
+        "Nome describe the different types of - pollination. -",
+        "List the features that aid self poUJnation. (ii)",
+        "State the characteristics of wind pollinated Insect (iii) pollinated flowers.",
+        "State the agents of pollination. (iv) - - - -"
+      ],
+      "content": [
+        "CONlllNl l~O PollinaUoo In l. (1) A:.'1 pjant5: no,,,_ • u<t/ kind:; ilr'IJ 'I'll h TYJ)C5 of polllnalloo ' (Ii) Rcl,)tO tt~ the ~Ugn.:i .irxl self polllnaUon the typed cross-pollination (Ill) Ex.amine the pollen grains. Features of self-pollinated 2, (I) Leads flower. remove ao anther flower. Features of (U) Crush It on cross-pollinated (fii) Prepare a flowers. examine grains under the Agents mlcrosa>pe d pollination:",
+        "Explains the Water. pollination. Insect",
+        "Leads the school garden Wind. observe Insects pollinating flowers. ' Animals."
+      ],
+      "teachers_activities": [
+        "~t;TJVITlJ:~ IE~ aagr i1 m:",
+        "Or.'IW ~IUon of tti ~t>m-:ro tD pollin;)tJoo. J. Stut!-1 di 1°!:Ct:.\"tl the n.Jtun: of",
+        "Prt~ eomlrtc~ld to from a",
+        "D~ ~ a slide, wet l110l.llt",
+        "Dlsa.Jss relatlooshlp the pollen stigma.",
+        "Wl'ite agents d comprehensive of visit to visit actively"
+      ],
+      "student_activities": [
+        "dlu<Jr-~rnc. - 11nd --. cro. the of somens report"
+      ],
+      "evaluation_guide": [],
+      "teaching_learning_materials": "",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/32-2-sexual-reproduction-of-angiosperms"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 1,
+      "topic": "Regulation of Internal Environment (Homeostasis)",
+      "pdf_pages": [
+        62,
+        63
+      ],
+      "performance_objectives": [
+        "THE AT should be able List the main organs substances involved homeostasis ( control mechanism). Describe the structure functions of these organs: kidney liver. .. Name some kidney diseases explain their symptoms effects. Name some liver diseases briefly explain their symptoms effects. Discuss the remedy unhealthy conditions kidney the liver. Explain what hormones are. THE AT",
+        "List some endoaine glands, their positions in the body tl1eir I functions.",
+        "State the effect of S. over production or under production of - these hormones.",
+        "Identify the mammalian skin under the microscope.",
+        "·oraw label main structures of the skin.",
+        "State the functions of the mammalian skin.",
+        "State few ways to care for the skin. .",
+        "(i) (ii) (ill}"
+      ],
+      "content": [
+        "Homeostatic organs.",
+        "Substances Involved In homeostasis. the",
+        "The kidney: (i) structure, functions",
+        "diseases of the kidney: (ii) the effects of kidney diseases remedy",
+        "The liver: (ii) (i) structure, functions diseases of the liver, ·bile",
+        "products, (ii) the effects of liver diseases remedy.",
+        "(i) Endocrine glands (ii) Substances produced by glands (Hormons).",
+        "rn (iii) or O', r prcx1uctlon ()( u xJrr oduction of the hom10ncs. under Plant Hormones: Explain the effects of auxlas on lateral bud development, leaf fall initiations of adventitious roots. Mention other types of plant hormones functions. Modem application of auxias effects (NM) with reference to early flowering, cropharvests weed control (as selective weeds kill dicotyledonous plants). The Skin: Structure of the mammalian skin. Functions of the mammalian skin. care of the mammalian skin."
+      ],
+      "teachers_activities": [
+        "Dissects a small",
+        "mammal to show liver the kidney. Shows photographs or - charts of a normal (healthy) diseased (i) kidney liver. - of Shows charts photographs that - highlights the of distinction of endocrine glands.",
+        "(a) Request _students to provide it germinated bean seeds.",
+        "(b) Performs experiments to show the role on played by auxins on shoot (phototropism) root (geotropism). ~C'TMTJ~ -- TEAC>IE~ m.:,mmcJl1cJn ·kin mlcro-__,cop,::."
+      ],
+      "student_activities": [
+        "Examine dissected vertebrate e.g. Rabbit Rabbit note the following; Charts, structure position of the Skin kidneys liver. relative positions other organs around them. number of lobes the liver. Make a labelled drawing of the liver organs around like gall bladder, stomach, pancreas. Observe the distribution of -endocrine glands· charts photographs. F ·r ."
+      ],
+      "evaluation_guide": [
+        "-- - to: of each of following (i) Kidney Liver. Name two diseases of kidney liver. Identify the of the glands: pituitary glands. adrenal glands in beings. State the effects overproduction underproduction following pituitary."
+      ],
+      "teaching_learning_materials": "Preserved vertebrate e.g. 1. State functions the organs: photographs of (ii) endocrine glands of a small 2. mammal on a kidney microscope (i) the (ii) the . 3 position following - - human 4. of or of the glands: - 7. four<! in me mammalta: • .n. 8. Explain Effect he of a ran on s.1mecne sweatJ119 att:r a physlC3l exercise .",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/33-1-osmoregulation-and-osmotic-balance"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 2,
+      "topic": "Nervous Co-ordination",
+      "pdf_pages": [
+        64,
+        65
+      ],
+      "performance_objectives": [
+        "ER.FORM rtCE OB.J£CTIVES kj be able to: tlie Loe.ah? po \"ti of U1<? Brain al;ld sptn.il cord) In dissected ~- Describe lhe structure of brain ex-plain the functions of its various oigans. Describe the spinal cord explain it;s I functions. State the ~I difference $,een the brain the spin~! cord. Identify ~e PNS (Peripheral System) N~s describe :its functions. a Desoibe typical neuron. Group neurons as acoording functions found in vertebrates alnd explain their functions. Explain tfie process of impulse transmission. i;:R_FORMANCE . PNS (J q, reflex system) a renex - Soma~c a few of each,' - Autonomic - Parasympathetic - Sympathetic",
+        "Structure a neuron sensory neuron).",
+        "Reflex actions experiments bell)."
+      ],
+      "content": [
+        "CONTI!NT",
+        "Or,gani5.JUon or lll(l",
+        "ncrvou5 system: to (1) CNS (ii) PNS C\"' the The",
+        "Brain: struct\\Jre ~ s.",
+        "The Spinal Cord: brain Position, structure functions. part",
+        "to show ' cnpht:r.11 nerif o~ N.S. N.S. N.S. N.S. functions of (motor neuron, neuron relay voluntary (1910) (Pavlov on dogs, food"
+      ],
+      "teachers_activities": [
+        "ACTIVTTl TEAC>IE1R Lead' ' tlxb1t; l. di~ a :;m.ill brain vertebrate to cord display the brain (In vmebr<1 sku II) the spinal cord.",
+        "Exposes the structure to show brain colour of the outer- cord.",
+        "Shows the permanent of slides, or charts of the neuron. position Guides parts. perform experiments to",
+        "action: reflex flicking a reflex handkerchief aO'OSS student's eyes. itJ\\CU(P."
+      ],
+      "student_activities": [
+        "STUOENTS Ob--~1 tt, spiral th In a di~ed A to show Observe its brain differences in cord. of the the spinal sJldes section Draw label different types neurons noting Slides differences in model structure of basic neuron. lj)<Plain experience on action."
+      ],
+      "evaluation_guide": [
+        "E:v'.\\LUATION - to: G Make a fuliy la!:-e:OO diagram ;::.f t,f~;; of -\" di5Sect~ :-abb;~. N3me 4 cifferem regicns of (he mammaliar1 b.ain. • State 2 funr--tions the spinal cord. State where the ccrd is lccated. State Uie colour the outer part of vertebrate's brai~."
+      ],
+      "teaching_learning_materials": "TEAC.HJNG HO LEAJUU~G 1'!1U lS H PtiotCX)raphs/charts 5 of OlS of c1 m.:imr,rl . l. dissected ~ebrate the position &e spinal 2. permanently prepared the transverse of of a vertebrate's CNS. 3. of of neurons, microscope, charts or 4. of a typical svinal landkerchief. 5. of the",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/35-1-neurons-and-glial-cells"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "The Organism At Work",
+      "theme_number": 2,
+      "topic_number": 3,
+      "topic": "Sense Organs",
+      "pdf_pages": [
+        66,
+        67
+      ],
+      "performance_objectives": [
+        "THE OP.GAi\"'iSM AT PERFORMA~CE OBJECTI'.'ES should be able to: List the major sense organs infer their locations. Describe the organs of smell taste. Identify the different parts the tongue associated with sweetness, bitterness, salty sore taste. the Draw the skin showing present. dirfeent receptors Describe the structure of the mammalian ear. Explain the functions of the - hearing, balance. Describe the mammalian explain the functions of various parts. Explain the functions of the image formation accommodation AT PERFORM_ANCE",
+        "the tarns myopia, rnetropla, astigmatism, eye night blindness. parts. the kind bf lens",
+        "used oorrect to hyper-metropia light,",
+        "- - - - -"
+      ],
+      "content": [
+        "CO!'!TENT",
+        "Organ of sme!!:",
+        "(a) Toe mechanism of the smelling with the help of olfactory chemo- (e.g. receptions.",
+        "(b) Adaptation for taste survival - animals Lhat Dog sniff for hunting e.g. from - presence of chemoreceptor on",
+        "butterfly (insects) antennae for sensing its skin",
+        "Taste buds on tongue",
+        "the part played in tasting. LS",
+        "The skin - sensory",
+        "nerve endings or receptions associated with or the skin - touch, deep pressure, - heat pain. of eye.",
+        "Structure of the ear part played by its various parts. Organ of Sight: the",
+        "With its various explains effect of hyper-metropic Functions of the e>Je formation. part played by image fonnation B. Uses accommodation. the Eye defects. : aid of convex myopic (short- f cylindrical sightedness) respectively. Hyper-metropic Astigmatism cataracts night blindness"
+      ],
+      "teachers_activities": [
+        "Leads the",
+        "to r~rceive released releasing of a· smelly into tile air",
+        "NH3). tongue, Leads bitter leaf, salt sugar brought home.",
+        "different Applies various due objects on student's objects for sensation of skin. touch.",
+        "Shows charts/ labeled photographs of an the of the skin.",
+        "Show a model, photograph, mode various charts.of the the longitudinal section sound the mammalian",
+        "to • the aid of charts,",
+        "parts the cause myopic on Image",
+        "during charts to explain correction of myopic astigmatism with the in concave lens, lens lens correct lens '"
+      ],
+      "student_activities": [
+        "STUDEl'-!Tc;; P0ttled Smell the ga~. A Notes area of which charts ;lr~ sensitive to sweetness, showing bitterness etc. different the Notes the sensitive feelings differer.t to the various applied 0'1 Ice object. Draw well A model drawings of the LS of the skin. ear. Study the Charts, identify its parts model pathway of waves vibrations. I Use the mirror observe the papillae of the tong•'\"· STUOENTS Identlfy the",
+        "of the Image e,1e. Sb.Jdy the pathway of light",
+        "image defect formation the placement of lens front of original in order to eye defects."
+      ],
+      "evaluation_guide": [
+        "I\\ TION GUTDE -- to: the part u,.-t tongue to the < f~lt (,y the thr~ the e.:ir. five ~r:ts eye their -- the· kinrl used to short- --"
+      ],
+      "teaching_learning_materials": "TEACHJ'i\"!G EVALU ~I\\U) LEARNINt; MJ\\TF.RT'II c; ~•H3 g;:,c_ mirror. 1. Name of the or is sensitive photographs bitterness. the arl?;:ic; nf 2. Lists tongue different to sensations t;,~t~c;. the skir.. I 3. Name cube~/rrir:~irig_ pclrts of or chart of 4. Name mam111.=ilian of the describe functions. photographs a'1<1 5. Name of the of lens mammalian eye. correct sigt,tedness. TEACHlNG ANO MATaUALS Charts en formation e:i.1e defects. Charts on eye correction.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/36-1-sensory-processes"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 1,
+      "topic": "Ecology of Population",
+      "pdf_pages": [
+        68,
+        69
+      ],
+      "performance_objectives": [
+        "should be able",
+        "Define the term succession.",
+        "Distinguish between primary secondary succession.",
+        "Describe the series of changes which ohen culminate in a stable ecosystem.",
+        "Discover a definite sequence of plants colonization.",
+        "Describe the characteristics.of a stable community recognize the climax of succession.",
+        "Define the term overcrowding. ITS f~ctors that may",
+        "overcrowding. adopted , avoid effects of • dispersal : fruits, • organisms measures adopted · avoid territorial some lizards. the causes of",
+        "of food effects of food - that food has - on mortality population. - - rate."
+      ],
+      "content": [
+        "Succession: (i) Meaning of succession. (ii) Structural changes in species composition, variety increase in number. (iii) Primary succession - in an aquatic habitat, - in a terrestrial habitat. (iii} Secondary succession - meaning examples·. (v) Characteristics of a stable community.",
+        "Overcrowding: (i) Population density studies vis-a-vis available resources. • (ii) Importance of factors affecting population e.g. space.",
+        "Explain the relationship between competition succession.",
+        "Factors that may cause overcrowding e.g. increased mortality, reduced death rate, absence of predators etc. y Discuss measures",
+        "Put nature· to • in 2 boxes, by overcrowding e.g. should of seeds while the migration of underfed. during unfavorable periods,",
+        "GetfNe in behaviour organisms e.g. desk three Discuss the effects",
+        "Display shortage: showing Competition. dispersal.",
+        "Ask Reproduction. ' describe Emigration. think will a poultry Increase in mortality feed for was 10 to 2"
+      ],
+      "teachers_activities": [
+        "Map out an area on a bare ground another on lawn that has been cleared earlier on (within the school premises).",
+        "Take to a nearby pond.",
+        "Lead to measure the size of their class determine available space for movement of each member of the class when: (a) only the class members are present (b) members of another dass are added.",
+        "Out-door practicals: visit to part of school or close by area with Delonix regia (Flame of the Forest) to see explosive mechanism that aids the dispersal of seeds. ACTIVIDES grasshopper",
+        "Write one set on the be well fed reducing other is supplied poulby 2 bags to sit on a meant for a chart agents means of to they what happen in where the chicks the reduced from bags a day."
+      ],
+      "student_activities": [
+        "Study succession on both pieces of land record findings over time (about 2 weeks).",
+        "Compare available space of movement of each member'of the class when (a) only the class members are present (b) members of another class are added.",
+        "Observe explosive mechanism note the distance between parent plant dispersed seeds.",
+        "Observe the behaviour or of the grasshoppers in the two boxes.",
+        "Observe the behaviour of five sharing a small seat. an essay",
+        "effects of the feed to a another ~ 10 to underfed in a a day.",
+        "dispersal."
+      ],
+      "evaluation_guide": [
+        "--...... to: Observe different organisms their member in a lawn the period of 2 What was the of other coming to the members of • class on your Name one animal that migrates during unfavourable conditions. Describe the activ.ity of grasshoppers in of the boxes presented to you in List the factors affecting population. ·½'hat is the relationship between competition succession of species. What are the measures taken by nature organisms in avoid over crowding. What are the consequences of food shortage on plant animal population."
+      ],
+      "teaching_learning_materials": "1. Mapped out bare ground a mapped 1. out piece of record lawn that had earlier on been identified. over weeks. 2. Pond, or lakes to 2. observe effect colonizers. join 3. of your the class being taught another class 3. put together. 4. Observing dispersal of seeds from pods of Delonix 4. regia. each class. One set of well fed 5. grasshopper in a box perforated set of grasshopper 6. perforated box. Olarts showing agents/means of . 7. . to 8.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/45-1-population-demography"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "The Organism And Its Environment",
+      "theme_number": 3,
+      "topic_number": 2,
+      "topic": "Balance in Nature",
+      "pdf_pages": [
+        70
+      ],
+      "performance_objectives": [
+        "1PERFORMANCi; , OBJECTr/ES should be able to: Recognise population as int2Qral part of the axTIITIUnity. Explain that different population of organisms make up a axnmunity. List factors that may efreci changes in popu)ation. ~lain the term dynamic equilibrium as related to different popu1ation in a dimax community . • Recognise the approximately constant numpers of individuals in a popt.!lation despite fluctuation. List some family planoing methods in human community."
+      ],
+      "content": [
+        "1 Factors affecting a",
+        "population: the (I) Ablotl,f - light, space, heat, water etc. (ii) Biotic - food,",
+        "competition (inter specific to intra specific), mortality, parasites, predators etc.",
+        "Dynamic equilibrium in nature factors that maintain it. (i) Density independent factors like availability of food. Density (ii) dependent factors e.g. natural disasters.",
+        "family planning: natural artificial method u!ed by man to control his population."
+      ],
+      "teachers_activities": [
+        "TEAotER ' Map out an",
+        "area, lawn within different school compound for study. Inhabit lawn. Plant, seedlings show inter-",
+        "specific intra- specific time competition. weeks) number Discusses the process by which survive omnivores maintain weeks. constant population by.density",
+        "dependent density natural ID(iependent e.g. factors. ctJt Display a",
+        "showing family chart planning methods. family"
+      ],
+      "student_activities": [
+        "Note the",
+        "A the school population of for study organisms that a given",
+        "(I) maize Record small observations over empty (about 2 evaporated note the of (ii) seedlings that cowpea after 2 container.",
+        "0,arts General family disrussion on methods. disasters Tsunami, earthquakes, etc. Observe the discuss planning methods."
+      ],
+      "evaluation_guide": [
+        "to: three populatfon lawn that that of the . specific specific natural avoidable? t;ne eff ecrs on or ! irl an area. . . - .. .."
+      ],
+      "teaching_learning_materials": "lawn arou~ premiS&'.,..-= by 1. Narne different on the Seedlings of make up planted in a a,mrr,unity rontainer e.g. tin of I milk. 2. Explain terms: Seedlings of : (i) planted in c: Intra · cr..rr.petitim. lm:er showing ·. {ii) ,;:ompet'ti:ion. planning ' . : ::.. AT€ disasters _. What are I 1 of e1lsaste-r5 t\"-O~u)a:-jcn. organisms affected I'. . .• :, !",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/46-1-ecology-of-ecosystems"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 1,
+      "topic": "Reproductive System and Reproduction in Humans",
+      "pdf_pages": [
+        71
+      ],
+      "performance_objectives": [
+        "should be able",
+        "female Identify the various of the !Tiale (i) reprod4ctive various In man. (ii) Draw, label male the structures male female reproductive organ in",
+        "(i) State the function of various parts of the (ii) female reproductive systems in",
+        "Compare the (I) Draw, label the structure of child. male female (sperm (II) foetus. Explain the process of fertlllzatlon In man. (111) llke the oondltlons for survival."
+      ],
+      "content": [
+        "Reproductive",
+        "Shows systems in male male (human): reproductJve Functions of Its",
+        "Sho-,-1,s parts. male female Toe structure of a sperm cell",
+        "Shows strudlJre of an ovum. fusion cell Fertilization:",
+        "Shows Fusion of gametes. photographs charts Implantation. developing Development of embryo: ' Selective exchange between mother a\"nd Removal of excretory products from Survival conditlons food, oxygen, amniotic fluid, placenta umblllcal oord."
+      ],
+      "teachers_activities": [
+        "TEACliER charts of",
+        "fem ale different systems. organs charts of",
+        "(sperm) gametes. with charts of",
+        "(i.e. a sperm gametes an ovum). featl.Jres.",
+        "or Identify of a foetus. S1.Jrvival"
+      ],
+      "student_activities": [
+        "STUOENTS l. Identify the reproducti·,e in the system. ' the male C.ompare syst..oms reproductive female.",
+        "the Compare the note",
+        "Observe the different conditions that aid lts of the foetus. '"
+      ],
+      "evaluation_guide": [
+        "to: S.-:ate the be:',·,-een ~ ices male repn::ductive systt:ms. State what is common to l:x>th gametes. State two functions d the umbilic.aJ cords. Draw label: The male reproductive system. The female reproductive system."
+      ],
+      "teaching_learning_materials": "LEARN1NG Well labdled Stuc~nts diarts of a me.le l ~ a!e 1. reproductive diff~ syst:?tnS. the fema!~ 0-arts of a well labelled male female gametes 2. (sperm ovum). Olarts photographs 3. showing the developing foet\\JS, surrounding amniotic fluid, 4. placenta attachment to the (I) mother's uterus. (II)",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/10-1-cell-division"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 2,
+      "topic": "Development of New Seeds",
+      "pdf_pages": [
+        72
+      ],
+      "performance_objectives": [
+        "9BJECTIVES Sb.Jdents should be able to: Defir)e fertilization. label male Draw the female reproductive· parts involved In fertilization. Destribe tile of ~ pollen development. . Locite the position of embryq within tile seed. -· I"
+      ],
+      "content": [
+        "Progress of development of zygote in the flowering plant: (I) plstll (Ii) stem (Iii) germplasm (iv) fertllization.",
+        "Germination of seeds:",
+        "(i) Typesd germlnatif)n. (ii) Conditions necessary for germination."
+      ],
+      "teachers_activities": [
+        "- A\\.1.1.w.1.1.1ES",
+        "Provides with dissected flowers to show the parts Involved In fertilization. Demonstrates experiment to grow pollen. Displays charts showing tile growth movement of pollen. Displays slides various showing the stages of embryo development In ' flowering plants. Guides to soak seeds in water plant some In milk tins to observe types of germination conditions necessary for germination."
+      ],
+      "student_activities": [
+        "Observe the dissected flower noting the male female parts.",
+        "Observe the slides charts showing the growth of pollen stages of embryo development",
+        "Soak seeds in water for different number of days observe with hand lens.",
+        "Plant seeds in different containers uproot to observe on different days.",
+        "Place the planted seedlings under different conditions to identify tile conditions necessary for germination."
+      ],
+      "evaluation_guide": [
+        "to: Define fertilization. Discuss i:he played by the stamen fertilization. : State 2 main of germination. List 4 main conditions necessary for germination. . ."
+      ],
+      "teaching_learning_materials": ". Prepared • • 1. slides of pollen growth. 1. 2. Olart:s on seed 2. development. role pistil 3, Empty milk !n tins. 3. Beakers with types 4. water. 5. Assorted 4. ; seeds - beans, ; maize etc. . 6. Sand. : 7. Hand lens. I I:· J",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/32-3-asexual-reproduction-in-plants"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 3,
+      "topic": "Fruits",
+      "pdf_pages": [
+        73
+      ],
+      "performance_objectives": [
+        "Stlmlts should be able lo: Distinguish between fruit a seed. State various types of Oassify fruits. ways are State the fruits dispersed. Describe the features that fruits to their modes of disposal."
+      ],
+      "content": [
+        "Strucl\\Jrc of frult!i.",
+        "kind:;",
+        "Types of f rull:5. d(l~",
+        "Dis~I fruits",
+        "of seeds. classify",
+        "Agents of dispersal.",
+        "link of ' mode • . ' ,."
+      ],
+      "teachers_activities": [
+        "A.CllVIDES ~ 'Cttl!R 8'1~ VurlotG",
+        "rl fruit; to the ~Inds . ~ Worl<s with to sort cY1d the fruits.",
+        "into Guides to physical features",
+        "fruits with their Into of dispersal. af '"
+      ],
+      "student_activities": [
+        "Brings varlo of fruit-: o du:;;; b.m on",
+        "te;x:hcrj of m.ut:; ln!it:uction. types. Sort the fruit;",
+        "vartcrus I:'~ . agEmt; d~ Sort out fruits their modes dl~I."
+      ],
+      "evaluation_guide": [
+        "G-U'l0f • ~ a seed ... V-drtcus t::> . fruits varlo..s Nameany fruits features their"
+      ],
+      "teaching_learning_materials": "t) I 0--urt:;/diugrorn'\" of 1/i. -~ m ; ~ 01c>rt st-iCWTng bE:t~ of fruit 22 hi ~ ...aJ. lJsln9 2. ca~ dass.'fy Into types. : 3. ttvee use their physlal to desaibe modesci dispersal.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/32-2-sexual-reproduction-of-angiosperms"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 4,
+      "topic": "Reproductive Behaviours",
+      "pdf_pages": [
+        74
+      ],
+      "performance_objectives": [
+        "ems OU d be able fferent State lre dl 1, twes af courtshlp -",
+        ".bdlaVIM ln dlffenn:",
+        ".anl!Mls. -4. E':JcS)laln the 1:eim5~ ~ 01) temtnrla'.lsm In anlmafs. shtruld able",
+        "~ I~fy' (i) {II) ~ t/r.3~V2 ch£ractslstlm. arti J.nfur that ®mlnant (Ill) ctwrnti:ers ~th! cxmtrlbution of ~s ~~ cheracilera for the rlrst g~ ' (F1),",
+        "rf Remgnl!ie ttEt trni 0} characters dominant {i} bamme lri manifest (BO more mrltvidual mem'l)...'\"l\"S of a pop. tion the ~ remsalva deradlani. 3."
+      ],
+      "content": [
+        "COflT!NT C.OUrmhlp b!havlc~m, In",
+        "m1lmnls: blrtf Palr1ng . ,:-eJT1t1x1allty UrimJ. or Dlsp(ay mlours 2, bcdypzm 5easooaJ cn tD mlQratf bask Tran6mlsslcn",
+        "of charar.tl!rs In aKpra55b'I Isms: Heretflay variatforl5 red Claracters tt-at be '311 transmitted aid how they lraismttim",
+        "How cheracter$ manifest ID from generation tD genemlon. used Qtrom05CmeS, tile basis hB'edftary locat~",
+        "the strucure or role In processes ~lssion of herecitary aq,) charscb!rs from parents ta offsp'tng, (an Prcbabillty In genetics,"
+      ],
+      "teachers_activities": [
+        "T!ACH!ll 9lOWS sbJdents coJourful cbo.lss pictures d s presBM!d 111.ards. s~menofAQarrm turkey autshlp Talcesstldents where ltzi!rds tD natB tl1'! au1sfllp behavfo.r, Discusses wtth",
+        "stJJdenls Mendel's C'tJS.S eq;,ertment wlh l!ilng wNm floweredi,eas.",
+        "Uses a prcjed:cr restJlts show a sllde d ratios chtmos0m8s. ' with Olarts can also~ Mendel. to show dlrancsomes. 3 . . Shows p-epared local of wrtety root biennial cassava (a II~ the lmpnwed cassaYa",
+        "aMJal crap). ix-epared"
+      ],
+      "student_activities": [
+        "Cbierveend PictUres anlma!:s e.g. ute ~ ~peaa>dc_ exhibiting wrt.ev nab.nd behir-1101.l'S. &perf lTIB't on",
+        "t:reedlng bkds, a Sli:h andmalze.. Agnma QxnpcR ycu",
+        "l.Oa!I {l.e. the ~(a they otnln) biennial). thatfl",
+        "\\cariety Obsetve . {cKl permanent s!Sdes",
+        "rl tips of oolcn or dttferent showlng mltcsls. genotypes ObseNe xaa. slides of lestl!Sofloo.Etor ~sshopper."
+      ],
+      "evaluation_guide": [
+        "to: three behiwtOlas the behaviour by a Mmcd to: a chart r:K d'IZlrac:bers. Smll!what llnd c:haraaers what ~ Is Probability d the two of cassava thlric farmers why?"
+      ],
+      "teaching_learning_materials": "MATI!RIALS ol bi~ such anlmals 1. Sllrte AgEwnal.lzsd, courtship In thef r tnanlmals. habltat 2. Desaibe ccurtshlp exhi>lted male ankMI, Pldures r:J animals as 1. Draw ~ Uzard. TT X tt VPJl'lety d 2. rece56lve dominant are. Improved asssava 3. state d dlromosomes an~l). Olart:s tD shoW 4. \\\\/hat lngenetirs? 0'0S5between e.g. AA 4, Whldl varJet:Ses do ycu wtl prefer",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/43-1-reproduction-methods"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 5,
+      "topic": "Biology of Heredity (Genetics)",
+      "pdf_pages": [
+        75
+      ],
+      "performance_objectives": [
+        "OF chromosomes in prepared slides of that chromosomes which are for inherited Explain the advantages disadvantages of: fertilization self- reproduction reproduction. In-breeding. the application of to practices in medicine."
+      ],
+      "content": [
+        "Application of the",
+        "principles of heredity: . (i) In agrirulture: - Improved varieties. - Diseases resistant varieties. (ii) In medicine advice for couples in relation to the sickle cell gene.",
+        "-Explain ' the terms: - Cross fertilization. - Self fertilization . - Out in-breeding using Mendelian crosses."
+      ],
+      "teachers_activities": [
+        "ACTIVffiES .TEACHER",
+        "Asks to do some cross AA SS (sickle cell gene) Shows",
+        "a chart depicting products of cross- fertilisation self-fertilisation. j"
+      ],
+      "student_activities": [
+        "Discuss the of advantages the improved variety of cassava over the local.",
+        "carry out Mendalian Cross to explain off springs' genotypes."
+      ],
+      "evaluation_guide": [
+        "Advise someons the AS genotype not to marry an AS. Show with a: - : Mendalian Cross. Discus$·tha . I di5advan~9f : lisatioh. self-f erti .."
+      ],
+      "teaching_learning_materials": "TEACHI JG /s, lD LEA ll G s. 5. Prepared slides of rcot tips with of onions, testes of g@sshopper. this 1. Charts showing crossing of AA x SS. 6. 2. Charts showing prod• 1c:s of self cross- fertilisation.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-inheritance"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 6,
+      "topic": "Variation",
+      "pdf_pages": [
+        76
+      ],
+      "performance_objectives": [
+        ". OF should be able to:",
+        "Define the terms evolution variation In relation to organisms.",
+        "Identify the relationship between the two terms variation evolution.",
+        "Recognise that variation be morphological or physio_logical.",
+        "State a few examples of: (i) morphological variations. (ii) physiological variations. S. List different ways that individuals vary in their behaviours functions.",
+        "Explain the application of variation to crime detection.",
+        "State the blood group types that can be transfused for individual with known blood group.",
+        "Deduce the possibility of children with particular blood group belonging to a man (father)."
+      ],
+      "content": [
+        "Variation Evolution {l) Morphological living variation (physical appearance) which can be: (i) Continuous (size, weight, height). (ii) Discontinuous (a) (colour, skin, eye could hair, coat of animal). (b) Finger prints. (2) Physiological variations (i) Behaviour (ii) Ability to roll the tongue (iii) Ability to taste phenylthiocarbamide (PTC) (iv) Differences in blood groups (A, B, AB 0). Application of Variation (i) Crime detection (finger prints) of dangerous weapons. (ii) Blood transfusion. (iii) Determination of paternity."
+      ],
+      "teachers_activities": [
+        "Measures height weight of of the same age group e.g. 12 years - lSyears, 14 years to 16 years.",
+        "Shows photographs of maize cobs, apple ripe pineapples.",
+        "Asks to roll their tongues. Asks",
+        "if they know their blood group.",
+        "Demonstrates the making of fingerprints identify the different patterns, made e.g. wells, arches etc.",
+        "Makes a table with different blood groups."
+      ],
+      "student_activities": [
+        "Record",
+        "different weighing heights weighing weights of in the",
+        "same group. markers measuring of",
+        "Observe record colour patterns",
+        "on plants. made tongue",
+        "Attempt to appreciate roll the tongue. feature",
+        "Name their not different blood roll the groups.",
+        "ink for make finger printing. prints, ' notes the",
+        "A different types group of finger prints. an indicate that to particular group"
+      ],
+      "evaluation_guide": [
+        "to: a table the explain implication. everyone tongue. Compare the prints by there two with the pattern? a man blood group possibly be ath~r of a whose blood is B given mother's group O?"
+      ],
+      "teaching_learning_materials": "Bathroom scale for 1. Draw frequency distribution showing for measurements heights made the are to roll the 2. can in order to roll the that this is 3. physiological i.e. finger made everyone can tongue. Stamp pad with 4. Are thumb same s. table for blood can match with empty space to AB the blood the f can be given boy group individual with blood that the types. blood is",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/19-1-population-evolution"
+    },
+    {
+      "class": "SSS 3",
+      "theme": "Continuity Of Life",
+      "theme_number": 4,
+      "topic_number": 7,
+      "topic": "Evolution",
+      "pdf_pages": [
+        77,
+        78
+      ],
+      "performance_objectives": [
+        "4: OF should be",
+        "able to:",
+        "Discuss the progressive change in water anatomy of organisms from water to land.",
+        "Explain the tenn their Adaptive colouration theii functions. Green",
+        "State examples of structural adaptations etc). in the following organisms that aid",
+        "their survival: (i) (i) mosquitoes feeding (ii) securing of mates in (ii) agama lizards, e.g. .(iii)",
+        "Explain the term behavioural adaptation body as regards the castes in termites.",
+        "State the law of use disuse",
+        "according to Jean Baptist de Lamar. their Ch £l.:Jp u·,, t:atcothcr occurrences .ip.1rt rrom n.itural selection u,at the may bring about evolution.",
+        "(i) (ii) 8."
+      ],
+      "content": [
+        "The progressive change in",
+        "Shows structures anatomy of specimens organisms using examples of tadpoles features of from external to land. fish with toads Structural adaptation: lungs. Adaptive colouration functions (e.g.",
+        "Visits camouflage in chameleons, ornamental snakes in green around grasses, Bright colours of flowers to attract pollinations",
+        "the zoo • peacock Structural adaptation peahen. for obtaining food e.g. proboscis for sucking sap in ~- Provi~es ' insects. Agama Protection defense show tortoise in shell, Mimicry colours for",
+        "Shows securing mates for regulating real temperature etc. soldiers, Different castes of males termites their roles.",
+        "Different castes of bees the roles they play In of the social disuse boxers Theories of Evolution MT r r or = ,.,,.,tn, J n of I· d\"1 rn r - 1,,w d1·u~ • luw of ,md lnhcrl lclncc or ucqulre:d can chJrncterl5llc:; (rcl.it d lo child of August Weisman using his even experiment of matlng of mice).",
+        "Evidence of evolution: real Fossil records. Embryology. spinoza responsible for hybridus. Forces evolution: mutation, gene flow, genetic drift. 9.· in the sapiens erectus,"
+      ],
+      "teachers_activities": [
+        "ACTIVmES",
+        "Observe of progressive in the changes of gill stage, respiratory internal gills in animals with (structures). '",
+        "Take to destination plants butterflies. the school.",
+        "Note the Organises visit to colourful to see a of the a against the colour of peahen. male hzard to",
+        "Note colour. colourful the Agama charts contrast termites: dull green king, queen the female reproductive females.",
+        "Draw different Discusses with tennites. the reality ' law of use by ref erring to or athletes. ti'i . . aller's have big ~<\"~J developed legs traits without transferred. trainings.",
+        "Study Shows specimen of similarities Amaranlhus differences them. Amaranlhus reason differences to the Shows photographs of",
+        "evolutionary trend similarities Homo the e.g. Homo· etc. :9. Provides Take photographs of the in tail different\" embryos gestation, vertebrates. common one other embryo."
+      ],
+      "student_activities": [
+        "Tadpoles in external gill fish toads. surfaces",
+        "Butterflies ornamental note of the",
+        "Visit to the of",
+        "Termites.",
+        "Charts of feathers different castes peacock termites. dull the",
+        "Pictures of boxers, weigh~ifters the footballers legs. bands on in with the colour of lizard. the castes of being both plants",
+        "note the lizards. between",
+        "showing Suggest the stages for the from one man. other.",
+        "Study the different between s~eletons of chimpanzee, gorilla man. the note of man during gill stage at point or the in the of an •"
+      ],
+      "evaluation_guide": [
+        "/.part from selecJon, o • er forces responsible evolution?"
+      ],
+      "teaching_learning_materials": "the to: stage, 1. State the impcrt:ance of the association between plants. buttertlies ar.d flowers/plants. zoo. 2. Give an example of a plant that practices mimicry. the of 3. Name the two kinds of soldiers in the termite castes. 4. Why do you Liink Charles Darwin's theory is more . popularly accepted? 5. State the structural adaptation in an its function in the of the 7. natural what Fish, toads are for Photographs different of evolution in Photographs of embryos of vertebrates.",
+      "openstax_link": "https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution"
+    }
+  ]
+}

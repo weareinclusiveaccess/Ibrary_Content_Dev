@@ -1,0 +1,153 @@
+{
+  "book": {
+    "title": "Concepts of Biology",
+    "url": "https://openstax.org/books/concepts-biology",
+    "description": "OpenStax Concepts of Biology - introductory biology for non-science majors"
+  },
+  "chapters": {
+    "1": {
+      "title": "Introduction to Biology",
+      "url": "https://openstax.org/books/concepts-biology/pages/1-introduction",
+      "sections": "1.1 Themes and Concepts of Biology; 1.2 The Process of Science"
+    },
+    "2": {
+      "title": "Chemistry of Life",
+      "url": "https://openstax.org/books/concepts-biology/pages/2-introduction",
+      "sections": "2.1 Building Blocks of Molecules; 2.2 Water; 2.3 Biological Molecules"
+    },
+    "3": {
+      "title": "Cell Structure and Function",
+      "url": "https://openstax.org/books/concepts-biology/pages/3-introduction",
+      "sections": "3.1 How Cells Are Studied; 3.2 Prokaryotic vs Eukaryotic; 3.3 Eukaryotic Cells; 3.4 Cell Membrane; 3.5 Passive Transport; 3.6 Active Transport"
+    },
+    "4": {
+      "title": "How Cells Obtain Energy",
+      "url": "https://openstax.org/books/concepts-biology/pages/4-introduction",
+      "sections": "4.1 Energy and Metabolism; 4.2 Glycolysis; 4.3 Citric Acid Cycle; 4.4 Fermentation"
+    },
+    "5": {
+      "title": "Photosynthesis",
+      "url": "https://openstax.org/books/concepts-biology/pages/5-introduction",
+      "sections": "5.1 Overview; 5.2 Light-Dependent Reactions; 5.3 Calvin Cycle"
+    },
+    "6": {
+      "title": "Reproduction at the Cellular Level",
+      "url": "https://openstax.org/books/concepts-biology/pages/6-introduction",
+      "sections": "6.1 Genome; 6.2 Cell Cycle; 6.3 Cancer; 6.4 Prokaryotic Cell Division"
+    },
+    "7": {
+      "title": "The Cellular Basis of Inheritance",
+      "url": "https://openstax.org/books/concepts-biology/pages/7-introduction",
+      "sections": "7.1 Sexual Reproduction; 7.2 Meiosis; 7.3 Variations in Meiosis"
+    },
+    "8": {
+      "title": "Patterns of Inheritance",
+      "url": "https://openstax.org/books/concepts-biology/pages/8-introduction",
+      "sections": "8.1 Mendel's Experiments; 8.2 Laws of Inheritance; 8.3 Extensions"
+    },
+    "9": {
+      "title": "Molecular Biology",
+      "url": "https://openstax.org/books/concepts-biology/pages/9-introduction",
+      "sections": "9.1 DNA Structure; 9.2 Replication; 9.3 Transcription; 9.4 Translation; 9.5 Gene Regulation"
+    },
+    "10": {
+      "title": "Biotechnology",
+      "url": "https://openstax.org/books/concepts-biology/pages/10-introduction",
+      "sections": "10.1 Cloning and Genetic Engineering; 10.2 Medicine and Agriculture; 10.3 Genomics"
+    },
+    "11": {
+      "title": "Evolution and Its Processes",
+      "url": "https://openstax.org/books/concepts-biology/pages/11-introduction",
+      "sections": "11.1 Discovering How Populations Change; 11.2 Mechanisms; 11.3 Evidence; 11.4 Speciation"
+    },
+    "12": {
+      "title": "Diversity of Life",
+      "url": "https://openstax.org/books/concepts-biology/pages/12-introduction",
+      "sections": "12.1 Organizing Life on Earth; 12.2 Determining Evolutionary Relationships"
+    },
+    "13": {
+      "title": "Diversity of Microorganisms, Fungi, and Protists",
+      "url": "https://openstax.org/books/concepts-biology/pages/13-introduction",
+      "sections": "13.1 Prokaryotic Diversity; 13.2 Eukaryotic Origins; 13.3 Protists; 13.4 Fungi"
+    },
+    "14": {
+      "title": "Diversity of Plants",
+      "url": "https://openstax.org/books/concepts-biology/pages/14-introduction",
+      "sections": "14.1 Plant Kingdom; 14.2 Seedless Plants; 14.3 Gymnosperms; 14.4 Angiosperms"
+    },
+    "15": {
+      "title": "Diversity of Animals",
+      "url": "https://openstax.org/books/concepts-biology/pages/15-introduction",
+      "sections": "15.1 Features; 15.2 Sponges & Cnidarians; 15.3 Flatworms/Nematodes/Arthropods; 15.4 Mollusks & Annelids; 15.5 Echinoderms & Chordates; 15.6 Vertebrates"
+    },
+    "16": {
+      "title": "The Body's Systems",
+      "url": "https://openstax.org/books/concepts-biology/pages/16-introduction",
+      "sections": "16.1 Homeostasis and Osmoregulation; 16.2 Digestive System; 16.3 Circulatory and Respiratory; 16.4 Endocrine; 16.5 Musculoskeletal; 16.6 Nervous System"
+    },
+    "17": {
+      "title": "The Immune System and Disease",
+      "url": "https://openstax.org/books/concepts-biology/pages/17-introduction",
+      "sections": "17.1 Viruses; 17.2 Innate Immunity; 17.3 Adaptive Immunity; 17.4 Disruptions"
+    },
+    "18": {
+      "title": "Animal Reproduction and Development",
+      "url": "https://openstax.org/books/concepts-biology/pages/18-introduction",
+      "sections": "18.1 How Animals Reproduce; 18.2 Development and Organogenesis; 18.3 Human Reproduction"
+    },
+    "19": {
+      "title": "Population and Community Ecology",
+      "url": "https://openstax.org/books/concepts-biology/pages/19-introduction",
+      "sections": "19.1 Population Demographics; 19.2 Population Growth; 19.3 Human Population; 19.4 Community Ecology"
+    },
+    "20": {
+      "title": "Ecosystems and the Biosphere",
+      "url": "https://openstax.org/books/concepts-biology/pages/20-introduction",
+      "sections": "20.1 Energy Flow; 20.2 Biogeochemical Cycles; 20.3 Terrestrial Biomes; 20.4 Aquatic and Marine Biomes"
+    }
+  },
+  "topic_to_chapters": {
+    "Recognizing Living Things": [1],
+    "Classification of Living Things": [1, 12, 13, 14, 15],
+    "The Cell": [3],
+    "The Cell and Its Environment": [3],
+    "Some Properties and Functions of the Cell": [3, 4, 5, 6],
+    "Reproduction (Asexual and Sexual)": [6, 7],
+    "Tissues and Supporting Systems": [16],
+    "Nutrition in Animals": [2, 16],
+    "Basic Ecological Concepts": [19, 20],
+    "Functioning Ecosystem: Autotrophy, Food Webs and Trophic Levels": [20],
+    "Energy Transformation in Nature": [4, 5, 20],
+    "Relevance of Biology to Agriculture": [10, 14],
+    "Microorganisms Around Us": [13],
+    "Microorganisms in Action": [13, 17],
+    "Aquatic Habitat (Fresh Water and Marine)": [20],
+    "Towards Better Health": [17],
+    "Unicellular Organisms and Invertebrates": [13, 15],
+    "Reproduction in Plants and Animals": [6, 7, 14, 18],
+    "Classification of Plants": [12, 14],
+    "Digestive System": [16],
+    "Transportation System": [16],
+    "Respiratory System": [16],
+    "Excretory Systems": [16],
+    "Nutrient Cycling in Nature": [20],
+    "Ecological Management: Association, Tolerance, Adaptation and Pollution": [19, 20],
+    "Conservation of Natural Resources": [19, 20],
+    "Pests and Diseases of Crops": [13, 17],
+    "Reproductive Systems in Vertebrates": [18],
+    "Reproductive Systems in Plants": [14],
+    "Pollination in Plants": [14],
+    "Regulation of Internal Environment (Homeostasis)": [16],
+    "Nervous Co-ordination": [16],
+    "Sense Organs": [16],
+    "Ecology of Population": [19],
+    "Balance in Nature": [19, 20],
+    "Reproductive System and Reproduction in Humans": [18],
+    "Development of New Seeds": [6, 14],
+    "Fruits": [14],
+    "Reproductive Behaviours": [18],
+    "Biology of Heredity (Genetics)": [7, 8, 9],
+    "Variation": [7, 8, 11],
+    "Evolution": [11, 12]
+  }
+}
