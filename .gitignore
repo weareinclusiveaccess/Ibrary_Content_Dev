@@ -147,11 +147,23 @@ Thumbs.db
 desktop.ini
 
 # Project-specific
-# Textbook PDFs and content
-
+# Textbook PDFs and content (general)
 docs/textbooks/
 docs/textBooks/
 *.pdf
+
+# Allow pipeline source documents (curriculum, UDL guidelines)
+# NOTE: Biology2e-WEB.pdf is too large for GitHub (378 MB). Download via: make download-textbook
+!data/docs/extracted_source_content/biology/OLD NERDC CURRICULUM SSCE BIOLOGY .pdf
+!data/docs/udlg3-graphicorganizer-digital-numbers-a11y.pdf
+
+# Pipeline artifacts (generated, not tracked)
+data/docs/extracted_source_content/biology/curriculum_validated.json
+data/docs/extracted_source_content/biology/curriculum_extraction_report.json
+data/docs/extracted_source_content/biology/curriculum_textbook_alignment.json
+data/docs/extracted_source_content/biology/curated_content.json
+data/docs/extracted_source_content/biology/udl_evaluation_report.json
+data/docs/extracted_source_content/biology/textbook_images/
 
 
 # Database

@@ -1,0 +1,69 @@
+---
+description: IBrary Biology Content System — project structure, setup, and pipeline conventions
+alwaysApply: true
+---
+
+# IBrary Biology Content Pipeline
+
+## Project Overview
+
+This project implements a UDL-aligned biology content pipeline that extracts textbook content, aligns it with the Nigerian curriculum, and generates accessible learning modules via LLM.
+
+## Quick Setup
+
+```bash
+docker compose up -d          # PostgreSQL (pgvector) + DynamoDB Local
+cp .env.example .env          # configure OPENAI_API_KEY at minimum
+uv sync --extra dev && uv pip install -e .
+alembic upgrade head          # create DB tables
+python scripts/create_dynamodb_tables.py
+make download-textbook        # download Biology2e-WEB.pdf (~380 MB)
+```
+
+## Architecture
+
+- **Textbook**: `data/docs/extracted_source_content/biology/Biology2e-WEB.pdf` (OpenStax Biology 2e — not in git, download via `make download-textbook`)
+- **Curriculum**: `data/docs/extracted_source_content/biology/biology_curriculum_structured.json` (topics 1-6 only, SSS 1)
+- **UDL Rubric**: `data/docs/udlg3-graphicorganizer-digital-numbers-a11y.pdf` (CAST UDL Guidelines v3.0)
+- **Storage**: PostgreSQL + pgvector for textbook chunks/embeddings; DynamoDB for published content; S3 for images
+
+## Package Layout
+
+All pipeline code lives under `src/ibrary/`:
+
+| Module | Purpose |
+|--------|---------|
+| `config.py` | Central env-based configuration |
+| `db.py` | SQLAlchemy engine/session |
+| `models.py` | ORM models (Textbook, Chunk, Embedding, CuratedContent) |
+| `curriculum/` | Curriculum validation, unit ID assignment |
+| `textbook/` | PDF extraction (PyMuPDF), DB loading |
+| `alignment/` | Embedding (OpenAI), pgvector similarity search |
+| `curation/` | UDL content generation via RAG + OpenAI |
+| `evaluation/` | UDL judge scoring |
+| `serving/` | DynamoDB writer + FastAPI internal API |
+
+Legacy extractors are in `src/sourceContentProcessor/` — do not add new code there.
+
+## Curriculum Model
+
+- Use `topic_number` only — never map to week numbers
+- Subtopic = content item (`curriculum[N].content[M]`)
+- Use `class`, `theme`, `theme_number` — no term concept
+- Unit ID format: `bio_sss1_theme{T}_topic{N}_content{M}`
+
+## Key Conventions
+
+- **Idempotency**: all pipeline steps must be safe to re-run (upsert by ID, skip unchanged)
+- **RAG flow**: always fetch full chunk content from PostgreSQL before calling LLM
+- **DynamoDB**: only human-reviewed-and-approved content goes here
+- **Prompt versioning**: track via file path + content hash (see `curation/prompts.py`)
+- **Error handling**: retry LLM calls 3x with backoff; flag failures as `[Needs Review]`
+
+## Running the Pipeline
+
+```bash
+python scripts/run_pipeline.py                    # full run
+python scripts/run_pipeline.py --resume-from curate  # resume from step
+python scripts/run_pipeline.py --skip-judge          # skip UDL evaluation
+```
