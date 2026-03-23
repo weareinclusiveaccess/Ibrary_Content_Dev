@@ -17,6 +17,8 @@ class CurriculumUnit(BaseModel):
     content_index: int
     content_text: str
     performance_objectives: list[str] = []
+    teachers_activities: list[str] = []
+    student_activities: list[str] = []
 
     model_config = {"populate_by_name": True}
 
@@ -32,6 +34,8 @@ class CurriculumTopic(BaseModel):
     pdf_pages: list[int] = []
     performance_objectives: list[str] = []
     content: list[str] = []
+    teachers_activities: list[str] = []
+    student_activities: list[str] = []
     textbook_chapters: list[int] = []
 
     model_config = {"populate_by_name": True}

@@ -70,18 +70,39 @@ def align_all(
     units: list[CurriculumUnit],
     top_k: int = ALIGNMENT_TOP_K,
     model_version: str | None = None,
-) -> dict[str, list[dict]]:
-    """Align all curriculum units; return mapping of unit_id → matches."""
-    alignment: dict[str, list[dict]] = {}
+) -> dict[str, dict]:
+    """Align all curriculum units; return mapping of unit_id → report row.
+
+    Each value includes curriculum labels (`content_text` is the subtopic / content
+    item wording) plus `matches` (chunk alignments). Older files used unit_id → list
+    only; see `alignment_matches` in curation for loading either shape.
+    """
+    alignment: dict[str, dict] = {}
     for unit in units:
         try:
             matches = align_unit(unit, top_k=top_k, model_version=model_version)
-            alignment[unit.curriculum_unit_id] = matches
+            alignment[unit.curriculum_unit_id] = {
+                "theme": unit.theme,
+                "theme_number": unit.theme_number,
+                "topic_number": unit.topic_number,
+                "topic": unit.topic,
+                "content_index": unit.content_index,
+                "content_text": unit.content_text,
+                "matches": matches,
+            }
             if not matches:
                 logger.warning("no_alignment", unit_id=unit.curriculum_unit_id)
         except Exception as exc:
             logger.error("alignment_failed", unit_id=unit.curriculum_unit_id, error=str(exc))
-            alignment[unit.curriculum_unit_id] = []
+            alignment[unit.curriculum_unit_id] = {
+                "theme": unit.theme,
+                "theme_number": unit.theme_number,
+                "topic_number": unit.topic_number,
+                "topic": unit.topic,
+                "content_index": unit.content_index,
+                "content_text": unit.content_text,
+                "matches": [],
+            }
     return alignment
 
 

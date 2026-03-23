@@ -9,7 +9,7 @@ from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from ibrary.db import get_session
 from ibrary.models import Textbook, TextbookChunk, TextbookImage
-from ibrary.textbook.extractor import ExtractedImage, TextbookChunkRecord
+from ibrary.textbook.openstax_biology2e import ExtractedImage, TextbookChunkRecord
 
 logger = structlog.get_logger(__name__)
 
@@ -19,13 +19,25 @@ def upsert_textbook(
     title: str,
     edition: str = "",
     source_path: str = "",
+    subject: str | None = "biology",
 ) -> None:
     session = get_session()
     try:
-        stmt = (
-            pg_insert(Textbook)
-            .values(book_id=book_id, title=title, edition=edition, source_path=source_path)
-            .on_conflict_do_nothing(index_elements=["book_id"])
+        ins = pg_insert(Textbook).values(
+            book_id=book_id,
+            title=title,
+            edition=edition,
+            source_path=source_path,
+            subject=subject,
+        )
+        stmt = ins.on_conflict_do_update(
+            index_elements=["book_id"],
+            set_={
+                "title": ins.excluded.title,
+                "edition": ins.excluded.edition,
+                "source_path": ins.excluded.source_path,
+                "subject": ins.excluded.subject,
+            },
         )
         session.execute(stmt)
         session.commit()
@@ -43,32 +55,33 @@ def upsert_chunks(chunks: list[TextbookChunkRecord]) -> int:
             if existing and existing.content_hash == chunk.content_hash:
                 continue
 
-            stmt = (
-                pg_insert(TextbookChunk)
-                .values(
-                    chunk_id=chunk.chunk_id,
-                    book_id=chunk.book_id,
-                    chapter_num=chunk.chapter_num,
-                    section_num=chunk.section_num,
-                    subsection_num=chunk.subsection_num,
-                    title=chunk.title,
-                    summary=chunk.summary,
-                    content=chunk.content,
-                    content_hash=chunk.content_hash,
-                    page_start=chunk.page_start,
-                    page_end=chunk.page_end,
-                )
-                .on_conflict_do_update(
-                    index_elements=["chunk_id"],
-                    set_={
-                        "title": chunk.title,
-                        "summary": chunk.summary,
-                        "content": chunk.content,
-                        "content_hash": chunk.content_hash,
-                        "page_start": chunk.page_start,
-                        "page_end": chunk.page_end,
-                    },
-                )
+            ins = pg_insert(TextbookChunk).values(
+                chunk_id=chunk.chunk_id,
+                book_id=chunk.book_id,
+                chapter_num=chunk.chapter_num,
+                section_num=chunk.section_num,
+                subsection_num=chunk.subsection_num,
+                title=chunk.title,
+                summary=chunk.summary,
+                learning_objectives=chunk.learning_objectives,
+                ancillary_content=chunk.ancillary_content,
+                content=chunk.content,
+                content_hash=chunk.content_hash,
+                page_start=chunk.page_start,
+                page_end=chunk.page_end,
+            )
+            stmt = ins.on_conflict_do_update(
+                index_elements=["chunk_id"],
+                set_={
+                    "title": ins.excluded.title,
+                    "summary": ins.excluded.summary,
+                    "learning_objectives": ins.excluded.learning_objectives,
+                    "ancillary_content": ins.excluded.ancillary_content,
+                    "content": ins.excluded.content,
+                    "content_hash": ins.excluded.content_hash,
+                    "page_start": ins.excluded.page_start,
+                    "page_end": ins.excluded.page_end,
+                },
             )
             session.execute(stmt)
             upserted += 1
@@ -100,17 +113,23 @@ def save_images_to_s3(images: list[ExtractedImage], bucket: str) -> list[str]:
             url = f"s3://{bucket}/{key}"
             urls.append(url)
 
-            stmt = (
-                pg_insert(TextbookImage)
-                .values(
-                    image_id=img.image_id,
-                    chunk_id=img.chunk_id,
-                    s3_url=url,
-                    caption=img.caption,
-                    alt_text=img.alt_text,
-                    page_num=img.page_num,
-                )
-                .on_conflict_do_nothing(index_elements=["image_id"])
+            ins_img = pg_insert(TextbookImage).values(
+                image_id=img.image_id,
+                chunk_id=img.chunk_id,
+                s3_url=url,
+                caption=img.caption,
+                alt_text=img.alt_text,
+                page_num=img.page_num,
+            )
+            stmt = ins_img.on_conflict_do_update(
+                index_elements=["image_id"],
+                set_={
+                    "chunk_id": ins_img.excluded.chunk_id,
+                    "s3_url": ins_img.excluded.s3_url,
+                    "caption": ins_img.excluded.caption,
+                    "alt_text": ins_img.excluded.alt_text,
+                    "page_num": ins_img.excluded.page_num,
+                },
             )
             session.execute(stmt)
 

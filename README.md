@@ -1,196 +1,123 @@
-# Ibrary_Content_Dev
+# IBrary
 
-## IBrary - Automated Content Rewording Component
+UDL-aligned **biology** content pipeline: extract [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e), align it with structured Nigerian curriculum JSON (SSS 1 focus), optionally generate accessible learning modules via OpenAI (RAG), and publish reviewed content to DynamoDB. Storage is **PostgreSQL + pgvector** for chunks and embeddings; **DynamoDB** (and optional **S3** for images) for serving.
 
-An automated, standardized content rewording component that transforms curriculum-aligned secondary school content into simplified, relatable, accessibility-aware explanations optimized for visually impaired learners and audio-first delivery.
+## What this repo implements
 
-## Overview
+- **Extract & load** — Parse `Biology2e-WEB.pdf`, structured chunks and images → Postgres ([`textbook/openstax_biology2e.py`](src/ibrary/textbook/openstax_biology2e.py), [`textbook/loader.py`](src/ibrary/textbook/loader.py)).
+- **Validate** — Curriculum JSON and unit IDs ([`curriculum/`](src/ibrary/curriculum/)).
+- **Align** — Embed chunks, similarity search vs curriculum ([`alignment/`](src/ibrary/alignment/)).
+- **Optional (LLM-dependent)** — UDL curation, judge scoring, DynamoDB publish ([`curation/`](src/ibrary/curation/), [`evaluation/`](src/ibrary/evaluation/), [`serving/`](src/ibrary/serving/)).
 
-IBrary provides an API-driven content rewording pipeline that:
-- Transforms approved curriculum content into accessible formats
-- Validates content for readability, accessibility, and semantic fidelity
-- Uses profile-driven transformation for consistency
-- Caches results to optimize costs and performance
-- Supports multiple LLM providers (OpenAI, Anthropic, Google)
+**Roadmap (not implemented here):** additional subjects (chemistry, physics), non-OpenAI LLM providers, and broader “profile-based” transformation APIs described in older design docs.
 
-## MVP Scope
+## Documentation
 
-**Initial Target:**
-- **Grade Level:** SSS1 (Senior Secondary School 1)
-- **Subjects:** Chemistry, Physics, Biology
-- **Focus:** Audio-first, accessible content for visually impaired learners
+**Full setup (Docker, Postgres, env vars, textbook download, troubleshooting):** see [SETUP.md](SETUP.md).
 
-## Features
+## Quick start
 
-- ✅ Profile-based content transformation
-- ✅ Multi-provider LLM support (OpenAI, Anthropic, Google)
-- ✅ Hybrid evaluation (deterministic + semantic checks)
-- ✅ Caching and versioning
-- ✅ Accessibility-focused validation
-- ✅ Tiered failure handling with retries
-- ✅ Cost control mechanisms
+```bash
+git clone <repository-url>
+cd IBrary   # or your clone directory name
 
-## Project Structure
+uv sync --extra dev
+uv pip install -e .
+cp .env.example .env
+# Set OPENAI_API_KEY (required for default pipeline: embeddings in align)
+# Set DATABASE_URL if not using defaults (see SETUP.md)
 
-```
-ibrary/
-├── src/
-│   └── ibrary/
-│       ├── __init__.py
-│       ├── api/              # API endpoints
-│       ├── core/              # Core transformation logic
-│       ├── llm/               # LLM provider abstractions
-│       ├── profiles/          # Transformation profiles
-│       ├── validation/        # Validation and evaluation
-│       ├── storage/           # Content storage and caching
-│       └── utils/             # Utilities
-├── config/                    # Configuration files
-│   └── profiles/              # Transformation profile definitions
-├── tests/                     # Test suite
-├── docs/                      # Documentation
-└── pyproject.toml            # Project configuration
+# Start Postgres + DynamoDB Local (see SETUP.md for Windows vs make)
+make up   # Windows PowerShell: .\scripts\make.ps1 up
+
+uv run alembic upgrade head
+uv run python scripts/create_dynamodb_tables.py
+
+make download-textbook   # OpenStax Biology 2e PDF into data/docs/...
+# Windows: .\scripts\make.ps1 download-textbook
+
+# Default: extract → validate → align (no LLM curation)
+make pipeline
+# Windows PowerShell: .\scripts\make.ps1 pipeline
+# Git Bash on Windows: powershell -File scripts/make.ps1 pipeline
+# or anywhere: uv run python scripts/run_pipeline.py
+
+# Optional: full flow through curation, judge, publish
+make pipeline-full
+# Windows: .\scripts\make.ps1 pipeline-full
+# or: uv run python scripts/run_pipeline.py --full
 ```
 
-## Installation
+More options: `python scripts/run_pipeline.py --help` (e.g. `--steps extract`, `--full --resume-from curate`). Notebook mirror: [`notebooks/run_pipeline.ipynb`](notebooks/run_pipeline.ipynb).
 
-### Prerequisites
+## Project structure
 
-- Python 3.10 or higher
-- UV package manager
+```
+IBrary/
+├── src/ibrary/
+│   ├── config.py           # Environment-based settings
+│   ├── db.py               # SQLAlchemy engine/session
+│   ├── models.py           # Textbook, chunks, embeddings, curated content, …
+│   ├── curriculum/         # Curriculum validation & schemas
+│   ├── textbook/           # OpenStax Biology 2e PDF extract + DB load
+│   ├── alignment/          # OpenAI embeddings + pgvector alignment
+│   ├── curation/           # RAG + UDL prompts → curated modules
+│   ├── evaluation/         # UDL judge
+│   └── serving/            # DynamoDB writer + FastAPI read API
+├── scripts/                # run_pipeline.py, compose helpers, …
+├── alembic/                # Migrations (schema `ibrary`)
+├── data/docs/              # PDF, curriculum JSON, pipeline outputs (large assets often gitignored)
+├── notebooks/              # Notebook pipeline walkthrough
+├── tests/
+├── pyproject.toml
+├── SETUP.md
+└── README.md
+```
 
-### Setup
+## Pipeline (high level)
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd IBrary
-   ```
+```mermaid
+flowchart LR
+  extract[extract]
+  validate[validate]
+  align[align]
+  curate[curate]
+  judge[judge]
+  publish[publish]
+  extract --> validate --> align
+  align -.-> curate --> judge --> publish
+```
 
-2. **Install UV package manager** (if not already installed):
-   ```bash
-   # On macOS/Linux
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   
-   # On Windows (PowerShell)
-   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-   ```
+Solid path: **default** `make pipeline`. Dotted path: **optional** `make pipeline-full` or `--steps curate,judge,publish`.
 
-3. **Install dependencies:**
-   ```bash
-   # Install production dependencies
-   uv sync
-   
-   # Install development dependencies (includes black, isort, ruff, pytest, etc.)
-   uv sync --extra dev
-   ```
+## Prerequisites (summary)
 
-4. **Set up environment variables:**
-   ```bash
-   # Copy the example environment file
-   cp .env.example .env
-   
-   # Edit .env with your LLM API keys (at least one provider required)
-   # Required: OPENAI_API_KEY or ANTHROPIC_API_KEY or GOOGLE_API_KEY
-   ```
-
-5. **Download Spacy model** (required for text processing):
-   ```bash
-   python -m spacy download en_core_web_sm
-   # Or use the model you prefer: en_core_web_md, en_core_web_lg
-   ```
-
-6. **Install the package in editable mode:**
-   ```bash
-   uv pip install -e .
-   ```
-
-7. **Set up pre-commit hooks** (recommended):
-   ```bash
-   uv run pre-commit install
-   ```
-
-## Quick Start
-
-See `docs/QUICKSTART.md` for detailed usage examples.
-
-## Configuration
-
-Transformation profiles define how content is transformed. See `config/profiles/` for example profiles.
+- Python 3.10+, [uv](https://github.com/astral-sh/uv), Git  
+- Docker (Postgres with pgvector + DynamoDB Local)  
+- `OPENAI_API_KEY` for embeddings and (if used) curation  
+- Optional: `python -m spacy download en_core_web_sm` if you use Spacy-based tooling (see [SETUP.md](SETUP.md))
 
 ## Development
 
-### Running Tests
 ```bash
 uv run pytest
-```
-
-### Code Formatting and Linting
-
-This project uses **black** for code formatting, **isort** for import sorting, and **ruff** for linting.
-
-#### Format Code
-```bash
-# Format with black
-uv run black src tests
-
-# Sort imports with isort
-uv run isort src tests
-
-# Or format and sort in one go
-uv run black src tests && uv run isort src tests
-```
-
-#### Lint Code
-```bash
-# Check code with ruff
-uv run ruff check src tests
-
-# Auto-fix issues where possible
-uv run ruff check --fix src tests
-
-# Format with ruff (alternative to black)
-uv run ruff format src tests
-```
-
-#### Format and Lint Everything
-```bash
-# Run all formatters and linters
-uv run black src tests
-uv run isort src tests
-uv run ruff check --fix src tests
-uv run ruff format src tests
-```
-
-### Pre-commit Hooks
-
-Install pre-commit hooks to automatically format and lint code before commits:
-
-```bash
-# Install pre-commit hooks
 uv run pre-commit install
-
-# Run hooks manually on all files
 uv run pre-commit run --all-files
-
-# Run hooks on staged files only (automatic on commit)
-uv run pre-commit run
-```
-
-### Type Checking
-```bash
+uv run ruff check src tests
 uv run mypy src
 ```
 
-## Architecture
+Formatting: this repo may use **black** / **isort** / **ruff format** per `pyproject.toml` and pre-commit; see [SETUP.md](SETUP.md) §11–12.
 
-This project follows the architecture decisions outlined in the proposal document:
-- **Stateless API** design
-- **Profile-based transformation** for consistency
-- **Two-pass generation** with self-check
-- **Hybrid evaluation** (deterministic + semantic)
-- **Tiered failure handling**
-- **Built-in cost controls**
-- **Hybrid content creation** (profile-based cache)
+## Internal API (optional)
+
+Read API over DynamoDB (requires API key). Example:
+
+```bash
+uvicorn ibrary.serving.api:app --reload --port 8080
+```
+
+Endpoints and headers: [SETUP.md](SETUP.md) §10.
 
 ## License
 

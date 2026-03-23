@@ -12,7 +12,7 @@ This project implements a UDL-aligned biology content pipeline that extracts tex
 ## Quick Setup
 
 ```bash
-docker compose up -d          # PostgreSQL (pgvector) + DynamoDB Local
+make up                       # or: docker compose up -d
 cp .env.example .env          # configure OPENAI_API_KEY at minimum
 uv sync --extra dev && uv pip install -e .
 alembic upgrade head          # create DB tables
@@ -63,7 +63,9 @@ Legacy extractors are in `src/sourceContentProcessor/` — do not add new code t
 ## Running the Pipeline
 
 ```bash
-python scripts/run_pipeline.py                    # full run
-python scripts/run_pipeline.py --resume-from curate  # resume from step
-python scripts/run_pipeline.py --skip-judge          # skip UDL evaluation
+python scripts/run_pipeline.py                       # default: extract, validate, align (no curation)
+python scripts/run_pipeline.py --steps extract       # single step
+python scripts/run_pipeline.py --full                # through publish (curation + judge + DynamoDB)
+python scripts/run_pipeline.py --full --resume-from curate
+python scripts/run_pipeline.py --full --skip-judge
 ```

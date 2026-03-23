@@ -1,0 +1,15 @@
+---
+description: Refine LLM prompts using linked or pasted feedback (pairs with prompt-feedback-refiner skill)
+globs: "**/curation/prompts.py"
+alwaysApply: false
+---
+
+# Prompt feedback workflow
+
+When the user provides **feedback as a URL or pasted text** (human review, another model, doc, ticket):
+
+1. Follow the **prompt-feedback-refiner** skill (`.cursor/skills/prompt-feedback-refiner/SKILL.md`): fetch link if needed, map feedback to prompt sections, apply **minimal** edits.
+2. Preserve this repo’s prompt versioning (e.g. `PROMPT_VERSION_TAG` / content hash notes in `prompts.py`).
+3. End with a short **Feedback → change** changelog for commits or PRs.
+
+If feedback conflicts with other project rules, flag it and default to repo rules unless the user overrides.

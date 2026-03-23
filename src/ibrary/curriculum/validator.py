@@ -61,6 +61,8 @@ def validate_curriculum(
                     "content_index": idx,
                     "content_text": content_text,
                     "performance_objectives": topic.performance_objectives,
+                    "teachers_activities": topic.teachers_activities,
+                    "student_activities": topic.student_activities,
                 },
             )
             units.append(unit)

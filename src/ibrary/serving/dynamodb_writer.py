@@ -1,20 +1,23 @@
-"""Write published (human-approved) curated content to DynamoDB."""
+"""Write human-verified curated content to DynamoDB (not the draft Postgres mirror)."""
 
 from __future__ import annotations
 
 import json
-import sys
 
 import boto3
 import structlog
 
 from ibrary.config import AWS_DEFAULT_REGION, DYNAMODB_ENDPOINT_URL
+from ibrary.curation.curated_postgres import upsert_curated_payloads
 from ibrary.curation.schemas import CuratedModule
 
 logger = structlog.get_logger(__name__)
 
 TABLE_NAME = "CuratedContent"
 ITEM_SIZE_LIMIT = 400_000  # DynamoDB 400 KB limit
+
+# Only these statuses are pushed to DynamoDB after human review.
+_PUBLISHABLE_STATUSES = frozenset({"published", "verified"})
 
 
 def _get_dynamo_resource():
@@ -71,9 +74,13 @@ def _check_size(item: dict) -> dict:
 
 
 def publish_module(module: CuratedModule, content_index: int = 0) -> None:
-    """Write a single published module to DynamoDB as topic + subtopic items."""
-    if module.status != "published":
-        logger.warning("skip_unpublished", unit_id=module.curriculum_unit_id)
+    """Write a single verified module to DynamoDB as topic + subtopic items."""
+    if module.status not in _PUBLISHABLE_STATUSES:
+        logger.warning(
+            "skip_not_verified",
+            unit_id=module.curriculum_unit_id,
+            status=module.status,
+        )
         return
 
     dynamo = _get_dynamo_resource()
@@ -100,6 +107,9 @@ def publish_module(module: CuratedModule, content_index: int = 0) -> None:
         "curated_content_md": module.curated_content,
         "key_takeaways": json.dumps(module.key_takeaways),
         "glossary_terms": json.dumps(module.glossary_terms),
+        "student_activities": json.dumps(module.student_activities),
+        "teacher_activities": json.dumps(module.teacher_activities),
+        "accessibility_checklist": json.dumps(module.accessibility_checklist),
         "textbook_chunk_refs": json.dumps(module.textbook_chunk_refs),
         "model_version": module.model_version,
         "prompt_version": module.prompt_version,
@@ -110,14 +120,18 @@ def publish_module(module: CuratedModule, content_index: int = 0) -> None:
 
 
 def publish_curated_content(curated_json_path: str) -> int:
-    """Load curated_content.json and publish all approved modules."""
+    """Load curated_content.json and publish only verified modules (published/verified)."""
     from pathlib import Path
 
-    data = json.loads(Path(curated_json_path).read_text())
+    data = json.loads(Path(curated_json_path).read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise ValueError("curated_content.json must be a JSON array")
+    upsert_curated_payloads(data)
+
     count = 0
     for item in data:
         module = CuratedModule.model_validate(item)
-        if module.status != "published":
+        if module.status not in _PUBLISHABLE_STATUSES:
             continue
         cindex = int(module.curriculum_unit_id.split("_content")[-1]) if "_content" in module.curriculum_unit_id else 0
         publish_module(module, content_index=cindex)

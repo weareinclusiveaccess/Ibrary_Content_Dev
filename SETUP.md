@@ -61,37 +61,70 @@ Edit `.env` with your configuration. Key variables:
 
 ### 4. Docker Services
 
-The project uses Docker Compose to run PostgreSQL (with pgvector) and DynamoDB Local.
+The project uses Docker Compose to run PostgreSQL (with pgvector) and DynamoDB Local. Ensure **Docker Desktop** is running.
 
+**Windows (PowerShell), from project root:**
+```powershell
+.\scripts\compose.ps1 up -d
+.\scripts\compose.ps1 ps
+```
+
+**Linux/macOS or Git Bash:**
 ```bash
-# Start all services
 make up
 # or
 docker compose up -d
 
-# Verify services are running
-docker compose ps
+make ps
+# or: docker compose ps
 ```
 
 Services:
 - **PostgreSQL** (`pgvector/pgvector:pg16`) — port 5432, textbook chunks + embeddings
 - **DynamoDB Local** (`amazon/dynamodb-local`) — port 8000, curated content serving
 
+**Connect with pgAdmin:** Host `127.0.0.1`, Port `5432`, Database `ibrary`, Username `ibrary`, Password `ibrary_dev`. If it fails, set Connection → SSL mode to **Prefer** or **Disable**.
+
 ### 5. Database Setup
 
-```bash
-# Run Alembic migrations to create tables
-make db-migrate
-# or
-alembic upgrade head
+**Prerequisite:** Start the containers first (Step 4). PostgreSQL and DynamoDB Local must be running.
+
+**Windows (PowerShell)** — run from the project root:
+
+```powershell
+# Run Alembic migrations (creates PostgreSQL tables)
+uv run alembic upgrade head
 
 # Create DynamoDB tables
-make dynamodb-setup
-# or
-python scripts/create_dynamodb_tables.py
+uv run python scripts/create_dynamodb_tables.py
 ```
 
-The migration creates: `textbooks`, `textbook_chunks`, `textbook_chunk_embeddings`, `textbook_images`, and `curated_content` tables in PostgreSQL.
+**Linux/macOS or Git Bash:**
+
+```bash
+make db-migrate
+# or
+uv run alembic upgrade head
+
+make dynamodb-setup
+# or
+uv run python scripts/create_dynamodb_tables.py
+```
+
+The migration creates schema **`ibrary`** and tables: `textbooks`, `textbook_chunks`, `textbook_chunk_embeddings`, `textbook_images`, `curated_content`, `content_manual_quality_check`, and `content_udl_scores`. It also creates role **`der`** (password `der_ibrary_dev` until you change it) with usage/create on the schema and full privileges on existing objects. Set `POSTGRES_SCHEMA=ibrary` in `.env` (default in code) so the app uses the same schema. Ensure `DATABASE_URL` in `.env` matches your Postgres (default: `postgresql://ibrary:ibrary_dev@127.0.0.1:5432/ibrary`).
+
+Alembic’s **`alembic_version`** table lives in the same **`ibrary`** schema as the app tables (configured in `alembic/env.py`). **If your database still has `public.alembic_version`** from an older setup, move it once so Alembic keeps tracking correctly:
+
+```sql
+CREATE SCHEMA IF NOT EXISTS ibrary;
+CREATE TABLE ibrary.alembic_version (version_num VARCHAR(32) NOT NULL);
+INSERT INTO ibrary.alembic_version SELECT version_num FROM public.alembic_version;
+DROP TABLE public.alembic_version;
+```
+
+Skip the `CREATE TABLE` / `INSERT` if `ibrary.alembic_version` already exists with the right revision; only drop `public.alembic_version` when `ibrary` holds the same row.
+
+**If you already ran an older migration** that created tables in `public` and revision `002`, reset the DB volume or drop those tables, then `alembic stamp base` (or delete the row from `alembic_version`) and run `uv run alembic upgrade head` again.
 
 ### 6. Download Textbook
 
@@ -125,28 +158,57 @@ The following source documents must be present for the content pipeline:
 
 ### 9. Running the Content Pipeline
 
-The pipeline extracts textbook content, aligns it with the curriculum, and generates UDL-curated learning modules.
+**Initial setup (default)** loads the textbook and curriculum into the database and builds embeddings + alignment. It does **not** run LLM curation—curation depends on your chosen model, prompts, and review workflow, so you run it when you are ready.
 
 ```bash
-# Run the full pipeline
+# Default: extract → validate → align (chunks in Postgres + curriculum_textbook_alignment.json)
 make pipeline
 # or
 python scripts/run_pipeline.py
 
-# Resume from a specific step
-python scripts/run_pipeline.py --resume-from curate
+# Run only one step
+python scripts/run_pipeline.py --steps extract
 
-# Skip the UDL judge step
-python scripts/run_pipeline.py --skip-judge
+# Explicitly list steps (comma-separated, pipeline order)
+python scripts/run_pipeline.py --steps extract,validate,align
+
+# Resume within the default setup (extract | validate | align only)
+python scripts/run_pipeline.py --resume-from validate
+```
+
+**Full pipeline** (curation through publish)—opt-in when prompts/models are configured:
+
+```bash
+make pipeline-full
+# or
+python scripts/run_pipeline.py --full
+
+# Resume from curation or later (must use --full so those steps are in scope)
+python scripts/run_pipeline.py --full --resume-from curate
+
+# Skip the UDL judge when it is part of the selected steps
+python scripts/run_pipeline.py --full --skip-judge
+```
+
+Makefile helpers for resume:
+
+```bash
+make pipeline-resume STEP=validate          # default setup only
+make pipeline-full-resume STEP=curate       # full pipeline, start at curate
 ```
 
 Pipeline steps (in order):
-1. **extract** — Parse Biology2e-WEB.pdf, load chunks into PostgreSQL
-2. **validate** — Validate curriculum JSON (topics 1-6, SSS 1)
-3. **align** — Embed textbook chunks, align with curriculum via pgvector
-4. **curate** — Generate UDL content via OpenAI (RAG with textbook context)
-5. **judge** — Evaluate curated content against UDL criteria
-6. **publish** — Write approved content to DynamoDB
+
+| Phase | Step | What it does |
+|--------|------|----------------|
+| Setup (default) | **extract** | Parse Biology2e-WEB.pdf, load chunks into PostgreSQL |
+| | **validate** | Validate curriculum JSON (topics 1-6, SSS 1) |
+| | **align** | Embed textbook chunks; align with curriculum via pgvector |
+| After setup | **curate** | Generate UDL content via OpenAI (RAG)—model/prompt dependent |
+| | **judge** | Evaluate curated content against UDL criteria |
+| | **publish** | Write approved content to DynamoDB |
+
+`OPENAI_API_KEY` is still required for the default run because **align** calls the embedding API.
 
 ### 10. Internal API (Optional)
 
@@ -200,8 +262,10 @@ make down              # Stop Docker services
 make db-migrate        # Run Alembic migrations
 make dynamodb-setup    # Create DynamoDB tables
 make download-textbook # Download OpenStax Biology 2e PDF (~380 MB)
-make pipeline          # Run the full content pipeline
-make pipeline-resume STEP=curate  # Resume from a step
+make pipeline                 # Default: extract + validate + align
+make pipeline-full            # Through publish (curation, judge, DynamoDB)
+make pipeline-resume STEP=validate   # Resume default setup from STEP
+make pipeline-full-resume STEP=curate  # Resume full flow from STEP
 ```
 
 ## Common Issues
@@ -214,12 +278,26 @@ docker compose logs postgres
 docker compose logs dynamodb-local
 ```
 
-### Alembic migration fails
-**Solution:** Ensure PostgreSQL is running and `DATABASE_URL` is correct:
-```bash
-docker compose ps  # check postgres is healthy
-alembic upgrade head
+### "password authentication failed for user ibrary"
+Another PostgreSQL is using port 5432 with different credentials, or the project container was first created with different env. Reset so the project's Postgres is recreated from your `.env`:
+
+**Windows (PowerShell, from project root):**
+```powershell
+.\scripts\reset-postgres.ps1
 ```
+Then create DynamoDB tables: `uv run python scripts/create_dynamodb_tables.py`
+
+**Linux/macOS / Git Bash:** Stop other Postgres or free port 5432, then:
+```bash
+docker compose down -v
+docker compose up -d
+# wait ~10s, then:
+uv run alembic upgrade head
+uv run python scripts/create_dynamodb_tables.py
+```
+
+### Alembic migration fails (other)
+**Solution:** Ensure PostgreSQL is running and `DATABASE_URL` in `.env` matches the container (e.g. `postgresql://ibrary:ibrary_dev@127.0.0.1:5432/ibrary`). Check containers: `.\scripts\compose.ps1 ps` (Windows) or `make ps`.
 
 ### PDF extraction produces no chunks
 **Solution:** Verify `Biology2e-WEB.pdf` exists and PyMuPDF is installed:

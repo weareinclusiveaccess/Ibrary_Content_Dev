@@ -196,3 +196,6 @@ config/secrets.yaml
 # Generated content storage (if large)
 storage/generated/
 storage/cache/
+
+#motunrayo personal files
+.todo/*

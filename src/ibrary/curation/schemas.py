@@ -29,6 +29,18 @@ class CuratedModule(BaseModel):
     glossary_terms: dict[str, str] = Field(
         default_factory=dict, description="term → definition"
     )
+    student_activities: list[str] = Field(
+        default_factory=list,
+        description="Concrete learner tasks aligned to the subtopic",
+    )
+    teacher_activities: list[str] = Field(
+        default_factory=list,
+        description="Concrete teaching moves for this subtopic",
+    )
+    accessibility_checklist: list[str] = Field(
+        default_factory=list,
+        description="Short statements of how accessibility/UDL were applied",
+    )
     textbook_chunk_refs: list[str] = []
     model_version: str = ""
     prompt_version: str = ""

@@ -8,8 +8,15 @@ optimized for visually impaired learners and audio-first delivery.
 
 __version__ = "0.1.0"
 
-from ibrary.core.transformer import ContentTransformer
-from ibrary.profiles.profile_manager import ProfileManager
+# Optional imports for legacy/optional modules so pipeline and Alembic can run
+try:
+    from ibrary.core.transformer import ContentTransformer
+except ModuleNotFoundError:
+    ContentTransformer = None  # type: ignore[misc, assignment]
+try:
+    from ibrary.profiles.profile_manager import ProfileManager
+except ModuleNotFoundError:
+    ProfileManager = None  # type: ignore[misc, assignment]
 
 __all__ = [
     "ContentTransformer",

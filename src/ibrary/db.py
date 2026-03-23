@@ -5,9 +5,14 @@ from __future__ import annotations
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from ibrary.config import DATABASE_URL
+from ibrary.config import DATABASE_URL, POSTGRES_SCHEMA
 
-engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+# search_path so unqualified SQL (embedder, aligner, curation) hits ibrary.* first
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True,
+    connect_args={"options": f"-csearch_path={POSTGRES_SCHEMA},public"},
+)
 SessionLocal = sessionmaker(bind=engine, class_=Session, expire_on_commit=False)
 
 

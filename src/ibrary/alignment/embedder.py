@@ -27,7 +27,7 @@ def embed_textbook_chunks(model_version: str | None = None) -> int:
         rows = session.execute(
             sa_text(
                 """
-                SELECT tc.chunk_id, tc.title, tc.summary
+                SELECT tc.chunk_id, tc.title, tc.summary, tc.learning_objectives
                 FROM textbook_chunks tc
                 LEFT JOIN textbook_chunk_embeddings tce
                     ON tc.chunk_id = tce.chunk_id AND tce.model_version = :model
@@ -41,7 +41,16 @@ def embed_textbook_chunks(model_version: str | None = None) -> int:
             logger.info("all_chunks_embedded")
             return 0
 
-        texts = [f"{r.title}\n{r.summary or ''}" for r in rows]
+        def _embed_text(row) -> str:
+            parts = [row.title]
+            lo = row.learning_objectives
+            if lo:
+                parts.append(lo)
+            if row.summary:
+                parts.append(row.summary)
+            return "\n".join(parts)
+
+        texts = [_embed_text(r) for r in rows]
         chunk_ids = [r.chunk_id for r in rows]
 
         batch_size = 100
