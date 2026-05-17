@@ -7,7 +7,8 @@ UDL-aligned **biology** content pipeline: extract [OpenStax Biology 2e](https://
 - **Extract & load** — Parse `Biology2e-WEB.pdf`, structured chunks and images → Postgres ([`textbook/openstax_biology2e.py`](src/ibrary/textbook/openstax_biology2e.py), [`textbook/loader.py`](src/ibrary/textbook/loader.py)).
 - **Validate** — Curriculum JSON and unit IDs ([`curriculum/`](src/ibrary/curriculum/)).
 - **Align** — Embed chunks, similarity search vs curriculum ([`alignment/`](src/ibrary/alignment/)).
-- **Optional (LLM-dependent)** — UDL curation, judge scoring, DynamoDB publish ([`curation/`](src/ibrary/curation/), [`evaluation/`](src/ibrary/evaluation/), [`serving/`](src/ibrary/serving/)).
+- **Filter relevance** (pipeline v2) — LLM gate on aligned chunks before curation ([`relevance/`](src/ibrary/relevance/)).
+- **Optional (LLM-dependent)** — UDL curation with textbook figure linking, judge scoring, DynamoDB publish ([`curation/`](src/ibrary/curation/), [`enrichment/`](src/ibrary/enrichment/), [`judging/`](src/ibrary/judging/), [`serving/`](src/ibrary/serving/)).
 
 **Roadmap (not implemented here):** additional subjects (chemistry, physics), non-OpenAI LLM providers, and broader “profile-based” transformation APIs described in older design docs.
 
@@ -42,10 +43,13 @@ make pipeline
 # Git Bash on Windows: powershell -File scripts/make.ps1 pipeline
 # or anywhere: uv run python scripts/run_pipeline.py
 
+# Pipeline v2 (recommended): adds filter_relevance + excerpt-based curation + media linking
+uv run python scripts/run_pipeline.py --pipeline-version 2
+
 # Optional: full flow through curation, judge, publish
 make pipeline-full
 # Windows: .\scripts\make.ps1 pipeline-full
-# or: uv run python scripts/run_pipeline.py --full
+# or: uv run python scripts/run_pipeline.py --full --pipeline-version 2
 ```
 
 More options: `python scripts/run_pipeline.py --help` (e.g. `--steps extract`, `--full --resume-from curate`). Notebook mirror: [`notebooks/run_pipeline.ipynb`](notebooks/run_pipeline.ipynb).
@@ -61,8 +65,10 @@ IBrary/
 │   ├── curriculum/         # Curriculum validation & schemas
 │   ├── textbook/           # OpenStax Biology 2e PDF extract + DB load
 │   ├── alignment/          # OpenAI embeddings + pgvector alignment
+│   ├── relevance/          # Chunk relevance filter (pipeline v2)
 │   ├── curation/           # RAG + UDL prompts → curated modules
-│   ├── evaluation/         # UDL judge
+│   ├── enrichment/         # Textbook image linking (media linker)
+│   ├── judging/            # UDL subtopic judge
 │   └── serving/            # DynamoDB writer + FastAPI read API
 ├── scripts/                # run_pipeline.py, compose helpers, …
 ├── alembic/                # Migrations (schema `ibrary`)
@@ -89,6 +95,52 @@ flowchart LR
 ```
 
 Solid path: **default** `make pipeline`. Dotted path: **optional** `make pipeline-full` or `--steps curate,judge,publish`.
+
+**Pipeline v2** adds `filter_relevance` to the default setup path and uses aligned excerpts + optional textbook figures during curation. Set `--pipeline-version 2` or `PIPELINE_VERSION=2` in `.env`. Details: [SETUP.md](SETUP.md) §9.
+
+## Curated lessons and textbook images
+
+After **curate** (v2), each curriculum unit is a JSON object in `data/docs/extracted_source_content/biology/curated_content.json` (and mirrored in Postgres `ibrary.curated_content`).
+
+| Field | Role |
+|--------|------|
+| `curated_content` | Student lesson as **Markdown prose only** — headings, explanations, review questions. No `![](s3://…)` image tags. |
+| `images` | Separate list of textbook figures: `image_id`, `s3_url`, `caption`, `alt_text`. |
+
+**Extract** uploads OpenStax figures to S3 (`s3://{bucket}/{subject}/textbook-images/…`) and records them in `textbook_images` + `textbook_image_manifest.json`. **Curate** may request figures via internal `image_placeholders`; the **media linker** picks real assets from aligned chunks and attaches them to `images[]`. Placeholders are not exported in the JSON file.
+
+### Lesson figure numbers vs textbook captions
+
+These are **two different numbering systems** and are **not linked** in stored data today:
+
+- **In `curated_content`** — the LLM may write pedagogical labels such as “(Figure 1)” or describe an imagined diagram (“a plate with seven labels…”). That is lesson-local numbering for the narrative.
+- **In `images[].caption`** — OpenStax labels are preserved from the PDF, e.g. `FIGURE 34.1` (chapter 34, figure 1 in the textbook).
+
+Do **not** assume `images[0]` matches “Figure 1” in the markdown. Array order follows media-linker selections from aligned chapter chunks, not renumbered lesson figures. A lesson “Figure 1” can describe a diagram that does not exist in `images[]` at all.
+
+**Building a UI today:** render `curated_content` as markdown; show `images[]` in a figures panel, carousel, or appendix using `s3_url` + `alt_text` / `caption`. Inline placement after specific headings is not stored yet.
+
+Example (abbreviated) from unit `bio_sss1_theme2_topic2_content1`:
+
+```json
+{
+  "curriculum_unit_id": "bio_sss1_theme2_topic2_content1",
+  "title": "Food Substances in Animal Nutrition",
+  "curated_content": "## Types of food substances\n\nImagine a simple picture (Figure 1) showing a plate…",
+  "images": [
+    {
+      "image_id": "bio2e_ch34_pg1004_img0",
+      "s3_url": "s3://ibrary-content/biology/textbook-images/bio2e_ch34_pg1004_img0.jpeg",
+      "caption": "FIGURE 34.1 For humans, fruits and vegetables…",
+      "alt_text": "Figure 34.1: Fruits and vegetables…"
+    }
+  ]
+}
+```
+
+Postgres stores images as a JSON object `{"images": [...], "formulas": [...]}` — query with `c.images::jsonb -> 'images'`, not `jsonb_array_length(c.images)`.
+
+If S3 paths change after curation, run `uv run python scripts/fix_curated_image_urls.py` to sync URLs from the manifest. More detail: [SETUP.md](SETUP.md) §9 (pipeline outputs and inspection).
 
 ## Prerequisites (summary)
 

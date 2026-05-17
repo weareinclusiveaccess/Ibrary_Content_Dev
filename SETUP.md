@@ -47,17 +47,108 @@ Edit `.env` with your configuration. Key variables:
 - `DATABASE_URL` — PostgreSQL connection string (default: `postgresql://ibrary:ibrary_dev@localhost:5432/ibrary`)
 
 **Pipeline Configuration:**
+- `PIPELINE_VERSION` — `1` (legacy) or `2` (recommended: `filter_relevance`, excerpt-based curation, media linking; default in code may still be `1` — set `2` explicitly)
+- `PIPELINE_SUBJECT_SLUG` — S3 path prefix for textbook images (default: `biology`)
 - `OPENAI_MODEL` — LLM model for curation (default: `gpt-4-turbo-preview`)
 - `OPENAI_EMBEDDING_MODEL` — Embedding model (default: `text-embedding-3-small`)
 - `ALIGNMENT_TOP_K` — Number of textbook chunks to align per curriculum unit (default: `2`)
 - `MAX_CONTEXT_TOKENS` — Max tokens for textbook context in curation prompt (default: `8000`)
 - `ALIGNMENT_CONFIDENCE_THRESHOLD` — Minimum similarity score for alignment (default: `0.7`)
+- `CURATE_CURRICULUM_ONLY_IF_NO_EXCERPTS` — When v2 relevance yields no excerpts, curate from curriculum only and flag `textbook_grounded: false` (default: `true`)
 
 **Infrastructure:**
 - `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` — PostgreSQL credentials (defaults provided)
 - `DYNAMODB_ENDPOINT_URL` — DynamoDB endpoint (default: `http://localhost:8000`)
 - `S3_BUCKET` — S3 bucket for extracted textbook images (default: `ibrary-content`)
 - `S3_ENDPOINT_URL` — S3 endpoint (leave empty for AWS, set for LocalStack)
+- `AWS_PROFILE` — optional; use a named profile from `~/.aws/credentials` instead of keys in `.env` (recommended)
+
+#### AWS access key and S3 bucket (textbook images)
+
+The **extract** step uploads OpenStax figures to S3. You need an AWS account, an IAM access key (or SSO profile), and a bucket in the same region as `AWS_DEFAULT_REGION`.
+
+**Option A — IAM access key (typical for local dev)**
+
+1. Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
+2. Open **IAM** → **Users** → **Create user** (e.g. `ibrary-dev`).
+3. **Permissions** — attach a policy scoped to your bucket, or for early dev only:
+   - `AmazonS3FullAccess` (broad; tighten before production), or
+   - Custom policy allowing `s3:PutObject`, `s3:GetObject`, `s3:ListBucket`, `s3:DeleteObject` on `arn:aws:s3:::ibrary-content` and `arn:aws:s3:::ibrary-content/*`.
+4. Finish creating the user → open the user → **Security credentials** tab.
+5. **Access keys** → **Create access key** → choose **Command Line Interface (CLI)** → confirm.
+6. Copy **Access key ID** and **Secret access key** (secret is shown **once**; store it in a password manager).
+
+**Store credentials (pick one)**
+
+*Recommended — AWS CLI profile* (keeps secrets out of `.env`):
+
+```ini
+# Windows: %USERPROFILE%\.aws\credentials
+# macOS/Linux: ~/.aws/credentials
+
+[ibrary]
+aws_access_key_id = AKIAxxxxxxxxxxxxxxxx
+aws_secret_access_key = your-secret-key
+```
+
+```ini
+# ~/.aws/config
+[profile ibrary]
+region = us-east-2
+```
+
+In `.env`:
+
+```env
+AWS_PROFILE=ibrary
+AWS_DEFAULT_REGION=us-east-2
+S3_BUCKET=ibrary-content
+S3_ENDPOINT_URL=
+# Do not set AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY when using a profile
+```
+
+*Alternative — keys in `.env`* (works but easier to leak; never commit `.env`):
+
+```env
+AWS_ACCESS_KEY_ID=AKIAxxxxxxxxxxxxxxxx
+AWS_SECRET_ACCESS_KEY=your-secret-key
+AWS_DEFAULT_REGION=us-east-2
+S3_BUCKET=ibrary-content
+S3_ENDPOINT_URL=
+```
+
+**Create the S3 bucket**
+
+1. Console → **S3** → **Create bucket**.
+2. **Bucket name:** `ibrary-content` (must match `S3_BUCKET` in `.env`).
+3. **AWS Region:** same as `AWS_DEFAULT_REGION` (e.g. `us-east-2`). Region cannot be changed later; create a new bucket if you need another region.
+4. Block public access: leave **on** (app uses private objects + signed URLs or backend access).
+5. Default storage class: **S3 Standard** is fine for development (you can add lifecycle rules later).
+6. Create bucket.
+
+**Verify**
+
+```bash
+aws s3 ls s3://ibrary-content/biology/textbook-images/ --profile ibrary --summarize
+# or, if using .env keys only:
+aws s3 ls s3://ibrary-content/biology/textbook-images/ --summarize
+```
+
+**Upload images from the textbook**
+
+```bash
+python scripts/run_pipeline.py --pipeline-version 2 --steps extract
+```
+
+Look for log line `images_uploaded` (not `s3_upload_skipped`). Objects appear under `{PIPELINE_SUBJECT_SLUG}/textbook-images/` (default: `biology/textbook-images/`).
+
+**DynamoDB Local + real S3**
+
+`.env.example` sets `AWS_ACCESS_KEY_ID=local` for DynamoDB Local. Those values **override** an AWS profile. For real S3, remove or comment out `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` and use `AWS_PROFILE` instead. Keep `DYNAMODB_ENDPOINT_URL=http://localhost:8000` for local publish testing.
+
+**Option B — SSO (organization account)**
+
+If your org uses IAM Identity Center, run `aws configure sso`, create a profile, then set `AWS_PROFILE=that-profile` and `AWS_SDK_LOAD_CONFIG=1` in `.env`. No long-lived access keys required.
 
 ### 4. Docker Services
 
@@ -201,14 +292,88 @@ Pipeline steps (in order):
 
 | Phase | Step | What it does |
 |--------|------|----------------|
-| Setup (default) | **extract** | Parse Biology2e-WEB.pdf, load chunks into PostgreSQL |
+| Setup (default v1) | **extract** | Parse Biology2e-WEB.pdf, load chunks (+ images to S3 when configured) into PostgreSQL |
 | | **validate** | Validate curriculum JSON (topics 1-6, SSS 1) |
 | | **align** | Embed textbook chunks; align with curriculum via pgvector |
-| After setup | **curate** | Generate UDL content via OpenAI (RAG)—model/prompt dependent |
-| | **judge** | Evaluate curated content against UDL criteria |
-| | **publish** | Write approved content to DynamoDB |
+| Setup (v2 only) | **filter_relevance** | LLM relevance gate on aligned chunks; writes excerpt JSON used by curation |
+| After setup | **curate** | Generate UDL lesson JSON (RAG + optional textbook figure linking) |
+| | **judge** | Evaluate curated content against UDL criteria; persists per unit |
+| | **publish** | Write human-approved content to DynamoDB |
+
+**Pipeline v2 (recommended):**
+
+```bash
+# Default setup + relevance filter
+python scripts/run_pipeline.py --pipeline-version 2
+
+# Curation and judge (incremental save to file + Postgres after each unit)
+python scripts/run_pipeline.py --pipeline-version 2 --steps curate,judge
+
+# Or full flow
+python scripts/run_pipeline.py --pipeline-version 2 --full
+```
+
+Set `PIPELINE_VERSION=2` in `.env` to avoid passing `--pipeline-version` every time.
 
 `OPENAI_API_KEY` is still required for the default run because **align** calls the embedding API.
+
+#### Pipeline outputs (biology)
+
+| Artifact | Path | Notes |
+|----------|------|--------|
+| Textbook image manifest | `data/docs/extracted_source_content/biology/textbook_image_manifest.json` | `image_id`, captions, S3 URLs from **extract** |
+| Curated modules | `data/docs/extracted_source_content/biology/curated_content.json` | One object per curriculum unit after **curate** |
+| UDL judge results | `data/docs/extracted_source_content/biology/udl_subtopic_evaluation.json` | After **judge** |
+| Chunk relevance (v2) | `data/docs/extracted_source_content/biology/chunk_relevance.json` | After **filter_relevance** (also in Postgres `chunk_relevance`) |
+
+#### Curated content and textbook images
+
+Each curated unit is stored as JSON with at least:
+
+- **`curated_content`** — Markdown lesson for students (prose, `##` sections, review questions). **Does not** embed images as `![](url)`; figures may be described in words only.
+- **`images`** — Array of linked textbook assets (`image_id`, `s3_url`, `caption`, `alt_text`) chosen during curation from aligned chunks via the media linker.
+
+**How images get into the pipeline**
+
+1. **extract** — PyMuPDF extracts figures → S3 `s3://{S3_BUCKET}/{PIPELINE_SUBJECT_SLUG}/textbook-images/{image_id}.{ext}` → Postgres `textbook_images` + manifest.
+2. **curate** — The curation LLM may emit internal `image_placeholders` (intent + search hints). The media linker selects real `image_id` values from candidates in aligned chunks and fills `images[]`. Placeholders are stripped from the exported JSON.
+3. **Postgres** — `ibrary.curated_content.curated_content_md` holds the markdown; `images` column is JSON `{"images": [...], "formulas": [...]}`.
+
+**Lesson “Figure 1” vs textbook “FIGURE 34.1”**
+
+These are not the same thing and are **not linked** in stored data:
+
+| Source | Example | Meaning |
+|--------|---------|---------|
+| `curated_content` prose | “(Figure 1) showing a plate with seven labels…” | Pedagogical / lesson-local label or description written by the curation LLM. May refer to an imagined diagram. |
+| `images[].caption` | `FIGURE 34.1 For humans, fruits and vegetables…` | Original OpenStax caption from the PDF (chapter 34, figure 1). |
+
+**Do not** map `images[0]` to “Figure 1” in the markdown unless you implement that rule in your app — order follows media-linker picks from textbook chunks, not lesson renumbering. The first attached image may be unrelated to a “Figure 1” mentioned only in prose.
+
+**Serving / UI guidance (current behavior)**
+
+- Render `curated_content` as markdown.
+- Display `images[]` separately (figures panel, carousel, or appendix) using `s3_url`, `caption`, and `alt_text`.
+- Inline placement after a specific `##` heading is **not** persisted yet (`after_heading` on placeholders is not applied to the exported module).
+
+**Inspect in Postgres**
+
+```sql
+SELECT curriculum_unit_id, title,
+       left(curated_content_md, 120) AS lesson_preview,
+       jsonb_array_length(images::jsonb -> 'images') AS image_count
+FROM ibrary.curated_content
+ORDER BY curriculum_unit_id
+LIMIT 10;
+```
+
+**Fix S3 URLs after a path change** (e.g. migrating to `biology/textbook-images/`):
+
+```bash
+uv run python scripts/fix_curated_image_urls.py
+```
+
+See also [README.md](README.md) § “Curated lessons and textbook images”.
 
 ### 10. Internal API (Optional)
 
@@ -343,8 +508,10 @@ Ibrary_Content_Dev/
 │   │   ├── curriculum/              # Curriculum validation
 │   │   ├── textbook/                # PDF extraction + DB loading
 │   │   ├── alignment/               # Embedding + alignment
+│   │   ├── relevance/               # Chunk relevance filter (pipeline v2)
 │   │   ├── curation/                # UDL content generation (RAG)
-│   │   ├── evaluation/              # UDL judge
+│   │   ├── enrichment/              # Textbook image media linker
+│   │   ├── judging/                 # UDL subtopic judge
 │   │   └── serving/                 # DynamoDB writer + API
 │   └── sourceContentProcessor/      # Legacy extractors
 └── data/docs/
@@ -352,7 +519,10 @@ Ibrary_Content_Dev/
     └── extracted_source_content/biology/
         ├── Biology2e-WEB.pdf
         ├── OLD NERDC CURRICULUM SSCE BIOLOGY .pdf
-        └── biology_curriculum_structured.json
+        ├── biology_curriculum_structured.json
+        ├── textbook_image_manifest.json   # after extract
+        ├── curated_content.json           # after curate
+        └── udl_subtopic_evaluation.json   # after judge
 ```
 
 ## Additional Resources
