@@ -16,6 +16,8 @@ UDL-aligned **biology** content pipeline: extract [OpenStax Biology 2e](https://
 
 **Full setup (Docker, Postgres, env vars, textbook download, troubleshooting):** see [SETUP.md](SETUP.md).
 
+**Reviewer portal (planned):** [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md) · **AWS / Terraform:** [infra/README.md](infra/README.md)
+
 ## Quick start
 
 ```bash

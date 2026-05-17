@@ -375,6 +375,14 @@ uv run python scripts/fix_curated_image_urls.py
 
 See also [README.md](README.md) § “Curated lessons and textbook images”.
 
+**Bulk load JSON → Postgres** (if you curated/judged to files but Postgres is empty):
+
+```bash
+uv run python scripts/load_curated_to_postgres.py
+```
+
+**Reviewer portal (planned):** login UI, judge report, status updates — see [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md) and [infra/README.md](infra/README.md).
+
 ### 10. Internal API (Optional)
 
 The read API serves published content from DynamoDB. It requires API key authentication.

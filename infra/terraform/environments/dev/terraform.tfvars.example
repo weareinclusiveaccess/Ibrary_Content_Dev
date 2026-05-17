@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars and customize.
+# terraform.tfvars is gitignored — do not commit secrets.
+
+aws_region  = "eu-west-1"
+project_name = "ibrary"
+environment  = "dev"
+
+# Must be globally unique across all AWS accounts for Cognito domains
+cognito_domain_prefix = "ibrary-review-dev-YOUR_INITIALS"
+
+cognito_callback_urls = ["http://localhost:5173/"]
+cognito_logout_urls   = ["http://localhost:5173/"]
+
+# --- RDS (optional) ---
+# Set true to provision managed Postgres; false keeps using Docker Compose locally.
+enable_rds = false
+
+# When enable_rds = true:
+# db_password = "change-me-strong-password"
+# Restrict to your IP for security, e.g. ["203.0.113.10/32"]
+# db_allowed_cidr_blocks = ["0.0.0.0/0"]
+
+# Optional: pin default VPC/subnets (auto-detected if omitted)
+# vpc_id     = "vpc-xxxxxxxx"
+# subnet_ids = ["subnet-aaa", "subnet-bbb"]
