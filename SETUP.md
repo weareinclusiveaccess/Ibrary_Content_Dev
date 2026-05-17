@@ -381,7 +381,19 @@ See also [README.md](README.md) § “Curated lessons and textbook images”.
 uv run python scripts/load_curated_to_postgres.py
 ```
 
-**Reviewer portal (planned):** login UI, judge report, status updates — see [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md) and [infra/README.md](infra/README.md).
+**Reviewer portal (local):**
+
+```bash
+# Point at Neon development branch (direct host, not -pooler)
+# DATABASE_URL_REVIEW=postgresql://...@ep-xxx.eu-west-2.aws.neon.tech/neondb?sslmode=require
+
+uv run python scripts/run_review_portal.py
+# Open http://127.0.0.1:8090 — API key from REVIEW_API_KEY in .env (default: dev-review-key-change-me)
+```
+
+Features: browse 88 units, read lesson markdown + figures (S3 presigned if AWS profile works), UDL judge sidebar, **Approve (verified)** / **Send back to draft**, reviewer notes.
+
+See [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md) for production (Cognito + deploy).
 
 ### 10. Internal API (Optional)
 
