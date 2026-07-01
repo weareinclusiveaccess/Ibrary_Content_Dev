@@ -25,11 +25,14 @@ terraform destroy
 
 ### `modules/cognito`
 
-- User pool with email sign-in
-- App client (no secret — SPA-friendly)
-- Optional hosted UI domain prefix: `ibrary-review-dev`
+Creates:
 
-**Outputs:** `user_pool_id`, `app_client_id`, `hosted_ui_base_url`
+- User pool (email sign-in)
+- Groups: **`admin`** (precedence 1), **`reviewer`** (precedence 2)
+- Hosted UI domain + SPA app client
+- IAM policy **`cognito_admin_api_policy_arn`** — attach to the API task role so the portal can create/list users
+
+Outputs: `user_pool_id`, `app_client_id`, `hosted_ui_base_url`, `cognito_group_admin`, `cognito_group_reviewer`, `cognito_admin_api_policy_arn`
 
 ### `modules/rds`
 

@@ -6,7 +6,7 @@ Terraform and setup notes for hosting the **reviewer portal**, **RDS PostgreSQL*
 
 | Component | Purpose | Terraform module |
 |-----------|---------|------------------|
-| **Amazon Cognito** | Reviewer login (email/password or SSO later) | [`terraform/modules/cognito`](terraform/modules/cognito) |
+| **Amazon Cognito** | Reviewer login; groups `admin` / `reviewer`; admin user API | [`terraform/modules/cognito`](terraform/modules/cognito) |
 | **RDS PostgreSQL** | Production Postgres for `ibrary` schema (curated content, judge scores) | [`terraform/modules/rds`](terraform/modules/rds) |
 | **S3** | Already used: `ibrary-content` for textbook images; optional bucket for reviewer UI static files | Manual / extend `modules/s3` later |
 | **Secrets Manager** | Store `DATABASE_URL` for the reviewer API | Referenced in RDS module |
@@ -62,6 +62,10 @@ The **reviewer API** task role needs:
 - `s3:GetObject` on `arn:aws:s3:::ibrary-content/biology/textbook-images/*`
 - Read `secretsmanager:GetSecretValue` for database URL
 - No write to S3 unless you add asset upload later
+
+## Hosting the portal (~$6–12/mo)
+
+See **[HOSTING.md](HOSTING.md)** for Fly.io / Render / Cloudflare Pages + Neon + Cognito.
 
 ## Cost notes (dev)
 

@@ -1,18 +1,28 @@
 # Copy to terraform.tfvars and customize.
 # terraform.tfvars is gitignored — do not commit secrets.
 
-aws_region  = "eu-west-1"
-project_name = "ibrary"
-environment  = "dev"
+aws_region     = "eu-west-1"
+aws_account_id = "681986854278"
+project_name   = "ibrary"
+environment    = "dev"
 
-# Must be globally unique across all AWS accounts for Cognito domains
+# Profile in ~/.aws/config assumes content-dev (681986854278) with MFA
+aws_profile     = "ibrary-dev"
+assume_role_arn = ""
+
+# Globally unique across ALL AWS accounts (not just yours). If apply fails with
+# "Domain already associated", pick a new prefix.
 cognito_domain_prefix = "ibrary-review-dev-YOUR_INITIALS"
+
+# content-dev usually cannot iam:CreatePolicy — leave false
+cognito_create_admin_iam_policy = false
 
 cognito_callback_urls = ["http://localhost:5173/"]
 cognito_logout_urls   = ["http://localhost:5173/"]
 
 # --- RDS (optional) ---
-# Set true to provision managed Postgres; false keeps using Docker Compose locally.
+# Default: false — use Neon (DATABASE_URL_REVIEW in .env) or local Docker Postgres.
+# Set true only to provision AWS RDS instead of Neon.
 enable_rds = false
 
 # When enable_rds = true:
@@ -23,3 +33,27 @@ enable_rds = false
 # Optional: pin default VPC/subnets (auto-detected if omitted)
 # vpc_id     = "vpc-xxxxxxxx"
 # subnet_ids = ["subnet-aaa", "subnet-bbb"]
+
+# --- Reviewer portal hosting (off by default) ---
+# Set to true to provision ECR + S3 UI bucket + CloudFront + EC2 + SSM + DynamoDB.
+# Stop the EC2 with `make portal-stop` between sprints to drop to $0 compute.
+enable_portal_hosting  = false
+# portal_instance_type   = "t3.micro"          # free tier
+# portal_ecr_repo_name   = "ibrary-review-api"
+# portal_publish_enabled = "false"             # flip to "true" only after JWT auth ships
+# dynamodb_table_name    = "CuratedContent"
+# images_bucket          = "ibrary-content"    # existing bucket holding biology/* images
+
+# UI bucket defaults to ibrary-review-ui-dev-<account>; override only if you need a specific name.
+# portal_ui_bucket_name = "your-globally-unique-bucket"
+
+# Initial SSM SecureString values. Portal-only — do not seed pipeline keys here
+# (OPENAI_API_KEY etc. live in your local .env, never in the EC2 SSM scope).
+# After first apply, rotate via AWS Console / CLI:
+#   aws ssm put-parameter --name /ibrary/review/DATABASE_URL_REVIEW --value "..." --type SecureString --overwrite
+# portal_ssm_secrets = {
+#   DATABASE_URL_REVIEW       = "REPLACE_ME"
+#   COGNITO_USER_POOL_ID      = "REPLACE_ME"
+#   COGNITO_APP_CLIENT_ID     = "REPLACE_ME"
+#   COGNITO_APP_CLIENT_SECRET = "REPLACE_ME"
+# }

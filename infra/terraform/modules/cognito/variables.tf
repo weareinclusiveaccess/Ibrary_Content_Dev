@@ -24,3 +24,9 @@ variable "logout_urls" {
   description = "OAuth logout URLs"
   default     = ["http://localhost:5173/"]
 }
+
+variable "create_admin_iam_policy" {
+  type        = bool
+  description = "Create IAM managed policy for API user admin. Requires iam:CreatePolicy on the deploy role."
+  default     = false
+}

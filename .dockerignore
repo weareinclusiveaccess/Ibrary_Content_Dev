@@ -1,0 +1,94 @@
+# =============================================================================
+# .dockerignore — keeps the build context small and avoids accidentally baking
+# secrets / large pipeline artifacts into the image.
+#
+# The Dockerfile copies an explicit set of paths (review-ui/, src/, scripts/run_review_portal.py,
+# alembic/, pyproject.toml, uv.lock, entrypoint-ec2.sh). Everything else is excluded
+# to keep `docker build` fast over slow uplinks.
+# =============================================================================
+
+# --- VCS / IDE ---------------------------------------------------------------
+.git
+.gitignore
+.gitattributes
+.github
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Python venv & caches ----------------------------------------------------
+.venv
+venv
+env
+ENV
+__pycache__
+*.py[cod]
+*.egg-info
+.eggs
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.pyre
+.uv
+.python-version
+
+# --- Build/dist outputs ------------------------------------------------------
+build
+dist
+*.egg
+htmlcov
+.coverage
+.coverage.*
+coverage.xml
+
+# --- Node (UI build copies its own context; root-level is irrelevant) -------
+review-ui/node_modules
+review-ui/dist
+review-ui/.vite
+**/node_modules
+
+# --- Secrets / env -----------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.yaml
+config/secrets.yaml
+
+# --- Pipeline data (huge; not needed at runtime) -----------------------------
+data
+notebooks
+journals
+*.pdf
+*.db
+*.sqlite
+*.sqlite3
+ibrary.db
+
+# --- Infrastructure (not part of the runtime image) --------------------------
+infra
+docker-compose.yml
+docker-compose.*.yml
+
+# --- Docs / planning ---------------------------------------------------------
+docs
+*.md
+!README.md
+
+# --- Misc dev artifacts ------------------------------------------------------
+debug.log
+*.log
+logs
+tmp
+temp
+.cache
+.todo
+TODO.md
+.agents
+.cursor
+skills-lock.json

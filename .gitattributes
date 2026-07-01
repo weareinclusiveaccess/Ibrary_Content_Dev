@@ -1,0 +1,40 @@
+# Default: let git handle line-ending normalization based on the file type.
+* text=auto
+
+# Shell scripts and the Dockerfile run inside Linux containers — must be LF
+# even when checked out on Windows. Without this, Docker chokes with
+# "no such file or directory" or "/usr/bin/env: 'sh\r': No such file or directory".
+*.sh        text eol=lf
+*.bash      text eol=lf
+Dockerfile  text eol=lf
+*.dockerfile text eol=lf
+
+# Terraform — LF is the de-facto convention
+*.tf        text eol=lf
+*.tfvars    text eol=lf
+*.hcl       text eol=lf
+
+# YAML / TOML / JSON — LF
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.toml      text eol=lf
+*.json      text eol=lf
+
+# Python / TS / CSS — LF
+*.py        text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.js        text eol=lf
+*.jsx       text eol=lf
+*.css       text eol=lf
+*.md        text eol=lf
+
+# Treat known binary blobs explicitly so git never tries to normalize them.
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.pdf       binary
+*.zip       binary
+*.tar.gz    binary
+*.ico       binary
