@@ -10,6 +10,7 @@ from sqlalchemy.dialects.postgresql import insert as pg_insert
 from ibrary.db import get_session
 from ibrary.models import Textbook, TextbookChunk, TextbookImage
 from ibrary.textbook.openstax_biology2e import ExtractedImage, TextbookChunkRecord
+from ibrary.textbook.s3_paths import textbook_image_s3_key, textbook_image_s3_url
 
 logger = structlog.get_logger(__name__)
 
@@ -108,9 +109,9 @@ def save_images_to_s3(images: list[ExtractedImage], bucket: str) -> list[str]:
     session = get_session()
     try:
         for img in images:
-            key = f"textbook-images/{img.image_id}.{img.ext}"
+            key = textbook_image_s3_key(img.image_id, img.ext)
             s3.put_object(Bucket=bucket, Key=key, Body=img.image_bytes)
-            url = f"s3://{bucket}/{key}"
+            url = textbook_image_s3_url(img.image_id, img.ext, bucket=bucket)
             urls.append(url)
 
             ins_img = pg_insert(TextbookImage).values(
@@ -144,7 +145,10 @@ def save_images_to_s3(images: list[ExtractedImage], bucket: str) -> list[str]:
 
 def save_images_locally(images: list[ExtractedImage], output_dir: str | Path) -> list[str]:
     """Fallback: save images to local directory when S3 is not configured."""
-    out = Path(output_dir)
+    from ibrary.config import PIPELINE_SUBJECT_SLUG
+    from ibrary.textbook.s3_paths import textbook_images_prefix
+
+    out = Path(output_dir) / textbook_images_prefix()
     out.mkdir(parents=True, exist_ok=True)
     paths: list[str] = []
     for img in images:

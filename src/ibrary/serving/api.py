@@ -9,11 +9,11 @@ from boto3.dynamodb.conditions import Key
 from fastapi import FastAPI, HTTPException, Security
 from fastapi.security import APIKeyHeader
 
-from ibrary.config import AWS_DEFAULT_REGION, DYNAMODB_ENDPOINT_URL
+from ibrary.config import AWS_DEFAULT_REGION, DYNAMODB_ENDPOINT_URL, PIPELINE_SUBJECT
+from ibrary.serving.dynamodb_writer import TABLE_NAME, build_pk
 
 app = FastAPI(title="IBrary Content API (Internal)", version="0.1.0")
 
-TABLE_NAME = "CuratedContent"
 API_KEY_HEADER = APIKeyHeader(name="X-API-Key")
 
 # Set this via env or config for production
@@ -37,11 +37,12 @@ def _verify_key(key: str = Security(API_KEY_HEADER)):
 def list_topics(
     class_name: str = "SSS 1",
     theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
     _key: str = Security(_verify_key),
 ):
-    """List all topics for a class and theme."""
+    """List all topics for a subject + class + theme."""
     table = _get_table()
-    pk = f"SUBJECT#Biology#CLASS#{class_name}#THEME#{theme_number}"
+    pk = build_pk(subject, class_name, theme_number)
     resp = table.query(
         KeyConditionExpression=Key("PK").eq(pk) & Key("SK").begins_with("TOPIC#"),
         FilterExpression="entity_type = :et",
@@ -55,11 +56,12 @@ def get_topic(
     topic_number: int,
     class_name: str = "SSS 1",
     theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
     _key: str = Security(_verify_key),
 ):
     """Get a single topic."""
     table = _get_table()
-    pk = f"SUBJECT#Biology#CLASS#{class_name}#THEME#{theme_number}"
+    pk = build_pk(subject, class_name, theme_number)
     sk = f"TOPIC#{topic_number:02d}"
     resp = table.get_item(Key={"PK": pk, "SK": sk})
     item = resp.get("Item")
@@ -73,11 +75,12 @@ def list_subtopics(
     topic_number: int,
     class_name: str = "SSS 1",
     theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
     _key: str = Security(_verify_key),
 ):
     """List subtopics (content items) for a topic."""
     table = _get_table()
-    pk = f"SUBJECT#Biology#CLASS#{class_name}#THEME#{theme_number}"
+    pk = build_pk(subject, class_name, theme_number)
     sk_prefix = f"TOPIC#{topic_number:02d}#CONTENT#"
     resp = table.query(
         KeyConditionExpression=Key("PK").eq(pk) & Key("SK").begins_with(sk_prefix),
@@ -91,11 +94,12 @@ def get_subtopic(
     content_index: int,
     class_name: str = "SSS 1",
     theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
     _key: str = Security(_verify_key),
 ):
     """Get a single subtopic content item."""
     table = _get_table()
-    pk = f"SUBJECT#Biology#CLASS#{class_name}#THEME#{theme_number}"
+    pk = build_pk(subject, class_name, theme_number)
     sk = f"TOPIC#{topic_number:02d}#CONTENT#{content_index}"
     resp = table.get_item(Key={"PK": pk, "SK": sk})
     item = resp.get("Item")

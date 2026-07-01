@@ -7,7 +7,7 @@ import json
 import boto3
 import structlog
 
-from ibrary.config import AWS_DEFAULT_REGION, DYNAMODB_ENDPOINT_URL
+from ibrary.config import AWS_DEFAULT_REGION, DYNAMODB_ENDPOINT_URL, PIPELINE_SUBJECT
 from ibrary.curation.curated_postgres import upsert_curated_payloads
 from ibrary.curation.schemas import CuratedModule
 
@@ -18,6 +18,17 @@ ITEM_SIZE_LIMIT = 400_000  # DynamoDB 400 KB limit
 
 # Only these statuses are pushed to DynamoDB after human review.
 _PUBLISHABLE_STATUSES = frozenset({"published", "verified"})
+
+
+def build_pk(subject: str, class_name: str, theme_number: int) -> str:
+    """Construct the DynamoDB partition key for a curated module.
+
+    PK shape: SUBJECT#<Subject>#CLASS#<Class>#THEME#<N>
+    Items partition naturally by subject, so all subjects coexist safely in
+    one table (Decision 12 in infra/HOSTING.md).
+    """
+    subj = (subject or PIPELINE_SUBJECT).strip() or PIPELINE_SUBJECT
+    return f"SUBJECT#{subj}#CLASS#{class_name}#THEME#{theme_number}"
 
 
 def _get_dynamo_resource():
@@ -51,7 +62,7 @@ def create_table() -> None:
 
 
 def _pk(module: CuratedModule) -> str:
-    return f"SUBJECT#Biology#CLASS#{module.class_name}#THEME#{module.theme_number}"
+    return build_pk(module.subject, module.class_name, module.theme_number)
 
 
 def _topic_sk(module: CuratedModule) -> str:

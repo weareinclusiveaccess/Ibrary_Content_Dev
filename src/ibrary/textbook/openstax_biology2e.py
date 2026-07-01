@@ -366,7 +366,11 @@ def write_textbook_image_manifest(
             "ext": img.ext,
         }
         if s3_bucket:
-            row["s3_url"] = f"s3://{s3_bucket}/textbook-images/{img.image_id}.{img.ext}"
+            from ibrary.textbook.s3_paths import textbook_image_s3_url
+
+            row["s3_url"] = textbook_image_s3_url(
+                img.image_id, img.ext, bucket=s3_bucket
+            )
         rows.append(row)
     path.write_text(json.dumps(rows, indent=2), encoding="utf-8")
     logger.info("image_manifest_written", path=str(path), count=len(rows))
