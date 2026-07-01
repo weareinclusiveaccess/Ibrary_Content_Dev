@@ -63,6 +63,7 @@ def validate_curriculum(
                     "performance_objectives": topic.performance_objectives,
                     "teachers_activities": topic.teachers_activities,
                     "student_activities": topic.student_activities,
+                    "textbook_chapters": topic.textbook_chapters,
                 },
             )
             units.append(unit)
@@ -74,6 +75,19 @@ def validate_curriculum(
         unmapped=len(unmapped),
     )
     return ValidatedCurriculum(units=units, topics=topics, unmapped_topics=unmapped)
+
+
+def load_validated(json_path: str | Path) -> ValidatedCurriculum:
+    """Load ``curriculum_validated.json`` from disk."""
+    path = Path(json_path)
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    units = [CurriculumUnit.model_validate(u) for u in raw.get("units", [])]
+    topics = [CurriculumTopic.model_validate(t) for t in raw.get("topics", [])]
+    return ValidatedCurriculum(
+        units=units,
+        topics=topics,
+        unmapped_topics=raw.get("unmapped_topics", []),
+    )
 
 
 def save_validated(result: ValidatedCurriculum, output_dir: str | Path) -> Path:

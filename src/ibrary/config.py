@@ -18,16 +18,33 @@ DATABASE_URL: str = os.getenv(
 
 # Review portal (Neon development branch or local); falls back to DATABASE_URL
 DATABASE_URL_REVIEW: str = os.getenv("DATABASE_URL_REVIEW") or DATABASE_URL
-REVIEW_API_KEY: str = os.getenv("REVIEW_API_KEY", "dev-review-key-change-me")
 REVIEW_API_HOST: str = os.getenv("REVIEW_API_HOST", "127.0.0.1")
 REVIEW_API_PORT: int = int(os.getenv("REVIEW_API_PORT", "8090"))
 REVIEW_S3_PRESIGN_SECONDS: int = int(os.getenv("REVIEW_S3_PRESIGN_SECONDS", "900"))
+
+# Admin "Approve & publish" button wires through to DynamoDB only when this is true.
+# Off by default so production environments can't accidentally publish before JWT
+# auth + reject workflow have been exercised. Flip to "true" once cutover is ready.
+PORTAL_PUBLISH_ENABLED: bool = os.getenv("PORTAL_PUBLISH_ENABLED", "false").lower() in (
+    "1",
+    "true",
+    "yes",
+)
+
+# AWS region — defined before COGNITO_REGION because it falls back to this value.
+AWS_DEFAULT_REGION: str = os.getenv("AWS_DEFAULT_REGION", "eu-west-1")
+
+# Cognito (optional — user admin API + portal login)
+COGNITO_USER_POOL_ID: str = os.getenv("COGNITO_USER_POOL_ID", "")
+COGNITO_APP_CLIENT_ID: str = os.getenv("COGNITO_APP_CLIENT_ID", "")
+COGNITO_REGION: str = os.getenv("COGNITO_REGION") or AWS_DEFAULT_REGION
+COGNITO_GROUP_ADMIN: str = os.getenv("COGNITO_GROUP_ADMIN", "admin")
+COGNITO_GROUP_REVIEWER: str = os.getenv("COGNITO_GROUP_REVIEWER", "reviewer")
 
 # PostgreSQL schema for all ORM tables (must match Alembic migrations)
 POSTGRES_SCHEMA: str = os.getenv("POSTGRES_SCHEMA", "ibrary")
 
 DYNAMODB_ENDPOINT_URL: str | None = os.getenv("DYNAMODB_ENDPOINT_URL")
-AWS_DEFAULT_REGION: str = os.getenv("AWS_DEFAULT_REGION", "us-east-2")
 
 S3_BUCKET: str = os.getenv("S3_BUCKET", "ibrary-content")
 S3_ENDPOINT_URL: str | None = os.getenv("S3_ENDPOINT_URL") or None

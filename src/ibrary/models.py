@@ -8,6 +8,7 @@ from typing import Any, Optional
 from pgvector.sqlalchemy import Vector
 from sqlalchemy import (
     JSON,
+    Boolean,
     Column,
     DateTime,
     Float,
@@ -116,6 +117,33 @@ class TextbookImage(Base):
     updated_at = Column(DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
 
 
+class ChunkRelevance(Base):
+    """Per (unit, chunk) relevance from filter_relevance agent."""
+
+    __tablename__ = "chunk_relevance"
+    __table_args__ = (
+        UniqueConstraint("curriculum_unit_id", "chunk_id", name="uq_unit_chunk_relevance"),
+        _SCHEMA,
+    )
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    curriculum_unit_id = Column(String, nullable=False, index=True)
+    chunk_id = Column(
+        String,
+        ForeignKey(f"{POSTGRES_SCHEMA}.textbook_chunks.chunk_id"),
+        nullable=False,
+    )
+    relevant = Column(Boolean, nullable=False)
+    excerpt = Column(Text, nullable=True)
+    embedding_score = Column(Float, nullable=True)
+    confidence = Column(Float, nullable=True)
+    rationale = Column(Text, nullable=True)
+    agent_version = Column(String, nullable=True)
+    content_hash = Column(String(64), nullable=True)
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+    updated_at = Column(DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
+
+
 class CuratedContent(Base):
     """Curated modules stored in PostgreSQL (upserted when the curation step saves JSON).
 
@@ -179,7 +207,6 @@ class ContentManualQualityCheck(Base):
     scores = Column(JSON, nullable=True)
     notes = Column(Text, nullable=True)
     checked_by = Column(String, nullable=True)
-    checked_at = Column(DateTime, nullable=True)
     created_at = Column(DateTime, default=dt.datetime.utcnow)
     updated_at = Column(DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
 
@@ -203,7 +230,8 @@ class ContentUdlScore(Base):
     )
     overall_score = Column(Float, nullable=True)
     scores = Column(JSON, nullable=True)
-    judge_model_version = Column(String, nullable=True)
+    judge_model_version = Column(String, nullable=False)
+    judge_prompt_version = Column(String, nullable=False)
     created_at = Column(DateTime, default=dt.datetime.utcnow)
     updated_at = Column(DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
 

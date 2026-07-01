@@ -19,6 +19,10 @@ class CurriculumUnit(BaseModel):
     performance_objectives: list[str] = []
     teachers_activities: list[str] = []
     student_activities: list[str] = []
+    textbook_chapters: list[int] = Field(
+        default_factory=list,
+        description="OpenStax chapter numbers for vector-search scope",
+    )
 
     model_config = {"populate_by_name": True}
 

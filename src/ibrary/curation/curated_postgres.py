@@ -4,15 +4,25 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+from collections.abc import Iterator
 
 import structlog
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 
-from ibrary.curation.schemas import CuratedModule
+from ibrary.curation.schemas import CuratedModule, FormulaRef, ImageRef, module_for_json_export
 from ibrary.db import get_session
 from ibrary.models import CuratedContent
 
 logger = structlog.get_logger(__name__)
+
+
+def _json_field(raw: str | None, default):
+    if not raw:
+        return default
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        return default
 
 
 def _module_to_row(m: CuratedModule) -> dict:
@@ -36,8 +46,71 @@ def _module_to_row(m: CuratedModule) -> dict:
         "model_version": m.model_version,
         "prompt_version": m.prompt_version,
         "status": m.status,
-        "images": [img.model_dump() for img in m.images] if m.images else None,
+        "images": _enrichment_images_payload(m),
     }
+
+
+def _enrichment_images_payload(m: CuratedModule) -> dict | list | None:
+    """Store enrichment in JSON column when present (export-shaped, no placeholders)."""
+    exported = module_for_json_export(m)
+    images = exported.get("images")
+    formulas = exported.get("formulas")
+    if not images and not formulas:
+        return None
+    payload: dict = {}
+    if images:
+        payload["images"] = images
+    if formulas:
+        payload["formulas"] = formulas
+    return payload
+
+
+def _row_to_module(row: CuratedContent) -> CuratedModule:
+    enrichment = row.images if isinstance(row.images, dict) else {}
+    image_dicts = enrichment.get("images") or []
+    formula_dicts = enrichment.get("formulas") or []
+    return CuratedModule(
+        curriculum_unit_id=row.curriculum_unit_id,
+        subject=row.subject or "",
+        **{"class": row.class_name or ""},
+        theme=row.theme or "",
+        theme_number=row.theme_number or 0,
+        topic_number=row.topic_number or 0,
+        subtopic=row.subtopic or "",
+        title=row.title or "",
+        learning_objectives=_json_field(row.learning_objectives, []),
+        curated_content=row.curated_content_md or "",
+        key_takeaways=_json_field(row.key_takeaways, []),
+        glossary_terms=_json_field(row.glossary_terms, {}),
+        student_activities=_json_field(row.student_activities, []),
+        teacher_activities=_json_field(row.teacher_activities, []),
+        accessibility_checklist=_json_field(row.accessibility_checklist, []),
+        textbook_chunk_refs=_json_field(row.textbook_chunk_refs, []),
+        model_version=row.model_version or "",
+        prompt_version=row.prompt_version or "",
+        status=row.status or "draft",
+        images=[ImageRef.model_validate(i) for i in image_dicts if isinstance(i, dict)],
+        formulas=[FormulaRef.model_validate(f) for f in formula_dicts if isinstance(f, dict)],
+    )
+
+
+def count_curated_modules_postgres() -> int:
+    session = get_session()
+    try:
+        return session.query(CuratedContent).count()
+    finally:
+        session.close()
+
+
+def iter_curated_modules_from_postgres() -> Iterator[CuratedModule]:
+    """Yield curated modules one row at a time (low memory)."""
+    session = get_session()
+    try:
+        query = session.query(CuratedContent).order_by(CuratedContent.curriculum_unit_id)
+        for row in query.yield_per(1):
+            yield _row_to_module(row)
+    finally:
+        session.close()
 
 
 def upsert_curated_payloads(payloads: list[dict]) -> int:

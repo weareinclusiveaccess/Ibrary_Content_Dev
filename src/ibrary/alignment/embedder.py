@@ -1,56 +1,52 @@
-"""Embed textbook chunks (title+summary) and store in pgvector."""
+"""Embed textbook chunks and store in pgvector."""
 
 from __future__ import annotations
 
 import structlog
 from sqlalchemy import text as sa_text
 
-from ibrary.config import OPENAI_API_KEY, OPENAI_EMBEDDING_MODEL
+from ibrary.alignment.embedding_text import (
+    build_chunk_embedding_text,
+    resolve_embedding_storage_version,
+)
+from ibrary.config import OPENAI_EMBEDDING_MODEL
 from ibrary.db import get_session
+from ibrary.llm.client import create_embeddings
 
 logger = structlog.get_logger(__name__)
 
 
-def _get_openai_embeddings(texts: list[str], model: str = OPENAI_EMBEDDING_MODEL) -> list[list[float]]:
-    from openai import OpenAI
-
-    client = OpenAI(api_key=OPENAI_API_KEY)
-    resp = client.embeddings.create(input=texts, model=model)
-    return [item.embedding for item in resp.data]
-
-
-def embed_textbook_chunks(model_version: str | None = None) -> int:
-    """Embed all textbook chunks that don't yet have embeddings for this model."""
-    model_version = model_version or OPENAI_EMBEDDING_MODEL
+def embed_textbook_chunks(storage_version: str | None = None) -> int:
+    """Embed chunks missing vectors for ``storage_version`` (see ``resolve_embedding_storage_version``)."""
+    storage_version = storage_version or resolve_embedding_storage_version()
     session = get_session()
     try:
         rows = session.execute(
             sa_text(
                 """
-                SELECT tc.chunk_id, tc.title, tc.summary, tc.learning_objectives
+                SELECT tc.chunk_id, tc.title, tc.summary, tc.learning_objectives, tc.content
                 FROM textbook_chunks tc
                 LEFT JOIN textbook_chunk_embeddings tce
                     ON tc.chunk_id = tce.chunk_id AND tce.model_version = :model
                 WHERE tce.id IS NULL
                 """
             ),
-            {"model": model_version},
+            {"model": storage_version},
         ).fetchall()
 
         if not rows:
-            logger.info("all_chunks_embedded")
+            logger.info("all_chunks_embedded", model_version=storage_version)
             return 0
 
-        def _embed_text(row) -> str:
-            parts = [row.title]
-            lo = row.learning_objectives
-            if lo:
-                parts.append(lo)
-            if row.summary:
-                parts.append(row.summary)
-            return "\n".join(parts)
-
-        texts = [_embed_text(r) for r in rows]
+        texts = [
+            build_chunk_embedding_text(
+                title=r.title or "",
+                learning_objectives=r.learning_objectives or "",
+                summary=r.summary or "",
+                content=r.content or "",
+            )
+            for r in rows
+        ]
         chunk_ids = [r.chunk_id for r in rows]
 
         batch_size = 100
@@ -58,7 +54,16 @@ def embed_textbook_chunks(model_version: str | None = None) -> int:
         for start in range(0, len(texts), batch_size):
             batch_texts = texts[start : start + batch_size]
             batch_ids = chunk_ids[start : start + batch_size]
-            embeddings = _get_openai_embeddings(batch_texts, model_version)
+            embeddings = create_embeddings(
+                batch_texts,
+                component="embedder",
+                model=OPENAI_EMBEDDING_MODEL,
+                metadata={
+                    "storage_version": storage_version,
+                    "batch_start": start,
+                    "batch_count": len(batch_texts),
+                },
+            )
 
             for cid, emb in zip(batch_ids, embeddings):
                 session.execute(
@@ -69,18 +74,25 @@ def embed_textbook_chunks(model_version: str | None = None) -> int:
                         ON CONFLICT (chunk_id, model_version) DO NOTHING
                         """
                     ),
-                    {"cid": cid, "emb": str(emb), "model": model_version},
+                    {"cid": cid, "emb": str(emb), "model": storage_version},
                 )
             total += len(batch_texts)
 
         session.commit()
-        logger.info("chunks_embedded", count=total)
+        logger.info(
+            "chunks_embedded",
+            count=total,
+            model_version=storage_version,
+        )
         return total
     finally:
         session.close()
 
 
-def embed_text(text: str, model: str | None = None) -> list[float]:
-    """Embed a single text string and return the vector."""
-    model = model or OPENAI_EMBEDDING_MODEL
-    return _get_openai_embeddings([text], model)[0]
+def embed_text(text: str) -> list[float]:
+    """Embed a single text string (API model from ``OPENAI_EMBEDDING_MODEL``)."""
+    return create_embeddings(
+        [text],
+        component="embedder_query",
+        metadata={"query": True},
+    )[0]
