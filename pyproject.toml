@@ -2,7 +2,7 @@
 name = "ibrary"
 version = "0.1.0"
 description = "Automated Content Rewording Component for Accessible Secondary School Learning - IBrary"
-readme = "readme.md"
+readme = "README.md"
 requires-python = ">=3.10,<3.13"
 license = {text = "MIT"}
 authors = [
@@ -16,44 +16,63 @@ classifiers = [
     "Topic :: Text Processing",
 ]
 
+# Core dependencies — installed in every environment.
+# Keep this list tight: it is what the reviewer portal (FastAPI + DynamoDB writer
+# + SQLAlchemy) actually imports at runtime. Pipeline / curation / extraction
+# dependencies live in the `pipeline` extra so the production container image
+# stays small (~600 MB vs 25 GB with torch + CUDA wheels).
 dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.0",
     "pydantic>=2.0.0",
-    "pydantic-settings>=2.0.0",
+    "httpx>=0.25.0",
+    "pyjwt[crypto]>=2.8.0",
+    "python-dotenv>=1.0.0",
+    "structlog>=24.0.0",
+    "sqlalchemy>=2.0.0",
+    "alembic>=1.13.0",
+    "psycopg2-binary>=2.9.0",
+    "pgvector>=0.3.0",
+    "boto3>=1.34.0",
+    "tenacity>=8.2.0",
+]
+
+[project.optional-dependencies]
+# Pipeline extra — needed to RUN the content pipeline locally (extraction,
+# embedding, alignment, curation, judge). Not installed in the reviewer portal
+# container. Install locally with: `uv sync --extra pipeline --extra dev`.
+pipeline = [
     "openai>=1.0.0",
     "anthropic>=0.18.0",
     "google-generativeai>=0.3.0",
-    "httpx>=0.25.0",
-    "tenacity>=8.2.0",
+    "openai-agents>=0.17.0",
     "tiktoken>=0.5.0",
     "numpy>=1.24.0",
     "sentence-transformers>=2.2.0",
     "textstat>=0.7.3",
     "spacy>=3.7.0",
-    "pyyaml>=6.0",
     "redis>=5.0.0",
-    "sqlalchemy>=2.0.0",
-    "alembic>=1.13.0",
-    "python-dotenv>=1.0.0",
-    "structlog>=24.0.0",
-    "jsonschema>=4.20.0",
     "langchain>=0.3.0",
     "langchain-community>=0.3.0",
     "langchain-core>=0.3.0",
+    "langsmith>=0.3.0",
     "pdfminer-six>=20260107",
     "pypdf>=3.0.0",
     "pymupdf>=1.23.0",
     "striprtf>=0.0.29",
-    "ipykernel>=7.1.0",
-    "ipywidgets>=8.1.8",
-    "psycopg2-binary>=2.9.0",
-    "pgvector>=0.3.0",
-    "boto3>=1.34.0",
-    "fastapi>=0.110.0",
-    "uvicorn>=0.27.0",
+    "pydantic-settings>=2.0.0",
+    "pyyaml>=6.0",
+    "jsonschema>=4.20.0",
 ]
 
-[project.optional-dependencies]
+# Notebooks extra — `notebooks/*.ipynb` need an IPython kernel + widgets.
+notebooks = [
+    "ipykernel>=7.1.0",
+    "ipywidgets>=8.1.8",
+]
+
 dev = [
+    "matplotlib>=3.8.0",
     "pytest>=7.4.0",
     "pytest-asyncio>=0.21.0",
     "pytest-cov>=4.1.0",

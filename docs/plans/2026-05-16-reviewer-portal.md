@@ -1,17 +1,19 @@
 # Reviewer portal — implementation plan
 
 **Branch:** `feature/reviewer-portal` (from `biology-multi-agent`)  
-**Date:** 2026-05-16  
+**Date:** 2026-05-16 (revised 2026-05-17 after decision log)  
 **Goal:** Let reviewers sign in, browse curated lessons, read UDL judge reports, and update review status in Postgres (then publish verified units to DynamoDB).
+
+> **Decision log:** all hosting/auth/workflow decisions are recorded in [infra/HOSTING.md § Decisions log](../../infra/HOSTING.md#decisions-log-2026-05-17). This plan is the build-order companion to that log.
 
 ---
 
 ## What you asked for (two steps)
 
-| Step | What | Status today |
-|------|------|----------------|
-| **1** | Load curated content (and judge results) into PostgreSQL | **Mostly done** — curation/judge pipeline upserts per unit; you may need a **one-shot bulk load** from JSON files |
-| **2** | Web UI for reviewers: login, read content, see judge report, change `status` | **Not built** — schema and Postgres tables exist; need API + frontend + AWS auth |
+| Step | What | Status |
+|------|------|--------|
+| **1** | Load curated content (and judge results) into PostgreSQL | **Done** — pipeline upserts per unit; `scripts/load_curated_to_postgres.py` available for bulk loads from JSON |
+| **2** | Web UI for reviewers: login, read content, see judge report, change `status` | **Phase 1 done (2026-05-18)** — FastAPI + React SPA deployed end-to-end on AWS: Cognito JWT auth, EC2 (t3.micro) behind CloudFront, S3 UI bucket, ECR image, SSM secrets, DynamoDB publish path, reject workflow. Live at `https://d52pmztlzpw34.cloudfront.net`. |
 
 ---
 
@@ -163,94 +165,116 @@ Display:
 
 ## Implementation phases
 
-### Phase 0 — Local (1–2 days)
+### Phase 0 — Local (done)
 
-- [ ] `scripts/load_curated_to_postgres.py` (this branch)
-- [ ] `src/ibrary/review/api.py` with dev API key
-- [ ] Minimal HTML or React page calling localhost API
-- [ ] Manual test: list → open unit → see judge → set `verified`
+- [x] `scripts/load_curated_to_postgres.py`
+- [x] `src/ibrary/review/api.py` with dev API key
+- [x] React SPA in `review-ui/` (queue, unit review, judge sidebar, rubric, admin/users)
+- [x] Cognito dev pool + admin user
+- [x] Manual test: list → open unit → see judge → submit rubric → approve & publish (Postgres only)
 
-### Phase 1 — AWS dev environment
+### Phase 1 — Production deploy (next)
 
-- [ ] Apply Terraform in `infra/terraform/environments/dev` (see [infra/README.md](../../infra/README.md))
-- [ ] RDS Postgres; migrate with Alembic; load data
-- [ ] Cognito user pool + test reviewer user
-- [ ] Deploy API (ECS Fargate or App Runner)
-- [ ] Build & deploy static UI (S3 + CloudFront or serve from API)
+Build order is **gated**: 1 → 2 → 3 → 4 → 5 → 6 → 7. JWT auth must land before the DynamoDB publish endpoint is enabled.
+
+1. [x] **Infra (Terraform additions):** ECR repo, S3 UI bucket, CloudFront distribution (two behaviors), EC2 t3.micro + security group, instance role, SSM SecureStrings, DynamoDB `CuratedContent`. **Applied 2026-05-18** with `enable_portal_hosting = true`.
+2. [x] **Container:** root-level `Dockerfile` (Node 22 builds `review-ui/dist` → Python 3.12-slim runtime → `entrypoint-ec2.sh` fetches SSM → `uvicorn`); root-level `.dockerignore`; image pushed to `ECR`. ~767 MB after dep split.
+3. [x] **EC2 bootstrap:** systemd unit `ibrary-portal.service` pulls from ECR and runs the container; health check `GET /health` returns 200.
+4. [x] **UI deploy:** built with Node 22, synced to S3, CloudFront invalidation issued.
+5. [x] **Auth refactor (Decision 2):** `cognito_jwt.py` with JWKS cache + Bearer deps; tokens via `POST /review/auth/login`; refresh via `POST /review/auth/refresh`; SPA sends Bearer on every `/review/*`.
+6. [x] **Workflow (Decision 7):** added `rejected` to `ALLOWED_STATUSES`, status union, queue badge, reject button (requires note), `POST /review/units/{id}/reject`, `POST /review/units/{id}/publish-to-dynamodb` (admin, behind `PORTAL_PUBLISH_ENABLED`), `GET /review/portal-config`.
+7. [x] **Cutover:** CloudFront URL `https://d52pmztlzpw34.cloudfront.net` added to Cognito callback/logout URLs; CORS scoped to that origin; `PORTAL_PUBLISH_ENABLED=true` in SSM; `make portal-start/stop/status` wired; `scripts/portal_update_cloudfront_origin.py` swaps origin after EC2 restart.
 
 ### Phase 2 — Hardening
 
-- [ ] Audit log (who changed status when)
-- [ ] Role groups: reviewer vs admin
-- [ ] CI: deploy on merge to `feature/reviewer-portal`
-- [ ] Wire publish webhook or button “Publish verified to DynamoDB”
+- [ ] GitHub Actions + OIDC + ECR push + SSM deploy (5C migration)
+- [ ] Cognito Hosted UI + PKCE (replaces custom form, adds MFA path)
+- [ ] Forgot password UX polish (already wired via API)
+- [ ] Audit log for status changes (richer than current single row per publish)
+- [ ] Custom domain (Route 53 or external DNS) in front of CloudFront
+- [ ] Restrict EC2 SG to CloudFront IP ranges
+- [ ] WAF in front of CloudFront
 
 ---
 
-## AWS setup (summary)
+## AWS resources (confirmed plan)
 
-Full instructions: **[infra/README.md](../../infra/README.md)** and **[infra/terraform/README.md](../../infra/terraform/README.md)**.
+Full hosting decision: [infra/HOSTING.md](../../infra/HOSTING.md). Full Terraform structure: [infra/terraform/README.md](../../infra/terraform/README.md).
 
-| Service | Use |
-|---------|-----|
-| **RDS PostgreSQL** | Same schema as local (`ibrary`); pipeline + reviewer API |
-| **Cognito** | Reviewer login |
-| **S3** | Existing `ibrary-content` bucket for textbook images; optional bucket for UI static assets |
-| **Secrets Manager** | `DATABASE_URL`, optional OpenAI key for re-judge |
-| **ECS Fargate / App Runner** | Host reviewer API |
-| **ALB + ACM** | HTTPS for API and UI (production) |
-| **IAM** | Task role: RDS (via secret), S3 read for presigned URLs, Cognito read |
+| Service | Use | Free-tier status |
+|---------|-----|-------------------|
+| **EC2 t3.micro** | Run FastAPI container | 750 hr/mo for 12 months |
+| **S3** (UI bucket) | Host `review-ui/dist` | 5 GB free for 12 months |
+| **S3** (`ibrary-content`) | Textbook images for presigned URLs | Existing |
+| **CloudFront** | One distribution, two behaviors (UI + API) | 1 TB egress + 10M req/mo forever |
+| **Cognito** | Reviewer/admin login (eu-west-1) | 50k MAU forever |
+| **ECR** | Hold API image | 500 MB private for 12 months |
+| **SSM Parameter Store** | API secrets under `/ibrary/review/*` | Free |
+| **CloudWatch Logs** | App logs | 5 GB ingest/storage for 12 months |
+| **IAM (instance role)** | S3 read + Cognito admin + SSM/KMS + DynamoDB write | Free |
+| **Neon** (external) | `ibrary` schema for curated content + judge | Existing free tier |
 
-**Region:** align with existing bucket (e.g. `eu-west-1`).
+**Region:** `eu-west-1` (matches `ibrary-content` bucket). CloudFront ACM certs in `us-east-1` if custom domain is added.
 
-**Cost-conscious dev:** keep Postgres on Docker locally; only provision Cognito + S3 + App Runner for a hosted demo.
+**Explicitly not in scope for v1:** RDS, App Runner / ECS / Lambda, NAT Gateway, Secrets Manager, Route 53 hosted zone, WAF.
 
 ---
 
 ## Security checklist
 
-- [ ] No public Postgres port; RDS in private subnets
-- [ ] Cognito JWT on all `/review/*` routes (except health)
-- [ ] CORS restricted to reviewer UI origin
-- [ ] Presigned S3 URLs: 15-minute expiry, read-only
-- [ ] Reviewers cannot call OpenAI or pipeline admin endpoints from this app
+- [x] Cognito user pool + groups `admin`/`reviewer` (Terraform)
+- [x] Cognito JWT on all `/review/*` routes (except `/health`)
+- [x] CORS restricted to CloudFront URL
+- [x] Presigned S3 URLs: 15-minute expiry, read-only
+- [x] Reviewers cannot call OpenAI or pipeline admin endpoints from this app (no such routes exist)
+- [x] EC2 instance role replaces any AWS keys in env
+- [x] Secrets in SSM SecureString, not on disk
+- [x] `PORTAL_PUBLISH_ENABLED` flipped on only after JWT auth verified live (2026-05-18)
 
 ---
 
-## Files to add (this epic)
+## Files added / to add
+
+**Already added on this branch:**
 
 ```
 scripts/load_curated_to_postgres.py
-src/ibrary/review/
-  __init__.py
-  api.py
-  schemas.py
-  service.py
-  auth.py
-review-ui/                    # or apps/reviewer/
-infra/
-  README.md
-  terraform/
-    README.md
-    environments/dev/
-    modules/cognito/
-    modules/rds/
-    modules/reviewer_api/     # optional phase 1
+scripts/run_review_portal.py
+src/ibrary/review/{__init__,api,auth,cognito_admin,cognito_auth,db,s3_presign,schemas,service}.py
+review-ui/  (full Vite + React SPA)
+infra/HOSTING.md
+infra/README.md
+infra/terraform/environments/dev/  (Cognito wired; RDS off)
+infra/terraform/modules/cognito/
+```
+
+**Added in Phase 1 (complete):**
+
+```
+Dockerfile, .dockerignore, .gitattributes
+entrypoint-ec2.sh
+src/ibrary/review/cognito_jwt.py
+infra/terraform/modules/{ec2_portal,s3_ui,cloudfront,ecr,ssm_params,dynamodb}/
+scripts/portal_update_cloudfront_origin.py
+Makefile — portal-start / portal-stop / portal-status / portal-logs / portal-roll / portal-cf-origin
 ```
 
 ---
 
-## Open decisions (confirm before Phase 1)
+## Closed decisions (resolved 2026-05-17)
 
-1. **Hosting:** App Runner (simpler) vs ECS Fargate (more control)?
-2. **UI:** separate SPA repo folder vs server-rendered Jinja templates?
-3. **Statuses:** add `rejected` / `in_review` or keep `draft` / `verified` / `published` only?
-4. **RDS:** new instance vs connect reviewer API to existing Postgres (VPN/bastion)?
+See [infra/HOSTING.md § Decisions log](../../infra/HOSTING.md#decisions-log-2026-05-17) for the full table. Earlier open questions in this doc are resolved as follows:
+
+1. **Hosting:** Neither App Runner nor ECS. **EC2 t3.micro free tier** chosen for $0 active cost + clean stop/start lifecycle.
+2. **UI:** SPA (`review-ui/`), not Jinja.
+3. **Statuses:** Five statuses — `draft` / `draft_curriculum_only` / `rejected` / `verified` / `published`.
+4. **DB:** **Neon**, not RDS (`enable_rds = false` permanently).
 
 ---
 
 ## Related docs
 
+- [infra/HOSTING.md](../../infra/HOSTING.md) — confirmed deployment plan + decisions log
 - [README.md](../../README.md) — curated lessons & images
 - [SETUP.md](../../SETUP.md) — pipeline outputs & Postgres queries
 - [REVIEW_PIPELINE_V2.md](../REVIEW_PIPELINE_V2.md) — manual QA of curation quality

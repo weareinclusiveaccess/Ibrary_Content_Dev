@@ -127,6 +127,7 @@ dmypy.json
 uv.lock
 
 # IDE
+.worktrees/
 .vscode/
 .idea/
 *.swp
@@ -163,7 +164,16 @@ data/docs/extracted_source_content/biology/curriculum_extraction_report.json
 data/docs/extracted_source_content/biology/curriculum_textbook_alignment.json
 data/docs/extracted_source_content/biology/curated_content.json
 data/docs/extracted_source_content/biology/udl_evaluation_report.json
+data/docs/extracted_source_content/biology/chunk_relevance_without_images.json
+data/docs/extracted_source_content/biology/curated_content_old.json
+data/docs/extracted_source_content/biology/curriculum_refinement_report.json
+data/docs/extracted_source_content/biology/learning_module_bio_sss1_theme1_topic1_content0.json
+data/docs/extracted_source_content/biology/udl_subtopic_evaluation.json
 data/docs/extracted_source_content/biology/textbook_images/
+
+# Local Terraform output cache and state backups
+.tfout_*
+infra/terraform/**/terraform.tfstate.*.backup
 
 
 # Database

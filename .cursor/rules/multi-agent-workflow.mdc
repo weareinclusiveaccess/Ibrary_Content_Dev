@@ -50,3 +50,21 @@ Each agent response must include: **goal**, **findings**, **decision**, **risks*
 - `/status` — Orchestrator summarizes progress, blockers, and next actions.
 
 Full reference: docs/MULTI_AGENT_WORKFLOW.md.
+
+## Cursor subagents
+
+Project subagents live in `.cursor/agents/` (one file per role). Invoke explicitly, e.g. `/orchestrator`, `/software-engineer`, `/tester`. Map slash commands to agents:
+
+| Command | Subagent(s) |
+|---------|-------------|
+| `/plan` | `orchestrator` |
+| `/inspect` | `intern` then `information-retriever` |
+| `/architect` | `system-architect` |
+| `/design` | `designer` |
+| `/build` | `software-engineer` |
+| `/review` | `senior-software-engineer` |
+| `/test` | `tester` |
+| `/edit` | `editor` |
+| `/status` | `orchestrator` |
+
+Start a full cycle with `/project-owner` when scoping a new request.

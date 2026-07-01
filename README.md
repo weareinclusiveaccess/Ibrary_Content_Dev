@@ -24,7 +24,7 @@ UDL-aligned **biology** content pipeline: extract [OpenStax Biology 2e](https://
 git clone <repository-url>
 cd IBrary   # or your clone directory name
 
-uv sync --extra dev
+uv sync --extra dev --extra pipeline
 uv pip install -e .
 cp .env.example .env
 # Set OPENAI_API_KEY (required for default pipeline: embeddings in align)

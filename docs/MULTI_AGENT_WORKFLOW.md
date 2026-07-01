@@ -1,10 +1,10 @@
 # Multi-Agent Software Team Workflow
 
-This document defines the roles, rules, and flow for the simulated multi-agent software team used in IBrary development. At any time only one agent is active; handoffs are explicit.
+Cursor-facing roles for human-driven development. Runtime pipeline agents are separate (see below).
 
 ---
 
-## Agents
+## Cursor agents
 
 | Agent | Scope |
 |-------|--------|
@@ -26,56 +26,30 @@ This document defines the roles, rules, and flow for the simulated multi-agent s
 - **Stay in scope:** Only the active agent speaks; do not mix roles.
 - **Handoff:** Every agent ends with a handoff to the next best agent.
 - **Ground decisions:** Use the actual codebase, file structure, configs, and existing patterns.
-- **Inspect before proposing:** Verify repo state before suggesting changes.
-- **Reuse before reinventing:** Prefer existing patterns and modules.
+- **Reuse before reinventing:** Prefer existing patterns under `src/ibrary/`.
 - **Output:** Keep responses structured, concise, and actionable.
 
 ---
 
-## Default Flow
+## Pipeline sub-agents (runtime, subject-agnostic)
 
-```
-Project Owner → Orchestrator → Intern → Information Retriever → System Architect
-    → Designer (if needed) → Software Engineer → Senior Software Engineer
-    → Tester → Editor → Orchestrator
-```
+Implemented in code — not Cursor chat roles.
 
----
-
-## Agent Response Format
-
-Each agent response must include:
-
-- **goal** — What this agent is responsible for in this step.
-- **findings** — Relevant facts from repo, docs, or prior handoffs.
-- **decision** — What was decided or produced.
-- **risks** — Notable risks or caveats.
-- **next handoff** — Which agent goes next and what they should do.
-
----
-
-## Command Rules
-
-| Command | Responsibility |
+| Module | Responsibility |
 |--------|----------------|
-| `/plan` | Orchestrator creates a step-by-step execution plan. |
-| `/inspect` | Intern + Information Retriever inspect repository and summarize findings. |
-| `/architect` | System Architect proposes structure. |
-| `/design` | Designer proposes UX/UI direction. |
-| `/build` | Software Engineer implements the task. |
-| `/review` | Senior Software Engineer reviews implementation. |
-| `/test` | Tester validates behavior and coverage. |
-| `/edit` | Editor improves docs, naming, and wording. |
-| `/status` | Orchestrator summarizes progress, blockers, and next actions. |
+| `src/ibrary/pipeline/` | `PipelineOrchestrator`, sub-agents, native DAG |
+| `src/ibrary/judging/` | UDL v3 subtopic judge (CAST metrics PDF) |
+| `src/ibrary/prompt_improvement/` | Compare prompt versions using judge scores |
+| `src/ibrary/relevance/` | (planned) filter_relevance |
+| `src/ibrary/curation/` | Text/media/formula curation |
+
+Guide: `docs/PIPELINE_ORCHESTRATOR.md`  
+Spec: `docs/superpowers/specs/2026-05-16-biology-pipeline-v2-design.md`
 
 ---
 
 ## References
 
-- **Project plan:** `docs/PLAN_BIOLOGY_CONTENT_SYSTEM.md`
-- **Priorities / TODO:** `TODO.md`
-- **Setup & dev:** `README.md`, `SETUP.md`, `CONTRIBUTING.md`
-
----
-
-*Last updated: March 2026*
+- **Pipeline spec:** `docs/superpowers/specs/2026-05-16-biology-pipeline-v2-design.md`
+- **Implementation plan:** `docs/superpowers/plans/2026-05-16-biology-pipeline-v2.md`
+- **Setup:** `SETUP.md`, `README.md`

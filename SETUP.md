@@ -27,7 +27,12 @@ git clone <repository-url>
 cd Ibrary_Content_Dev
 
 # Install dependencies
-uv sync --extra dev
+# - core: FastAPI + DB + auth (everything the reviewer portal container needs)
+# - pipeline: torch/transformers/spaCy/langchain/pymupdf (only needed to run the pipeline locally)
+# - dev: pytest, ruff, etc.
+# Run the portal only:   uv sync --extra dev
+# Run the full pipeline: uv sync --extra dev --extra pipeline
+uv sync --extra dev --extra pipeline
 
 # Install package in editable mode
 uv pip install -e .
@@ -383,17 +388,39 @@ uv run python scripts/load_curated_to_postgres.py
 
 **Reviewer portal (local):**
 
+Requirements: **Node.js 22 LTS** (or 20.19+). Vite 8 / Rolldown will not run on Node 21.x — see `review-ui/.nvmrc`.
+
 ```bash
 # Point at Neon development branch (direct host, not -pooler)
 # DATABASE_URL_REVIEW=postgresql://...@ep-xxx.eu-west-2.aws.neon.tech/neondb?sslmode=require
 
+# Build the React UI once (or after UI changes)
+cd review-ui && npm install && npm run build && cd ..
+
 uv run python scripts/run_review_portal.py
-# Open http://127.0.0.1:8090 — API key from REVIEW_API_KEY in .env (default: dev-review-key-change-me)
+# Open http://127.0.0.1:8090
+# Sign in with a Cognito user from your dev pool (see infra/HOSTING.md to create the pool).
+# Auth: every /review/* request now needs Authorization: Bearer <Cognito ID token> — the SPA
+# stores the token in sessionStorage after login and refreshes it automatically.
 ```
 
-Features: browse 88 units, read lesson markdown + figures (S3 presigned if AWS profile works), UDL judge sidebar, **Approve (verified)** / **Send back to draft**, reviewer notes.
+**UI dev mode** (hot reload, API proxied to :8090):
 
-See [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md) for production (Cognito + deploy).
+```bash
+# Terminal 1
+uv run python scripts/run_review_portal.py
+# Terminal 2
+cd review-ui && npm run dev   # http://127.0.0.1:5173
+```
+
+Sign-in options today:
+- Cognito user from your dev pool (`COGNITO_USER_POOL_ID` set) — preferred
+- Dev mock: `reviewer@ibrary.com` or `admin@ibrary.com` / password `password` — **will be removed in Phase 1** (see decision log)
+
+Features: browse units, read lesson markdown + figures (S3 presigned if AWS profile works), UDL judge sidebar, reviewer **Submit review** (→ `verified`), admin **Approve & publish** (→ `published`), **Send back to draft**, reviewer notes.
+
+**Production deployment plan:** see [infra/HOSTING.md](infra/HOSTING.md) — EC2 free tier + S3/CloudFront + Cognito JWT.
+**Implementation plan:** [docs/plans/2026-05-16-reviewer-portal.md](docs/plans/2026-05-16-reviewer-portal.md).
 
 ### 10. Internal API (Optional)
 
