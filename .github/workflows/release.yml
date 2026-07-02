@@ -45,7 +45,7 @@ jobs:
           fi
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && env.UV_PUBLISH_TOKEN != '')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
