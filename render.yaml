@@ -1,0 +1,39 @@
+# Render Blueprint — free public HTTPS endpoint for the content read API.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Deploy:
+#   1. Create IAM user `ibrary-content-api` with content-api-readonly-policy.json
+#   2. Push this branch to GitHub
+#   3. Render Dashboard → New → Blueprint → connect repo
+#   4. Set secret env vars in Render (CONTENT_API_KEYS, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
+#
+# Free tier: service sleeps after ~15 min idle; first request may take ~30s to wake.
+
+services:
+  - type: web
+    name: ibrary-content-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.content-api
+    region: frankfurt
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: AWS_DEFAULT_REGION
+        value: eu-west-1
+      - key: ENVIRONMENT
+        value: production
+      - key: CONTENT_API_HOST
+        value: 0.0.0.0
+      - key: CONTENT_API_PORT
+        value: "8080"
+      - key: CONTENT_API_CORS_ORIGINS
+        value: "*"
+      - key: PIPELINE_SUBJECT
+        value: Biology
+      # Secrets — set in Render dashboard (never commit values):
+      - key: CONTENT_API_KEYS
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false

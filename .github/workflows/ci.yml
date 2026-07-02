@@ -110,7 +110,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.setup-python.outcome == 'success'
-        run: uv sync --extra dev
+        run: uv sync --extra dev --extra content-api
 
       - name: Check if tests exist
         if: steps.setup-python.outcome == 'success'
