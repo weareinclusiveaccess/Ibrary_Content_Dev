@@ -186,12 +186,13 @@ uv run mypy src
 Read-only HTTP API for backend teams to fetch published biology lessons from AWS DynamoDB.
 
 ```bash
-cp .env.content-api.example .env
-uv sync --extra content-api --extra dev && uv pip install -e .
-make content-api
+cp .env.content-api.example .env.content-api   # does not touch your .env
+make content-api-install && make content-api
 ```
 
 Full setup, Render deploy, and backend integration: **[docs/CONTENT_API.md](docs/CONTENT_API.md)**
+
+**Swagger UI (local):** http://127.0.0.1:8080/docs — **Backend guide:** [docs/BACKEND_INTEGRATION.md](docs/BACKEND_INTEGRATION.md)
 
 ## Architecture
 

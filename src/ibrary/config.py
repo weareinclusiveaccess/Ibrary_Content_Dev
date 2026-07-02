@@ -3,10 +3,14 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
+# Load shared project .env first, then optional content-api overrides.
+# Use .env.content-api for API-only vars — never overwrite your main .env.
 load_dotenv()
+load_dotenv(Path(".env.content-api"), override=False)
 
 AWS_DEFAULT_REGION: str = os.getenv("AWS_DEFAULT_REGION", "eu-west-1")
 DYNAMODB_ENDPOINT_URL: str | None = os.getenv("DYNAMODB_ENDPOINT_URL") or None

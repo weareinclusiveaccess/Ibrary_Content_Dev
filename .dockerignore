@@ -1,4 +1,6 @@
+# Content API image — exclude everything except the files COPY'd in Dockerfile.content-api
 .git
+.github
 .venv
 venv
 __pycache__
@@ -9,14 +11,25 @@ __pycache__
 .env
 .env.*
 !.env.content-api.example
-!.env.example
+
+# Not needed for content-api runtime
 tests
 docs
-.github
 infra
-review-ui
+scripts
+Makefile
+render.yaml
 notebooks
 data
 storage
+review-ui
+src/ibrary/core
+src/sourceContentProcessor
+alembic
+alembic.ini
+
+# Full project deps (torch, spacy, …) — image uses docker/content-api/requirements.txt
+pyproject.toml
+uv.lock
+
 *.md
-!README.md

@@ -1,25 +1,24 @@
 # Minimal image for the DynamoDB content read API (standalone — no pipeline or review UI).
 #
+# Installs only docker/content-api/requirements.txt (~30 MB), not pyproject.toml.
+#
 # Build:
-#   docker build -f Dockerfile.content-api -t ibrary-content-api:dev .
+#   docker build -f Dockerfile.content-api -t youruser/ibrary-content-api:latest .
 #
 # Run (prod DynamoDB):
 #   docker run --rm -p 8080:8080 \
 #     -e AWS_DEFAULT_REGION=eu-west-1 \
 #     -e CONTENT_API_KEYS=your-secret-key \
 #     -e AWS_ACCESS_KEY_ID=... -e AWS_SECRET_ACCESS_KEY=... \
-#     ibrary-content-api:dev
+#     youruser/ibrary-content-api:latest
 
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS runtime
+FROM python:3.12-slim-bookworm
 
 WORKDIR /app
 
-ENV UV_COMPILE_BYTECODE=1 \
-    UV_LINK_MODE=copy \
-    UV_PROJECT_ENVIRONMENT=/app/.venv \
-    PYTHONDONTWRITEBYTECODE=1 \
+ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PATH="/app/.venv/bin:$PATH" \
+    PYTHONPATH=/app/src \
     CONTENT_API_HOST=0.0.0.0 \
     CONTENT_API_PORT=8080 \
     ENVIRONMENT=production
@@ -28,18 +27,13 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml ./
-RUN --mount=type=cache,target=/root/.cache/uv,sharing=locked \
-    uv sync --extra content-api --no-dev --no-install-project
+COPY docker/content-api/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt \
+    && rm /tmp/requirements.txt
 
-RUN mkdir -p src/ibrary/serving
 COPY src/ibrary/__init__.py  src/ibrary/__init__.py
 COPY src/ibrary/config.py    src/ibrary/config.py
 COPY src/ibrary/serving/     src/ibrary/serving/
-COPY README.md ./
-
-RUN --mount=type=cache,target=/root/.cache/uv,sharing=locked \
-    uv sync --extra content-api --no-dev
 
 RUN useradd --create-home --shell /bin/bash --uid 1001 ibrary \
     && chown -R ibrary:ibrary /app
