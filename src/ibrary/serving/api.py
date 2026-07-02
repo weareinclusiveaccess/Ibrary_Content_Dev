@@ -1,0 +1,129 @@
+"""Internal read API over DynamoDB curated content."""
+
+from __future__ import annotations
+
+import boto3
+from boto3.dynamodb.conditions import Key
+from fastapi import FastAPI, HTTPException, Security
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import APIKeyHeader
+
+from ibrary.config import (
+    AWS_DEFAULT_REGION,
+    CONTENT_API_CORS_ORIGINS,
+    CONTENT_API_KEYS,
+    DYNAMODB_ENDPOINT_URL,
+    PIPELINE_SUBJECT,
+)
+from ibrary.serving.keys import TABLE_NAME, build_pk
+
+app = FastAPI(
+    title="IBrary Content API",
+    version="0.2.0",
+    description="Read-only API over published curated content in DynamoDB.",
+)
+
+_cors_origins = CONTENT_API_CORS_ORIGINS or ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_cors_origins,
+    allow_credentials="*" not in _cors_origins,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
+API_KEY_HEADER = APIKeyHeader(name="X-API-Key", auto_error=False)
+
+
+def _get_table():
+    kwargs: dict = {"region_name": AWS_DEFAULT_REGION}
+    if DYNAMODB_ENDPOINT_URL:
+        kwargs["endpoint_url"] = DYNAMODB_ENDPOINT_URL
+    return boto3.resource("dynamodb", **kwargs).Table(TABLE_NAME)
+
+
+def _verify_key(key: str | None = Security(API_KEY_HEADER)):
+    if not key or key not in CONTENT_API_KEYS:
+        raise HTTPException(status_code=403, detail="Invalid or missing API key")
+    return key
+
+
+@app.get("/health")
+def health():
+    """Liveness probe for load balancers and Render health checks."""
+    return {"status": "ok", "table": TABLE_NAME, "region": AWS_DEFAULT_REGION}
+
+
+@app.get("/topics")
+def list_topics(
+    class_name: str = "SSS 1",
+    theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
+    _key: str = Security(_verify_key),
+):
+    """List all topics for a subject + class + theme."""
+    table = _get_table()
+    pk = build_pk(subject, class_name, theme_number)
+    resp = table.query(
+        KeyConditionExpression=Key("PK").eq(pk) & Key("SK").begins_with("TOPIC#"),
+        FilterExpression="entity_type = :et",
+        ExpressionAttributeValues={":et": "TOPIC"},
+    )
+    return {"topics": resp.get("Items", [])}
+
+
+@app.get("/topics/{topic_number}")
+def get_topic(
+    topic_number: int,
+    class_name: str = "SSS 1",
+    theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
+    _key: str = Security(_verify_key),
+):
+    """Get a single topic."""
+    table = _get_table()
+    pk = build_pk(subject, class_name, theme_number)
+    sk = f"TOPIC#{topic_number:02d}"
+    resp = table.get_item(Key={"PK": pk, "SK": sk})
+    item = resp.get("Item")
+    if not item:
+        raise HTTPException(status_code=404, detail="Topic not found")
+    return item
+
+
+@app.get("/topics/{topic_number}/subtopics")
+def list_subtopics(
+    topic_number: int,
+    class_name: str = "SSS 1",
+    theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
+    _key: str = Security(_verify_key),
+):
+    """List subtopics (content items) for a topic."""
+    table = _get_table()
+    pk = build_pk(subject, class_name, theme_number)
+    sk_prefix = f"TOPIC#{topic_number:02d}#CONTENT#"
+    resp = table.query(
+        KeyConditionExpression=Key("PK").eq(pk) & Key("SK").begins_with(sk_prefix),
+    )
+    return {"subtopics": resp.get("Items", [])}
+
+
+@app.get("/topics/{topic_number}/subtopics/{content_index}")
+def get_subtopic(
+    topic_number: int,
+    content_index: int,
+    class_name: str = "SSS 1",
+    theme_number: int = 1,
+    subject: str = PIPELINE_SUBJECT,
+    _key: str = Security(_verify_key),
+):
+    """Get a single subtopic content item."""
+    table = _get_table()
+    pk = build_pk(subject, class_name, theme_number)
+    sk = f"TOPIC#{topic_number:02d}#CONTENT#{content_index}"
+    resp = table.get_item(Key={"PK": pk, "SK": sk})
+    item = resp.get("Item")
+    if not item:
+        raise HTTPException(status_code=404, detail="Subtopic not found")
+    return item

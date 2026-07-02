@@ -181,6 +181,18 @@ uv run pre-commit run
 uv run mypy src
 ```
 
+## Content read API (DynamoDB)
+
+Read-only HTTP API for backend teams to fetch published biology lessons from AWS DynamoDB.
+
+```bash
+cp .env.content-api.example .env
+uv sync --extra content-api --extra dev && uv pip install -e .
+make content-api
+```
+
+Full setup, Render deploy, and backend integration: **[docs/CONTENT_API.md](docs/CONTENT_API.md)**
+
 ## Architecture
 
 This project follows the architecture decisions outlined in the proposal document:
