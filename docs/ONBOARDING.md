@@ -16,7 +16,7 @@ Three programs share this repo. They are not one server.
 
 The content API only reads. It does not create lessons. The portal and the pipeline are what create and approve them.
 
-Open [content-creation-flow.html](content-creation-flow.html) in a browser and click each stage. That map is the picture version of this page. The work itself is the checklist in [tasks.html](tasks.html): set up locally, learn the flow, extract the reviews already stored in Neon and compare them with the LLM judge, then make that judge stable enough to compare again.
+Open [content-creation-flow.html](content-creation-flow.html) in a browser and click each stage. That map is the picture version of this page. The work itself is the checklist in [tasks.html](tasks.html): set up locally, learn the flow, extract the reviews already stored in Neon, understand the current judge against those reviews, then propose how to calibrate the judge to the human scores. The proposal comes before any judge code change.
 
 ## Read this first, in this order
 
@@ -396,6 +396,6 @@ Review comments can also be summarized into prompt weaknesses. That code lives i
 
 ## First week
 
-Work through [tasks.html](tasks.html) in order. It is the assignment: local setup, the flow, a review compared with the LLM judge, then a more stable judge. Use [SETUP.md](../SETUP.md) when a command fails. Do not start `--full` as part of that assignment.
+Work through [tasks.html](tasks.html) in order. It is the assignment: local setup, the flow, extract the Neon reviews and set them beside the judge, then a written proposal for a judge calibrated to those reviews. Use [SETUP.md](../SETUP.md) when a command fails. Do not start `--full` as part of that assignment.
 
 When something fails, look at [SETUP.md](../SETUP.md) under Common Issues before changing model code. Failed model calls are retried three times. If they still fail, the lesson is marked for review rather than published as if it succeeded.

@@ -109,7 +109,7 @@
 <body>
   <header>
     <h1>Onboarding tasks</h1>
-    <p class="lede">Four phases. Finish them in order. Setup stays on your laptop. The reviews are already in Neon: extract them and set them beside the LLM judge. The last phase changes the judge so that comparison can be repeated.</p>
+    <p class="lede">Four phases. Finish them in order. Setup stays on your laptop. The reviews are already in Neon: extract them, understand how the current judge scored those same lessons, then propose how to calibrate the judge to the human reviews. Do not change the judge until that proposal is written.</p>
     <div class="progress" aria-live="polite">
       <div class="bar" aria-hidden="true"><span id="fill"></span></div>
       <strong id="count">0 / 0</strong>
@@ -156,21 +156,20 @@
           "Keep DYNAMODB_ENDPOINT_URL on localhost and PORTAL_PUBLISH_ENABLED=false. Do not copy someone else’s OpenAI or LangSmith key.",
           "Query Neon. Reviewer rows are ibrary.content_manual_quality_check (scores JSON has representation, engagement, action_expression, plus notes and checked_by). Judge rows are ibrary.content_udl_scores (scores JSON has representation_score, engagement_score, action_expression_score, correctness_score, clarity_score, passed, and checkpoint_scores). Join them on curriculum_unit_id.",
           "Use a read-only psql session: psql \"$DATABASE_URL_REVIEW\" and select those columns. If DATABASE_URL_REVIEW is unset, this query hits local Docker and will not show the Neon reviews.",
-          "Build the comparison table from that result. Where a reviewer and the judge differ by 2 or more on a principle, write whether the judge missed evidence named in the note, or the reviewer used a stricter standard than the rubric.",
+          "Build the comparison table from that result. Mark every principle where a reviewer and the judge differ by 2 or more. Do not explain the gap yet. That comes after you have read the human notes and the judge.",
           "Do not treat src/ibrary/prompt_improvement/review_weaknesses.py as this mapping. That code summarizes review comments. It does not score them against the judge."
         ]
       },
       {
-        title: "Build a more stable LLM judge",
-        aim: "The judge in src/ibrary/judging/subtopic_judge.py should return a complete rubric every time, so the comparison from the previous phase can be repeated.",
-        done: "The same three units, judged three times each, stay inside a spread you write down. A result missing a checkpoint id is rejected. Tests cover that rejection. The comparison table is filled again after the change.",
+        title: "Propose a judge calibrated to the human reviews",
+        aim: "Inspect the human reviews first. Then read the current judge against those same units. Only after that, propose changes so the judge would score the way the reviewers did. This task is a written proposal, not a code change.",
+        done: "A short proposal on your branch. It quotes human notes, shows the judge scores beside them, and lists specific prompt or rubric changes tied to those gaps. No judge code is changed yet.",
         tasks: [
-          "Read src/ibrary/judging/prompts.py, subtopic_judge.py, and schemas.py. Today the model is called at temperature 0.1, prompt tag v1.0-udl-v3, and a missing checkpoint is kept as whatever JSON came back. A failed call returns overall 0 and passed false.",
-          "Re-judge the three units from the review three times each, before you change the prompt. Record principle scores and which checkpoint ids were absent.",
-          "Require every checkpoint id in the rubric, with a score from 0 to 10. Reject a response that omits one, then retry. Keep temperature at 0.1 or lower.",
-          "If you edit the prompt text, bump the judge prompt version in prompts.py. Add tests next to tests/judging/.",
-          "Re-judge the same units three times. Fill the comparison table again against the Neon reviewer scores. Write whether the gap got smaller, and which disagreements are still a rubric problem rather than a parser problem.",
-          "Leave publish pointed at DynamoDB Local. Do not write the AWS CuratedContent table as part of this task."
+          "Read the human reviews before you read the judge code. For each unit in the Neon extract, read the notes, checked_by, and the three scores (representation, engagement, action_expression). Write what the reviewers reward and what they mark down.",
+          "Then read the judge that scored those same units. Start with src/ibrary/judging/prompts.py and src/ibrary/judging/rubric.py, then the stored judge output: principle scores, checkpoint notes, correctness, clarity, recommendations, and passed. Write, in your own words, what this judge is actually scoring.",
+          "Go back to the gaps of 2 points or more. For each one, say whether the judge used a different standard from the human note, ignored evidence the reviewer named, or scored something the reviewer did not mention.",
+          "Propose changes to the judge prompt or rubric so a new run would move toward those human scores. Tie every proposed change to a unit id and a review note. Do not edit subtopic_judge.py in this task.",
+          "Put the proposal in the pull request. Ask the group to review it before any judge code is changed. Do not publish to the AWS table."
         ]
       }
     ];
