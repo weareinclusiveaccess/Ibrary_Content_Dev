@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IBrary content creation flow</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #d9d0c3;
+      --card: #fffdf8;
+      --green: #1f6b4a;
+      --green-soft: #e5f2eb;
+      --amber: #8a5a12;
+      --amber-soft: #f8ecd6;
+      --blue: #1d4e89;
+      --blue-soft: #e6eef8;
+      --rose: #8d3b4a;
+      --rose-soft: #f8e8ec;
+      --shadow: 0 10px 30px rgba(40, 32, 20, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #efe4cf 0%, transparent 55%),
+        var(--bg);
+    }
+    header, main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 36px 0 12px; }
+    h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin: 0 0 10px; letter-spacing: -0.03em; }
+    .lede { max-width: 68ch; font-size: 1.12rem; color: var(--muted); margin: 0; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 22px 0 8px;
+    }
+    button, .chip {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.92rem;
+    }
+    .chip, .walk {
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    .chip[aria-pressed="true"],     .node[aria-current="true"] {
+      background: var(--ink);
+      color: #f7f3ea;
+      border-color: var(--ink);
+    }
+    .node[aria-current="true"] p { color: #e4d9c8; }
+    .node[aria-current="true"] .badge { background: #f4ecdf; color: var(--ink); }
+    .walk { background: var(--green); color: white; border-color: var(--green); }
+    .walk[aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
+    .legend { display: flex; gap: 14px; flex-wrap: wrap; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin: 8px 0 18px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr); gap: 18px; align-items: start; padding-bottom: 48px; }
+    .flow { display: flex; flex-direction: column; gap: 8px; }
+    .node {
+      text-align: left;
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+    .node:focus-visible, .chip:focus-visible, .walk:focus-visible { outline: 3px solid #c47b2b; outline-offset: 2px; }
+    .idx {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+    .node h2 { margin: 0; font-size: 1.15rem; }
+    .node p { margin: 3px 0 0; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.88rem; }
+    .badge {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: var(--green-soft);
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .cost-llm .badge { background: var(--amber-soft); color: var(--amber); }
+    .cost-human .badge { background: var(--blue-soft); color: var(--blue); }
+    .cost-serve .badge { background: var(--rose-soft); color: var(--rose); }
+    .arrow { text-align: center; color: #9a9184; font-family: ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.2em; }
+    .panel {
+      position: sticky;
+      top: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px 8px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 { margin: 0 0 6px; font-size: 1.6rem; }
+    .kicker { font-family: ui-sans-serif, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; color: var(--muted); margin: 0 0 8px; }
+    .panel p { line-height: 1.45; }
+    .panel h3 { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 16px 0 6px; }
+    ul { margin: 0 0 8px; padding-left: 18px; }
+    li { margin: 4px 0; }
+    code, .cmd {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.84rem;
+    }
+    .cmd {
+      display: block;
+      background: #221e1a;
+      color: #f4ecdf;
+      border-radius: 10px;
+      padding: 10px 12px;
+      overflow-x: auto;
+      margin: 0 0 8px;
+    }
+    .dag {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .dag span {
+      background: var(--green-soft);
+      border-radius: 10px;
+      padding: 8px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+    }
+    .stores { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .stores button {
+      border: 1px dashed var(--line);
+      background: transparent;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    .stores button[aria-pressed="true"] { border-style: solid; background: var(--amber-soft); }
+    footer { width: min(1180px, calc(100% - 32px)); margin: 0 auto 32px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.85rem; }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .panel { position: static; }
+      .dag { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">IBrary biology · SSS 1</p>
+    <h1>Content creation flow</h1>
+    <p class="lede">Click a stage to see what it reads, what it writes, and the command that runs it. The solid path is how a lesson is born. The content API only serves a lesson after a person has approved it.</p>
+    <div class="toolbar">
+      <button class="chip" type="button" aria-pressed="true" data-filter="all">All stages</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="setup">Setup</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="draft">Drafting</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="review">Review</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="serve">Serve</button>
+      <button class="walk" type="button" aria-pressed="false" id="walk">Walk the flow</button>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#1f6b4a"></i>No model call</span>
+      <span><i class="dot" style="background:#8a5a12"></i>Uses a model</span>
+      <span><i class="dot" style="background:#1d4e89"></i>Human</span>
+      <span><i class="dot" style="background:#8d3b4a"></i>Read API</span>
+    </div>
+  </header>
+  <main class="layout">
+    <section>
+      <div class="flow" id="flow"></div>
+      <h3 class="kicker" style="margin-top:22px">Where data lives</h3>
+      <div class="stores" id="stores"></div>
+    </section>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+  <footer>
+    Pair this map with <a href="ONBOARDING.md">ONBOARDING.md</a>. Green and amber stages write local Docker unless you change URLs. Neon, Cognito, S3, and the production DynamoDB table are the buttons under “Where data lives”.
+  </footer>
+  <script>
+    const stages = [
+      {
+        id: "sources",
+        phase: "setup",
+        cost: "local",
+        title: "Source materials",
+        blurb: "Curriculum JSON in git, textbook PDF downloaded.",
+        body: "Two inputs enter the system. The Nigerian SSS 1 biology curriculum is already structured as JSON. The OpenStax Biology 2e PDF is downloaded locally and is not committed.",
+        reads: ["NERDC / SSS 1 biology curriculum", "OpenStax Biology 2e PDF"],
+        writes: ["biology_curriculum_structured.json", "Biology2e-WEB.pdf"],
+        command: "make download-textbook",
+        code: ["data/docs/extracted_source_content/biology/"],
+        note: "Do not map curriculum topics onto week numbers. A subtopic is curriculum[N].content[M]."
+      },
+      {
+        id: "extract",
+        phase: "setup",
+        cost: "local",
+        title: "Extract",
+        blurb: "PDF becomes chunks, headings, and figures.",
+        body: "PyMuPDF splits the textbook into structured chunks and images. Chunks go to PostgreSQL. Figures can be uploaded to S3 and are listed in the image manifest.",
+        reads: ["Biology2e-WEB.pdf"],
+        writes: ["PostgreSQL textbook chunks", "textbook_images", "textbook_image_manifest.json", "S3 textbook-images/"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps extract",
+        code: ["src/ibrary/textbook/openstax_biology2e.py", "src/ibrary/textbook/loader.py"],
+        note: "Chunks go to local Docker Postgres. Figures go to the AWS bucket ibrary-content unless S3_ENDPOINT_URL is set. The PDF is about 380 MB. This step is safe to re-run."
+      },
+      {
+        id: "validate",
+        phase: "setup",
+        cost: "local",
+        title: "Validate",
+        blurb: "Curriculum shape and unit ids are checked.",
+        body: "Each content item receives a stable unit id: bio_sss1_theme{T}_topic{N}_content{M}. Invalid curriculum JSON stops the pipeline here, before any embedding spend.",
+        reads: ["biology_curriculum_structured.json"],
+        writes: ["Validated unit ids in memory and downstream rows"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps validate",
+        code: ["src/ibrary/curriculum/validator.py", "src/ibrary/curriculum/schemas.py"],
+        note: "Fields in use: class, theme, theme_number, topic_number. There is no term in this model."
+      },
+      {
+        id: "refine",
+        phase: "draft",
+        cost: "llm",
+        title: "Refine curriculum",
+        blurb: "Optional. Splits topic objectives onto subtopics.",
+        body: "Off unless you pass --refine-curriculum. A model assigns topic-level objectives and activities onto each subtopic. It runs after validate and before align.",
+        reads: ["Validated curriculum units"],
+        writes: ["Refined curriculum fields used by later prompts"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --refine-curriculum --steps refine_curriculum",
+        code: ["src/ibrary/curriculum/refiner.py", "scripts/refine_curriculum.py"],
+        note: "Skip this on your first run."
+      },
+      {
+        id: "align",
+        phase: "setup",
+        cost: "llm",
+        title: "Align",
+        blurb: "Embed chunks and find the nearest curriculum matches.",
+        body: "Chunk text is embedded with OpenAI and stored in pgvector. Each unit keeps a top-k set of textbook passages. The full chunk text is loaded from PostgreSQL before a later model sees it.",
+        reads: ["PostgreSQL chunks", "Curriculum units"],
+        writes: ["Embeddings", "Alignment matches"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps align",
+        code: ["src/ibrary/alignment/embedder.py", "src/ibrary/alignment/aligner.py"],
+        note: "Needs OPENAI_API_KEY. Chapter filtering is on by default."
+      },
+      {
+        id: "filter",
+        phase: "draft",
+        cost: "llm",
+        title: "Filter relevance",
+        blurb: "Pipeline v2 keeps only passages that fit the subtopic.",
+        body: "A smaller model scores each aligned chunk against the unit. Irrelevant passages drop out before curation, so the lesson is drafted from excerpts instead of whole chapters.",
+        reads: ["Top-k alignment matches"],
+        writes: ["Chunk relevance rows", "Relevance JSON"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps filter_relevance",
+        code: ["src/ibrary/relevance/scorer.py", "src/ibrary/relevance/filter_runner.py"],
+        note: "Version 1 skips this step. .env.example sets PIPELINE_VERSION=2."
+      },
+      {
+        id: "curate",
+        phase: "draft",
+        cost: "llm",
+        title: "Curate",
+        blurb: "One UDL lesson per unit, plus figures and formulas.",
+        body: "The orchestrator drafts student-facing Markdown, links real textbook figures, resolves formulas, and assembles a module. Prose figure numbers are not the same as OpenStax caption numbers.",
+        reads: ["Relevant excerpts", "Curriculum unit", "Image candidates"],
+        writes: ["curated_content.json", "PostgreSQL curated_content"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps curate --curate-unit bio_sss1_theme1_topic1_content0",
+        code: ["src/ibrary/pipeline/orchestrator.py", "src/ibrary/curation/curation_service.py", "src/ibrary/curation/prompts.py"],
+        note: "Start with one unit id. --full curates every unit and spends real credits.",
+        dag: ["Text curator", "Media linker", "Formula resolver", "Assembler"]
+      },
+      {
+        id: "judge",
+        phase: "draft",
+        cost: "llm",
+        title: "Judge",
+        blurb: "A rubric scores the draft before a person sees it.",
+        body: "The UDL judge scores the curated module. The pass line defaults to 7.0. A failed or errored model call is flagged for review rather than treated as a finished lesson.",
+        reads: ["Curated module"],
+        writes: ["Judge scores beside the curated JSON"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps judge",
+        code: ["src/ibrary/judging/subtopic_judge.py", "src/ibrary/judging/rubric.py"],
+        note: "You can skip it with --skip-judge while debugging prompts."
+      },
+      {
+        id: "review",
+        phase: "review",
+        cost: "human",
+        title: "Human review",
+        blurb: "A reviewer reads the lesson in the portal.",
+        body: "The portal on port 8090 shows the queue, the lesson, and a rubric. Reviews live in PostgreSQL (local or Neon). Login uses Cognito when the pool is configured. This is the gate before DynamoDB.",
+        reads: ["Curated lessons", "Judge scores"],
+        writes: ["Review rows", "Rubric notes"],
+        command: "uv run python scripts/run_review_portal.py",
+        code: ["src/ibrary/review/api.py", "review-ui/src/components/unit-review.tsx"],
+        note: "The app is local. Reviews go to Neon only when DATABASE_URL_REVIEW is set; otherwise they go to Docker Postgres. Cognito login is the AWS user pool. PORTAL_PUBLISH_ENABLED defaults to false."
+      },
+      {
+        id: "publish",
+        phase: "review",
+        cost: "human",
+        title: "Publish",
+        blurb: "Approved lessons are written to DynamoDB.",
+        body: "Only published or verified lessons are pushed. The writer builds a partition key from subject, class, and theme, then stores the module. Drafts stay in PostgreSQL.",
+        reads: ["Approved curated module"],
+        writes: ["DynamoDB table CuratedContent"],
+        command: "uv run python scripts/run_pipeline.py --pipeline-version 2 --steps publish",
+        code: ["src/ibrary/serving/dynamodb_writer.py", "src/ibrary/serving/keys.py"],
+        note: "Same key in both places: SUBJECT#Biology#CLASS#SSS 1#THEME#1. DYNAMODB_ENDPOINT_URL=http://localhost:8000 writes DynamoDB Local (in-memory). Unset that variable to write the AWS table CuratedContent in eu-west-1."
+      },
+      {
+        id: "serve",
+        phase: "serve",
+        cost: "serve",
+        title: "Serve",
+        blurb: "The product backend reads published lessons.",
+        body: "The content API on port 8080 is read-only. Swagger is at /docs. Health does not need a key. Topic and subtopic routes need X-API-Key. It does not run the pipeline.",
+        reads: ["DynamoDB CuratedContent"],
+        writes: ["HTTP JSON for the product backend"],
+        command: "make content-api",
+        code: ["src/ibrary/serving/api.py", "docs/CONTENT_API.md", "docs/BACKEND_INTEGRATION.md"],
+        note: ".env is loaded first and .env.content-api does not override it. A localhost DYNAMODB_ENDPOINT_URL in .env keeps this API on DynamoDB Local. Unset it to read the AWS table."
+      },
+      {
+        id: "weakness",
+        phase: "review",
+        cost: "llm",
+        title: "Weakness summary",
+        blurb: "Reviews are folded back into prompt fixes.",
+        body: "After reviews exist, a separate summarizer groups evidence by unit, asks a model for weaknesses, and rejects citations that were not in the evidence. It is not a step inside run_pipeline.py. Use it to improve the curation prompt, then curate again.",
+        reads: ["Review rows", "Judge evidence"],
+        writes: ["Grounded weakness summaries for prompt edits"],
+        command: "uv run pytest tests/prompt_improvement",
+        code: ["src/ibrary/prompt_improvement/review_weaknesses.py", "src/ibrary/prompt_improvement/review_weakness_prompts.py"],
+        note: "Reads the portal database: Neon when DATABASE_URL_REVIEW is set, otherwise local Docker. Model is OPENAI_REVIEW_SUMMARY_MODEL, or OPENAI_MODEL when that is unset."
+      }
+    ];
+
+    const stores = [
+      { id: "pg-local", title: "Local Postgres", body: "Docker via make up. DATABASE_URL points at localhost:5432, database ibrary, schema ibrary. Holds chunks, embeddings, alignment, and curated drafts. Alembic upgrades this URL. Stopping the container keeps the volume; it is not Neon." },
+      { id: "neon", title: "Neon Postgres", body: "Remote review database. Set DATABASE_URL_REVIEW to the direct host (the name must not contain -pooler). Unset, the portal falls back to local Docker. Use the development branch for daily work. Production is a different URL, kept as DATABASE_URL_REVIEW_PROD locally and as SSM /ibrary/review/DATABASE_URL_REVIEW on EC2. The portal does not use RDS unless enable_rds is turned on." },
+      { id: "dynamo-local", title: "DynamoDB Local", body: "Docker via make up, port 8000, selected by DYNAMODB_ENDPOINT_URL=http://localhost:8000. The container is in-memory, so items disappear when it stops. Create the CuratedContent table again with scripts/create_dynamodb_tables.py. This is the safe target for a first publish." },
+      { id: "dynamo-aws", title: "DynamoDB on AWS", body: "Table CuratedContent in account 681986854278, region eu-west-1. Reach it by unsetting DYNAMODB_ENDPOINT_URL and using the ibrary-dev profile (role content-dev). The product content API reads this table. .env wins over .env.content-api, so a localhost endpoint left in .env still hides the AWS table." },
+      { id: "json", title: "JSON files (laptop)", body: "data/docs/extracted_source_content/biology/ holds the curriculum, the image manifest, and curated_content.json. These files are on disk, not in Neon or DynamoDB. The PDF is downloaded and is not in git." },
+      { id: "s3", title: "S3 (AWS)", body: "Textbook figures live in bucket ibrary-content, prefix biology/textbook-images/, region eu-west-1. Extract uploads there with AWS_PROFILE=ibrary-dev. Dummy AWS_ACCESS_KEY_ID values in .env override that profile. There is no S3 in Docker unless S3_ENDPOINT_URL is set." },
+      { id: "cognito", title: "Cognito (AWS)", body: "Reviewer login. User pool and app client come from Terraform in infra/terraform/environments/dev. Put the ids in COGNITO_USER_POOL_ID and COGNITO_APP_CLIENT_ID. Region eu-west-1. Not started by make up." }
+    ];
+
+    const flow = document.getElementById("flow");
+    const panel = document.getElementById("panel");
+    const storeRow = document.getElementById("stores");
+    let current = "curate";
+    let filter = "all";
+    let timer = null;
+
+    function badge(cost) {
+      if (cost === "llm") return "Model";
+      if (cost === "human") return "Human";
+      if (cost === "serve") return "Read API";
+      return "Local";
+    }
+    function costClass(cost) {
+      if (cost === "llm") return "cost-llm";
+      if (cost === "human") return "cost-human";
+      if (cost === "serve") return "cost-serve";
+      return "";
+    }
+
+    function renderFlow() {
+      flow.innerHTML = "";
+      const visible = stages.filter((s) => filter === "all" || s.phase === filter);
+      visible.forEach((stage, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "node " + costClass(stage.cost);
+        btn.dataset.id = stage.id;
+        if (stage.id === current) btn.setAttribute("aria-current", "true");
+        btn.innerHTML = '<span class="idx">' + (stages.indexOf(stage) + 1) + '</span><span><h2>' + stage.title + '</h2><p>' + stage.blurb + '</p></span><span class="badge">' + badge(stage.cost) + '</span>';
+        btn.addEventListener("click", () => select(stage.id));
+        flow.appendChild(btn);
+        if (i < visible.length - 1) {
+          const arrow = document.createElement("div");
+          arrow.className = "arrow";
+          arrow.textContent = "↓";
+          flow.appendChild(arrow);
+        }
+      });
+    }
+
+    function list(title, items) {
+      return "<h3>" + title + "</h3><ul>" + items.map((item) => "<li><code>" + item + "</code></li>").join("") + "</ul>";
+    }
+
+    function renderPanel(stage) {
+      const dag = stage.dag
+        ? '<h3>Inside this step</h3><div class="dag">' + stage.dag.map((name) => "<span>" + name + "</span>").join("") + "</div>"
+        : "";
+      panel.innerHTML =
+        '<p class="kicker">' + badge(stage.cost) + " · " + stage.phase + "</p>" +
+        "<h2>" + stage.title + "</h2>" +
+        "<p>" + stage.body + "</p>" +
+        list("Reads", stage.reads) +
+        list("Writes", stage.writes) +
+        "<h3>Command</h3><code class=\"cmd\">" + stage.command + "</code>" +
+        list("Code", stage.code) +
+        "<p>" + stage.note + "</p>" +
+        dag;
+    }
+
+    function select(id) {
+      current = id;
+      renderFlow();
+      renderPanel(stages.find((s) => s.id === id));
+      storeRow.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", "false"));
+    }
+
+    document.querySelectorAll(".chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        filter = chip.dataset.filter;
+        document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+        const visible = stages.filter((s) => filter === "all" || s.phase === filter);
+        if (!visible.some((s) => s.id === current)) current = visible[0].id;
+        select(current);
+      });
+    });
+
+    storeRow.innerHTML = stores.map((s) => '<button type="button" aria-pressed="false" data-store="' + s.id + '">' + s.title + "</button>").join("");
+    storeRow.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const store = stores.find((s) => s.id === btn.dataset.store);
+        storeRow.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        panel.innerHTML = '<p class="kicker">Storage</p><h2>' + store.title + "</h2><p>" + store.body + "</p>";
+        document.querySelectorAll(".node").forEach((n) => n.removeAttribute("aria-current"));
+      });
+    });
+
+    document.getElementById("walk").addEventListener("click", (event) => {
+      const button = event.currentTarget;
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+        button.setAttribute("aria-pressed", "false");
+        button.textContent = "Walk the flow";
+        return;
+      }
+      filter = "all";
+      document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.filter === "all")));
+      let index = 0;
+      button.setAttribute("aria-pressed", "true");
+      button.textContent = "Stop";
+      const tick = () => {
+        select(stages[index].id);
+        index += 1;
+        if (index >= stages.length) {
+          clearInterval(timer);
+          timer = null;
+          button.setAttribute("aria-pressed", "false");
+          button.textContent = "Walk the flow";
+        }
+      };
+      tick();
+      timer = setInterval(tick, 1600);
+    });
+
+    select("sources");
+  </script>
+</body>
+</html>

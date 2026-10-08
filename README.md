@@ -14,6 +14,8 @@ UDL-aligned **biology** content pipeline: extract [OpenStax Biology 2e](https://
 
 ## Documentation
 
+**New to the repo:** read [docs/ONBOARDING.md](docs/ONBOARDING.md), open [docs/content-creation-flow.html](docs/content-creation-flow.html), then work through [docs/tasks.html](docs/tasks.html).
+
 **Full setup (Docker, Postgres, env vars, textbook download, troubleshooting):** see [SETUP.md](SETUP.md).
 
 **Reviewer portal:** `uv run python scripts/run_review_portal.py` → http://127.0.0.1:8090 ([plan](docs/plans/2026-05-16-reviewer-portal.md)) · **AWS / Terraform:** [infra/README.md](infra/README.md)

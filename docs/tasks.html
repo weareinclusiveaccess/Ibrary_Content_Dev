@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IBrary onboarding tasks</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #d9d0c3;
+      --card: #fffdf8;
+      --green: #1f6b4a;
+      --green-soft: #e5f2eb;
+      --amber: #8a5a12;
+      --amber-soft: #f8ecd6;
+      --blue: #1d4e89;
+      --shadow: 0 10px 30px rgba(40, 32, 20, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #efe4cf 0%, transparent 55%),
+        var(--bg);
+    }
+    header, main { width: min(860px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 36px 0 8px; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 10px; letter-spacing: -0.03em; }
+    h2 { font-size: 1.35rem; margin: 0 0 6px; }
+    .lede, .phase p, li { color: var(--muted); }
+    .lede { max-width: 68ch; font-size: 1.12rem; margin: 0 0 14px; }
+    a { color: var(--blue); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; }
+    .progress {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+    .bar {
+      flex: 1;
+      height: 10px;
+      background: var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+    }
+    #count { font-variant-numeric: tabular-nums; color: var(--ink); }
+    .phase {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px 18px 8px;
+      margin: 16px 0;
+    }
+    .phase header { padding: 0; width: auto; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+    .badge {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--amber-soft);
+      color: var(--amber);
+      border-radius: 999px;
+      padding: 4px 8px;
+      white-space: nowrap;
+    }
+    .phase.done .badge { background: var(--green-soft); color: var(--green); }
+    ol { list-style: none; padding: 0; margin: 12px 0; }
+    li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+    }
+    li input { margin-top: 4px; width: 16px; height: 16px; }
+    li.checked span { color: var(--muted); text-decoration: line-through; text-decoration-color: #b7ae9f; }
+    .done-when {
+      background: var(--green-soft);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 4px 0 12px;
+      color: var(--ink);
+    }
+    footer { width: min(860px, calc(100% - 32px)); margin: 8px auto 40px; color: var(--muted); }
+    button {
+      font: inherit;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Onboarding tasks</h1>
+    <p class="lede">Four phases. Finish them in order. Setup stays on your laptop. The reviews are already in Neon: extract them and set them beside the LLM judge. The last phase changes the judge so that comparison can be repeated.</p>
+    <div class="progress" aria-live="polite">
+      <div class="bar" aria-hidden="true"><span id="fill"></span></div>
+      <strong id="count">0 / 0</strong>
+    </div>
+    <button type="button" id="reset">Clear checks on this browser</button>
+  </header>
+  <main id="phases"></main>
+  <footer>
+    <p>Read <a href="ONBOARDING.md">ONBOARDING.md</a> and open <a href="content-creation-flow.html">the content-creation map</a> while you work. Checks are stored in this browser only.</p>
+  </footer>
+  <script>
+    const phases = [
+      {
+        title: "Set up the repo",
+        aim: "A local pipeline that tests pass against. No shared database yet.",
+        done: "pytest passes, and you can point at each URL in .env and say whether it is Docker, Neon, or AWS.",
+        tasks: [
+          "Install Python 3.10, 3.11, or 3.12, plus uv, Git, and Docker. Python 3.13 and newer will not install this project.",
+          "Clone the repo and create your own branch from main: git checkout -b yourname/short-description. Do not commit on main. When your work is ready, open a pull request into main and ask the group to approve it before anyone merges. Then run uv sync --extra dev --extra pipeline and uv pip install -e .",
+          "Copy .env.example to .env. Do not copy anyone’s .env. Create your own OpenAI key inside the group’s OpenAI organization and put it in OPENAI_API_KEY. Leave LANGSMITH_TRACING=false and LANGSMITH_API_KEY empty. Leave the Docker DATABASE_URL, DYNAMODB_ENDPOINT_URL=http://localhost:8000, PIPELINE_VERSION=2, and PORTAL_PUBLISH_ENABLED=false.",
+          "Confirm DATABASE_URL is postgresql://ibrary:ibrary_dev@localhost:5432/ibrary. Confirm DYNAMODB_ENDPOINT_URL is http://localhost:8000. Leave DATABASE_URL_REVIEW unset. Leave PORTAL_PUBLISH_ENABLED=false.",
+          "Run make up, then uv run alembic upgrade head, then uv run python scripts/create_dynamodb_tables.py, then make download-textbook.",
+          "Run uv run pytest and keep the output. Do not start --full."
+        ]
+      },
+      {
+        title: "Understand the flow",
+        aim: "You can walk a lesson from the textbook to a human review without running the expensive steps.",
+        done: "You can name, for one unit id, which store holds the draft, which store holds the review, and which store the product reads.",
+        tasks: [
+          "Open docs/content-creation-flow.html and click Extract through Weakness. Read the store buttons, especially Local Postgres, Neon, DynamoDB Local, and DynamoDB on AWS.",
+          "Read the “Local machine vs Neon, AWS, and DynamoDB” section in ONBOARDING.md.",
+          "Open biology_curriculum_structured.json, pick one content item, and write its unit id (bio_sss1_theme…_topic…_content…).",
+          "Run uv run python scripts/run_pipeline.py --pipeline-version 2 --steps validate. Confirm that unit id exists after validation.",
+          "Write a short note, in your own words: pipeline drafts live in local Docker Postgres; reviewer scores live in Neon only after DATABASE_URL_REVIEW is set; DynamoDB Local is the laptop table; the AWS CuratedContent table is what the product reads."
+        ]
+      },
+      {
+        title: "Extract the review from Neon and map it to the judge",
+        aim: "The reviews are already stored. Read them from Neon and put each reviewer’s scores next to the LLM judge for the same unit. Do not submit a new review. Nothing in the repo does this comparison for you.",
+        done: "A table of the units that already have a human review: reviewer scores and notes beside the judge’s principle scores, checkpoint notes, correctness, clarity, overall score, and pass/fail. Each gap of 2 points or more has a one-line reason.",
+        tasks: [
+          "Ask the group for the direct Neon URL of the database that already holds the reviews. The hostname must not contain -pooler. Put it in DATABASE_URL_REVIEW. This step is read-only: do not run alembic, do not load data, and do not publish.",
+          "Keep DYNAMODB_ENDPOINT_URL on localhost and PORTAL_PUBLISH_ENABLED=false. Do not copy someone else’s OpenAI or LangSmith key.",
+          "Query Neon. Reviewer rows are ibrary.content_manual_quality_check (scores JSON has representation, engagement, action_expression, plus notes and checked_by). Judge rows are ibrary.content_udl_scores (scores JSON has representation_score, engagement_score, action_expression_score, correctness_score, clarity_score, passed, and checkpoint_scores). Join them on curriculum_unit_id.",
+          "Use a read-only psql session: psql \"$DATABASE_URL_REVIEW\" and select those columns. If DATABASE_URL_REVIEW is unset, this query hits local Docker and will not show the Neon reviews.",
+          "Build the comparison table from that result. Where a reviewer and the judge differ by 2 or more on a principle, write whether the judge missed evidence named in the note, or the reviewer used a stricter standard than the rubric.",
+          "Do not treat src/ibrary/prompt_improvement/review_weaknesses.py as this mapping. That code summarizes review comments. It does not score them against the judge."
+        ]
+      },
+      {
+        title: "Build a more stable LLM judge",
+        aim: "The judge in src/ibrary/judging/subtopic_judge.py should return a complete rubric every time, so the comparison from the previous phase can be repeated.",
+        done: "The same three units, judged three times each, stay inside a spread you write down. A result missing a checkpoint id is rejected. Tests cover that rejection. The comparison table is filled again after the change.",
+        tasks: [
+          "Read src/ibrary/judging/prompts.py, subtopic_judge.py, and schemas.py. Today the model is called at temperature 0.1, prompt tag v1.0-udl-v3, and a missing checkpoint is kept as whatever JSON came back. A failed call returns overall 0 and passed false.",
+          "Re-judge the three units from the review three times each, before you change the prompt. Record principle scores and which checkpoint ids were absent.",
+          "Require every checkpoint id in the rubric, with a score from 0 to 10. Reject a response that omits one, then retry. Keep temperature at 0.1 or lower.",
+          "If you edit the prompt text, bump the judge prompt version in prompts.py. Add tests next to tests/judging/.",
+          "Re-judge the same units three times. Fill the comparison table again against the Neon reviewer scores. Write whether the gap got smaller, and which disagreements are still a rubric problem rather than a parser problem.",
+          "Leave publish pointed at DynamoDB Local. Do not write the AWS CuratedContent table as part of this task."
+        ]
+      }
+    ];
+
+    const key = "ibrary-onboarding-tasks";
+    const saved = new Set(JSON.parse(localStorage.getItem(key) || "[]"));
+    const root = document.getElementById("phases");
+
+    phases.forEach((phase, pi) => {
+      const section = document.createElement("section");
+      section.className = "phase";
+      section.innerHTML = `<header><h2>${phase.title}</h2><span class="badge"></span></header><p>${phase.aim}</p>`;
+      const list = document.createElement("ol");
+      phase.tasks.forEach((text, ti) => {
+        const id = `${pi}-${ti}`;
+        const li = document.createElement("li");
+        const box = document.createElement("input");
+        box.type = "checkbox";
+        box.id = id;
+        box.checked = saved.has(id);
+        const label = document.createElement("label");
+        label.htmlFor = id;
+        label.append(document.createElement("span"));
+        label.querySelector("span").textContent = text;
+        li.append(box, label);
+        if (box.checked) li.classList.add("checked");
+        box.addEventListener("change", () => {
+          li.classList.toggle("checked", box.checked);
+          if (box.checked) saved.add(id); else saved.delete(id);
+          localStorage.setItem(key, JSON.stringify([...saved]));
+          paint();
+        });
+        list.append(li);
+      });
+      const done = document.createElement("p");
+      done.className = "done-when";
+      done.innerHTML = `<strong>Done when.</strong> ${phase.done}`;
+      section.append(list, done);
+      root.append(section);
+    });
+
+    function paint() {
+      const boxes = [...document.querySelectorAll('input[type="checkbox"]')];
+      const n = boxes.filter((b) => b.checked).length;
+      document.getElementById("count").textContent = `${n} / ${boxes.length}`;
+      document.getElementById("fill").style.width = `${boxes.length ? (100 * n) / boxes.length : 0}%`;
+      document.querySelectorAll(".phase").forEach((section) => {
+        const mine = [...section.querySelectorAll('input[type="checkbox"]')];
+        const complete = mine.every((b) => b.checked);
+        section.classList.toggle("done", complete);
+        section.querySelector(".badge").textContent = complete ? "Done" : `${mine.filter((b) => b.checked).length} / ${mine.length}`;
+      });
+    }
+
+    document.getElementById("reset").addEventListener("click", () => {
+      saved.clear();
+      localStorage.removeItem(key);
+      document.querySelectorAll('input[type="checkbox"]').forEach((b) => {
+        b.checked = false;
+        b.closest("li").classList.remove("checked");
+      });
+      paint();
+    });
+    paint();
+  </script>
+</body>
+</html>
