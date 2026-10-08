@@ -19,7 +19,7 @@ jobs:
           - python-version: "3.14"
             continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install UV
         uses: astral-sh/setup-uv@v4
