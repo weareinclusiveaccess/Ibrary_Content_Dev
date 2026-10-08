@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: uv sync --extra dev
@@ -88,10 +88,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
-        include:
-          - python-version: "3.14"
-            continue-on-error: true
+        python-version: ["3.10", "3.11", "3.12"]
+
     steps:
       - uses: actions/checkout@v4
 
@@ -105,12 +103,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          allow-prereleases: ${{ matrix.python-version == '3.14' }}
-        continue-on-error: ${{ matrix.python-version == '3.14' }}
 
       - name: Install dependencies
         if: steps.setup-python.outcome == 'success'
-        run: uv sync --extra dev --extra content-api
+        run: uv sync --extra dev --extra pipeline
 
       - name: Check if tests exist
         if: steps.setup-python.outcome == 'success'
@@ -124,20 +120,22 @@ jobs:
 
       - name: Run tests with pytest
         if: steps.setup-python.outcome == 'success' && steps.check_tests.outputs.tests_exist == 'true'
-        run: uv run pytest tests/ -v --cov=src --cov-report=term --cov-report=html
+        run: uv run pytest tests/ -v --cov=src --cov-report=xml --cov-report=term
 
       - name: Create empty coverage file if no tests
         if: steps.setup-python.outcome == 'success' && steps.check_tests.outputs.tests_exist == 'false'
         run: |
+          echo '<?xml version="1.0" ?><coverage></coverage>' > coverage.xml
           echo "No tests found, skipping pytest"
 
-      - name: Upload coverage report
-        if: steps.setup-python.outcome == 'success' && steps.check_tests.outputs.tests_exist == 'true'
-        uses: actions/upload-artifact@v4
+      - name: Upload coverage to Codecov
+        if: always()
+        uses: codecov/codecov-action@v4
         with:
-          name: coverage-report-${{ matrix.python-version }}
-          path: htmlcov/
-          retention-days: 7
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
 
   security-scan:
     name: Security Scan
@@ -158,10 +156,15 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Run safety check
+        run: |
+          pip install safety
+          safety check --file uv.lock || true
+
       - name: Run bandit security linter
         run: |
           if [ -d "src" ] && [ "$(find src -name '*.py' -type f | wc -l)" -gt 0 ]; then
-            uv pip install bandit[toml]
+            pip install bandit[toml]
             bandit -r src -f json -o bandit-report.json || true
           else
             echo '{"errors": []}' > bandit-report.json

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from ibrary.config import PIPELINE_SUBJECT
+from ibrary.serving.dynamodb_writer import build_pk as writer_build_pk
 from ibrary.serving.keys import build_pk
 
 
@@ -19,3 +20,7 @@ def test_pk_uses_provided_subject_not_default():
 def test_pk_falls_back_to_pipeline_subject_when_blank():
     pk = build_pk(subject="", class_name="SSS 1", theme_number=1)
     assert pk == f"SUBJECT#{PIPELINE_SUBJECT}#CLASS#SSS 1#THEME#1"
+
+
+def test_writer_build_pk_matches_content_api_keys():
+    assert writer_build_pk is build_pk

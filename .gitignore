@@ -128,6 +128,7 @@ dmypy.json
 uv.lock
 
 # IDE
+.worktrees/
 .vscode/
 .idea/
 *.swp
@@ -148,11 +149,32 @@ Thumbs.db
 desktop.ini
 
 # Project-specific
-# Textbook PDFs and content
-
+# Textbook PDFs and content (general)
 docs/textbooks/
 docs/textBooks/
 *.pdf
+
+# Allow pipeline source documents (curriculum, UDL guidelines)
+# NOTE: Biology2e-WEB.pdf is too large for GitHub (378 MB). Download via: make download-textbook
+!data/docs/extracted_source_content/biology/OLD NERDC CURRICULUM SSCE BIOLOGY .pdf
+!data/docs/udlg3-graphicorganizer-digital-numbers-a11y.pdf
+
+# Pipeline artifacts (generated, not tracked)
+data/docs/extracted_source_content/biology/curriculum_validated.json
+data/docs/extracted_source_content/biology/curriculum_extraction_report.json
+data/docs/extracted_source_content/biology/curriculum_textbook_alignment.json
+data/docs/extracted_source_content/biology/curated_content.json
+data/docs/extracted_source_content/biology/udl_evaluation_report.json
+data/docs/extracted_source_content/biology/chunk_relevance_without_images.json
+data/docs/extracted_source_content/biology/curated_content_old.json
+data/docs/extracted_source_content/biology/curriculum_refinement_report.json
+data/docs/extracted_source_content/biology/learning_module_bio_sss1_theme1_topic1_content0.json
+data/docs/extracted_source_content/biology/udl_subtopic_evaluation.json
+data/docs/extracted_source_content/biology/textbook_images/
+
+# Local Terraform output cache and state backups
+.tfout_*
+infra/terraform/**/terraform.tfstate.*.backup
 
 
 # Database
@@ -185,3 +207,6 @@ config/secrets.yaml
 # Generated content storage (if large)
 storage/generated/
 storage/cache/
+
+#motunrayo personal files
+.todo/*
