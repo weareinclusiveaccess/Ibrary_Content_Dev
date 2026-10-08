@@ -1,8 +1,8 @@
 """Contract tests for review-weakness summarization prompts."""
 
 import hashlib
-import re
 from pathlib import Path
+import re
 
 from ibrary.prompt_improvement import review_weakness_prompts
 from ibrary.prompt_improvement.review_weakness_prompts import (

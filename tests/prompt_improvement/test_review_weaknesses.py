@@ -12,8 +12,8 @@ import sys
 from types import SimpleNamespace
 from typing import Any
 
-import pytest
 from pydantic import ValidationError
+import pytest
 
 from ibrary.prompt_improvement import review_weaknesses as rw
 from ibrary.prompt_improvement.review_weaknesses import (
