@@ -1,0 +1,8 @@
+{
+  "commands": [
+    "systemctl is-active ibrary-portal.service",
+    "docker ps",
+    "curl -sf http://localhost/health && echo HEALTH_OK || echo HEALTH_FAIL",
+    "journalctl -u ibrary-portal.service -n 30 --no-pager -o cat"
+  ]
+}

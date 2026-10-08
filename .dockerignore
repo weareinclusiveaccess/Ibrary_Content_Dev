@@ -1,35 +1,95 @@
-# Content API image — exclude everything except the files COPY'd in Dockerfile.content-api
+# =============================================================================
+# .dockerignore — keeps the build context small and avoids accidentally baking
+# secrets / large pipeline artifacts into the image.
+#
+# The Dockerfile copies an explicit set of paths (review-ui/, src/, scripts/run_review_portal.py,
+# alembic/, pyproject.toml, uv.lock, entrypoint-ec2.sh). Everything else is excluded
+# to keep `docker build` fast over slow uplinks.
+# =============================================================================
+
+# --- VCS / IDE ---------------------------------------------------------------
 .git
+.gitignore
+.gitattributes
 .github
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Python venv & caches ----------------------------------------------------
 .venv
 venv
+env
+ENV
 __pycache__
-*.pyc
+*.py[cod]
+*.egg-info
+.eggs
 .pytest_cache
-.mypy_cache
 .ruff_cache
+.mypy_cache
+.pyre
+.uv
+.python-version
+
+# --- Build/dist outputs ------------------------------------------------------
+build
+dist
+*.egg
+htmlcov
+.coverage
+.coverage.*
+coverage.xml
+
+# --- Node (UI build copies its own context; root-level is irrelevant) -------
+review-ui/node_modules
+review-ui/dist
+review-ui/.vite
+**/node_modules
+
+# --- Secrets / env -----------------------------------------------------------
 .env
 .env.*
+!.env.example
 !.env.content-api.example
+*.pem
+*.key
+secrets.yaml
+config/secrets.yaml
 
-# Not needed for content-api runtime
-tests
-docs
-infra
-scripts
-Makefile
-render.yaml
-notebooks
+# --- Pipeline data (huge; not needed at runtime) -----------------------------
 data
-storage
-review-ui
-src/ibrary/core
-src/sourceContentProcessor
-alembic
-alembic.ini
+notebooks
+journals
+*.pdf
+*.db
+*.sqlite
+*.sqlite3
+ibrary.db
 
-# Full project deps (torch, spacy, …) — image uses docker/content-api/requirements.txt
-pyproject.toml
-uv.lock
+# --- Infrastructure (not part of the runtime image) --------------------------
+infra
+docker-compose.yml
+docker-compose.*.yml
 
+# --- Docs / planning ---------------------------------------------------------
+docs
 *.md
+!README.md
+
+# --- Misc dev artifacts ------------------------------------------------------
+debug.log
+*.log
+logs
+tmp
+temp
+.cache
+.todo
+TODO.md
+.agents
+.cursor
+skills-lock.json
