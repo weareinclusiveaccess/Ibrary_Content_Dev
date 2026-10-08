@@ -67,6 +67,7 @@ S3_ENDPOINT_URL: str | None = os.getenv("S3_ENDPOINT_URL") or None
 OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 # Chat model for judge and other non-curation calls (curation uses OPENAI_CURATION_* below).
 OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4-turbo-preview")
+OPENAI_REVIEW_SUMMARY_MODEL: str = os.getenv("OPENAI_REVIEW_SUMMARY_MODEL") or OPENAI_MODEL
 OPENAI_EMBEDDING_MODEL: str = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small")
 # Include first N chars of chunk body in embedding text (0 = title/LO/summary only)
 EMBEDDING_BODY_MAX_CHARS: int = int(os.getenv("EMBEDDING_BODY_MAX_CHARS", "2000"))
